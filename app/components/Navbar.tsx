@@ -1,182 +1,220 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-
-const ChevronDownIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
-  <svg
-    className={className}
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
-  </svg>
-);
-
-const ExternalArrowIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
-  <svg
-    className={className}
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 17L17 7M17 7H7M17 7V17" />
-  </svg>
-);
-
-// Program data structure
-const categories = [
-  {
-    id: 'undergraduate',
-    name: 'Undergraduate',
-    programmes: [
-      { name: 'UG in Technology & Business Management', href: '/ug/tech-business' },
-      { name: 'UG in Psychology & Marketing', href: '/ug/psychology-marketing' },
-      { name: 'UG in Data Science & AI', href: '/ug/data-science' },
-      { name: 'UG in Finance & Economics', href: '/ug/finance' },
-    ],
-  },
-  {
-    id: 'postgraduate',
-    name: 'Postgraduate',
-    programmes: [
-      { name: 'PG in Business Leadership', href: '/pg/leadership' },
-      { name: 'PG in Digital Marketing & Growth', href: '/pg/marketing' },
-      { name: 'PG in Product Management', href: '/pg/product' },
-    ],
-  },
-  {
-    id: 'executive',
-    name: 'Executive',
-    programmes: [
-      { name: 'Executive MBA', href: '/executive/mba' },
-      { name: 'Senior Leadership Program', href: '/executive/leadership' },
-    ],
-  },
-  {
-    id: 'family-business',
-    name: 'Family Business',
-    programmes: [
-      { name: 'Next-Gen Family Business Program', href: '/family-business/next-gen' },
-    ],
-  },
-  {
-    id: 'immersions',
-    name: 'Immersions',
-    programmes: [
-      { name: 'Global Silicon Valley Immersion', href: '/immersions/silicon-valley' },
-    ],
-  },
-  {
-    id: 'coaching',
-    name: '1:1 Executive Coaching',
-    programmes: [
-      { name: 'Personalized Executive Mentorship', href: '/coaching/mentorship' },
-    ],
-  },
-];
+import React, { useState } from "react";
+import Image from "next/image";
+import { User, Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 
 export default function Navbar() {
-  const [activeCategory, setActiveCategory] = useState(categories[0]);
-  const [isProgramsOpen, setIsProgramsOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState("Home");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Track expanded items for mobile view
+  const [mobileCategoryOpen, setMobileCategoryOpen] = useState<string | null>(null);
+
+  // Nested structure for Programmes -> Categories -> Sub-Programmes
+  const programmesData = [
+    {
+      category: "Trading & Markets",
+      subItems: [
+        { name: "Financial Markets & Derivatives", href: "#" },
+        { name: "Technical Analysis & Charting", href: "#" },
+        { name: "Algorithmic Trading", href: "#" },
+      ],
+    },
+    {
+      category: "Risk & Management",
+      subItems: [
+        { name: "Multi-Asset Risk Management", href: "#" },
+        { name: "Portfolio Hedging Strategies", href: "#" },
+      ],
+    },
+    {
+      category: "Behavioral & Psychology",
+      subItems: [
+        { name: "Trading Psychology & Discipline", href: "#" },
+        { name: "Performance Audit Lab", href: "#" },
+      ],
+    },
+  ];
 
   return (
-    <div className="relative w-full">
-      {/* Light Navbar Theme */}
-      <nav className="w-full bg-white text-zinc-900 border-b border-zinc-200 px-8 py-4 flex items-center justify-between font-sans z-50 relative shadow-sm">
-        {/* Brand Logo Section */}
-        <Link href="/" className="flex items-center">
-          <Image
-            src="/logo.png"
-            alt="Logo"
-            width={160}
-            height={40}
-            priority
-            className="h-auto w-auto max-h-10 object-contain"
-          />
-        </Link>
+    <header className="w-full bg-white/60 backdrop-blur-md border-b border-white/30 py-4 px-4 sm:px-8 mx-auto sticky top-0 z-50">
+      <nav className="flex items-center justify-between gap-4">
+        {/* Brand Logo */}
+        <div className="flex items-center gap-2.5 z-20">
+          <div className="flex items-center justify-center text-white font-bold text-lg shadow-sm">
+            <Image src="/Home/derivion-logo.png" alt="Logo" width={60} height={60} />
+          </div>
+        </div>
 
-        {/* Navigation Links */}
-        <div className="flex items-center space-x-8">
-          {/* Programs Mega-Menu Trigger */}
-          <div 
-            className="group relative"
-            onMouseEnter={() => setIsProgramsOpen(true)}
-            onMouseLeave={() => setIsProgramsOpen(false)}
+        {/* Center Pill Navigation Menu (Desktop) */}
+        <div className="hidden md:flex items-center gap-1.5 bg-zinc-100/80 p-1.5 rounded-full border border-zinc-200/60 shadow-inner">
+          {/* Home Link */}
+          <button
+            onClick={() => setActiveTab("Home")}
+            className={`px-5 py-2 text-xs sm:text-sm font-medium rounded-full transition-all duration-200 ${
+              activeTab === "Home"
+                ? "bg-zinc-900 text-white shadow-md"
+                : "text-zinc-500 hover:text-zinc-900 hover:bg-zinc-200/50"
+            }`}
           >
-            <button className={`flex items-center space-x-1.5 text-base font-medium transition-colors py-2 focus:outline-none ${isProgramsOpen ? 'text-[#E61B43]' : 'hover:text-[#E61B43]'}`}>
-              <span>Programs</span>
-              <ChevronDownIcon className={`w-4 h-4 transition-transform duration-200 ${isProgramsOpen ? 'rotate-180 text-[#E61B43]' : ''}`} />
+            Home
+          </button>
+
+          {/* Programmes Dropdown Menu */}
+          <div className="relative group">
+            <button
+              onClick={() => setActiveTab("Programmes")}
+              className={`flex items-center gap-1.5 px-5 py-2 text-xs sm:text-sm font-medium rounded-full transition-all duration-200 ${
+                activeTab === "Programmes"
+                  ? "bg-zinc-900 text-white shadow-md"
+                  : "text-zinc-500 hover:text-zinc-900 hover:bg-zinc-200/50"
+              }`}
+            >
+              <span>Programmes</span>
+              <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" />
             </button>
 
-            {/* Light Mega Dropdown Panel */}
-            {isProgramsOpen && (
-              <div className="absolute top-full -right-20 w-[800px] bg-white text-zinc-900 shadow-xl rounded-b-xl p-10 flex border border-zinc-200 z-50 transition-all">
-                {/* Left Column: Categories */}
-                <div className="w-1/2 pr-8 border-r border-zinc-200">
-                  <span className="text-[11px] font-semibold tracking-widest text-zinc-400 uppercase block mb-6">
-                    CATEGORY
-                  </span>
-                  <div className="space-y-4">
-                    {categories.map((cat) => {
-                      const isActive = activeCategory.id === cat.id;
-                      return (
-                        <button
-                          key={cat.id}
-                          onMouseEnter={() => setActiveCategory(cat)}
-                          className={`w-full text-left text-2xl flex items-center justify-between font-serif transition-colors ${
-                            isActive ? 'text-[#E61B43] font-normal' : 'text-zinc-500 hover:text-zinc-900'
-                          }`}
-                        >
-                          <span>{cat.name}</span>
-                          {isActive && <span className="text-xl text-[#E61B43]">→</span>}
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
+            {/* Level 1 Dropdown: Categories */}
+            <div className="absolute left-0 top-full pt-3 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50">
+              <div className="bg-white border border-zinc-200 rounded-2xl shadow-xl p-2 w-64 space-y-1">
+                {programmesData.map((cat, idx) => (
+                  <div key={idx} className="relative group/sub">
+                    {/* Category Item */}
+                    <div className="flex items-center justify-between px-4 py-2.5 rounded-xl text-xs sm:text-sm text-zinc-700 font-medium hover:bg-zinc-100 hover:text-zinc-900 cursor-pointer transition-colors">
+                      <span>{cat.category}</span>
+                      <ChevronRight className="w-3.5 h-3.5 text-zinc-400" />
+                    </div>
 
-                {/* Right Column: Programmes */}
-                <div className="w-1/2 pl-12">
-                  <span className="text-[11px] font-semibold tracking-widest text-zinc-400 uppercase block mb-6">
-                    PROGRAMMES
-                  </span>
-                  <div className="space-y-5">
-                    {activeCategory.programmes.map((prog, idx) => (
-                      <Link
-                        key={idx}
-                        href={prog.href}
-                        className="group/item flex items-center space-x-2 text-base font-semibold text-zinc-800 hover:text-[#E61B43] transition-colors"
-                      >
-                        <span>{prog.name}</span>
-                        <ExternalArrowIcon className="w-4 h-4 opacity-0 group-hover/item:opacity-100 text-[#E61B43] transition-opacity" />
-                      </Link>
-                    ))}
+                    {/* Level 2 Sub-Dropdown: Opens on Hovering Category */}
+                    <div className="absolute left-full top-0 pl-2 opacity-0 -translate-x-2 pointer-events-none group-hover/sub:opacity-100 group-hover/sub:translate-x-0 group-hover/sub:pointer-events-auto transition-all duration-200 z-50">
+                      <div className="bg-white border border-zinc-200 rounded-2xl shadow-xl p-2 w-64 space-y-1">
+                        {cat.subItems.map((sub, sIdx) => (
+                          <a
+                            key={sIdx}
+                            href={sub.href}
+                            className="block px-4 py-2.5 rounded-xl text-xs sm:text-sm text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100 transition-colors"
+                          >
+                            {sub.name}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                </div>
+                ))}
               </div>
-            )}
+            </div>
           </div>
 
-          <div className="group relative">
-            <Link
-              href="/aboutus"
-              className="text-base font-medium hover:text-[#E61B43] transition-colors"
-            >
-              About us
-            </Link>
-          </div>
-
-          {/* Primary Action Button styled with the Candlestick Red theme color */}
-          <button className="bg-[#E61B43] hover:bg-[#c91236] text-white rounded-full px-6 py-2.5 text-sm font-medium transition-all duration-200 tracking-wider shadow-sm">
-            Contact us
+          {/* About Us Link */}
+          <button
+            onClick={() => setActiveTab("About Us")}
+            className={`px-5 py-2 text-xs sm:text-sm font-medium rounded-full transition-all duration-200 ${
+              activeTab === "About Us"
+                ? "bg-zinc-900 text-white shadow-md"
+                : "text-zinc-500 hover:text-zinc-900 hover:bg-zinc-200/50"
+            }`}
+          >
+            About Us
           </button>
         </div>
+
+        {/* Right CTA Button */}
+        <div className="hidden sm:flex items-center z-20">
+          <button className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-zinc-900 hover:bg-zinc-800 text-white text-xs sm:text-sm font-semibold transition-all duration-200 shadow-sm active:scale-95">
+            <User className="w-4 h-4 text-zinc-300" />
+            <span>Contact us</span>
+          </button>
+        </div>
+
+        {/* Mobile Hamburger Toggle */}
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden p-2 rounded-lg text-zinc-700 hover:bg-zinc-100"
+          aria-label="Toggle navigation"
+        >
+          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
       </nav>
-    </div>
+
+      {/* Mobile Menu Dropdown */}
+      {mobileMenuOpen && (
+        <div className="md:hidden mt-3 p-4 bg-zinc-100 rounded-2xl border border-zinc-200 space-y-2">
+          {/* Mobile Home */}
+          <button
+            onClick={() => {
+              setActiveTab("Home");
+              setMobileMenuOpen(false);
+            }}
+            className={`w-full text-left px-4 py-2.5 text-sm font-medium rounded-xl transition-colors ${
+              activeTab === "Home" ? "bg-zinc-900 text-white" : "text-zinc-600 hover:bg-zinc-200/60"
+            }`}
+          >
+            Home
+          </button>
+
+          {/* Mobile Programmes Nested Accordion */}
+          <div className="bg-white/60 rounded-xl border border-zinc-200/80 p-2 space-y-1">
+            <div className="px-3 py-2 text-xs font-bold text-zinc-400 uppercase tracking-wider">
+              Programmes
+            </div>
+            {programmesData.map((cat, idx) => (
+              <div key={idx} className="space-y-1">
+                <button
+                  onClick={() =>
+                    setMobileCategoryOpen(
+                      mobileCategoryOpen === cat.category ? null : cat.category
+                    )
+                  }
+                  className="w-full flex items-center justify-between px-3 py-2 text-sm text-zinc-700 font-medium rounded-lg hover:bg-zinc-200/50"
+                >
+                  <span>{cat.category}</span>
+                  <ChevronDown
+                    className={`w-4 h-4 text-zinc-400 transition-transform ${
+                      mobileCategoryOpen === cat.category ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                {/* Expanded Sub-Items */}
+                {mobileCategoryOpen === cat.category && (
+                  <div className="pl-4 pr-2 space-y-1">
+                    {cat.subItems.map((sub, sIdx) => (
+                      <a
+                        key={sIdx}
+                        href={sub.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block px-3 py-2 text-xs text-zinc-600 hover:text-zinc-900 rounded-md hover:bg-zinc-200/40"
+                      >
+                        {sub.name}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Mobile About Us */}
+          <button
+            onClick={() => {
+              setActiveTab("About Us");
+              setMobileMenuOpen(false);
+            }}
+            className={`w-full text-left px-4 py-2.5 text-sm font-medium rounded-xl transition-colors ${
+              activeTab === "About Us" ? "bg-zinc-900 text-white" : "text-zinc-600 hover:bg-zinc-200/60"
+            }`}
+          >
+            About Us
+          </button>
+
+          {/* Mobile Contact Us CTA */}
+          <button className="w-full flex items-center justify-center gap-2 mt-3 px-4 py-3 rounded-xl bg-zinc-900 text-white text-sm font-semibold">
+            <User className="w-4 h-4" />
+            <span>Contact us</span>
+          </button>
+        </div>
+      )}
+    </header>
   );
 }
