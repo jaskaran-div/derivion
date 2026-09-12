@@ -87,21 +87,21 @@ export default function Footer() {
         </div>
 
         {/* ─── Main Footer Content Grid ─── */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pt-4">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 pt-4">
           
           {/* Brand Info (Col 1) */}
-          <div className="md:col-span-4 space-y-6">
+          <div className="md:col-span-4 space-y-2">
             <div className="flex items-center gap-3">
               <Image
-                src="/Home/derivion-logo.png"
+                src="/footer/derivion-logo.png"
                 alt="Derivion Logo"
-                width={50}
-                height={50}
-                className="object-contain"
+                width={140}
+                height={100}
+                className="object-cover"
               />
-              <span className="text-xl font-bold tracking-tight text-white">
+              {/* <span className="text-xl font-bold tracking-tight text-white">
                 Derivion
-              </span>
+              </span> */}
             </div>
 
             <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed max-w-sm">
