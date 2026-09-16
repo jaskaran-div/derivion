@@ -40,95 +40,103 @@ function YoutubeIcon(props: React.SVGProps<SVGSVGElement>) {
 
 export default function Footer() {
   const programmeLinks = [
-    { name: "Trading & Markets", href: "#" },
-    { name: "Financial Markets & Derivatives", href: "#" },
-    { name: "Technical Analysis & Charting", href: "#" },
-    { name: "Algorithmic Trading", href: "#" },
-    { name: "Multi-Asset Risk Management", href: "#" },
-    { name: "Behavioral & Psychology", href: "#" },
+    { name: "Tech & Business Management (UG)", href: "/programs/technology-and-business-management" },
+    { name: "Multi-Asset Trading & Quant (PG)", href: "/programs/multi-asset-trading" },
+    { name: "Psychology & Marketing (UG)", href: "/programs/psychology-and-marketing" },
+    { name: "Artificial Intelligence & Data (UG)", href: "/programs/artificial-intelligence-and-data" },
+    { name: "Algorithmic Trading (Executive)", href: "/programs/algorithmic-trading" },
+    { name: "Multi-Asset Risk & Hedging", href: "/programs/risk-and-portfolio-hedging" },
   ];
 
   const quickLinks = [
-    { name: "Our Programmes", href: "#" },
-    { name: "Our Alumni", href: "#" },
-    { name: "Derivion Masters", href: "#" },
-    { name: "Why Derivion", href: "#" },
-    { name: "Placements Report", href: "#" },
+    { name: "All Programmes", href: "/programs" },
+    { name: "About Derivion", href: "/about" },
+    { name: "Contact & Counseling", href: "/contact" },
+    { name: "Our Alumni", href: "/#alumni" },
+    { name: "Derivion Masters", href: "/#masters" },
+    { name: "Why Derivion", href: "/#why-us" },
+    { name: "Placements Report", href: "/#placements" },
   ];
 
   const socialLinks = [
-    { name: "LinkedIn", icon: LinkedinIcon, href: "#" },
-    { name: "Twitter", icon: TwitterIcon, href: "#" },
-    { name: "Instagram", icon: InstagramIcon, href: "#" },
-    { name: "YouTube", icon: YoutubeIcon, href: "#" },
+    { name: "LinkedIn", icon: LinkedinIcon, href: "https://linkedin.com" },
+    { name: "Twitter", icon: TwitterIcon, href: "https://x.com" },
+    { name: "Instagram", icon: InstagramIcon, href: "https://instagram.com" },
+    { name: "YouTube", icon: YoutubeIcon, href: "https://youtube.com" },
   ];
 
   return (
-    <footer className="w-full bg-zinc-950 text-white pt-16 pb-8 px-4 sm:px-8 border-t border-zinc-900">
+    <footer className="w-full bg-[#0A0A0A] text-white pt-16 pb-8 px-4 sm:px-8 border-t border-[#141414]">
       <div className="max-w-7xl mx-auto space-y-12">
-        
+
         {/* ─── Top Callout CTA Card ─── */}
-        <div className="bg-gradient-to-r from-zinc-900 via-zinc-900 to-zinc-900/80 border border-zinc-800 rounded-3xl p-6 sm:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-2xl">
+        <div className="bg-gradient-to-r from-[#141414] via-[#141414] to-[#141414]/80 border border-[#141414]/80 rounded-3xl p-6 sm:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-2xl">
           <div className="space-y-2 max-w-2xl">
-            <h3 className="text-2xl sm:text-3xl font-serif tracking-tight text-white">
-              Ready to accelerate your career in <span className="italic font-normal text-[#E85C33]">markets & leadership</span>?
+            <h3
+              className="text-2xl sm:text-3xl tracking-tight text-white"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
+              Ready to accelerate your career in{" "}
+              <span className="italic font-normal text-[#ED1654]">markets &amp; leadership</span>?
             </h3>
-            <p className="text-zinc-400 text-xs sm:text-sm font-normal">
+            <p className="text-[#737373] text-xs sm:text-sm font-normal">
               Join our upcoming cohort and learn directly from top practitioners and founders.
             </p>
           </div>
 
           <div className="flex items-center gap-3 w-full sm:w-auto">
-            <button className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#E85C33] hover:bg-[#d44f28] text-white text-xs sm:text-sm font-semibold transition-all duration-200 shadow-lg active:scale-95">
+            <Link
+              href="/contact"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#ED1654] hover:bg-[#d6124b] text-white text-xs sm:text-sm font-semibold transition-all duration-200 shadow-lg active:scale-95"
+            >
               <span>Apply Now</span>
               <ArrowRight className="w-4 h-4" />
-            </button>
+            </Link>
           </div>
         </div>
 
         {/* ─── Main Footer Content Grid ─── */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 pt-4">
-          
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-8 pt-4">
+
           {/* Brand Info (Col 1) */}
-          <div className="md:col-span-4 space-y-2">
-            <div className="flex items-center gap-3">
+          <div className="sm:col-span-2 md:col-span-4 space-y-4">
+            <Link href="/" className="inline-flex items-center gap-3">
               <Image
                 src="/footer/derivion-logo.png"
                 alt="Derivion Logo"
                 width={140}
-                height={100}
-                className="object-cover"
+                height={50}
+                className="h-10 w-auto object-contain"
               />
-              {/* <span className="text-xl font-bold tracking-tight text-white">
-                Derivion
-              </span> */}
-            </div>
+            </Link>
 
-            <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed max-w-sm">
+            <p className="text-[#737373] text-xs sm:text-sm leading-relaxed max-w-sm">
               An AI-first, practitioner-led institute empowering the next generation of traders, risk managers, and market leaders.
             </p>
 
             {/* Quick Stats Pill */}
-            <div className="flex items-center gap-4 py-2 text-xs font-semibold text-zinc-300">
+            <div className="flex items-center gap-4 py-2 text-xs font-semibold text-[#D9D9D9]">
               <div>
-                <span className="text-[#E85C33] font-bold">2.8X</span> Avg CTC Jump
+                <span className="text-[#A8FF24] font-bold">2.8X</span> Avg CTC Jump
               </div>
-              <div className="w-1 h-1 rounded-full bg-zinc-700" />
+              <div className="w-1 h-1 rounded-full bg-[#141414]" />
               <div>
-                <span className="text-[#E85C33] font-bold">500+</span> Partners
+                <span className="text-[#A8FF24] font-bold">500+</span> Partners
               </div>
             </div>
 
             {/* Social Icons */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 pt-1">
               {socialLinks.map((item, idx) => {
                 const IconComponent = item.icon;
                 return (
                   <a
                     key={idx}
                     href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={item.name}
-                    className="w-9 h-9 rounded-full bg-zinc-900 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-800 text-zinc-400 hover:text-white flex items-center justify-center transition-colors"
+                    className="w-9 h-9 rounded-full bg-[#141414] border border-[#141414] hover:border-[#737373] hover:bg-[#141414] text-[#737373] hover:text-white flex items-center justify-center transition-colors"
                   >
                     <IconComponent className="w-4 h-4" />
                   </a>
@@ -138,8 +146,8 @@ export default function Footer() {
           </div>
 
           {/* Quick Links (Col 2) */}
-          <div className="md:col-span-2 space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-200">
+          <div className="space-y-4 md:col-span-2">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-[#D9D9D9]">
               Navigation
             </h4>
             <ul className="space-y-2.5">
@@ -147,7 +155,7 @@ export default function Footer() {
                 <li key={idx}>
                   <Link
                     href={link.href}
-                    className="text-xs sm:text-sm text-zinc-400 hover:text-white transition-colors"
+                    className="text-xs sm:text-sm text-[#737373] hover:text-white transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -157,8 +165,8 @@ export default function Footer() {
           </div>
 
           {/* Programmes (Col 3) */}
-          <div className="md:col-span-3 space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-200">
+          <div className="space-y-4 md:col-span-3">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-[#D9D9D9]">
               Programmes
             </h4>
             <ul className="space-y-2.5">
@@ -166,7 +174,7 @@ export default function Footer() {
                 <li key={idx}>
                   <Link
                     href={prog.href}
-                    className="text-xs sm:text-sm text-zinc-400 hover:text-white transition-colors block line-clamp-1"
+                    className="text-xs sm:text-sm text-[#737373] hover:text-white transition-colors block line-clamp-1"
                   >
                     {prog.name}
                   </Link>
@@ -176,22 +184,26 @@ export default function Footer() {
           </div>
 
           {/* Contact Details (Col 4) */}
-          <div className="md:col-span-3 space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-200">
+          <div className="sm:col-span-2 md:col-span-3 space-y-4">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-[#D9D9D9]">
               Get in Touch
             </h4>
-            <ul className="space-y-3 text-xs sm:text-sm text-zinc-400">
+            <ul className="space-y-3 text-xs sm:text-sm text-[#737373]">
               <li className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-[#E85C33] shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#ED1654] shrink-0 mt-0.5" />
                 <span>Derivion Campus, Institutional Area, Sector 44, Gurugram</span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-[#E85C33] shrink-0" />
-                <span>admissions@derivion.edu</span>
+                <Mail className="w-4 h-4 text-[#ED1654] shrink-0" />
+                <a href="mailto:admissions@derivion.edu" className="hover:text-white transition-colors">
+                  admissions@derivion.edu
+                </a>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-[#E85C33] shrink-0" />
-                <span>+91 (0) 124 456 7890</span>
+                <Phone className="w-4 h-4 text-[#ED1654] shrink-0" />
+                <a href="tel:+911244567890" className="hover:text-white transition-colors">
+                  +91 (0) 124 456 7890
+                </a>
               </li>
             </ul>
           </div>
@@ -199,17 +211,17 @@ export default function Footer() {
         </div>
 
         {/* ─── Bottom Sub-Footer ─── */}
-        <div className="pt-8 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
+        <div className="pt-8 border-t border-[#141414] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#737373]">
           <p>&copy; {new Date().getFullYear()} Derivion Institute. All rights reserved.</p>
 
           <div className="flex items-center gap-6">
-            <Link href="#" className="hover:text-zinc-300 transition-colors">
+            <Link href="/about" className="hover:text-[#D9D9D9] transition-colors">
               Privacy Policy
             </Link>
-            <Link href="#" className="hover:text-zinc-300 transition-colors">
+            <Link href="/about" className="hover:text-[#D9D9D9] transition-colors">
               Terms of Service
             </Link>
-            <Link href="#" className="hover:text-zinc-300 transition-colors">
+            <Link href="/contact" className="hover:text-[#D9D9D9] transition-colors">
               Cookie Settings
             </Link>
           </div>
