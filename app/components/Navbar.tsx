@@ -14,16 +14,16 @@ export default function Navbar() {
   // Nested structure for Programmes -> Categories -> Sub-Programmes
   const programmesData = [
     {
-      category: "Kids",
+      category: "Young Learners",
       subItems: [
-        { name: "Sprout Literacy (Ages 9–11)", href: "/programs/sprout-literacy" },
-        { name: "Bloom Literacy (Ages 11–14)", href: "/programs/bloom-literacy" },
+        { name: "Sprout Literacy (Young Learners 9–11)", href: "/programs/sprout-literacy" },
+        { name: "Bloom Literacy (Young Learners 11–14)", href: "/programs/bloom-literacy" },
       ],
     },
     {
-      category: "Adults",
+      category: "Adult Learners",
       subItems: [
-        { name: "Harvest Literacy (Adults 18+)", href: "/programs/harvest-literacy" },
+        { name: "Harvest Literacy (Adult Learners 18+)", href: "/programs/harvest-literacy" },
       ],
     },
   ];

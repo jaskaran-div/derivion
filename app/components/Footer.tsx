@@ -40,9 +40,9 @@ function YoutubeIcon(props: React.SVGProps<SVGSVGElement>) {
 
 export default function Footer() {
   const programmeLinks = [
-    { name: "Sprout Literacy (Kids 9–11)", href: "/programs/sprout-literacy" },
-    { name: "Bloom Literacy (Kids 11–14)", href: "/programs/bloom-literacy" },
-    { name: "Harvest Literacy (Adults 18+)", href: "/programs/harvest-literacy" },
+    { name: "Sprout Literacy (Young Learners 9–11)", href: "/programs/sprout-literacy" },
+    { name: "Bloom Literacy (Young Learners 11–14)", href: "/programs/bloom-literacy" },
+    { name: "Harvest Literacy (Adult Learners 18+)", href: "/programs/harvest-literacy" },
     { name: "All Programmes Catalogue", href: "/programs" },
   ];
 
@@ -56,10 +56,10 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { name: "LinkedIn", icon: LinkedinIcon, href: "https://linkedin.com" },
+    { name: "LinkedIn", icon: LinkedinIcon, href: "https://www.linkedin.com/company/derivion-international/" },
     { name: "Twitter", icon: TwitterIcon, href: "https://x.com" },
-    { name: "Instagram", icon: InstagramIcon, href: "https://instagram.com" },
-    { name: "YouTube", icon: YoutubeIcon, href: "https://youtube.com" },
+    { name: "Instagram", icon: InstagramIcon, href: "https://www.instagram.com/isftglobal/" },
+    { name: "YouTube", icon: YoutubeIcon, href: "www.youtube.com/@DerivionInternational" },
   ];
 
   return (

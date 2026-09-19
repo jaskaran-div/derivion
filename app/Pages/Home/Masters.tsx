@@ -10,35 +10,43 @@ export default function Masters() {
   const cards = [
     {
       id: 1,
-      name: "Mentor 01",
-      title: "Financial Intelligence Mentor",
+      name: "Neil Crammond",
+      title: "Head Educator",
       specialty: "Capital discipline, budgeting, and market behaviour",
-      description: "Guides learners to understand spending, saving, and decision-making through real-world financial reasoning.",
-      image: "/Home/hero-section.jpg",
+      description: "Guides learners to understand spending, saving, and long-term decision-making with real-world financial reasoning.",
+      image: "https://isftglobal.com/wp-content/uploads/2026/03/403773cd-49f6-4e41-a052-145c80b42b49.jpg",
     },
     {
       id: 2,
-      name: "Mentor 02",
-      title: "Digital Finance Mentor",
+      name: "Robert Russel",
+      title: "Trainer",
       specialty: "Payments, fraud awareness, and digital spending habits",
       description: "Helps students build healthy digital habits, recognise financial traps, and use tools responsibly.",
-      image: "/Home/hero-section.jpg",
+      image: "https://isftglobal.com/wp-content/uploads/2026/09/ChatGPT-Image-Sep-18-2026-06_04_03-PM.png",
     },
     {
       id: 3,
-      name: "Mentor 03",
-      title: "AI & Risk Mentor",
+      name: "David Michael",
+      title: "Trainer",
       specialty: "Verification, synthetic media, and algorithmic trust",
       description: "Teaches learners how to question digital content, identify manipulation, and think critically in AI-driven environments.",
-      image: "/Home/hero-section.jpg",
+      image: "https://isftglobal.com/wp-content/uploads/2026/09/ChatGPT-Image-Sep-18-2026-06_03_03-PM.png",
     },
     {
       id: 4,
-      name: "Mentor 04",
-      title: "Cyber & Legal Mentor",
+      name: "Jon Harman",
+      title: "Ex-Vice President at JP Morgan",
       specialty: "Online safety, redressal, and digital rights",
       description: "Equips students with practical knowledge around privacy, cyber hygiene, and taking the right actions when issues arise.",
-      image: "/Home/hero-section.jpg",
+      image: "https://isftglobal.com/wp-content/uploads/2026/09/ChatGPT-Image-Sep-19-2026-10_15_16-PM.png",
+    },
+    {
+      id: 5,
+      name: "Alex Wilson",
+      title: "Senior Manager at cmegroup",
+      specialty: "Confidence, decision-making, and digital resilience",
+      description: "Builds everyday judgment, courage, and calm in high-pressure online and financial situations.",
+      image: "/Home/alex.png",
     },
   ];
 
@@ -118,7 +126,7 @@ export default function Masters() {
                       className="object-cover object-center group-hover:scale-105 transition-transform duration-500 opacity-60"
                     />
                     {/* Gradient overlay for legibility */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/70" />
+                    {/* <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/70" /> */}
                   </div>
 
                   {/* Top Header/Profile Title */}
@@ -132,7 +140,7 @@ export default function Masters() {
                   </div>
 
                   {/* Bottom Mentor Info & Play Trigger */}
-                  <div className="relative z-10 flex items-start justify-between gap-3 pt-4 border-t border-white/20">
+                  {/* <div className="relative z-10 flex items-start justify-between gap-3 pt-4 border-t border-white/20">
                     <div className="space-y-1 min-w-0">
                       <span className="text-xs sm:text-sm font-semibold text-white block">
                         {card.specialty}
@@ -145,7 +153,7 @@ export default function Masters() {
                     <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/40 flex items-center justify-center text-white shadow-lg group-hover:scale-110 group-hover:bg-[#ED1654] group-hover:border-[#ED1654] transition-all duration-300 shrink-0 mt-1">
                       <Play className="w-4 h-4 fill-current ml-0.5" />
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               ))}
             </div>

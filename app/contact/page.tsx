@@ -265,9 +265,9 @@ export default function ContactPage() {
       icon: Mail,
       title: "Email",
       subtitle: "Official Correspondence",
-      detail: "info@derivion.in",
+      detail: "admissions@derivion.in",
       actionText: "Send Email",
-      actionHref: "mailto:info@derivion.in",
+      actionHref: "mailto:admissions@derivion.in",
     },
     {
       icon: Clock,
@@ -405,10 +405,10 @@ export default function ContactPage() {
                 Connect with our academic team to introduce Sprout (9–11) or Bloom (11–14) literacy programmes to your student community.
               </p>
               <a
-                href="mailto:alliances@derivion.in"
+                href="mailto:admissions@derivion.in"
                 className="inline-flex items-center gap-1.5 text-xs text-[#ED1654] font-medium pt-2"
               >
-                <span>alliances@derivion.in</span>
+                <span>admissions@derivion.in</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </a>
             </div>
@@ -422,10 +422,10 @@ export default function ContactPage() {
                 Organise dedicated Harvest Literacy masterclasses for employees, alumni groups, or professional associations.
               </p>
               <a
-                href="mailto:partnerships@derivion.in"
+                href="mailto:admissions@derivion.in"
                 className="inline-flex items-center gap-1.5 text-xs text-[#ED1654] font-medium pt-2"
               >
-                <span>partnerships@derivion.in</span>
+                <span>admissions@derivion.in</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </a>
             </div>
@@ -439,10 +439,10 @@ export default function ContactPage() {
                 For research queries, curriculum documentation, and official administrative communication with Derivion.
               </p>
               <a
-                href="mailto:info@derivion.in"
+                href="mailto:admissions@derivion.in"
                 className="inline-flex items-center gap-1.5 text-xs text-[#ED1654] font-medium pt-2"
               >
-                <span>info@derivion.in</span>
+                <span>admissions@derivion.in</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </a>
             </div>

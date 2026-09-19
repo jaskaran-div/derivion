@@ -10,72 +10,38 @@ export default function OurAlumni() {
 
   const alumniData = [
     {
-      name: "Richa Pherwani",
-      role: "Marketing Lead",
-      company: "COMET",
-      companyLogo: "/logos/comet.png",
+      name: "Sudhanshu Dhankar",
+      role: "Analyst",
+      company: "HSBC",
+      companyLogo: "/Home/sudhanshu%20(2).png",
       batch: "Batch of 2025",
-      photo: "/alumni/richa.jpg",
+      photo: "/Home/sudhanshu%20(2).png",
+      quote:
+        '“I had the maths and an MBA, but never a real trading desk. This programme gave me that live platforms, real practitioners, actual trading decisions. In interviews, recruiters finally saw a market professional, not just another graduate and it helped me land a job in finance.”',
     },
     {
-      name: "Piyush Verma",
-      role: "Category Manager",
-      company: "hyperpure",
-      companyLogo: "/logos/hyperpure.png",
+      name: "Nishant Dagar",
+      role: "Funded Trader",
+      company: "",
+      companyLogo: "/Home/nishant%20(2).png",
       batch: "Batch of 2024",
-      photo: "/alumni/piyush.jpg",
+      photo: "/Home/nishant%20(2).png",
+      quote:
+        '“Spending eight weeks with ISFT, talking through trades and pushing through the tougher sessions everyday, changed the way I approached the markets and that change showed in my portfolio. I later presented the same portfolio as my track record during an interview and my current manager said it was my USP.”',
     },
     {
-      name: "Varun Bali",
-      role: "Founder's Office",
-      company: "Swipe",
-      companyLogo: "/logos/swipe.png",
+      name: "Aaryan Chakraborty",
+      role: "Finance Analyst",
+      company: "ZWC",
+      companyLogo: "/Home/aaryan.png",
       batch: "Batch of 2024",
-      photo: "/alumni/varun.jpg",
-    },
-    {
-      name: "Atishay Nijhawan",
-      role: "Senior Manager",
-      company: "BLUE TOKAI",
-      companyLogo: "/logos/bluetokai.png",
-      batch: "Batch of 2025",
-      photo: "/alumni/atishay.jpg",
-    },
-    {
-      name: "Akshita Rajput",
-      role: "Head of Operations",
-      company: "BPR Hub",
-      companyLogo: "/logos/bprhub.png",
-      batch: "Batch of 2024",
-      photo: "/alumni/akshita.jpg",
-    },
-    {
-      name: "Adarsh Iyer",
-      role: "Founder's Office",
-      company: "CULTURE",
-      companyLogo: "/logos/culture.png",
-      batch: "Batch of 2025",
-      photo: "/alumni/adarsh.jpg",
-    },
-    {
-      name: "Neha Moda",
-      role: "Senior Manager",
-      company: "zepto",
-      companyLogo: "/logos/zepto.png",
-      batch: "Batch of 2024",
-      photo: "/alumni/neha.jpg",
-    },
-    {
-      name: "Chaitanya Sawhney",
-      role: "Entrepreneur in Residence",
-      company: "NOTO",
-      companyLogo: "/logos/noto.png",
-      batch: "Batch of 2025",
-      photo: "/alumni/chaitanya.jpg",
+      photo: "/Home/aaryan.png",
+      quote:
+        '“ISFT provided me with the necessary knowledge, skills and mentorship to begin my journey as a professional trader.”',
     },
   ];
 
-  const itemsPerPage = 4;
+  const itemsPerPage = 3;
   const totalPages = Math.ceil(alumniData.length / itemsPerPage);
   const currentAlumni = alumniData.slice(
     currentPage * itemsPerPage,
@@ -83,9 +49,9 @@ export default function OurAlumni() {
   );
 
   return (
-    <section id="alumni" className="w-full bg-white text-[#000000] py-12 sm:py-16 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
+    <section id="alumni" className="w-full bg-white text-[#000000] py-8 sm:py-10 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-6 items-start">
 
           {/* ─── Left Sidebar: Title, Description & CTA ─── */}
           <div className="lg:col-span-4 space-y-4 sm:space-y-6 lg:sticky lg:top-28">
@@ -117,46 +83,52 @@ export default function OurAlumni() {
           <div className="lg:col-span-8 space-y-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {currentAlumni.map((alumnus, index) => {
-                const initials = alumnus.name
-                  .split(" ")
-                  .map((n) => n[0])
-                  .join("");
-
                 return (
                   <div
                     key={index}
-                    className="relative group bg-[#0A0A0A] border border-[#141414] rounded-2xl overflow-hidden p-5 flex flex-col justify-between hover:border-[#737373] transition-all duration-300 shadow-lg min-h-[190px]"
+                    className="group bg-[#0A0A0A] border border-[#141414] rounded-2xl overflow-hidden p-2.5 sm:p-3 transition-all duration-300 shadow-lg hover:border-[#737373]"
                   >
-                    {/* Top Row: Name, Role & Initial Avatar */}
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="space-y-1">
-                        <h3 className="text-sm sm:text-base font-bold text-white tracking-tight">
-                          {alumnus.name}
-                        </h3>
-                        <p className="text-xs text-[#D9D9D9] font-medium italic">
+                    <div className="flex items-stretch gap-3 sm:gap-3.5">
+                      <div className="relative w-[42%] min-w-[42%] overflow-hidden rounded-xl border border-[#141414] bg-[#141414]">
+                        <Image
+                          src={alumnus.photo}
+                          alt={alumnus.name}
+                          fill
+                          className="object-cover object-center scale-105 group-hover:scale-110 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-transparent" />
+                      </div>
+
+                      <div className="flex-1 min-w-0 py-1 pr-1">
+                        <div className="flex items-center justify-between gap-2 mb-1.5">
+                          <h3 className="text-sm sm:text-base font-bold text-white tracking-tight leading-tight truncate">
+                            {alumnus.name}
+                          </h3>
+                          {alumnus.company ? (
+                            <span className="inline-flex items-center rounded-full border border-[#A8FF24]/40 bg-[#A8FF24]/10 px-1.5 py-0.5 text-[8px] uppercase tracking-[0.12em] text-[#A8FF24] font-semibold whitespace-nowrap">
+                              {alumnus.company}
+                            </span>
+                          ) : null}
+                        </div>
+
+                        <p className="text-[11px] text-[#D9D9D9] font-medium italic mb-2">
                           {alumnus.role}
+                          {alumnus.company ? `, ${alumnus.company}` : ""}
                         </p>
-                        <p className="text-xs text-[#737373]">
-                          at <span className="font-bold text-white uppercase tracking-wider">{alumnus.company}</span>
+
+                        <p className="text-[10.5px] leading-relaxed text-[#D9D9D9] italic line-clamp-3">
+                          {alumnus.quote}
                         </p>
-                      </div>
 
-                      {/* Monogram / Avatar Emblem */}
-                      <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#141414] to-[#0A0A0A] border border-[#737373]/40 flex items-center justify-center shrink-0 shadow-inner group-hover:border-[#A8FF24] transition-colors">
-                        <span className="text-xs font-bold tracking-wider text-[#D9D9D9] group-hover:text-[#A8FF24] transition-colors">
-                          {initials}
-                        </span>
+                        <div className="flex items-center justify-between pt-2.5 mt-2.5 border-t border-[#141414]">
+                          <span className="inline-block px-2 py-1 rounded-md bg-[#141414] border border-[#737373]/30 text-[9px] font-medium text-[#D9D9D9]">
+                            {alumnus.batch}
+                          </span>
+                          <span className="text-[9px] text-[#A8FF24] font-medium flex items-center gap-1">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#A8FF24]" /> Verified Outcome
+                          </span>
+                        </div>
                       </div>
-                    </div>
-
-                    {/* Bottom Row: Batch Pill & Network tag */}
-                    <div className="flex items-center justify-between pt-4 border-t border-[#141414]">
-                      <span className="inline-block px-2.5 py-1 rounded-md bg-[#141414] border border-[#737373]/30 text-[10px] font-medium text-[#D9D9D9]">
-                        {alumnus.batch}
-                      </span>
-                      <span className="text-[10px] text-[#A8FF24] font-medium flex items-center gap-1">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#A8FF24]" /> Verified Outcome
-                      </span>
                     </div>
                   </div>
                 );
@@ -164,7 +136,7 @@ export default function OurAlumni() {
             </div>
 
             {/* ─── Bottom Navigation & Pagination Indicators ─── */}
-            <div className="flex items-center justify-between pt-4 border-t border-[#D9D9D9]">
+            <div className="flex items-center justify-between pt-3 border-t border-[#D9D9D9]">
               {/* Indicator Pills */}
               <div className="flex items-center gap-2">
                 {Array.from({ length: totalPages }).map((_, idx) => (

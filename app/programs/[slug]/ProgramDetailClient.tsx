@@ -12,7 +12,6 @@ import {
   Download,
   CheckCircle2,
   ChevronDown,
-  Play,
   Sparkles,
   Cpu,
   ShieldCheck,
@@ -27,7 +26,6 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
   const [activeModuleIndex, setActiveModuleIndex] = useState(0);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   const [syllabusDownloaded, setSyllabusDownloaded] = useState(false);
-  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   const handleDownloadSyllabus = () => {
     setSyllabusDownloaded(true);
@@ -182,17 +180,6 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
 
-                  {/* Play Video Trigger */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <button
-                      onClick={() => setIsVideoModalOpen(true)}
-                      className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md border border-white/50 flex items-center justify-center text-white shadow-xl hover:scale-110 hover:bg-[#ED1654] hover:border-[#ED1654] transition-all duration-300 active:scale-95"
-                      aria-label="Play Programme Overview Video"
-                    >
-                      <Play className="w-6 h-6 fill-current ml-1" />
-                    </button>
-                  </div>
-
                   {/* Bottom Float Card info */}
                   <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-black/70 backdrop-blur-md border border-white/10 text-white space-y-1">
                     <div className="flex items-center justify-between text-xs">
@@ -202,7 +189,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                       <span className="text-[#D9D9D9]">{programme.format}</span>
                     </div>
                     <p className="text-xs text-[#D9D9D9] font-light">
-                      Core Reflex: <span className="text-white font-semibold">{programme.coreReflex}</span>
+                      Programme snapshot: <span className="text-white font-semibold">{programme.title}</span>
                     </p>
                   </div>
                 </div>
@@ -729,29 +716,6 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
           </div>
         </section>
       </main>
-
-      {/* Video Modal */}
-      {isVideoModalOpen && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
-            <button
-              onClick={() => setIsVideoModalOpen(false)}
-              className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-white/20 text-white flex items-center justify-center hover:bg-white hover:text-black transition-colors"
-            >
-              ✕
-            </button>
-            <div className="aspect-video w-full">
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/qUfVSh4eaDE?autoplay=1"
-                title="Derivion Program Video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
-          </div>
-        </div>
-      )}
 
       <Footer />
     </div>

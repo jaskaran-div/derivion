@@ -34,21 +34,21 @@ export default function AboutUsPage() {
       subtitle: "Aligned to Life Stages",
       description:
         "We calibrate cognitive complexity to learner maturity: concrete, visible money concepts for young children; independent wallet hygiene for teenagers; and capital defense and legal recourse for adults.",
-      image: "/Home/hero-section.jpg",
+      image: "/Home/sprout.png",
     },
     {
       title: "REFLEX-FIRST PEDAGOGY",
       subtitle: "Automated Defensive Habits",
       description:
         "Information alone does not protect capital under emotional pressure. Derivion conditions automated reflexes—Stop & Ask, Verify Before You Act, and Statutory Recourse—that deploy instinctively.",
-      image: "/Home/hero-section.jpg",
+      image: "/Home/bloom.png",
     },
     {
       title: "RECONSTRUCTED CASE STUDIES",
       subtitle: "Empirical Risk Autopsies",
       description:
         "By dissecting real market failures, rogue trading collapses, dark patterns, and synthetic voice scams, learners understand the mechanics of deception before experiencing risk firsthand.",
-      image: "/Home/hero-section.jpg",
+      image: "/Home/harvest.png",
     },
   ];
 
@@ -57,25 +57,25 @@ export default function AboutUsPage() {
       name: "Financial Economics & Markets",
       role: "Curriculum Stream",
       bio: "Focusing on cashflow fundamentals, saving psychology, credit mathematics, asset classes, and macroeconomic liquidity.",
-      image: "/Home/hero-section.jpg",
+      image: "/Home/about-1.png",
     },
     {
       name: "Digital Payment Systems & Hygiene",
       role: "Curriculum Stream",
       bio: "Unpacking the money that leaves through screens: UPI AutoPay, dark patterns, Buy Now Pay Later (BNPL), and app subscription creep.",
-      image: "/Home/hero-section.jpg",
+      image: "/Home/about-2.png",
     },
     {
       name: "AI & Synthetic Media Verification",
       role: "Curriculum Stream",
       bio: "Tackling cloned audio, deepfakes, AI-generated fraud schemes, and independent multi-channel verification protocols.",
-      image: "/Home/hero-section.jpg",
+      image: "/Home/about-3.png",
     },
     {
       name: "Cyber Defence & Statutory Recourse",
       role: "Curriculum Stream",
       bio: "Equipping learners with credential protection, emergency response protocols, and statutory dispute escalation via Ombudsman channels.",
-      image: "/Home/hero-section.jpg",
+      image: "/Home/about-4.png",
     },
   ];
 
@@ -165,7 +165,7 @@ export default function AboutUsPage() {
         <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
           <div className="relative w-full h-[320px] sm:h-[440px] rounded-3xl overflow-hidden bg-[#141414] shadow-xl">
             <Image
-              src="/Home/hero-section.jpg"
+              src="/Home/about-us-pic.png"
               alt="Derivion Learning Environment"
               fill
               className="object-cover opacity-85"

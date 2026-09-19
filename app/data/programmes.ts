@@ -20,7 +20,7 @@ export interface Programme {
   slug: string;
   title: string;
   shortTitle: string;
-  category: "Kids" | "Adults";
+  category: "Young Learners" | "Adult Learners";
   targetAge: string;
   coreReflex: string;
   tagline: string;
@@ -72,13 +72,13 @@ export const PROGRAMMES: Programme[] = [
     slug: "sprout-literacy",
     title: "Sprout Literacy",
     shortTitle: "Sprout Literacy",
-    category: "Kids",
+    category: "Young Learners",
     targetAge: "9–11 years",
     coreReflex: "STOP & ASK",
     tagline: "Plant safe financial instincts before risk arrives.",
     description:
       "A 3-hour hybrid programme designed specifically around the developmental stage of 9–11 year olds. Introduces digital money, screen safety, AI awareness, and fraud defence through concrete, relatable experiences and the foundational reflex: Stop & Ask.",
-    heroImage: "/Home/hero-section.jpg",
+    heroImage: "/Home/sprout.png",
     format: "Hybrid (Interactive Digital + Guided Activities)",
     eligibility: "Children aged 9 to 11 years",
     duration: "3 Hours (5 Comprehensive Modules)",
@@ -264,13 +264,13 @@ export const PROGRAMMES: Programme[] = [
     slug: "bloom-literacy",
     title: "Bloom Literacy",
     shortTitle: "Bloom Literacy",
-    category: "Kids",
+    category: "Young Learners",
     targetAge: "11–14 years",
     coreReflex: "VERIFY BEFORE YOU ACT",
     tagline: "Deepen capability as independence and exposure grow.",
     description:
       "A 4-hour hybrid programme designed for teenagers navigating their first digital wallets, subscriptions, and AI-driven platforms. Teaches earning, budgeting, deepfake defence, and consumer rights with the core reflex: Verify Before You Act.",
-    heroImage: "/Home/hero-section.jpg",
+    heroImage: "/Home/bloom.png",
     format: "Hybrid (Digital Masterclasses + Applied Projects)",
     eligibility: "Teenagers aged 11 to 14 years",
     duration: "4 Hours (5 In-Depth Modules)",
@@ -457,13 +457,13 @@ export const PROGRAMMES: Programme[] = [
     slug: "harvest-literacy",
     title: "Harvest Literacy",
     shortTitle: "Harvest Literacy",
-    category: "Adults",
+    category: "Adult Learners",
     targetAge: "Adults 18+",
     coreReflex: "JUDGE, VERIFY & KNOW YOUR RECOURSE",
     tagline: "Defend the earning, borrowing, and investing adult where a mistake costs most.",
     description:
       "A 6.5-hour rigorous hybrid programme for Indian adults aged 18+. Defends hard-earned capital across personal finance, credit traps, market mechanisms, AI financial fraud, cyber deception, and statutory consumer legal recourse.",
-    heroImage: "/Home/hero-section.jpg",
+    heroImage: "/Home/harvest.png",
     format: "Hybrid (Intensive Masterclasses + Reconstructed Case Studies)",
     eligibility: "Adults aged 18+ (Students, Earners, Investors, Professionals)",
     duration: "6.5 Hours (5 Comprehensive Adult Modules)",

@@ -6,7 +6,6 @@ import Link from "next/link";
 import {
   ChevronLeft,
   ChevronRight,
-  Play,
   GraduationCap,
   Building2,
   Clock,
@@ -19,7 +18,7 @@ export default function OurProgrammes() {
   const [activeCategory, setActiveCategory] = useState("All");
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  const categories = ["All", "Kids", "Adults"];
+  const categories = ["All", "Young Learners", "Adult Learners"];
 
   // Filter programmes based on active category selection
   const filteredProgrammes =
@@ -117,7 +116,7 @@ export default function OurProgrammes() {
               className="w-[85vw] min-w-[280px] max-w-[340px] sm:w-[46vw] sm:max-w-[380px] md:w-[40vw] md:max-w-[420px] lg:w-[31vw] lg:max-w-[360px] xl:w-[360px] bg-[#141414]/90 border border-[#141414]/80 rounded-2xl p-4 sm:p-5 flex flex-col justify-between shrink-0 snap-start hover:border-[#737373]/80 transition-all duration-300 shadow-xl group"
             >
               <div className="space-y-4 sm:space-y-5">
-                {/* Media Container with Overlay Play Button */}
+                {/* Media Container */}
                 <div className="relative w-full h-44 sm:h-52 rounded-xl overflow-hidden bg-[#0A0A0A]">
                   <Image
                     src={prog.heroImage}
@@ -125,12 +124,16 @@ export default function OurProgrammes() {
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500 opacity-80"
                   />
-                  <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2">
+                    <span className="text-[10px] uppercase tracking-wider font-semibold text-[#A8FF24]">
+                      Programme image
+                    </span>
                     <Link
                       href={`/programs/${prog.slug}`}
-                      className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/40 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300"
+                      className="inline-flex items-center gap-1 rounded-full border border-white/30 bg-white/10 px-2.5 py-1 text-[10px] font-medium text-white backdrop-blur-sm hover:bg-white/20 transition-colors"
                     >
-                      <Play className="w-5 h-5 fill-white ml-0.5" />
+                      View details
                     </Link>
                   </div>
                 </div>
