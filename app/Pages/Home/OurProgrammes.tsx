@@ -10,29 +10,22 @@ import {
   GraduationCap,
   Building2,
   Clock,
-  Hourglass,
+  ShieldCheck,
   ArrowRight,
 } from "lucide-react";
 import { PROGRAMMES } from "@/app/data/programmes";
 
 export default function OurProgrammes() {
-  const [activeCategory, setActiveCategory] = useState("Undergraduate");
+  const [activeCategory, setActiveCategory] = useState("All");
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  const categories = [
-    "Undergraduate",
-    "Postgraduate",
-    "Executive",
-    "Family Business",
-    "Immersions",
-  ];
+  const categories = ["All", "Kids", "Adults"];
 
   // Filter programmes based on active category selection
-  const filteredProgrammes = PROGRAMMES.filter(
-    (p) => p.category === activeCategory
-  );
-  const displayProgrammes =
-    filteredProgrammes.length > 0 ? filteredProgrammes : PROGRAMMES;
+  const filteredProgrammes =
+    activeCategory === "All"
+      ? PROGRAMMES
+      : PROGRAMMES.filter((p) => p.category === activeCategory);
 
   // Handle horizontal scroll via top right arrows
   const handleScroll = (direction: "left" | "right") => {
@@ -53,7 +46,7 @@ export default function OurProgrammes() {
         <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
           <div className="space-y-1">
             <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
-              Curriculum
+              Derivion Curriculum
             </span>
             <h2
               className="text-3xl sm:text-4xl font-medium tracking-tight text-white italic"
@@ -116,12 +109,12 @@ export default function OurProgrammes() {
         {/* ─── Horizontal Carousel Track ─── */}
         <div
           ref={scrollContainerRef}
-          className="flex items-stretch gap-4 sm:gap-6 overflow-x-auto pb-6 pt-2 scroll-smooth no-scrollbar snap-x snap-mandatory"
+          className="flex items-stretch gap-3 sm:gap-5 lg:gap-6 overflow-x-auto pb-6 pt-2 scroll-smooth no-scrollbar snap-x snap-mandatory -mx-1 px-1"
         >
-          {displayProgrammes.map((prog) => (
+          {filteredProgrammes.map((prog) => (
             <div
               key={prog.id}
-              className="w-[85vw] max-w-[340px] sm:w-[380px] md:w-[420px] bg-[#141414]/90 border border-[#141414]/80 rounded-2xl p-4 sm:p-5 flex flex-col justify-between shrink-0 snap-start hover:border-[#737373]/80 transition-all duration-300 shadow-xl group"
+              className="w-[85vw] min-w-[280px] max-w-[340px] sm:w-[46vw] sm:max-w-[380px] md:w-[40vw] md:max-w-[420px] lg:w-[31vw] lg:max-w-[360px] xl:w-[360px] bg-[#141414]/90 border border-[#141414]/80 rounded-2xl p-4 sm:p-5 flex flex-col justify-between shrink-0 snap-start hover:border-[#737373]/80 transition-all duration-300 shadow-xl group"
             >
               <div className="space-y-4 sm:space-y-5">
                 {/* Media Container with Overlay Play Button */}
@@ -144,12 +137,20 @@ export default function OurProgrammes() {
 
                 {/* Title & Description */}
                 <div className="space-y-2">
-                  <h3 className="text-lg sm:text-xl font-bold text-white leading-snug">
-                    <Link href={`/programs/${prog.slug}`} className="hover:text-[#ED1654] transition-colors">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-[#ED1654]/20 text-[#ED1654] border border-[#ED1654]/30">
+                      {prog.category}
+                    </span>
+                    <span className="text-[10px] font-mono text-[#A8FF24]">
+                      {prog.targetAge}
+                    </span>
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white leading-snug break-words">
+                    <Link href={`/programs/${prog.slug}`} className="hover:text-[#ED1654] transition-colors break-words">
                       {prog.title}
                     </Link>
                   </h3>
-                  <p className="text-xs sm:text-sm text-[#737373] leading-relaxed line-clamp-3 font-normal">
+                  <p className="text-xs sm:text-sm text-[#737373] leading-relaxed line-clamp-3 font-normal break-words">
                     {prog.description}
                   </p>
                 </div>
@@ -157,32 +158,17 @@ export default function OurProgrammes() {
 
               {/* 2x2 Specs Grid */}
               <div className="grid grid-cols-2 gap-4 pt-5 mt-5 border-t border-[#141414]/80">
-                {/* Format */}
+                {/* Target Audience */}
                 <div className="flex items-start gap-2.5">
                   <div className="w-7 h-7 rounded-full bg-[#0A0A0A] border border-[#141414]/50 flex items-center justify-center text-[#737373] shrink-0 mt-0.5">
                     <GraduationCap className="w-3.5 h-3.5" />
                   </div>
                   <div className="space-y-0.5">
                     <span className="text-[11px] font-semibold text-[#D9D9D9] block">
-                      Format
+                      Target Age
                     </span>
-                    <span className="text-[11px] text-[#737373] block leading-tight truncate">
-                      {prog.format}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Eligibility */}
-                <div className="flex items-start gap-2.5">
-                  <div className="w-7 h-7 rounded-full bg-[#0A0A0A] border border-[#141414]/50 flex items-center justify-center text-[#737373] shrink-0 mt-0.5">
-                    <Building2 className="w-3.5 h-3.5" />
-                  </div>
-                  <div className="space-y-0.5">
-                    <span className="text-[11px] font-semibold text-[#D9D9D9] block">
-                      Eligibility
-                    </span>
-                    <span className="text-[11px] text-[#737373] block leading-tight truncate">
-                      {prog.eligibility}
+                    <span className="text-[11px] text-[#737373] block leading-tight break-words">
+                      {prog.targetAge}
                     </span>
                   </div>
                 </div>
@@ -196,23 +182,38 @@ export default function OurProgrammes() {
                     <span className="text-[11px] font-semibold text-[#D9D9D9] block">
                       Duration
                     </span>
-                    <span className="text-[11px] text-[#737373] block leading-tight truncate">
+                    <span className="text-[11px] text-[#737373] block leading-tight break-words">
                       {prog.duration}
                     </span>
                   </div>
                 </div>
 
-                {/* Deadline */}
+                {/* Mode */}
                 <div className="flex items-start gap-2.5">
                   <div className="w-7 h-7 rounded-full bg-[#0A0A0A] border border-[#141414]/50 flex items-center justify-center text-[#737373] shrink-0 mt-0.5">
-                    <Hourglass className="w-3.5 h-3.5 text-[#A8FF24]" />
+                    <Building2 className="w-3.5 h-3.5" />
                   </div>
                   <div className="space-y-0.5">
                     <span className="text-[11px] font-semibold text-[#D9D9D9] block">
-                      Deadline
+                      Mode
                     </span>
-                    <span className="text-[11px] text-[#A8FF24] font-medium block leading-tight truncate">
-                      {prog.deadline}
+                    <span className="text-[11px] text-[#737373] block leading-tight break-words">
+                      {prog.format}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Core Reflex */}
+                <div className="flex items-start gap-2.5">
+                  <div className="w-7 h-7 rounded-full bg-[#0A0A0A] border border-[#141414]/50 flex items-center justify-center text-[#A8FF24] shrink-0 mt-0.5">
+                    <ShieldCheck className="w-3.5 h-3.5" />
+                  </div>
+                  <div className="space-y-0.5">
+                    <span className="text-[11px] font-semibold text-[#D9D9D9] block">
+                      Core Reflex
+                    </span>
+                    <span className="text-[11px] text-[#A8FF24] font-medium block leading-tight break-words">
+                      {prog.coreReflex}
                     </span>
                   </div>
                 </div>

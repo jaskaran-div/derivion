@@ -171,11 +171,10 @@ export default function OurAlumni() {
                   <button
                     key={idx}
                     onClick={() => setCurrentPage(idx)}
-                    className={`h-2 rounded-full transition-all duration-300 ${
-                      currentPage === idx
+                    className={`h-2 rounded-full transition-all duration-300 ${currentPage === idx
                         ? "w-8 bg-[#ED1654]"
                         : "w-2.5 bg-[#D9D9D9] hover:bg-[#737373]"
-                    }`}
+                      }`}
                     aria-label={`Go to page ${idx + 1}`}
                   />
                 ))}

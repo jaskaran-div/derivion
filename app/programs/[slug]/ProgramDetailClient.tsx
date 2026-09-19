@@ -13,14 +13,11 @@ import {
   CheckCircle2,
   ChevronDown,
   Play,
-  Share2,
   Sparkles,
-  Layers,
   Cpu,
-  TrendingUp,
   ShieldCheck,
   ChevronRight,
-  ExternalLink,
+  BookOpen,
 } from "lucide-react";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
@@ -38,6 +35,10 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
       setSyllabusDownloaded(false);
     }, 4000);
   };
+
+  const titleWords = programme.title.split(" ");
+  const firstWord = titleWords[0];
+  const restWords = titleWords.slice(1).join(" ");
 
   return (
     <div className="min-h-screen bg-white text-[#000000] flex flex-col">
@@ -67,14 +68,17 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
             
             {/* Left Content Column */}
             <div className="lg:col-span-7 space-y-5">
-              {/* Category & Deadline Pill */}
+              {/* Category & Reflex Pill */}
               <div className="flex flex-wrap items-center gap-2.5">
                 <span className="px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#ED1654]/10 text-[#ED1654] border border-[#ED1654]/20">
                   {programme.category}
                 </span>
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-[#0A0A0A] text-[#A8FF24] border border-[#141414]">
                   <span className="w-2 h-2 rounded-full bg-[#A8FF24] animate-pulse" />
-                  Cohort: {programme.nextCohort}
+                  Target: {programme.targetAge}
+                </span>
+                <span className="px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#D9D9D9]/30 text-[#000000] border border-[#D9D9D9]">
+                  Reflex: {programme.coreReflex}
                 </span>
               </div>
 
@@ -83,9 +87,9 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold tracking-tight leading-[1.15] text-[#000000]"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
-                {programme.title.split(" in ")[0]} in{" "}
+                {firstWord}{" "}
                 <span className="italic font-normal text-[#ED1654]">
-                  {programme.title.split(" in ")[1] || programme.shortTitle}
+                  {restWords}
                 </span>
               </h1>
 
@@ -128,11 +132,11 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
 
                 <div className="space-y-1">
                   <div className="flex items-center gap-1.5 text-xs text-[#737373]">
-                    <Hourglass className="w-3.5 h-3.5 text-[#A8FF24] fill-[#A8FF24]" />
-                    <span>Deadline</span>
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#A8FF24] fill-[#A8FF24]" />
+                    <span>Core Reflex</span>
                   </div>
-                  <p className="text-xs sm:text-sm font-bold text-[#ED1654]">
-                    {programme.deadline}
+                  <p className="text-xs sm:text-sm font-bold text-[#ED1654] truncate">
+                    {programme.coreReflex}
                   </p>
                 </div>
               </div>
@@ -143,7 +147,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   href={`/contact?programme=${encodeURIComponent(programme.slug)}`}
                   className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-[#ED1654] hover:bg-[#d6124b] text-white text-xs sm:text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-lg active:scale-95"
                 >
-                  <span>Apply For Cohort</span>
+                  <span>Enroll For Cohort</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
 
@@ -153,7 +157,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                 >
                   <Download className="w-4 h-4" />
                   <span>
-                    {syllabusDownloaded ? "Syllabus Sent to Email!" : "Download Curriculum"}
+                    {syllabusDownloaded ? "Curriculum Guide Sent!" : "Download Curriculum"}
                   </span>
                 </button>
               </div>
@@ -193,12 +197,12 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-black/70 backdrop-blur-md border border-white/10 text-white space-y-1">
                     <div className="flex items-center justify-between text-xs">
                       <span className="text-[#A8FF24] font-bold uppercase tracking-wider">
-                        Practitioner Masterclass
+                        Derivion Curriculum
                       </span>
-                      <span className="text-[#D9D9D9]">Gurugram Floor</span>
+                      <span className="text-[#D9D9D9]">{programme.format}</span>
                     </div>
                     <p className="text-xs text-[#D9D9D9] font-light">
-                      Simulated execution floor and institutional order router demo.
+                      Core Reflex: <span className="text-white font-semibold">{programme.coreReflex}</span>
                     </p>
                   </div>
                 </div>
@@ -233,17 +237,22 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
             <a href="#curriculum" className="px-4 py-1.5 rounded-full hover:bg-[#D9D9D9]/50 text-[#737373] hover:text-[#000000] shrink-0">
               Curriculum
             </a>
-            <a href="#trading-lab" className="px-4 py-1.5 rounded-full hover:bg-[#D9D9D9]/50 text-[#737373] hover:text-[#000000] shrink-0">
-              Trading Lab &amp; Tools
+            {programme.caseStudies && programme.caseStudies.length > 0 && (
+              <a href="#case-studies" className="px-4 py-1.5 rounded-full hover:bg-[#D9D9D9]/50 text-[#737373] hover:text-[#000000] shrink-0">
+                Case Studies
+              </a>
+            )}
+            <a href="#tools" className="px-4 py-1.5 rounded-full hover:bg-[#D9D9D9]/50 text-[#737373] hover:text-[#000000] shrink-0">
+              Learning Tools
             </a>
             <a href="#faculty" className="px-4 py-1.5 rounded-full hover:bg-[#D9D9D9]/50 text-[#737373] hover:text-[#000000] shrink-0">
-              Faculty Mentors
+              Curriculum Leads
             </a>
-            <a href="#careers" className="px-4 py-1.5 rounded-full hover:bg-[#D9D9D9]/50 text-[#737373] hover:text-[#000000] shrink-0">
-              Career Outcomes
+            <a href="#outcomes" className="px-4 py-1.5 rounded-full hover:bg-[#D9D9D9]/50 text-[#737373] hover:text-[#000000] shrink-0">
+              Reflex Outcomes
             </a>
             <a href="#admissions" className="px-4 py-1.5 rounded-full hover:bg-[#D9D9D9]/50 text-[#737373] hover:text-[#000000] shrink-0">
-              Admissions
+              Enrollment
             </a>
             <a href="#faq" className="px-4 py-1.5 rounded-full hover:bg-[#D9D9D9]/50 text-[#737373] hover:text-[#000000] shrink-0">
               FAQ
@@ -251,12 +260,12 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
           </div>
         </div>
 
-        {/* ─── Overview & Edge Bento Grid ─── */}
+        {/* ─── Overview & Highlights Bento Grid ─── */}
         <section id="overview" className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="space-y-8">
             <div className="max-w-3xl space-y-2">
               <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
-                Program Foundation
+                Curriculum Foundation
               </span>
               <h2
                 className="text-3xl sm:text-4xl font-medium tracking-tight text-[#000000]"
@@ -276,13 +285,13 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
 
                 <div className="p-5 rounded-2xl bg-[#D9D9D9]/20 border border-[#D9D9D9] space-y-2">
                   <h4 className="text-xs font-bold uppercase tracking-wider text-[#000000]">
-                    Tuition &amp; Investment
+                    Core Aim &amp; Reflex
                   </h4>
-                  <div className="text-2xl font-black text-[#000000]">
-                    {programme.tuition}
+                  <div className="text-xl font-bold text-[#ED1654]">
+                    Reflex: {programme.coreReflex}
                   </div>
                   <p className="text-xs text-[#737373]">
-                    Includes all terminal licensing, floor simulator access, and residency materials. Flexible 0% EMI financing plans available.
+                    {programme.tagline}
                   </p>
                 </div>
               </div>
@@ -300,9 +309,9 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                     <p className="text-xs sm:text-sm font-semibold text-[#000000] leading-snug">
                       {highlight}
                     </p>
-                    <div className="pt-3 mt-3 border-t border-[#D9D9D9]/50 flex items-center gap-1.5 text-[11px] text-[#A8FF24] font-semibold">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#000000]" />
-                      <span className="text-[#000000]">Derivion Verified</span>
+                    <div className="pt-3 mt-3 border-t border-[#D9D9D9]/50 flex items-center gap-1.5 text-[11px] text-[#000000] font-semibold">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#ED1654]" />
+                      <span>Derivion Standard</span>
                     </div>
                   </div>
                 ))}
@@ -327,7 +336,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                 </h2>
               </div>
               <p className="text-xs sm:text-sm text-[#D9D9D9] max-w-md">
-                Structured into progressive milestones with continuous code audits, live terminal labs, and real client or prop desk deliverables.
+                Structured into progressive modules with hands-on scenario analysis, habit drills, and concrete reflection milestones.
               </p>
             </div>
 
@@ -376,7 +385,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   {/* Topics Covered */}
                   <div className="lg:col-span-7 space-y-3">
                     <h4 className="text-xs font-bold uppercase tracking-wider text-[#D9D9D9]">
-                      Core Topics &amp; Competencies
+                      Topics &amp; Episodes
                     </h4>
                     <ul className="space-y-2.5">
                       {programme.curriculum[activeModuleIndex].topics.map((t, tIdx) => (
@@ -392,7 +401,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   <div className="lg:col-span-5 space-y-4 bg-[#0A0A0A] p-5 sm:p-6 rounded-2xl border border-white/5">
                     <div className="space-y-1.5">
                       <span className="text-[10px] font-bold text-[#A8FF24] uppercase tracking-widest block">
-                        Capstone Milestone Project
+                        Milestone Project / Drill
                       </span>
                       <p className="text-xs sm:text-sm text-white font-medium leading-relaxed">
                         {programme.curriculum[activeModuleIndex].project}
@@ -401,7 +410,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
 
                     <div className="space-y-2 pt-2 border-t border-white/10">
                       <span className="text-[10px] font-bold text-[#737373] uppercase tracking-widest block">
-                        Skills Earned
+                        Core Competencies
                       </span>
                       <div className="flex flex-wrap gap-2">
                         {programme.curriculum[activeModuleIndex].skills.map((skill, sIdx) => (
@@ -421,98 +430,108 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
           </div>
         </section>
 
-        {/* ─── Institutional Trading Floor & Terminal Tools ─── */}
-        <section id="trading-lab" className="w-full bg-white text-[#000000] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
+        {/* ─── Harvest Behavioural Finance Case Studies (When Applicable) ─── */}
+        {programme.caseStudies && programme.caseStudies.length > 0 && (
+          <section id="case-studies" className="w-full bg-[#141414] text-white py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10">
+            <div className="max-w-7xl mx-auto space-y-10">
+              <div className="space-y-2 max-w-3xl">
+                <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
+                  Empirical Risk Analysis
+                </span>
+                <h2
+                  className="text-3xl sm:text-4xl font-medium tracking-tight text-white"
+                  style={{ fontFamily: "var(--font-serif)" }}
+                >
+                  Reconstructed <span className="italic font-normal text-[#A8FF24]">Case Studies</span>
+                </h2>
+                <p className="text-xs sm:text-sm text-[#D9D9D9] leading-relaxed">
+                  Historical autopsies of real-world market collapses, hidden risk, and impossible-yield schemes integrated into the curriculum to teach the anatomy of financial failure.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {programme.caseStudies.map((cs, cIdx) => (
+                  <div
+                    key={cIdx}
+                    className="p-6 rounded-3xl bg-[#0A0A0A] border border-white/10 flex flex-col justify-between space-y-4 hover:border-[#ED1654] transition-colors"
+                  >
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between text-xs">
+                        <span className="text-[10px] font-bold text-[#A8FF24] uppercase tracking-widest">
+                          Case 0{cIdx + 1}
+                        </span>
+                        <BookOpen className="w-4 h-4 text-[#737373]" />
+                      </div>
+                      <h3 className="text-lg font-bold text-white leading-snug">
+                        {cs.title}
+                      </h3>
+                      <p className="text-xs text-[#ED1654] font-medium">
+                        {cs.subtitle}
+                      </p>
+                      <p className="text-xs text-[#737373] leading-relaxed pt-2 border-t border-white/5">
+                        {cs.description}
+                      </p>
+                    </div>
+
+                    <div className="p-3 rounded-xl bg-[#141414] border border-white/5 text-[11px] text-[#D9D9D9]">
+                      <span className="font-semibold text-[#A8FF24] block mb-0.5">Core Takeaway:</span>
+                      {cs.keyTakeaway}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* ─── Learning Tools & Environment ─── */}
+        <section id="tools" className="w-full bg-white text-[#000000] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
           <div className="max-w-7xl mx-auto space-y-10">
             <div className="max-w-3xl space-y-2">
               <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
-                Infrastructure
+                Learning Ecosystem
               </span>
               <h2
                 className="text-3xl sm:text-4xl font-medium tracking-tight text-[#000000]"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
-                Institutional Trading Labs &amp;{" "}
-                <span className="italic font-normal text-[#ED1654]">Tool Stack</span>
+                Practical Learning <span className="italic font-normal text-[#ED1654]">Tools &amp; Worksheets</span>
               </h2>
               <p className="text-sm sm:text-base text-[#737373] leading-relaxed">
-                Derivion provides students with real professional environments. Train with institutional data feeds, live market simulators, and enterprise-grade software stacks.
+                Derivion provides structured toolkits, calculators, and verification workflows so learners apply principles directly to their screens and accounts.
               </p>
             </div>
 
-            {/* Platform Badges */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+            {/* Tool Badges */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {programme.toolsAndPlatforms.map((tool, idx) => (
                 <div
                   key={idx}
-                  className="p-4 rounded-2xl bg-[#0A0A0A] text-white border border-[#141414] flex items-center justify-between shadow-md hover:border-[#A8FF24] transition-colors"
+                  className="p-5 rounded-2xl bg-[#0A0A0A] text-white border border-[#141414] flex items-center justify-between shadow-md hover:border-[#A8FF24] transition-colors"
                 >
                   <span className="text-xs sm:text-sm font-semibold">{tool}</span>
-                  <Cpu className="w-4 h-4 text-[#A8FF24]" />
+                  <Cpu className="w-4 h-4 text-[#A8FF24] shrink-0 ml-2" />
                 </div>
               ))}
-            </div>
-
-            {/* Trading Lab Feature Card */}
-            <div className="bg-[#0A0A0A] text-white rounded-3xl p-6 sm:p-10 border border-[#141414] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-6 space-y-4">
-                <span className="text-xs font-bold text-[#A8FF24] uppercase tracking-widest">
-                  Gurugram Campus Trading Floor
-                </span>
-                <h3
-                  className="text-2xl sm:text-3xl font-medium text-white"
-                  style={{ fontFamily: "var(--font-serif)" }}
-                >
-                  Where Virtual Capital Meets Real Market Latency
-                </h3>
-                <p className="text-xs sm:text-sm text-[#D9D9D9] font-light leading-relaxed">
-                  Our trading floor is connected directly to tick-level exchange simulators mirroring NSE, BSE, LSE, and CME book depth. Experience what happens when volatility spikes and spreads widen.
-                </p>
-                <div className="flex flex-wrap gap-4 pt-2 text-xs text-[#A8FF24]">
-                  <span className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-4 h-4" /> 10G Low Latency Network
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-4 h-4" /> $1M Virtual Book Allocations
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-4 h-4" /> Real-Time Risk Audits
-                  </span>
-                </div>
-              </div>
-
-              <div className="lg:col-span-6 relative h-64 sm:h-80 rounded-2xl overflow-hidden bg-[#141414] border border-white/10">
-                <Image
-                  src="/Home/hero-section.jpg"
-                  alt="Derivion Trading Lab"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
-                  <span className="text-xs font-mono text-[#A8FF24]">
-                    TERMINAL://DERIVION-DESK-01 [STATUS: ONLINE]
-                  </span>
-                </div>
-              </div>
             </div>
           </div>
         </section>
 
-        {/* ─── Faculty & Practitioner Mentors ─── */}
+        {/* ─── Curriculum Mentors ─── */}
         <section id="faculty" className="w-full bg-white text-[#000000] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
           <div className="max-w-7xl mx-auto space-y-10">
             <div className="space-y-2">
               <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
-                World-Class Faculty
+                Curriculum Stewardship
               </span>
               <h2
                 className="text-3xl sm:text-4xl font-medium tracking-tight text-[#000000]"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
-                Learn Directly From <span className="italic font-normal text-[#ED1654]">Masters</span>
+                Curriculum <span className="italic font-normal text-[#ED1654]">Mentorship</span>
               </h2>
               <p className="text-xs sm:text-sm text-[#737373] max-w-xl">
-                No career academics who have never managed capital or built a product. Every Derivion mentor is an active or former managing director, founder, or senior desk head.
+                Guided by Derivion&apos;s multidisciplinary faculty across financial economics, digital psychology, and cybersecurity.
               </p>
             </div>
 
@@ -544,8 +563,8 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   </div>
 
                   <div className="pt-6 mt-6 border-t border-[#141414] flex items-center justify-between text-xs text-[#737373]">
-                    <span>1-on-1 Office Hours Included</span>
-                    <span className="text-[#A8FF24] font-medium">Verified Mentor</span>
+                    <span>Derivion Academic Faculty</span>
+                    <span className="text-[#A8FF24] font-medium">Active Cohort Support</span>
                   </div>
                 </div>
               ))}
@@ -553,18 +572,18 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
           </div>
         </section>
 
-        {/* ─── Career Outcomes & Placement Tracks ─── */}
-        <section id="careers" className="w-full bg-[#0A0A0A] text-white py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#141414]">
+        {/* ─── Competencies & Reflex Outcomes ─── */}
+        <section id="outcomes" className="w-full bg-[#0A0A0A] text-white py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#141414]">
           <div className="max-w-7xl mx-auto space-y-10">
             <div className="space-y-2">
               <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
-                Career Trajectory
+                Competency Outcomes
               </span>
               <h2
                 className="text-3xl sm:text-4xl font-medium tracking-tight text-white"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
-                Target Roles &amp; <span className="italic font-normal text-[#A8FF24]">Placement Paths</span>
+                Key Reflexes &amp; <span className="italic font-normal text-[#A8FF24]">Capability Pillars</span>
               </h2>
             </div>
 
@@ -575,7 +594,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   className="p-6 rounded-2xl bg-[#141414] border border-white/5 hover:border-[#ED1654] transition-all duration-300 space-y-3"
                 >
                   <div className="flex items-center justify-between">
-                    <TrendingUp className="w-5 h-5 text-[#ED1654]" />
+                    <ShieldCheck className="w-5 h-5 text-[#ED1654]" />
                     <span className="px-2.5 py-1 rounded bg-[#0A0A0A] text-[#A8FF24] text-xs font-bold border border-[#A8FF24]/20">
                       {career.avgCtc}
                     </span>
@@ -597,20 +616,20 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
           <div className="max-w-7xl mx-auto space-y-10">
             <div className="space-y-2">
               <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
-                Application Roadmap
+                Enrollment Process
               </span>
               <h2
                 className="text-3xl sm:text-4xl font-medium tracking-tight text-[#000000]"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
-                Admissions <span className="italic font-normal text-[#ED1654]">Process</span>
+                How to <span className="italic font-normal text-[#ED1654]">Join</span>
               </h2>
               <p className="text-xs sm:text-sm text-[#737373] max-w-lg">
-                Admission to Derivion is selective. We evaluate quantitative curiosity, grit, and analytical instinct over rote memorization.
+                Cohorts are scheduled regularly with dedicated timings for individual learners, school batches, and professional groups.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {programme.admissionSteps.map((step, idx) => (
                 <div
                   key={idx}
@@ -688,14 +707,13 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                 className="text-2xl sm:text-4xl tracking-tight text-white"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
-                Ready to Join the{" "}
+                Ready to Join{" "}
                 <span className="italic font-normal text-[#ED1654]">
-                  {programme.shortTitle}
-                </span>{" "}
-                Cohort?
+                  {programme.title}
+                </span>?
               </h3>
               <p className="text-[#D9D9D9] text-xs sm:text-sm font-normal">
-                Next cohort starts in {programme.nextCohort}. Applications reviewed on a rolling basis.
+                Next cohort starts in {programme.nextCohort}. Cohort sizes are intentionally limited.
               </p>
             </div>
 
@@ -704,7 +722,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                 href={`/contact?programme=${encodeURIComponent(programme.slug)}`}
                 className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#ED1654] hover:bg-[#d6124b] text-white text-xs sm:text-sm font-semibold transition-all duration-200 shadow-xl active:scale-95"
               >
-                <span>Apply for Admission</span>
+                <span>Enroll in Cohort</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>

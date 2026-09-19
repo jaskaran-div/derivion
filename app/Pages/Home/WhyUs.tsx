@@ -40,17 +40,17 @@ export default function WhyUs() {
             <div className="relative w-full sm:w-1/2 h-44 rounded-xl overflow-hidden bg-[#D9D9D9] shrink-0">
               <Image
                 src="/Home/hero-section.jpg"
-                alt="Practitioner-led learning"
+                alt="Practitioner-crafted education"
                 fill
                 className="object-cover"
               />
             </div>
             <div className="space-y-1.5">
               <h3 className="text-sm sm:text-base font-bold uppercase tracking-tight text-[#000000] leading-snug">
-                PRACTITIONER-LED CURRICULUM
+                PRACTITIONER-CRAFTED CURRICULA
               </h3>
               <p className="text-xs sm:text-sm text-[#737373] leading-relaxed font-normal">
-                Designed for real-world market execution, institutional trading, and high-impact leadership.
+                Designed around actual economic shifts, digital payment realities, and modern cyber risk vectors.
               </p>
             </div>
           </div>
@@ -60,20 +60,20 @@ export default function WhyUs() {
             <div className="absolute inset-0 z-0 opacity-40 group-hover:scale-105 transition-transform duration-500">
               <Image
                 src="/Home/hero-section.jpg"
-                alt="Institutional grade environment"
+                alt="Holistic multi-pillar education"
                 fill
                 className="object-cover"
               />
             </div>
             <div className="relative z-10 space-y-2 max-w-lg">
               <span className="inline-block text-[10px] font-bold text-[#A8FF24] uppercase tracking-widest bg-black/50 px-2.5 py-1 rounded backdrop-blur-sm border border-[#A8FF24]/30">
-                IMMERSIVE EXPERIENCE
+                COMPREHENSIVE ECOSYSTEM
               </span>
               <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-tight text-white">
-                INSTITUTIONAL-GRADE TRADING LABS
+                INTEGRATED 5-PILLAR PROTECTION
               </h3>
               <p className="text-xs sm:text-sm text-[#D9D9D9] leading-relaxed">
-                Train on live order-matching engines, multi-asset risk management software, and high-frequency algorithms.
+                Combining Financial, Digital, AI, Cyber, and Legal literacy into a single unified capability built for modern life.
               </p>
             </div>
           </div>
@@ -83,20 +83,20 @@ export default function WhyUs() {
             <div className="absolute inset-0 z-0 opacity-20 group-hover:scale-105 transition-transform duration-500">
               <Image
                 src="/Home/hero-section.jpg"
-                alt="Market analytics"
+                alt="Reflex-driven habits"
                 fill
                 className="object-cover"
               />
             </div>
             <div className="relative z-10 space-y-2">
               <span className="text-[10px] font-bold text-[#ED1654] uppercase tracking-widest">
-                DIRECT ACCESS
+                ACTIONABLE DEFENCE
               </span>
               <h3 className="text-lg sm:text-xl font-bold uppercase tracking-tight text-[#000000]">
-                1-ON-1 FOUNDER MENTORSHIP
+                REFLEX-DRIVEN PEDAGOGY
               </h3>
               <p className="text-xs sm:text-sm text-[#737373] leading-relaxed">
-                Direct access to industry partners, hedge fund founders, and startup leaders.
+                Instilling automated behavioural reflexes: Stop &amp; Ask, Verify Before You Act, and Statutory Recourse.
               </p>
             </div>
           </div>
@@ -106,17 +106,17 @@ export default function WhyUs() {
             <div className="relative w-full sm:w-1/2 h-48 rounded-xl overflow-hidden bg-[#D9D9D9] shrink-0">
               <Image
                 src="/Home/hero-section.jpg"
-                alt="World class placement outcomes"
+                alt="Reconstructed Case Studies"
                 fill
                 className="object-cover"
               />
             </div>
             <div className="space-y-1.5">
               <h3 className="text-sm sm:text-base font-bold uppercase tracking-tight text-[#000000] leading-snug">
-                GUARANTEED CAREER TRANSFORMATION
+                RECONSTRUCTED CASE STUDIES
               </h3>
               <p className="text-xs sm:text-sm text-[#737373] leading-relaxed font-normal">
-                Audited 2.8X average CTC jumps, 500+ partner companies, and guaranteed founder-facing roles.
+                Deconstructing market collapses, rogue losses, synthetic voice scams, and predatory debt traps to inoculate capital before risk arrives.
               </p>
             </div>
           </div>

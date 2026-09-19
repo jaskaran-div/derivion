@@ -13,12 +13,11 @@ export default function Hero() {
                 {/* Main Background Video */}
                 <iframe
                     className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-                    src="https://www.youtube.com/embed/qUfVSh4eaDE?autoplay=1&mute=1&loop=1&playlist=qUfVSh4eaDE&controls=0&rel=0&modestbranding=1&playsinline=1"
+                    src="https://www.youtube.com/embed/VEr1qt5XM5M?autoplay=1&mute=1&loop=1&playlist=VEr1qt5XM5M"
                     title="Derivion Hero Video"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allow="autoplay; encrypted-media; picture-in-picture"
                     allowFullScreen
                 />
-
                 {/* Subtle dark gradient overlay to ensure contrast */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
 
@@ -26,9 +25,9 @@ export default function Hero() {
                 <div className="absolute bottom-0 right-0 bg-white p-4 sm:pt-6 sm:pl-8 sm:pr-6 sm:pb-6 rounded-tl-2xl sm:rounded-tl-[36px] max-w-full sm:max-w-xl md:max-w-2xl shadow-lg">
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-6">
                         <p className="text-xs sm:text-sm text-[#737373] font-normal leading-relaxed">
-                            We are committed to inspiring minds and igniting change through
-                            transformative education, groundbreaking research, and a
-                            dedication to social responsibility.
+                            Derivion is dedicated to empowering modern learners with practitioner-led
+                            education across financial instincts, digital payment safety, AI awareness,
+                            and risk management.
                         </p>
 
                         <Link
@@ -61,20 +60,20 @@ export default function Hero() {
                     {/* Stat Circle 1 */}
                     <div className="w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full border border-[#D9D9D9] bg-white/90 backdrop-blur-sm flex flex-col items-center justify-center text-center p-3 shrink-0 shadow-sm hover:z-10 transition-transform duration-300 hover:scale-105">
                         <span className="text-xl sm:text-3xl font-bold text-[#ED1654]">
-                            50+
+                            100%
                         </span>
                         <span className="text-[10px] sm:text-xs text-[#737373] font-medium mt-0.5 sm:mt-1 leading-tight max-w-[70px] sm:max-w-[80px]">
-                            Success Students
+                            Practitioner Focus
                         </span>
                     </div>
 
                     {/* Stat Circle 2 */}
                     <div className="w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full border border-[#D9D9D9] bg-white/90 backdrop-blur-sm flex flex-col items-center justify-center text-center p-3 shrink-0 shadow-sm hover:z-10 transition-transform duration-300 hover:scale-105">
                         <span className="text-xl sm:text-3xl font-bold text-[#000000]">
-                            10+
+                            3
                         </span>
                         <span className="text-[10px] sm:text-xs text-[#737373] font-medium mt-0.5 sm:mt-1 leading-tight max-w-[70px] sm:max-w-[80px]">
-                            Study Programs
+                            Core Programmes
                         </span>
                     </div>
                 </div>

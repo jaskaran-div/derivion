@@ -5,17 +5,16 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import {
   Mail,
-  Phone,
   MapPin,
+  Phone,
   Clock,
   Send,
   CheckCircle2,
-  Calendar,
   Building,
   ArrowRight,
   ChevronRight,
-  MessageSquare,
   ShieldCheck,
+  MessageSquare,
 } from "lucide-react";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
@@ -29,9 +28,9 @@ function ContactFormInner() {
     fullName: "",
     email: "",
     phone: "",
-    programme: preselectedSlug || "technology-and-business-management",
-    background: "Class 12th Student / Pass-out",
-    counselingMode: "1-on-1 Virtual Video Call",
+    programme: preselectedSlug || "sprout-literacy",
+    background: "Parent of Learner (Ages 9–11)",
+    counselingMode: "1-on-1 Virtual Consultation",
     message: "",
   });
 
@@ -57,11 +56,11 @@ function ContactFormInner() {
           className="text-2xl sm:text-3xl font-medium tracking-tight text-white"
           style={{ fontFamily: "var(--font-serif)" }}
         >
-          Book a 1-on-1{" "}
-          <span className="italic font-normal text-[#ED1654]">Counseling Session</span>
+          Book a Programme{" "}
+          <span className="italic font-normal text-[#ED1654]">Orientation</span>
         </h3>
         <p className="text-xs sm:text-sm text-[#737373]">
-          Speak directly with our senior admissions team or a faculty practitioner.
+          Connect with a Derivion curriculum advisor to discuss learning outcomes, cohorts, and schedules.
         </p>
       </div>
 
@@ -73,7 +72,7 @@ function ContactFormInner() {
           <div className="space-y-1">
             <h4 className="text-xl font-bold text-white">Inquiry Received!</h4>
             <p className="text-xs sm:text-sm text-[#D9D9D9] max-w-sm mx-auto leading-relaxed">
-              Thank you, <span className="text-white font-semibold">{formData.fullName}</span>. An admissions mentor will reach out to you via WhatsApp and email within 24 hours.
+              Thank you, <span className="text-white font-semibold">{formData.fullName}</span>. A Derivion advisor will reach out to you via email and phone within 24 hours.
             </p>
           </div>
           <div className="pt-2">
@@ -144,7 +143,7 @@ function ContactFormInner() {
             {/* Programme of Interest */}
             <div className="space-y-1.5">
               <label className="text-xs font-medium text-[#D9D9D9]">
-                Interested Programme <span className="text-[#ED1654]">*</span>
+                Programme of Interest <span className="text-[#ED1654]">*</span>
               </label>
               <select
                 value={formData.programme}
@@ -155,7 +154,7 @@ function ContactFormInner() {
               >
                 {PROGRAMMES.map((prog) => (
                   <option key={prog.slug} value={prog.slug} className="bg-[#141414] text-white">
-                    {prog.title} ({prog.category})
+                    {prog.title} ({prog.category} • {prog.targetAge})
                   </option>
                 ))}
               </select>
@@ -166,7 +165,7 @@ function ContactFormInner() {
             {/* Current Background */}
             <div className="space-y-1.5">
               <label className="text-xs font-medium text-[#D9D9D9]">
-                Current Background
+                Applicant / Inquirer Background
               </label>
               <select
                 value={formData.background}
@@ -175,19 +174,19 @@ function ContactFormInner() {
                 }
                 className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-white/10 text-xs sm:text-sm text-white focus:outline-none focus:border-[#ED1654] transition-colors"
               >
-                <option value="Class 12th Student / Pass-out">Class 12th Student / Pass-out</option>
-                <option value="Undergraduate College Student">Undergraduate College Student</option>
-                <option value="Recent Graduate">Recent Graduate</option>
-                <option value="Working Professional / Engineer">Working Professional / Engineer</option>
-                <option value="Active Independent Trader">Active Independent Trader</option>
-                <option value="Family Business Promoter">Family Business Promoter</option>
+                <option value="Parent of Learner (Ages 9–11)">Parent of Learner (Ages 9–11)</option>
+                <option value="Parent of Learner (Ages 11–14)">Parent of Learner (Ages 11–14)</option>
+                <option value="Adult Learner / University Student (18+)">Adult Learner / University Student (18+)</option>
+                <option value="Working Professional / Executive">Working Professional / Executive</option>
+                <option value="School / Institutional Representative">School / Institutional Representative</option>
+                <option value="General Inquirer">General Inquirer</option>
               </select>
             </div>
 
             {/* Preferred Consultation Mode */}
             <div className="space-y-1.5">
               <label className="text-xs font-medium text-[#D9D9D9]">
-                Preferred Counseling Mode
+                Preferred Orientation Mode
               </label>
               <select
                 value={formData.counselingMode}
@@ -196,9 +195,9 @@ function ContactFormInner() {
                 }
                 className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-white/10 text-xs sm:text-sm text-white focus:outline-none focus:border-[#ED1654] transition-colors"
               >
-                <option value="1-on-1 Virtual Video Call">1-on-1 Virtual Video Call</option>
-                <option value="In-Person Gurugram Campus Tour">In-Person Gurugram Campus Tour</option>
-                <option value="Direct Telephone Consultation">Direct Telephone Consultation</option>
+                <option value="1-on-1 Virtual Consultation">1-on-1 Virtual Consultation</option>
+                <option value="Direct Telephone Discussion">Direct Telephone Discussion</option>
+                <option value="School / Group Batch Briefing">School / Group Batch Briefing</option>
               </select>
             </div>
           </div>
@@ -214,7 +213,7 @@ function ContactFormInner() {
               onChange={(e) =>
                 setFormData({ ...formData, message: e.target.value })
               }
-              placeholder="Tell us about your background, career goals, or specific queries..."
+              placeholder="Tell us about your learning goals, cohort preferences, or specific inquiries..."
               className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-white/10 text-xs sm:text-sm text-white placeholder-[#737373] focus:outline-none focus:border-[#ED1654] transition-colors resize-none"
             />
           </div>
@@ -229,14 +228,14 @@ function ContactFormInner() {
               <span>Scheduling Consultation...</span>
             ) : (
               <>
-                <span>Submit &amp; Schedule Consultation</span>
+                <span>Submit &amp; Schedule Orientation</span>
                 <Send className="w-4 h-4" />
               </>
             )}
           </button>
 
           <p className="text-[11px] text-center text-[#737373]">
-            We respect your privacy. No spam. All consultations are confidential.
+            We respect your privacy. All consultations are completely confidential.
           </p>
         </form>
       )}
@@ -248,34 +247,34 @@ export default function ContactPage() {
   const contactCards = [
     {
       icon: MapPin,
-      title: "Campus Location",
-      subtitle: "Derivion Institute",
-      detail: "Sector 44, Institutional Area, Gurugram, Haryana 122003",
-      actionText: "Get Transit Directions",
+      title: "Our Location",
+      subtitle: "Derivion India Office",
+      detail: "Plot No 42, Phase IV, Sector 18, Gurugram, Sarhol, Haryana 122015",
+      actionText: "View Map Location",
       actionHref: "https://maps.google.com",
     },
     {
       icon: Phone,
-      title: "Admissions Hotline",
-      subtitle: "Direct Lines",
-      detail: "+91 (0) 124 456 7890 / +91 (0) 98765 43210",
-      actionText: "Call Admissions Desk",
-      actionHref: "tel:+911244567890",
+      title: "Phone",
+      subtitle: "Call Our Desk",
+      detail: "+91 70560 57913",
+      actionText: "Call Now",
+      actionHref: "tel:+917056057913",
     },
     {
       icon: Mail,
-      title: "Direct Emails",
-      subtitle: "General & Official",
-      detail: "admissions@derivion.edu • partnerships@derivion.edu",
-      actionText: "Send Official Mail",
-      actionHref: "mailto:admissions@derivion.edu",
+      title: "Email",
+      subtitle: "Official Correspondence",
+      detail: "info@derivion.in",
+      actionText: "Send Email",
+      actionHref: "mailto:info@derivion.in",
     },
     {
       icon: Clock,
       title: "Operating Hours",
-      subtitle: "Admissions & Floor",
-      detail: "Monday – Saturday: 9:00 AM – 7:00 PM IST",
-      actionText: "Sunday: By Appointment",
+      subtitle: "Mon-Fri",
+      detail: "10:30am-6:30pm",
+      actionText: "By Appointment",
       actionHref: "#",
     },
   ];
@@ -310,13 +309,13 @@ export default function ContactPage() {
                   className="text-3xl sm:text-5xl md:text-6xl font-semibold tracking-tight leading-[1.1] text-[#000000]"
                   style={{ fontFamily: "var(--font-serif)" }}
                 >
-                  Let&apos;s Build Your{" "}
+                  Connect with the{" "}
                   <span className="italic font-normal text-[#ED1654]">
-                    Edge in Markets
+                    Derivion Team
                   </span>
                 </h1>
                 <p className="text-sm sm:text-base md:text-lg text-[#737373] leading-relaxed">
-                  Have questions about our curriculum, eligibility, or fellowship grants? Connect directly with our admissions advisors or book a private campus walk-through.
+                  Have questions about our curriculum, cohort timings, or institutional batches? Connect directly with our admissions advisors.
                 </p>
               </div>
 
@@ -360,20 +359,20 @@ export default function ContactPage() {
                 })}
               </div>
 
-              {/* Campus Tour Highlight Box */}
+              {/* Curriculum Orientation Box */}
               <div className="p-6 rounded-3xl bg-[#0A0A0A] text-white border border-[#141414] space-y-3">
                 <div className="flex items-center gap-2 text-xs font-bold text-[#A8FF24] uppercase tracking-wider">
-                  <Building className="w-4 h-4" />
-                  <span>Campus Floor Access</span>
+                  <ShieldCheck className="w-4 h-4" />
+                  <span>Curriculum Orientation</span>
                 </div>
                 <h4
                   className="text-lg sm:text-xl font-medium text-white"
                   style={{ fontFamily: "var(--font-serif)" }}
                 >
-                  Experience the High-Frequency Trading Lab in Person
+                  Personalised Guidance for Learners &amp; Parents
                 </h4>
                 <p className="text-xs text-[#D9D9D9] font-light leading-relaxed">
-                  Prospective students and their parents are encouraged to visit our Sector 44 Gurugram campus to tour the Bloomberg terminal cluster, student venture studio, and residence facilities.
+                  Prospective learners and parents are encouraged to connect with our admissions desk to review course modules, workbook exercises, and interactive simulation schedules.
                 </p>
               </div>
             </div>
@@ -394,56 +393,56 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* ─── Corporate Hiring & Partnerships Desk ─── */}
+        {/* ─── Institutional Alliances & Group Inquiries ─── */}
         <section className="w-full bg-[#141414] text-white py-14 px-4 sm:px-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-6 rounded-2xl bg-[#0A0A0A] border border-white/5 space-y-2">
               <span className="text-xs font-bold text-[#A8FF24] uppercase tracking-widest">
-                Recruit Talent
+                School Partnerships
               </span>
-              <h4 className="text-lg font-bold text-white">Hiring &amp; Desk Placements</h4>
+              <h4 className="text-lg font-bold text-white">Youth Cohorts &amp; Schools</h4>
               <p className="text-xs text-[#737373] leading-relaxed">
-                Connect with our placements office to hire quants, derivatives traders, and high-agency founder-facing analysts.
+                Connect with our academic team to introduce Sprout (9–11) or Bloom (11–14) literacy programmes to your student community.
               </p>
               <a
-                href="mailto:partnerships@derivion.edu"
+                href="mailto:alliances@derivion.in"
                 className="inline-flex items-center gap-1.5 text-xs text-[#ED1654] font-medium pt-2"
               >
-                <span>partnerships@derivion.edu</span>
+                <span>alliances@derivion.in</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </a>
             </div>
 
             <div className="p-6 rounded-2xl bg-[#0A0A0A] border border-white/5 space-y-2">
               <span className="text-xs font-bold text-[#A8FF24] uppercase tracking-widest">
-                Academic Alliances
+                Corporate &amp; Group
               </span>
-              <h4 className="text-lg font-bold text-white">Global University Partners</h4>
+              <h4 className="text-lg font-bold text-white">Harvest Adult Workshops</h4>
               <p className="text-xs text-[#737373] leading-relaxed">
-                Joint research, faculty exchange, and cross-border capital markets immersions with international universities.
+                Organise dedicated Harvest Literacy masterclasses for employees, alumni groups, or professional associations.
               </p>
               <a
-                href="mailto:alliances@derivion.edu"
+                href="mailto:partnerships@derivion.in"
                 className="inline-flex items-center gap-1.5 text-xs text-[#ED1654] font-medium pt-2"
               >
-                <span>alliances@derivion.edu</span>
+                <span>partnerships@derivion.in</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </a>
             </div>
 
             <div className="p-6 rounded-2xl bg-[#0A0A0A] border border-white/5 space-y-2">
               <span className="text-xs font-bold text-[#A8FF24] uppercase tracking-widest">
-                Media &amp; Press
+                General Correspondence
               </span>
-              <h4 className="text-lg font-bold text-white">Press &amp; Publications</h4>
+              <h4 className="text-lg font-bold text-white">Institutional Desk</h4>
               <p className="text-xs text-[#737373] leading-relaxed">
-                Access audited placement reports, faculty research publications, and press spokesperson interviews.
+                For research queries, curriculum documentation, and official administrative communication with Derivion.
               </p>
               <a
-                href="mailto:press@derivion.edu"
+                href="mailto:info@derivion.in"
                 className="inline-flex items-center gap-1.5 text-xs text-[#ED1654] font-medium pt-2"
               >
-                <span>press@derivion.edu</span>
+                <span>info@derivion.in</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </a>
             </div>

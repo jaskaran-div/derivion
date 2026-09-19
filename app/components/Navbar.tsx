@@ -14,26 +14,16 @@ export default function Navbar() {
   // Nested structure for Programmes -> Categories -> Sub-Programmes
   const programmesData = [
     {
-      category: "Undergraduate",
+      category: "Kids",
       subItems: [
-        { name: "Tech & Business Management", href: "/programs/technology-and-business-management" },
-        { name: "Psychology & Marketing", href: "/programs/psychology-and-marketing" },
-        { name: "Artificial Intelligence & Data", href: "/programs/artificial-intelligence-and-data" },
+        { name: "Sprout Literacy (Ages 9–11)", href: "/programs/sprout-literacy" },
+        { name: "Bloom Literacy (Ages 11–14)", href: "/programs/bloom-literacy" },
       ],
     },
     {
-      category: "Postgraduate & Trading",
+      category: "Adults",
       subItems: [
-        { name: "Multi-Asset Trading & Quant", href: "/programs/multi-asset-trading" },
-        { name: "Algorithmic Trading & HFT", href: "/programs/algorithmic-trading" },
-      ],
-    },
-    {
-      category: "Executive & Family Office",
-      subItems: [
-        { name: "Multi-Asset Risk & Hedging", href: "/programs/risk-and-portfolio-hedging" },
-        { name: "Family Business & Wealth", href: "/programs/family-business-wealth-management" },
-        { name: "Global Markets Immersion", href: "/programs/global-financial-markets-immersion" },
+        { name: "Harvest Literacy (Adults 18+)", href: "/programs/harvest-literacy" },
       ],
     },
   ];
@@ -48,9 +38,14 @@ export default function Navbar() {
       <nav className="flex items-center justify-between gap-4">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-2.5 z-20 hover:opacity-90 transition-opacity">
-          <div className="flex items-center justify-center font-bold text-lg">
-            <Image src="/Home/derivion-logo.png" alt="Derivion Logo" width={60} height={60} />
-          </div>
+            <Image
+              src="/Home/derivion-logo.png"
+              alt="Derivion Logo"
+              width={60}
+              height={60}
+              className="h-10 sm:h-12 w-auto object-contain"
+              priority
+            />
         </Link>
 
         {/* Center Pill Navigation Menu (Desktop) */}

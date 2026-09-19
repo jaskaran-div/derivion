@@ -5,16 +5,16 @@ import Image from "next/image";
 
 export default function StudentSuccess() {
     const companies = [
-        { name: "J.P. Morgan", logo: "/Home/jpmc-logo.svg" },
-        { name: "Barclays", logo: "/Home/Barclays-Logo.png" },
-        { name: "Bank of England", logo: "/Home/Bank-of-England-logo.png" },
-        { name: "Bank of America", logo: "/Home/Bank_of_America-Logo.svg" },
-        { name: "eToro", logo: "/Home/etoro-logo.png" },
-        { name: "Macquarie", logo: "/Home/macquare-logo.webp" },
-        { name: "JB Drax Honoré", logo: "/Home/jbdrax-logo.png" },
-        { name: "Future First", logo: "/Home/future-first.png" },
-        { name: "Paragon", logo: "/Home/paragon-logo.png" },
-        { name: "Rathbones", logo: "/Home/rathbones logo.png" },
+        { name: "J.P. Morgan", logo: "https://isftglobal.com/wp-content/uploads/2026/09/jpmc-logo.svg" },
+        { name: "Barclays", logo: "https://isftglobal.com/wp-content/uploads/2026/09/Barclays-Logo-scaled.png" },
+        { name: "Bank of England", logo: "https://isftglobal.com/wp-content/uploads/2026/09/Bank-of-England-logo.png" },
+        { name: "Bank of America", logo: "https://isftglobal.com/wp-content/uploads/2026/09/Bank_of_America-Logo.svg" },
+        { name: "eToro", logo: "https://isftglobal.com/wp-content/uploads/2026/09/Etoro_logo.svg" },
+        { name: "Macquarie", logo: "https://isftglobal.com/wp-content/uploads/2026/09/macquare-logo-Photoroom.png" },
+        { name: "JB Drax Honoré", logo: "https://isftglobal.com/wp-content/uploads/2026/09/jbdrax-logo.png" },
+        { name: "Future First", logo: "https://isftglobal.com/wp-content/uploads/2026/09/future-first.png" },
+        { name: "Paragon", logo: "https://isftglobal.com/wp-content/uploads/2026/09/paragon-logo.png" },
+        { name: "Rathbones", logo: "https://isftglobal.com/wp-content/uploads/2026/09/rathbones-logo.png" },
     ];
 
     return (
@@ -35,19 +35,19 @@ export default function StudentSuccess() {
 
                 {/* Logo Container with Gradient Mask & Pause-On-Hover */}
                 <div className="group relative mt-6 w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-                    <div className="flex w-max items-center justify-around gap-8 sm:gap-14 animate-marquee group-hover:[animation-play-state:paused] py-2">
+                    <div className="flex w-max items-center justify-around gap-7 sm:gap-12 md:gap-16 animate-marquee group-hover:[animation-play-state:paused] py-4">
                         {/* First Set of Logos */}
                         {companies.map((company, index) => (
                             <div
                                 key={`logo-1-${index}`}
-                                className="flex items-center justify-center grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer h-8 sm:h-10 px-2"
+                                className="flex items-center justify-center grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer h-16 sm:h-20 md:h-24 px-4 sm:px-5"
                             >
                                 <Image
                                     src={company.logo}
                                     alt={`${company.name} logo`}
-                                    width={120}
-                                    height={40}
-                                    className="h-7 sm:h-9 w-auto max-w-[110px] sm:max-w-[140px] object-contain"
+                                    width={220}
+                                    height={90}
+                                    className="h-12 w-auto max-w-[180px] sm:h-16 sm:max-w-[220px] md:h-20 md:max-w-[260px] object-contain"
                                 />
                             </div>
                         ))}
@@ -56,14 +56,14 @@ export default function StudentSuccess() {
                         {companies.map((company, index) => (
                             <div
                                 key={`logo-2-${index}`}
-                                className="flex items-center justify-center grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer h-8 sm:h-10 px-2"
+                                className="flex items-center justify-center grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer h-16 sm:h-20 md:h-24 px-4 sm:px-5"
                             >
                                 <Image
                                     src={company.logo}
                                     alt={`${company.name} logo`}
-                                    width={120}
-                                    height={40}
-                                    className="h-7 sm:h-9 w-auto max-w-[110px] sm:max-w-[140px] object-contain"
+                                    width={220}
+                                    height={90}
+                                    className="h-12 w-auto max-w-[180px] sm:h-16 sm:max-w-[220px] md:h-20 md:max-w-[260px] object-contain"
                                 />
                             </div>
                         ))}

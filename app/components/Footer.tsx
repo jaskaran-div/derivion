@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
+import { ArrowRight, Mail, Phone, MapPin, Clock } from "lucide-react";
 
 // Clean inline SVGs for Social Logos
 function LinkedinIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -40,22 +40,19 @@ function YoutubeIcon(props: React.SVGProps<SVGSVGElement>) {
 
 export default function Footer() {
   const programmeLinks = [
-    { name: "Tech & Business Management (UG)", href: "/programs/technology-and-business-management" },
-    { name: "Multi-Asset Trading & Quant (PG)", href: "/programs/multi-asset-trading" },
-    { name: "Psychology & Marketing (UG)", href: "/programs/psychology-and-marketing" },
-    { name: "Artificial Intelligence & Data (UG)", href: "/programs/artificial-intelligence-and-data" },
-    { name: "Algorithmic Trading (Executive)", href: "/programs/algorithmic-trading" },
-    { name: "Multi-Asset Risk & Hedging", href: "/programs/risk-and-portfolio-hedging" },
+    { name: "Sprout Literacy (Kids 9–11)", href: "/programs/sprout-literacy" },
+    { name: "Bloom Literacy (Kids 11–14)", href: "/programs/bloom-literacy" },
+    { name: "Harvest Literacy (Adults 18+)", href: "/programs/harvest-literacy" },
+    { name: "All Programmes Catalogue", href: "/programs" },
   ];
 
   const quickLinks = [
     { name: "All Programmes", href: "/programs" },
     { name: "About Derivion", href: "/about" },
-    { name: "Contact & Counseling", href: "/contact" },
-    { name: "Our Alumni", href: "/#alumni" },
-    { name: "Derivion Masters", href: "/#masters" },
+    { name: "Contact & Admissions", href: "/contact" },
+    { name: "Core Learning Pillars", href: "/#pillars" },
+    { name: "Curricular Disciplines", href: "/#disciplines" },
     { name: "Why Derivion", href: "/#why-us" },
-    { name: "Placements Report", href: "/#placements" },
   ];
 
   const socialLinks = [
@@ -70,58 +67,58 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto space-y-12">
 
         {/* ─── Top Callout CTA Card ─── */}
-        <div className="bg-gradient-to-r from-[#141414] via-[#141414] to-[#141414]/80 border border-[#141414]/80 rounded-3xl p-6 sm:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-2xl">
+        {/* <div className="bg-gradient-to-r from-[#141414] via-[#141414] to-[#141414]/80 border border-[#141414]/80 rounded-3xl p-6 sm:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-2xl">
           <div className="space-y-2 max-w-2xl">
             <h3
               className="text-2xl sm:text-3xl tracking-tight text-white"
               style={{ fontFamily: "var(--font-serif)" }}
             >
-              Ready to accelerate your career in{" "}
-              <span className="italic font-normal text-[#ED1654]">markets &amp; leadership</span>?
+              Build safe financial instincts &amp;{" "}
+              <span className="italic font-normal text-[#ED1654]">real market capability</span>
             </h3>
             <p className="text-[#737373] text-xs sm:text-sm font-normal">
-              Join our upcoming cohort and learn directly from top practitioners and founders.
+              Explore Derivion&apos;s practitioner-crafted curricula for young minds, teenagers, and adult decision-makers.
             </p>
           </div>
 
           <div className="flex items-center gap-3 w-full sm:w-auto">
             <Link
-              href="/contact"
+              href="/programs"
               className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#ED1654] hover:bg-[#d6124b] text-white text-xs sm:text-sm font-semibold transition-all duration-200 shadow-lg active:scale-95"
             >
-              <span>Apply Now</span>
+              <span>Explore Programmes</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-        </div>
+        </div> */}
 
         {/* ─── Main Footer Content Grid ─── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-8 pt-4">
 
           {/* Brand Info (Col 1) */}
           <div className="sm:col-span-2 md:col-span-4 space-y-4">
-            <Link href="/" className="inline-flex items-center gap-3">
+            <Link href="/" className="inline-flex items-center gap-3 w-fit">
               <Image
                 src="/footer/derivion-logo.png"
                 alt="Derivion Logo"
-                width={140}
-                height={50}
-                className="h-10 w-auto object-contain"
+                width={360}
+                height={150}
+                className="w-[170px] sm:w-[70px] md:w-[100px] lg:w-[160px] h-auto object-contain drop-shadow-[0_0_14px_rgba(237,22,84,0.2)]"
               />
             </Link>
 
-            <p className="text-[#737373] text-xs sm:text-sm leading-relaxed max-w-sm">
-              An AI-first, practitioner-led institute empowering the next generation of traders, risk managers, and market leaders.
+            <p className="text-white text-xs sm:text-sm leading-relaxed max-w-sm">
+              Derivion is a forward-looking educational institute empowering learners across financial literacy, digital systems, AI awareness, and risk intelligence.
             </p>
 
             {/* Quick Stats Pill */}
             <div className="flex items-center gap-4 py-2 text-xs font-semibold text-[#D9D9D9]">
               <div>
-                <span className="text-[#A8FF24] font-bold">2.8X</span> Avg CTC Jump
+                <span className="text-[#A8FF24] font-bold">3</span> Targeted Programmes
               </div>
               <div className="w-1 h-1 rounded-full bg-[#141414]" />
               <div>
-                <span className="text-[#A8FF24] font-bold">500+</span> Partners
+                <span className="text-[#A8FF24] font-bold">5</span> Core Literacies
               </div>
             </div>
 
@@ -136,7 +133,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={item.name}
-                    className="w-9 h-9 rounded-full bg-[#141414] border border-[#141414] hover:border-[#737373] hover:bg-[#141414] text-[#737373] hover:text-white flex items-center justify-center transition-colors"
+                    className="w-9 h-9 rounded-full bg-[#141414] border border-[#141414] hover:border-[#737373] hover:bg-[#141414] text-white hover:text-white flex items-center justify-center transition-colors"
                   >
                     <IconComponent className="w-4 h-4" />
                   </a>
@@ -155,7 +152,7 @@ export default function Footer() {
                 <li key={idx}>
                   <Link
                     href={link.href}
-                    className="text-xs sm:text-sm text-[#737373] hover:text-white transition-colors"
+                    className="text-xs sm:text-sm text-#fff hover:text-white transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -174,7 +171,7 @@ export default function Footer() {
                 <li key={idx}>
                   <Link
                     href={prog.href}
-                    className="text-xs sm:text-sm text-[#737373] hover:text-white transition-colors block line-clamp-1"
+                    className="text-xs sm:text-sm text-#fff hover:text-white transition-colors block line-clamp-1"
                   >
                     {prog.name}
                   </Link>
@@ -188,22 +185,30 @@ export default function Footer() {
             <h4 className="text-xs font-bold uppercase tracking-wider text-[#D9D9D9]">
               Get in Touch
             </h4>
-            <ul className="space-y-3 text-xs sm:text-sm text-[#737373]">
+            <ul className="space-y-3 text-xs sm:text-sm text-#fff">
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[#ED1654] shrink-0 mt-0.5" />
-                <span>Derivion Campus, Institutional Area, Sector 44, Gurugram</span>
+                <span>Plot No 42, Phase IV, Sector 18, Gurugram, Sarhol, Haryana 122015</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-[#ED1654] shrink-0" />
-                <a href="mailto:admissions@derivion.edu" className="hover:text-white transition-colors">
-                  admissions@derivion.edu
+                <a href="mailto:info@derivion.in" className="hover:text-white transition-colors">
+                  info@derivion.in
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[#ED1654] shrink-0" />
-                <a href="tel:+911244567890" className="hover:text-white transition-colors">
-                  +91 (0) 124 456 7890
+                <a href="tel:+917056057913" className="hover:text-white transition-colors">
+                  +91 70560 57913
                 </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-[#ED1654] shrink-0 mt-0.5" />
+                <span>Office 3A:1, Rathbone House, Dexter House, Croydon CR0 1BT, United Kingdom</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Clock className="w-4 h-4 text-[#ED1654] shrink-0" />
+                <span>Mon-Fri: 10:30am-6:30pm</span>
               </li>
             </ul>
           </div>
@@ -212,17 +217,14 @@ export default function Footer() {
 
         {/* ─── Bottom Sub-Footer ─── */}
         <div className="pt-8 border-t border-[#141414] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#737373]">
-          <p>&copy; {new Date().getFullYear()} Derivion Institute. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Derivion. All rights reserved.</p>
 
           <div className="flex items-center gap-6">
-            <Link href="/about" className="hover:text-[#D9D9D9] transition-colors">
+            <Link href="/privacy-policy" className="hover:text-[#D9D9D9] transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/about" className="hover:text-[#D9D9D9] transition-colors">
+            <Link href="/terms-of-service" className="hover:text-[#D9D9D9] transition-colors">
               Terms of Service
-            </Link>
-            <Link href="/contact" className="hover:text-[#D9D9D9] transition-colors">
-              Cookie Settings
             </Link>
           </div>
         </div>

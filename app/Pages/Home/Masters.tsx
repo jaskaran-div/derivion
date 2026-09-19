@@ -7,41 +7,37 @@ import { ChevronLeft, ChevronRight, Play } from "lucide-react";
 export default function Masters() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  const avatars = [
-    "/avatars/avatar1.jpg",
-    "/avatars/avatar2.jpg",
-    "/avatars/avatar3.jpg",
-    "/avatars/avatar4.jpg",
-    "/avatars/avatar5.jpg",
-  ];
-
   const cards = [
     {
       id: 1,
-      title: "STRATEGIC HR MANAGEMENT",
-      instructor: "Ananya Sharma",
-      role: "Ex-Director, Global People Ops",
+      name: "Mentor 01",
+      title: "Financial Intelligence Mentor",
+      specialty: "Capital discipline, budgeting, and market behaviour",
+      description: "Guides learners to understand spending, saving, and decision-making through real-world financial reasoning.",
       image: "/Home/hero-section.jpg",
     },
     {
       id: 2,
-      title: "MASTER THE ART OF DECISION MAKING",
-      instructor: "Dr. Rajesh Verma",
-      role: "Visiting Faculty & Market Strategist",
+      name: "Mentor 02",
+      title: "Digital Finance Mentor",
+      specialty: "Payments, fraud awareness, and digital spending habits",
+      description: "Helps students build healthy digital habits, recognise financial traps, and use tools responsibly.",
       image: "/Home/hero-section.jpg",
     },
     {
       id: 3,
-      title: "BUSINESS TRANSFORMATION IN THE DIGITAL ERA",
-      instructor: "Vikram Malhotra",
-      role: "Managing Partner & Quant Founder",
+      name: "Mentor 03",
+      title: "AI & Risk Mentor",
+      specialty: "Verification, synthetic media, and algorithmic trust",
+      description: "Teaches learners how to question digital content, identify manipulation, and think critically in AI-driven environments.",
       image: "/Home/hero-section.jpg",
     },
     {
       id: 4,
-      title: "FINANCIAL MODELLING & VALUATION",
-      instructor: "Priya Nair",
-      role: "Head of Derivatives Trading",
+      name: "Mentor 04",
+      title: "Cyber & Legal Mentor",
+      specialty: "Online safety, redressal, and digital rights",
+      description: "Equips students with practical knowledge around privacy, cyber hygiene, and taking the right actions when issues arise.",
       image: "/Home/hero-section.jpg",
     },
   ];
@@ -57,16 +53,16 @@ export default function Masters() {
   };
 
   return (
-    <section id="masters" className="w-full bg-white text-[#000000] py-12 sm:py-16 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
+    <section id="disciplines" className="w-full bg-white text-[#000000] py-12 sm:py-16 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
 
-          {/* ─── Left Sidebar: Stacked Avatars, Heading, Bio & Navigation ─── */}
+          {/* ─── Left Sidebar: Heading, Bio & Navigation ─── */}
           <div className="lg:col-span-5 space-y-4 sm:space-y-6">
 
             {/* Section Tag */}
             <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
-              World-Class Faculty
+              Our Mentors
             </span>
 
             {/* Heading */}
@@ -74,17 +70,13 @@ export default function Masters() {
               className="text-3xl sm:text-4xl lg:text-5xl tracking-tight text-[#000000] leading-[1.15]"
               style={{ fontFamily: "var(--font-serif)" }}
             >
-              Built by Scholars, Led by Industry{" "}
-              <span className="italic font-normal text-[#ED1654]">
-                Practitioners
-              </span>
+              Real guidance from mentors who train minds for a
+              <span className="italic font-normal text-[#ED1654]"> smarter tomorrow</span>
             </h2>
 
             {/* Sub-text */}
             <p className="text-[#737373] text-xs sm:text-sm md:text-base leading-relaxed font-normal max-w-lg">
-              At Derivion, your classroom is powered by Ivy League academics and
-              global business leaders, from Harvard to McKinsey, from Wharton to
-              Google. Our Masters don&apos;t just teach the playbook. They wrote it.
+              Our mentors bring together practical experience in finance, digital systems, AI literacy, and cyber awareness, helping learners build confidence, critical thinking, and responsible decision-making.
             </p>
 
             {/* Carousel Navigation Buttons */}
@@ -117,7 +109,7 @@ export default function Masters() {
                   key={card.id}
                   className="relative w-[75vw] max-w-[270px] sm:w-[280px] h-[380px] sm:h-[440px] rounded-2xl overflow-hidden shrink-0 snap-start shadow-xl border border-[#D9D9D9]/80 group flex flex-col justify-between p-5 sm:p-6 bg-[#141414]"
                 >
-                  {/* Instructor Background Image */}
+                  {/* Background Image */}
                   <div className="absolute inset-0 z-0">
                     <Image
                       src={card.image}
@@ -126,33 +118,33 @@ export default function Masters() {
                       className="object-cover object-center group-hover:scale-105 transition-transform duration-500 opacity-60"
                     />
                     {/* Gradient overlay for legibility */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/70" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/70" />
                   </div>
 
-                  {/* Top Header/Topic Title */}
+                  {/* Top Header/Profile Title */}
                   <div className="relative z-10 space-y-2">
                     <div className="text-[10px] uppercase font-bold tracking-widest text-[#ED1654]">
-                      Derivion Masters
+                      {card.name}
                     </div>
-                    <h3 className="text-lg sm:text-2xl font-black tracking-tight text-white uppercase leading-tight">
+                    <h3 className="text-lg sm:text-2xl font-black tracking-tight text-white leading-tight">
                       {card.title}
                     </h3>
                   </div>
 
-                  {/* Bottom Instructor Name & Play Trigger */}
-                  <div className="relative z-10 flex items-center justify-between pt-4 border-t border-white/20">
-                    <div className="space-y-0.5">
+                  {/* Bottom Mentor Info & Play Trigger */}
+                  <div className="relative z-10 flex items-start justify-between gap-3 pt-4 border-t border-white/20">
+                    <div className="space-y-1 min-w-0">
                       <span className="text-xs sm:text-sm font-semibold text-white block">
-                        {card.instructor}
+                        {card.specialty}
                       </span>
-                      <span className="text-[10px] text-[#D9D9D9] block">
-                        {card.role}
+                      <span className="text-[10px] text-[#D9D9D9] block leading-relaxed break-words">
+                        {card.description}
                       </span>
                     </div>
 
-                    <button className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/40 flex items-center justify-center text-white shadow-lg group-hover:scale-110 group-hover:bg-[#ED1654] group-hover:border-[#ED1654] transition-all duration-300 shrink-0 ml-2">
+                    <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/40 flex items-center justify-center text-white shadow-lg group-hover:scale-110 group-hover:bg-[#ED1654] group-hover:border-[#ED1654] transition-all duration-300 shrink-0 mt-1">
                       <Play className="w-4 h-4 fill-current ml-0.5" />
-                    </button>
+                    </div>
                   </div>
                 </div>
               ))}

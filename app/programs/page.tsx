@@ -9,7 +9,7 @@ import {
   GraduationCap,
   Clock,
   Building2,
-  Hourglass,
+  ShieldCheck,
   Sparkles,
 } from "lucide-react";
 import Navbar from "@/app/components/Navbar";
@@ -20,14 +20,7 @@ export default function ProgrammesDirectoryPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [searchQuery, setSearchQuery] = useState<string>("");
 
-  const categories = [
-    "All",
-    "Undergraduate",
-    "Postgraduate",
-    "Executive",
-    "Family Business",
-    "Immersions",
-  ];
+  const categories = ["All", "Kids", "Adults"];
 
   const filteredProgrammes = PROGRAMMES.filter((prog) => {
     const matchesCategory =
@@ -35,6 +28,7 @@ export default function ProgrammesDirectoryPage() {
     const matchesQuery =
       prog.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       prog.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      prog.targetAge.toLowerCase().includes(searchQuery.toLowerCase()) ||
       prog.curriculum.some((c) =>
         c.topics.some((t) => t.toLowerCase().includes(searchQuery.toLowerCase()))
       );
@@ -51,20 +45,20 @@ export default function ProgrammesDirectoryPage() {
           <div className="max-w-3xl space-y-4">
             <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#ED1654]">
               <Sparkles className="w-4 h-4 text-[#ED1654]" />
-              <span>Academic Catalogue</span>
+              <span>Derivion Academic Catalogue</span>
             </div>
 
             <h1
               className="text-3xl sm:text-5xl md:text-6xl font-semibold tracking-tight leading-[1.1] text-[#000000]"
               style={{ fontFamily: "var(--font-serif)" }}
             >
-              Curated for Modern{" "}
-              <span className="italic font-normal text-[#ED1654]">Markets</span> &amp;{" "}
-              <span className="italic font-normal text-[#000000]">Venture</span>
+              Curated for Every Stage of{" "}
+              <span className="italic font-normal text-[#ED1654]">Financial &amp; Digital</span>{" "}
+              <span className="italic font-normal text-[#000000]">Capability</span>
             </h1>
 
             <p className="text-sm sm:text-base md:text-lg text-[#737373] leading-relaxed">
-              Explore Derivion&apos;s practitioner-led study programmes spanning undergraduate, postgraduate, executive masterclasses, and global market floor immersions.
+              Explore Derivion&apos;s practitioner-crafted programmes designed to build safe instincts, screen hygiene, AI verification, and financial defence across youth and adulthood.
             </p>
           </div>
 
@@ -79,7 +73,7 @@ export default function ProgrammesDirectoryPage() {
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search by topic, keyword, or asset class..."
+                  placeholder="Search by topic, keyword, or age group..."
                   className="w-full pl-11 pr-4 py-3 rounded-full bg-[#D9D9D9]/20 border border-[#D9D9D9] text-xs sm:text-sm text-[#000000] placeholder-[#737373] focus:outline-none focus:border-[#ED1654] transition-colors"
                 />
               </div>
@@ -158,6 +152,15 @@ export default function ProgrammesDirectoryPage() {
 
                     {/* Content */}
                     <div className="p-6 space-y-3">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-mono text-[#ED1654]">
+                          Target: {programme.targetAge}
+                        </span>
+                        <span className="text-[10px] text-[#A8FF24] font-semibold uppercase tracking-wider bg-[#141414] px-2 py-0.5 rounded border border-[#A8FF24]/20">
+                          {programme.coreReflex}
+                        </span>
+                      </div>
+
                       <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight leading-snug group-hover:text-[#ED1654] transition-colors">
                         {programme.title}
                       </h3>
@@ -177,11 +180,11 @@ export default function ProgrammesDirectoryPage() {
                         </div>
                         <div className="flex items-center gap-2 text-xs text-[#D9D9D9]">
                           <GraduationCap className="w-3.5 h-3.5 text-[#ED1654] shrink-0" />
-                          <span className="truncate">{programme.eligibility}</span>
+                          <span className="truncate">{programme.targetAge}</span>
                         </div>
                         <div className="flex items-center gap-2 text-xs text-[#A8FF24]">
-                          <Hourglass className="w-3.5 h-3.5 shrink-0" />
-                          <span className="truncate">{programme.deadline}</span>
+                          <ShieldCheck className="w-3.5 h-3.5 shrink-0" />
+                          <span className="truncate">{programme.coreReflex}</span>
                         </div>
                       </div>
                     </div>
