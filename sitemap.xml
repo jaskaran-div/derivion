@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="https://www.xml-sitemaps.com/css/sitemap.css"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+       <loc>https://www.derivion.in/</loc>
+       <lastmod>2026-09-23T10:39:28+00:00</lastmod>
+       <priority>1.0000</priority>
+  </url>
+  <url>
+       <loc>https://www.derivion.in/programs</loc>
+       <lastmod>2026-09-23T10:39:28+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.derivion.in/programs/sprout-literacy</loc>
+       <lastmod>2026-09-23T10:39:28+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.derivion.in/programs/bloom-literacy</loc>
+       <lastmod>2026-09-23T10:39:28+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.derivion.in/programs/harvest-literacy</loc>
+       <lastmod>2026-09-23T10:39:28+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.derivion.in/about</loc>
+       <lastmod>2026-09-23T10:39:28+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.derivion.in/contact</loc>
+       <lastmod>2026-09-23T10:39:28+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.derivion.in/privacy-policy</loc>
+       <lastmod>2026-09-23T10:39:28+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.derivion.in/terms-of-service</loc>
+       <lastmod>2026-09-23T10:39:28+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.derivion.in/contact?programme=sprout-literacy</loc>
+       <lastmod>2026-09-23T10:39:28+00:00</lastmod>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://www.derivion.in/contact?programme=bloom-literacy</loc>
+       <lastmod>2026-09-23T10:39:28+00:00</lastmod>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://www.derivion.in/contact?programme=harvest-literacy</loc>
+       <lastmod>2026-09-23T10:39:28+00:00</lastmod>
+       <priority>0.6400</priority>
+  </url>
+</urlset>
