@@ -83,7 +83,7 @@ function ContactFormInner() {
           Book a Programme{" "}
           <span className="italic font-normal text-[#ED1654]">Orientation</span>
         </h3>
-        <p className="text-xs sm:text-sm text-[#737373]">
+        <p className="text-xs sm:text-sm text-white/75">
           Connect with a Derivion curriculum advisor to discuss learning outcomes, cohorts, and schedules.
         </p>
       </div>
@@ -263,7 +263,7 @@ function ContactFormInner() {
             )}
           </button>
 
-          <p className="text-[11px] text-center text-[#737373]">
+          <p className="text-[11px] text-center text-white/70">
             We respect your privacy. All consultations are completely confidential.
           </p>
         </form>
@@ -430,7 +430,7 @@ export default function ContactPage() {
                 School Partnerships
               </span>
               <h4 className="text-lg font-bold text-white">Youth Cohorts &amp; Schools</h4>
-              <p className="text-xs text-[#737373] leading-relaxed">
+              <p className="text-xs text-white/75 leading-relaxed">
                 Connect with our academic team to introduce Sprout (9–11) or Bloom (11–14) literacy programmes to your student community.
               </p>
               <a
@@ -447,7 +447,7 @@ export default function ContactPage() {
                 Corporate &amp; Group
               </span>
               <h4 className="text-lg font-bold text-white">Harvest Adult Workshops</h4>
-              <p className="text-xs text-[#737373] leading-relaxed">
+              <p className="text-xs text-white/75 leading-relaxed">
                 Organise dedicated Harvest Literacy masterclasses for employees, alumni groups, or professional associations.
               </p>
               <a
@@ -464,7 +464,7 @@ export default function ContactPage() {
                 General Correspondence
               </span>
               <h4 className="text-lg font-bold text-white">Institutional Desk</h4>
-              <p className="text-xs text-[#737373] leading-relaxed">
+              <p className="text-xs text-white/75 leading-relaxed">
                 For research queries, curriculum documentation, and official administrative communication with Derivion.
               </p>
               <a

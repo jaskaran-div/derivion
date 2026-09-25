@@ -17,7 +17,7 @@ export default function OurAlumni() {
       batch: "Batch of 2025",
       photo: "/Home/sudhanshu%20(2).png",
       quote:
-        '“I had the maths and an MBA, but never a real trading desk. This programme gave me that live platforms, real practitioners, actual trading decisions. In interviews, recruiters finally saw a market professional, not just another graduate and it helped me land a job in finance.”',
+        '“I already had a strong academic base, but Derivion changed the difference between knowing theory and acting with discipline. The programme helped me connect market logic, risk awareness, and practical decision-making in a way that became immediately valuable in interviews and my finance role.”',
     },
     {
       name: "Nishant Dagar",
@@ -27,7 +27,7 @@ export default function OurAlumni() {
       batch: "Batch of 2024",
       photo: "/Home/nishant%20(2).png",
       quote:
-        '“Spending eight weeks with ISFT, talking through trades and pushing through the tougher sessions everyday, changed the way I approached the markets and that change showed in my portfolio. I later presented the same portfolio as my track record during an interview and my current manager said it was my USP.”',
+        '“The real shift was in my thinking. I stopped treating markets like theory and started approaching them with structure, risk control, and verification. That mindset sharpened my portfolio decisions and gave me a stronger story in front of hiring managers.”',
     },
     {
       name: "Aaryan Chakraborty",
@@ -37,7 +37,7 @@ export default function OurAlumni() {
       batch: "Batch of 2024",
       photo: "/Home/aaryan.png",
       quote:
-        '“ISFT provided me with the necessary knowledge, skills and mentorship to begin my journey as a professional trader.”',
+        '“Derivion gave me the clarity and practical framework I needed to move from curiosity to confidence. The combination of structured learning, market context, and mentor guidance helped me build a much sharper foundation for my career path.”',
     },
   ];
 
@@ -66,8 +66,9 @@ export default function OurAlumni() {
                 Strong <span className="font-semibold italic">Alumni</span> base
               </h2>
             </div>
-            <p className="text-[#737373] text-xs sm:text-sm md:text-base leading-relaxed font-normal">
-              Our alumni are entrepreneurs who have raised capital, leaders working with Founders directly in fast growing startups, and quantitative analysts managing institutional capital.
+            <p className="text-[#111111] text-xs sm:text-sm md:text-base leading-relaxed font-normal">
+              Derivion is building a growing network of market professionals, analysts, and traders who have taken their learning into real-world environments. From financial institutions to funded trading firms, our alumni carry forward the discipline, market insight, and practical thinking developed throughout their Derivion journey.
+
             </p>
 
             <Link

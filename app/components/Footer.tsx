@@ -152,7 +152,7 @@ export default function Footer() {
                 <li key={idx}>
                   <Link
                     href={link.href}
-                    className="text-xs sm:text-sm text-#fff hover:text-white transition-colors"
+                    className="text-xs sm:text-sm text-white hover:text-white transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -171,7 +171,7 @@ export default function Footer() {
                 <li key={idx}>
                   <Link
                     href={prog.href}
-                    className="text-xs sm:text-sm text-#fff hover:text-white transition-colors block line-clamp-1"
+                    className="text-xs sm:text-sm text-white hover:text-white transition-colors block line-clamp-1"
                   >
                     {prog.name}
                   </Link>
@@ -185,7 +185,7 @@ export default function Footer() {
             <h4 className="text-xs font-bold uppercase tracking-wider text-[#D9D9D9]">
               Get in Touch
             </h4>
-            <ul className="space-y-3 text-xs sm:text-sm text-#fff">
+            <ul className="space-y-3 text-xs sm:text-sm text-white">
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[#ED1654] shrink-0 mt-0.5" />
                 <span>Plot No 42, Phase IV, Sector 18, Gurugram, Sarhol, Haryana 122015</span>
@@ -216,7 +216,7 @@ export default function Footer() {
         </div>
 
         {/* ─── Bottom Sub-Footer ─── */}
-        <div className="pt-8 border-t border-[#141414] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#737373]">
+        <div className="pt-8 border-t border-[#141414] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/70">
           <p>&copy; {new Date().getFullYear()} Derivion. All rights reserved.</p>
 
           <div className="flex items-center gap-6">

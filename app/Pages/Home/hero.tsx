@@ -44,7 +44,7 @@ export default function Hero() {
             {/* ─── Bottom Content Row: Title Left + Stats Right ─── */}
             <div className="mt-8 sm:mt-12 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
                 {/* Left Heading */}
-                <div className="lg:col-span-7 space-y-2">
+                <div className="lg:col-span-7 space-y-4">
                     <h1
                         className="text-3xl sm:text-5xl md:text-6xl font-semibold text-[#000000] tracking-tight leading-[1.1]"
                         style={{ fontFamily: "var(--font-sans)" }}
@@ -53,26 +53,27 @@ export default function Hero() {
                         Igniting Change at <br className="hidden sm:inline" />
                         <span className="text-[#000000]">Derivion</span>
                     </h1>
+                    <p className="max-w-2xl text-sm sm:text-base leading-relaxed text-[#111111] font-medium">
+                        Real-world competence in modern markets isn&apos;t built through passive memorisation; it is measured by the clarity of your instincts, your habit of independent verification, and the reflexes you deploy when risk emerges.
+                    </p>
                 </div>
 
                 {/* Right Stats: Overlapping Circles */}
                 <div className="lg:col-span-5 flex items-center justify-center lg:justify-end -space-x-3 sm:-space-x-4 py-2">
-                    {/* Stat Circle 1 */}
                     <div className="w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full border border-[#D9D9D9] bg-white/90 backdrop-blur-sm flex flex-col items-center justify-center text-center p-3 shrink-0 shadow-sm hover:z-10 transition-transform duration-300 hover:scale-105">
                         <span className="text-xl sm:text-3xl font-bold text-[#ED1654]">
                             100%
                         </span>
-                        <span className="text-[10px] sm:text-xs text-[#737373] font-medium mt-0.5 sm:mt-1 leading-tight max-w-[70px] sm:max-w-[80px]">
+                        <span className="text-[10px] sm:text-xs text-[#111111] font-medium mt-0.5 sm:mt-1 leading-tight max-w-[70px] sm:max-w-[80px]">
                             Practitioner Focus
                         </span>
                     </div>
 
-                    {/* Stat Circle 2 */}
                     <div className="w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full border border-[#D9D9D9] bg-white/90 backdrop-blur-sm flex flex-col items-center justify-center text-center p-3 shrink-0 shadow-sm hover:z-10 transition-transform duration-300 hover:scale-105">
                         <span className="text-xl sm:text-3xl font-bold text-[#000000]">
-                            3
+                            12+
                         </span>
-                        <span className="text-[10px] sm:text-xs text-[#737373] font-medium mt-0.5 sm:mt-1 leading-tight max-w-[70px] sm:max-w-[80px]">
+                        <span className="text-[10px] sm:text-xs text-[#111111] font-medium mt-0.5 sm:mt-1 leading-tight max-w-[70px] sm:max-w-[80px]">
                             Core Programmes
                         </span>
                     </div>

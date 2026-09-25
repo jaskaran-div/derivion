@@ -26,6 +26,43 @@ export default function Navbar() {
         { name: "Harvest Literacy (Adult Learners 18+)", href: "/programs/harvest-literacy" },
       ],
     },
+    {
+      category: "OCN London",
+      subItems: [
+        {
+          name: "ISFT Award in Applied Financial Markets Trading",
+          href: "/programs/isft-award-in-applied-financial-markets-trading",
+        },
+        {
+          name: "ISFT Award in Introduction to Financial Markets",
+          href: "/programs/isft-award-in-introduction-to-financial-markets",
+        },
+        {
+          name: "ISFT Award in Introduction to Financial Trading",
+          href: "/programs/isft-award-in-introduction-to-financial-trading",
+        },
+        {
+          name: "ISFT Award in Introduction to Futures Trading",
+          href: "/programs/isft-award-in-introduction-to-futures-trading",
+        },
+        {
+          name: "ISFT Award in Introduction to Risk Management",
+          href: "/programs/isft-award-in-introduction-to-risk-management",
+        },
+        {
+          name: "ISFT Award in Introduction to Trading Government Bonds",
+          href: "/programs/isft-award-in-introduction-to-trading-government-bonds",
+        },
+        {
+          name: "ISFT Certificate in Introduction to Technical Analysis in Trading",
+          href: "/programs/isft-certificate-in-introduction-to-technical-analysis-in-trading",
+        },
+        {
+          name: "ISFT Award in Introduction to Behavioural Psychology in Trading",
+          href: "/programs/isft-award-in-introduction-to-behavioural-psychology-in-trading",
+        },
+      ],
+    },
   ];
 
   const isHomeActive = pathname === "/";
@@ -38,14 +75,14 @@ export default function Navbar() {
       <nav className="flex items-center justify-between gap-4">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-2.5 z-20 hover:opacity-90 transition-opacity">
-          <Image
-            src="/Home/derivion.png"
-            alt="Derivion Logo"
-            width={60}
-            height={60}
-            className="h-5 sm:h-6 w-auto object-cover"
-            priority
-          />
+            <Image
+              src="/Home/derivion-logo.png"
+              alt="Derivion Logo"
+              width={60}
+              height={60}
+              className="h-10 sm:h-12 w-auto object-contain"
+              priority
+            />
         </Link>
 
         {/* Center Pill Navigation Menu (Desktop) */}
@@ -53,10 +90,11 @@ export default function Navbar() {
           {/* Home Link */}
           <Link
             href="/"
-            className={`px-5 py-2 text-xs sm:text-sm font-medium rounded-full transition-all duration-200 ${isHomeActive
-              ? "bg-[#000000] text-white shadow-md"
-              : "text-[#737373] hover:text-[#000000] hover:bg-[#D9D9D9]/50"
-              }`}
+            className={`px-5 py-2 text-xs sm:text-sm font-medium rounded-full transition-all duration-200 ${
+              isHomeActive
+                ? "bg-[#000000] text-white shadow-md"
+                : "text-[#737373] hover:text-[#000000] hover:bg-[#D9D9D9]/50"
+            }`}
           >
             Home
           </Link>
@@ -65,10 +103,11 @@ export default function Navbar() {
           <div className="relative group">
             <Link
               href="/programs"
-              className={`flex items-center gap-1.5 px-5 py-2 text-xs sm:text-sm font-medium rounded-full transition-all duration-200 ${isProgrammesActive
-                ? "bg-[#000000] text-white shadow-md"
-                : "text-[#737373] hover:text-[#000000] hover:bg-[#D9D9D9]/50"
-                }`}
+              className={`flex items-center gap-1.5 px-5 py-2 text-xs sm:text-sm font-medium rounded-full transition-all duration-200 ${
+                isProgrammesActive
+                  ? "bg-[#000000] text-white shadow-md"
+                  : "text-[#737373] hover:text-[#000000] hover:bg-[#D9D9D9]/50"
+              }`}
             >
               <span>Programmes</span>
               <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" />
@@ -120,10 +159,11 @@ export default function Navbar() {
           {/* About Us Link */}
           <Link
             href="/about"
-            className={`px-5 py-2 text-xs sm:text-sm font-medium rounded-full transition-all duration-200 ${isAboutActive
-              ? "bg-[#000000] text-white shadow-md"
-              : "text-[#737373] hover:text-[#000000] hover:bg-[#D9D9D9]/50"
-              }`}
+            className={`px-5 py-2 text-xs sm:text-sm font-medium rounded-full transition-all duration-200 ${
+              isAboutActive
+                ? "bg-[#000000] text-white shadow-md"
+                : "text-[#737373] hover:text-[#000000] hover:bg-[#D9D9D9]/50"
+            }`}
           >
             About Us
           </Link>
@@ -133,10 +173,11 @@ export default function Navbar() {
         <div className="hidden sm:flex items-center z-20">
           <Link
             href="/contact"
-            className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 shadow-sm active:scale-95 ${isContactActive
-              ? "bg-[#ED1654] text-white"
-              : "bg-[#000000] hover:bg-[#141414] text-white"
-              }`}
+            className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 shadow-sm active:scale-95 ${
+              isContactActive
+                ? "bg-[#ED1654] text-white"
+                : "bg-[#000000] hover:bg-[#141414] text-white"
+            }`}
           >
             <User className="w-4 h-4 text-[#D9D9D9]" />
             <span>Contact us</span>
@@ -160,8 +201,9 @@ export default function Navbar() {
           <Link
             href="/"
             onClick={() => setMobileMenuOpen(false)}
-            className={`block w-full text-left px-4 py-2.5 text-sm font-medium rounded-xl transition-colors ${isHomeActive ? "bg-[#000000] text-white" : "text-[#737373] hover:bg-[#D9D9D9]/60"
-              }`}
+            className={`block w-full text-left px-4 py-2.5 text-sm font-medium rounded-xl transition-colors ${
+              isHomeActive ? "bg-[#000000] text-white" : "text-[#737373] hover:bg-[#D9D9D9]/60"
+            }`}
           >
             Home
           </Link>
@@ -189,8 +231,9 @@ export default function Navbar() {
                 >
                   <span>{cat.category}</span>
                   <ChevronDown
-                    className={`w-4 h-4 text-[#737373] transition-transform ${mobileCategoryOpen === cat.category ? "rotate-180" : ""
-                      }`}
+                    className={`w-4 h-4 text-[#737373] transition-transform ${
+                      mobileCategoryOpen === cat.category ? "rotate-180" : ""
+                    }`}
                   />
                 </button>
 
@@ -217,8 +260,9 @@ export default function Navbar() {
           <Link
             href="/about"
             onClick={() => setMobileMenuOpen(false)}
-            className={`block w-full text-left px-4 py-2.5 text-sm font-medium rounded-xl transition-colors ${isAboutActive ? "bg-[#000000] text-white" : "text-[#737373] hover:bg-[#D9D9D9]/60"
-              }`}
+            className={`block w-full text-left px-4 py-2.5 text-sm font-medium rounded-xl transition-colors ${
+              isAboutActive ? "bg-[#000000] text-white" : "text-[#737373] hover:bg-[#D9D9D9]/60"
+            }`}
           >
             About Us
           </Link>

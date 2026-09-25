@@ -115,7 +115,7 @@ export default function Masters() {
               {cards.map((card) => (
                 <div
                   key={card.id}
-                  className="relative w-[75vw] max-w-[270px] sm:w-[280px] h-[380px] sm:h-[440px] rounded-2xl overflow-hidden shrink-0 snap-start shadow-xl border border-[#D9D9D9]/80 group flex flex-col justify-between p-5 sm:p-6 bg-[#141414]"
+                  className="relative w-[80vw] max-w-[300px] sm:w-[320px] h-[380px] sm:h-[440px] rounded-2xl overflow-hidden shrink-0 snap-start shadow-xl border border-[#D9D9D9]/80 group flex flex-col justify-between p-5 sm:p-6 bg-[#141414]"
                 >
                   {/* Background Image */}
                   <div className="absolute inset-0 z-0">
@@ -123,37 +123,19 @@ export default function Masters() {
                       src={card.image}
                       alt={card.title}
                       fill
-                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500 opacity-60"
+                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500 opacity-100"
                     />
-                    {/* Gradient overlay for legibility */}
-                    {/* <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/70" /> */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
                   </div>
 
-                  {/* Top Header/Profile Title */}
-                  <div className="relative z-10 space-y-2">
-                    <div className="text-[10px] uppercase font-bold tracking-widest text-[#ED1654]">
+                  <div className="relative z-10 mt-auto flex flex-col gap-2 rounded-2xl bg-black/25 backdrop-blur-[1px] p-3 border border-white/10">
+                    <div className="text-[10px] uppercase font-bold tracking-widest text-[#A8FF24] drop-shadow-sm">
                       {card.name}
                     </div>
-                    <h3 className="text-lg sm:text-2xl font-black tracking-tight text-white leading-tight">
+                    <h3 className="text-lg sm:text-2xl font-black tracking-tight text-white leading-tight drop-shadow-sm">
                       {card.title}
                     </h3>
                   </div>
-
-                  {/* Bottom Mentor Info & Play Trigger */}
-                  {/* <div className="relative z-10 flex items-start justify-between gap-3 pt-4 border-t border-white/20">
-                    <div className="space-y-1 min-w-0">
-                      <span className="text-xs sm:text-sm font-semibold text-white block">
-                        {card.specialty}
-                      </span>
-                      <span className="text-[10px] text-[#D9D9D9] block leading-relaxed break-words">
-                        {card.description}
-                      </span>
-                    </div>
-
-                    <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/40 flex items-center justify-center text-white shadow-lg group-hover:scale-110 group-hover:bg-[#ED1654] group-hover:border-[#ED1654] transition-all duration-300 shrink-0 mt-1">
-                      <Play className="w-4 h-4 fill-current ml-0.5" />
-                    </div>
-                  </div> */}
                 </div>
               ))}
             </div>

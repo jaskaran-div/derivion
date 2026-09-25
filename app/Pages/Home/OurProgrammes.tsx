@@ -18,7 +18,7 @@ export default function OurProgrammes() {
   const [activeCategory, setActiveCategory] = useState("All");
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  const categories = ["All", "Young Learners", "Adult Learners"];
+  const categories = ["All", "Young Learners", "Adult Learners", "OCN London"];
 
   // Filter programmes based on active category selection
   const filteredProgrammes =
@@ -77,7 +77,7 @@ export default function OurProgrammes() {
                   className={`px-4 sm:px-5 py-2 text-xs sm:text-sm font-medium rounded-full transition-all duration-200 shrink-0 ${
                     isActive
                       ? "bg-white text-[#0A0A0A] shadow-md font-semibold"
-                      : "bg-[#141414]/80 text-[#737373] hover:text-white hover:bg-[#141414] border border-[#141414]"
+                      : "bg-[#141414]/80 text-white/70 hover:text-white hover:bg-[#141414] border border-[#141414]"
                   }`}
                 >
                   {category}
@@ -153,7 +153,7 @@ export default function OurProgrammes() {
                       {prog.title}
                     </Link>
                   </h3>
-                  <p className="text-xs sm:text-sm text-[#737373] leading-relaxed line-clamp-3 font-normal break-words">
+                  <p className="text-xs sm:text-sm text-white/75 leading-relaxed line-clamp-3 font-normal break-words">
                     {prog.description}
                   </p>
                 </div>
@@ -163,14 +163,14 @@ export default function OurProgrammes() {
               <div className="grid grid-cols-2 gap-4 pt-5 mt-5 border-t border-[#141414]/80">
                 {/* Target Audience */}
                 <div className="flex items-start gap-2.5">
-                  <div className="w-7 h-7 rounded-full bg-[#0A0A0A] border border-[#141414]/50 flex items-center justify-center text-[#737373] shrink-0 mt-0.5">
+                  <div className="w-7 h-7 rounded-full bg-[#0A0A0A] border border-[#141414]/50 flex items-center justify-center text-white/80 shrink-0 mt-0.5">
                     <GraduationCap className="w-3.5 h-3.5" />
                   </div>
                   <div className="space-y-0.5">
                     <span className="text-[11px] font-semibold text-[#D9D9D9] block">
                       Target Age
                     </span>
-                    <span className="text-[11px] text-[#737373] block leading-tight break-words">
+                    <span className="text-[11px] text-white/80 block leading-tight break-words">
                       {prog.targetAge}
                     </span>
                   </div>
@@ -178,14 +178,14 @@ export default function OurProgrammes() {
 
                 {/* Duration */}
                 <div className="flex items-start gap-2.5">
-                  <div className="w-7 h-7 rounded-full bg-[#0A0A0A] border border-[#141414]/50 flex items-center justify-center text-[#737373] shrink-0 mt-0.5">
+                  <div className="w-7 h-7 rounded-full bg-[#0A0A0A] border border-[#141414]/50 flex items-center justify-center text-white/80 shrink-0 mt-0.5">
                     <Clock className="w-3.5 h-3.5" />
                   </div>
                   <div className="space-y-0.5">
                     <span className="text-[11px] font-semibold text-[#D9D9D9] block">
                       Duration
                     </span>
-                    <span className="text-[11px] text-[#737373] block leading-tight break-words">
+                    <span className="text-[11px] text-white/80 block leading-tight break-words">
                       {prog.duration}
                     </span>
                   </div>
@@ -193,14 +193,14 @@ export default function OurProgrammes() {
 
                 {/* Mode */}
                 <div className="flex items-start gap-2.5">
-                  <div className="w-7 h-7 rounded-full bg-[#0A0A0A] border border-[#141414]/50 flex items-center justify-center text-[#737373] shrink-0 mt-0.5">
+                  <div className="w-7 h-7 rounded-full bg-[#0A0A0A] border border-[#141414]/50 flex items-center justify-center text-white/80 shrink-0 mt-0.5">
                     <Building2 className="w-3.5 h-3.5" />
                   </div>
                   <div className="space-y-0.5">
                     <span className="text-[11px] font-semibold text-[#D9D9D9] block">
                       Mode
                     </span>
-                    <span className="text-[11px] text-[#737373] block leading-tight break-words">
+                    <span className="text-[11px] text-white/80 block leading-tight break-words">
                       {prog.format}
                     </span>
                   </div>

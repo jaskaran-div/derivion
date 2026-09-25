@@ -92,7 +92,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
               </h1>
 
               {/* Tagline & Description */}
-              <p className="text-sm sm:text-base md:text-lg text-[#737373] font-normal leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-[#111111] font-normal leading-relaxed">
                 {programme.description}
               </p>
 
@@ -265,19 +265,19 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
               {/* Left narrative */}
-              <div className="lg:col-span-5 space-y-4 text-sm sm:text-base text-[#737373] leading-relaxed">
-                {programme.overview.map((para, pIdx) => (
-                  <p key={pIdx}>{para}</p>
-                ))}
+<div className="lg:col-span-5 space-y-4 text-sm sm:text-base text-[#111111] leading-relaxed">
+                  {programme.overview.map((para, pIdx) => (
+                    <p key={pIdx}>{para}</p>
+                  ))}
 
-                <div className="p-5 rounded-2xl bg-[#D9D9D9]/20 border border-[#D9D9D9] space-y-2">
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-[#000000]">
-                    Core Aim &amp; Reflex
-                  </h4>
-                  <div className="text-xl font-bold text-[#ED1654]">
-                    Reflex: {programme.coreReflex}
-                  </div>
-                  <p className="text-xs text-[#737373]">
+                  <div className="p-5 rounded-2xl bg-[#D9D9D9]/20 border border-[#D9D9D9] space-y-2">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#000000]">
+                      Core Aim &amp; Reflex
+                    </h4>
+                    <div className="text-xl font-bold text-[#ED1654]">
+                      Reflex: {programme.coreReflex}
+                    </div>
+                    <p className="text-xs text-[#111111]">
                     {programme.tagline}
                   </p>
                 </div>
@@ -376,7 +376,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                     </h4>
                     <ul className="space-y-2.5">
                       {programme.curriculum[activeModuleIndex].topics.map((t, tIdx) => (
-                        <li key={tIdx} className="flex items-start gap-3 text-xs sm:text-sm text-[#737373]">
+                        <li key={tIdx} className="flex items-start gap-3 text-xs sm:text-sm text-white/80">
                           <CheckCircle2 className="w-4 h-4 text-[#ED1654] shrink-0 mt-0.5" />
                           <span className="text-[#D9D9D9]">{t}</span>
                         </li>
@@ -396,7 +396,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                     </div>
 
                     <div className="space-y-2 pt-2 border-t border-white/10">
-                      <span className="text-[10px] font-bold text-[#737373] uppercase tracking-widest block">
+                      <span className="text-[10px] font-bold text-white/70 uppercase tracking-widest block">
                         Core Competencies
                       </span>
                       <div className="flex flex-wrap gap-2">
@@ -455,7 +455,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                       <p className="text-xs text-[#ED1654] font-medium">
                         {cs.subtitle}
                       </p>
-                      <p className="text-xs text-[#737373] leading-relaxed pt-2 border-t border-white/5">
+                      <p className="text-xs text-white/75 leading-relaxed pt-2 border-t border-white/5">
                         {cs.description}
                       </p>
                     </div>
@@ -484,7 +484,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
               >
                 Practical Learning <span className="italic font-normal text-[#ED1654]">Tools &amp; Worksheets</span>
               </h2>
-              <p className="text-sm sm:text-base text-[#737373] leading-relaxed">
+              <p className="text-sm sm:text-base text-[#111111] leading-relaxed">
                 Derivion provides structured toolkits, calculators, and verification workflows so learners apply principles directly to their screens and accounts.
               </p>
             </div>
@@ -517,7 +517,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
               >
                 Curriculum <span className="italic font-normal text-[#ED1654]">Mentorship</span>
               </h2>
-              <p className="text-xs sm:text-sm text-[#737373] max-w-xl">
+              <p className="text-xs sm:text-sm text-[#111111] max-w-xl">
                 Guided by Derivion&apos;s multidisciplinary faculty across financial economics, digital psychology, and cybersecurity.
               </p>
             </div>
@@ -533,7 +533,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                       <div>
                         <h3 className="text-xl font-bold text-white">{mentor.name}</h3>
                         <p className="text-xs text-[#ED1654] font-medium">{mentor.role}</p>
-                        <p className="text-xs text-[#737373]">{mentor.pastOrg}</p>
+                        <p className="text-xs text-white/70">{mentor.pastOrg}</p>
                       </div>
                       <div className="w-14 h-14 rounded-2xl overflow-hidden relative bg-[#141414] shrink-0 border border-white/10">
                         <Image
@@ -549,7 +549,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                     </p>
                   </div>
 
-                  <div className="pt-6 mt-6 border-t border-[#141414] flex items-center justify-between text-xs text-[#737373]">
+                  <div className="pt-6 mt-6 border-t border-[#141414] flex items-center justify-between text-xs text-white/70">
                     <span>Derivion Academic Faculty</span>
                     <span className="text-[#A8FF24] font-medium">Active Cohort Support</span>
                   </div>
@@ -589,7 +589,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   <h3 className="text-base sm:text-lg font-bold text-white">
                     {career.role}
                   </h3>
-                  <p className="text-xs text-[#737373] leading-relaxed">
+                  <p className="text-xs text-white/70 leading-relaxed">
                     {career.description}
                   </p>
                 </div>
@@ -611,7 +611,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
               >
                 How to <span className="italic font-normal text-[#ED1654]">Join</span>
               </h2>
-              <p className="text-xs sm:text-sm text-[#737373] max-w-lg">
+              <p className="text-xs sm:text-sm text-[#111111] max-w-lg">
                 Cohorts are scheduled regularly with dedicated timings for individual learners, school batches, and professional groups.
               </p>
             </div>
@@ -629,7 +629,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                     <h4 className="text-base font-bold text-[#000000]">
                       {step.title}
                     </h4>
-                    <p className="text-xs text-[#737373] leading-relaxed">
+                    <p className="text-xs text-[#111111] leading-relaxed">
                       {step.description}
                     </p>
                   </div>

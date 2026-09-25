@@ -206,7 +206,7 @@ export default function AboutUsPage() {
                 <span className="italic font-normal text-[#ED1654]">Vulnerable</span>
               </h2>
               <p className="text-xs sm:text-sm text-[#D9D9D9] font-light leading-relaxed">
-                Traditional curricula teach arithmetic and theoretical banking while ignoring the realities of instant digital payments, synthetic screens, and aggressive behavioral manipulation.
+                Traditional curricula teach arithmetic and theoretical banking while ignoring the realities of instant digital payments, synthetic screens, and aggressive behavioural manipulation.
               </p>
             </div>
 
@@ -214,12 +214,12 @@ export default function AboutUsPage() {
               {/* Conventional Education */}
               <div className="p-6 sm:p-8 rounded-3xl bg-[#141414] border border-white/5 space-y-6">
                 <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#737373]">
+                  <span className="text-xs font-bold uppercase tracking-wider text-white/70">
                     Conventional Model
                   </span>
-                  <span className="text-xs text-[#737373]">Theoretical Only</span>
+                  <span className="text-xs text-white/70">Theoretical Only</span>
                 </div>
-                <ul className="space-y-4 text-xs sm:text-sm text-[#737373]">
+                <ul className="space-y-4 text-xs sm:text-sm text-white/80">
                   <li className="flex items-start gap-3">
                     <span className="text-red-500 font-bold">✕</span>
                     <span>Focuses on theoretical formulas while ignoring modern screen-based spending.</span>
@@ -266,7 +266,7 @@ export default function AboutUsPage() {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-[#A8FF24] font-bold">✓</span>
-                    <span>Conditions automatic behavioral reflexes: Stop &amp; Ask, Verify, and Recourse.</span>
+                    <span>Conditions automatic behavioural reflexes: Stop &amp; Ask, Verify, and Recourse.</span>
                   </li>
                 </ul>
               </div>
@@ -361,7 +361,7 @@ export default function AboutUsPage() {
                         {item.role}
                       </p>
                     </div>
-                    <p className="text-xs text-[#737373] leading-relaxed font-light">
+                    <p className="text-xs text-white/80 leading-relaxed font-light">
                       {item.bio}
                     </p>
                   </div>

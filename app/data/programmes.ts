@@ -20,7 +20,7 @@ export interface Programme {
   slug: string;
   title: string;
   shortTitle: string;
-  category: "Young Learners" | "Adult Learners";
+  category: "Young Learners" | "Adult Learners" | "OCN London";
   targetAge: string;
   coreReflex: string;
   tagline: string;
@@ -396,7 +396,7 @@ export const PROGRAMMES: Programme[] = [
         name: "Derivion Teen Programmes Desk",
         role: "Adolescent Financial Literacy Leads",
         pastOrg: "Derivion Institute",
-        bio: "Educators specializing in teen behavioral finance, digital independence, and cyber psychology.",
+        bio: "Educators specialising in teen behavioural finance, digital independence, and cyber psychology.",
         image: "/Home/hero-section.jpg",
       },
       {
@@ -449,6 +449,1424 @@ export const PROGRAMMES: Programme[] = [
         question: "What is the core reflex taught in Bloom?",
         answer:
           "The central habit across all modules is 'VERIFY BEFORE YOU ACT'—checking independent sources before tapping, paying, or trusting digital media.",
+      },
+    ],
+  },
+  {
+    id: "isft-award-in-applied-financial-markets-trading",
+    slug: "isft-award-in-applied-financial-markets-trading",
+    title: "ISFT Award in Applied Financial Markets Trading",
+    shortTitle: "Applied Financial Markets Trading",
+    category: "OCN London",
+    targetAge: "Level 3 qualification",
+    coreReflex: "Understand, assess and trade with discipline",
+    tagline: "Trade with the forces that move the market.",
+    description:
+      "A practitioner-designed Level 3 qualification that builds applied understanding of fundamental analysis, central bank policy, and disciplined trading around scheduled market-moving news.",
+    heroImage: "/Home/hero-section.jpg",
+    format: "Online, self-paced via Derivion Academy LMS",
+    eligibility: "Completion of a Level 2 introduction to financial trading, or equivalent market knowledge",
+    duration: "6–10 weeks typical completion",
+    deadline: "Open for enrolment",
+    nextCohort: "Rolling intake",
+    tuition: "Contact admissions for current fee details",
+    scholarshipAvailable: false,
+    scholarshipText: "Not currently advertised",
+    stats: [
+      { value: "4", label: "Units" },
+      { value: "8", label: "Credits" },
+      { value: "Level 3", label: "Qualification" },
+      { value: "6–10 weeks", label: "Typical duration" },
+    ],
+    overview: [
+      "This qualification is designed to help learners move beyond basic trading awareness into applied market analysis, macroeconomic interpretation and disciplined decision-making around scheduled economic news releases.",
+      "It combines practical study of GDP, inflation and employment data with a clear understanding of how central bank policy moves currencies, bonds and equities.",
+      "Learners then build a written news-trading plan, assess the risk and opportunity of scheduled releases, and evaluate the outcome against the original decision-making framework.",
+    ],
+    keyHighlights: [
+      "Practitioner-designed by the centre’s Head Educator with more than 40 years of professional trading experience.",
+      "Delivered under OCN London with a defined credit value, level and external quality assurance.",
+      "Built around real market events, including central bank decisions and major economic data releases.",
+      "Develops applied skills in fundamental analysis, central bank policy interpretation and risk-aware news trading.",
+    ],
+    curriculum: [
+      {
+        number: "Unit 01",
+        title: "Fundamental Analysis and Economic Indicators",
+        duration: "2 credits • Level 3",
+        description:
+          "Introduces the main categories of fundamental data traders use and how GDP, inflation and employment indicators can shape market direction.",
+        topics: [
+          "Fundamental analysis versus technical analysis",
+          "GDP, inflation and employment data",
+          "Reading an economic calendar",
+          "Case studies of indicator releases",
+        ],
+        skills: ["Interpreting market-moving data", "Analysing indicators", "Forming a market view"],
+        project: "Interpret a simple set of economic data to explain likely market direction.",
+      },
+      {
+        number: "Unit 02",
+        title: "Central Banks and Monetary Policy",
+        duration: "2 credits • Level 3",
+        description:
+          "Explores how central banks set objectives, implement monetary policy, and transmit policy decisions across currencies, bonds and equities.",
+        topics: [
+          "Role and objectives of central banks",
+          "Interest rate policy",
+          "Quantitative easing and tightening",
+          "RBI framework alongside global central banks",
+        ],
+        skills: ["Understanding policy decisions", "Assessing market impact", "Linking policy to price action"],
+        project: "Explain how a change in interest rates could affect a specified market.",
+      },
+      {
+        number: "Unit 03",
+        title: "Applied News Trading and Market Strategy",
+        duration: "2 credits • Level 3",
+        description:
+          "Focuses on the risks and opportunities of trading around scheduled news events and how to structure a disciplined response to volatility before and after a release.",
+        topics: [
+          "Trading around scheduled news",
+          "Volatility before and after a release",
+          "Constructing a trading plan",
+          "Post-trade evaluation",
+        ],
+        skills: ["Planning around news events", "Managing risk", "Evaluating trade outcomes"],
+        project: "Build and assess a simple news-trading strategy for a scheduled economic release.",
+      },
+      {
+        number: "Unit 04",
+        title: "Economics for Financial Traders",
+        duration: "2 credits • Level 3",
+        description:
+          "Applies macroeconomic concepts to a real scheduled event through a written trading plan and evaluation of the actual outcome.",
+        topics: [
+          "Macroeconomic fundamentals",
+          "Supply and demand in financial markets",
+          "Trade balances and capital flows",
+          "Global economic interconnection with Indian markets",
+        ],
+        skills: ["Constructing a written trading plan", "Analysing outcomes", "Justifying trading decisions"],
+        project: "Write an 800–1,200 word news-trading plan based on a real scheduled release and evaluate performance after the event.",
+      },
+    ],
+    toolsAndPlatforms: [
+      "Derivion Academy LMS",
+      "Online study materials",
+      "Auto-marked unit MCQs",
+      "Written news-trading plan and evaluation",
+    ],
+    mentors: [
+      {
+        name: "Head Educator",
+        role: "Programme Author",
+        pastOrg: "ISFT / Derivion",
+        bio: "A practitioner with more than 40 years of professional trading experience across global markets.",
+        image: "/Home/hero-section.jpg",
+      },
+      {
+        name: "Derivion Academic Team",
+        role: "Assessment and Delivery Team",
+        pastOrg: "Derivion International Private Limited",
+        bio: "Supports quality assurance, learner progression and applied market education aligned with OCN London standards.",
+        image: "/Home/hero-section.jpg",
+      },
+    ],
+    careerPaths: [
+      {
+        role: "Market Analyst",
+        avgCtc: "Applied insight",
+        description: "Use economic data, central bank context and event-driven reasoning to interpret market conditions.",
+      },
+      {
+        role: "Trade Planner",
+        avgCtc: "Disciplined execution",
+        description: "Translate scheduled news and macroeconomic developments into a structured, risk-aware trading plan.",
+      },
+      {
+        role: "Financial Markets Learner",
+        avgCtc: "Progression pathway",
+        description: "Build on foundational market knowledge with a practical, level 3 qualification aligned to modern market analysis.",
+      },
+    ],
+    admissionSteps: [
+      { step: "01", title: "Review eligibility", description: "Check prior learning or equivalent market knowledge before enrolling." },
+      { step: "02", title: "Access the LMS", description: "Begin the online, self-paced programme and complete the study materials." },
+      { step: "03", title: "Complete assessments", description: "Pass each unit MCQ and complete the final written news-trading task in Unit 4." },
+    ],
+    faqs: [
+      {
+        question: "Is this qualification accredited?",
+        answer:
+          "Yes. It is delivered under OCN London and carries a defined credit value and level, with annual quality review and external quality assurance.",
+      },
+      {
+        question: "Who is this qualification for?",
+        answer:
+          "It is intended for learners who have completed a Level 2 introduction to financial trading or bring equivalent market knowledge and want to build applied analytical skills.",
+      },
+      {
+        question: "How are learners assessed?",
+        answer:
+          "Each unit closes with an online MCQ, and Unit 4 includes a written news-trading plan and post-event evaluation assessed against a published brief.",
+      },
+      {
+        question: "How long does it take?",
+        answer:
+          "Learners typically complete the programme within six to ten weeks, depending on pace and prior knowledge.",
+      },
+    ],
+  },
+  {
+    id: "isft-award-in-introduction-to-financial-markets",
+    slug: "isft-award-in-introduction-to-financial-markets",
+    title: "ISFT Award in Introduction to Financial Markets",
+    shortTitle: "Introduction to Financial Markets",
+    category: "OCN London",
+    targetAge: "Level 3 qualification",
+    coreReflex: "Build a broad market map before specialising",
+    tagline: "Five markets, one shared vocabulary.",
+    description:
+      "A broad, practitioner-designed Level 3 qualification that introduces learners to the structure and interplay of equities, foreign exchange, commodities, bonds and derivatives across global markets.",
+    heroImage: "/Home/hero-section.jpg",
+    format: "Online, self-paced via Derivion Academy LMS",
+    eligibility: "Completion of a Level 2 introduction to financial trading, or equivalent foundational knowledge of financial markets and trading",
+    duration: "8–12 weeks typical completion",
+    deadline: "Open for enrolment",
+    nextCohort: "Rolling intake",
+    tuition: "Contact admissions for current fee details",
+    scholarshipAvailable: false,
+    scholarshipText: "Not currently advertised",
+    stats: [
+      { value: "5", label: "Units" },
+      { value: "10", label: "Credits" },
+      { value: "Level 3", label: "Qualification" },
+      { value: "8–12 weeks", label: "Typical duration" },
+    ],
+    overview: [
+      "This qualification provides a comprehensive overview of global financial markets and explains how different markets operate and interrelate before learners specialise further.",
+      "It covers market structure, equities, foreign exchange, commodities, bonds, interest rates and derivatives in a single connected framework.",
+      "Learners develop an understanding of how regulators, exchanges, clearing houses and macroeconomic factors shape the broader market environment.",
+    ],
+    keyHighlights: [
+      "Broad by design: creates a structured foundation across asset classes before specialisation.",
+      "Delivered under OCN London with a defined credit value, level and external quality assurance.",
+      "Includes applied analysis of real market data and a written comparative report across two asset classes.",
+      "Suitable for learners who want a clear overview of how major markets relate to each other.",
+    ],
+    curriculum: [
+      {
+        number: "Unit 01",
+        title: "Financial Markets Overview and Structure",
+        duration: "2 credits • Level 3",
+        description:
+          "Explains how exchanges, regulators and clearing houses interact, and how market structures differ across developed and emerging economies.",
+        topics: [
+          "Structure of global markets",
+          "The function of regulation",
+          "Global exchange structures",
+          "Clearing and settlement",
+        ],
+        skills: ["Explaining market structure", "Comparing market systems", "Understanding regulation"],
+        project: "Describe how a regulator supports market confidence and stability.",
+      },
+      {
+        number: "Unit 02",
+        title: "Equities and Stock Markets",
+        duration: "2 credits • Level 3",
+        description:
+          "Introduces the function of shares, primary issuance, secondary trading and the basic concepts used to value and analyse listed companies.",
+        topics: [
+          "Characteristics of equity markets",
+          "Shares and equity ownership",
+          "IPOs and secondary trading",
+          "Basic valuation concepts",
+        ],
+        skills: ["Understanding equities", "Analysing valuation", "Comparing index versus stock trading"],
+        project: "Explain how index trading differs from single-stock trading.",
+      },
+      {
+        number: "Unit 03",
+        title: "Foreign Exchange and Currency Markets",
+        duration: "2 credits • Level 3",
+        description:
+          "Covers the structure of the foreign exchange market, how currency pairs are quoted, and what drives the value of a currency.",
+        topics: [
+          "How the FX market operates",
+          "What drives currency values",
+          "Currency pair quoting conventions",
+          "INR in the context of global FX",
+        ],
+        skills: ["Understanding FX markets", "Reading currency quotes", "Assessing macro drivers"],
+        project: "Identify likely impacts of a given economic event on a specified currency pair.",
+      },
+      {
+        number: "Unit 04",
+        title: "Commodities and Energy Markets",
+        duration: "2 credits • Level 3",
+        description:
+          "Explores hard and soft commodities, how commodity and energy markets operate, and why gold and crude oil matter to Indian traders and investors.",
+        topics: [
+          "Structure of commodity markets",
+          "What drives commodity prices",
+          "Spot and futures trading",
+          "Gold and crude oil in Indian markets",
+        ],
+        skills: ["Comparing commodity markets", "Understanding supply and demand", "Linking markets to traders"],
+        project: "Identify supply and demand factors affecting a named commodity.",
+      },
+      {
+        number: "Unit 05",
+        title: "Bonds, Interest Rates and Derivatives",
+        duration: "2 credits • Level 3",
+        description:
+          "Looks at bonds, the relationship between bond prices and interest rates, the purpose of futures and options, and how to compare asset classes side by side.",
+        topics: [
+          "Bonds and fixed income",
+          "The role of derivatives",
+          "Price and interest-rate relationship",
+          "Comparative analysis across asset classes",
+        ],
+        skills: ["Assessing bond markets", "Understanding hedging versus speculation", "Evaluating asset classes"],
+        project: "Write a comparative analysis using real market data from two asset classes.",
+      },
+    ],
+    toolsAndPlatforms: [
+      "Derivion Academy LMS",
+      "Online study materials",
+      "Auto-marked unit MCQs",
+      "Written comparative market analysis report",
+    ],
+    mentors: [
+      {
+        name: "Head Educator",
+        role: "Programme Author",
+        pastOrg: "ISFT / Derivion",
+        bio: "A practitioner with direct experience across equities, foreign exchange, commodities and fixed income in London and Chicago.",
+        image: "/Home/hero-section.jpg",
+      },
+      {
+        name: "Derivion Academic Team",
+        role: "Assessment and Delivery Team",
+        pastOrg: "Derivion International Private Limited",
+        bio: "Supports quality assurance, learner progression and applied education aligned with OCN London standards.",
+        image: "/Home/hero-section.jpg",
+      },
+    ],
+    careerPaths: [
+      {
+        role: "Market Foundation Learner",
+        avgCtc: "Broad market awareness",
+        description: "Develop a clear understanding of how major asset classes relate and operate in the wider financial system.",
+      },
+      {
+        role: "Comparative Researcher",
+        avgCtc: "Analytical comparison",
+        description: "Learn to summarise current conditions across asset classes and compare valuation and risk characteristics.",
+      },
+      {
+        role: "Specialisation Pathway",
+        avgCtc: "Progression readiness",
+        description: "Prepare for more specialised Level 3 awards in trading and market analysis after building a broader foundation.",
+      },
+    ],
+    admissionSteps: [
+      { step: "01", title: "Review eligibility", description: "Check prior learning or equivalent knowledge before applying." },
+      { step: "02", title: "Access the LMS", description: "Begin the online, self-paced programme and complete the study materials." },
+      { step: "03", title: "Complete assessments", description: "Pass each unit MCQ and complete the final comparative analysis report in Unit 5." },
+    ],
+    faqs: [
+      {
+        question: "Is this qualification accredited?",
+        answer:
+          "Yes. It is delivered under OCN London and has a defined credit value, level and annual quality review.",
+      },
+      {
+        question: "Who is this qualification for?",
+        answer:
+          "It is designed for learners who want a structured understanding of how different markets operate and interrelate before specialising further.",
+      },
+      {
+        question: "How are learners assessed?",
+        answer:
+          "Each unit closes with an online MCQ, and Unit 5 includes a written comparative market analysis report of 800–1,200 words.",
+      },
+      {
+        question: "How long does it take?",
+        answer:
+          "Learners typically complete the programme within eight to twelve weeks, depending on pace and prior knowledge.",
+      },
+    ],
+  },
+  {
+    id: "isft-award-in-introduction-to-financial-trading",
+    slug: "isft-award-in-introduction-to-financial-trading",
+    title: "ISFT Award in Introduction to Financial Trading",
+    shortTitle: "Introduction to Financial Trading",
+    category: "OCN London",
+    targetAge: "Entry-level learner",
+    coreReflex: "Understand the market before placing a trade",
+    tagline: "Understand the market. Trade with discipline.",
+    description:
+      "A beginner-friendly Level 3 qualification that introduces learners to how financial markets work, the main trading instruments, and the risk-aware process of placing and justifying an order.",
+    heroImage: "/Home/hero-section.jpg",
+    format: "Online, self-paced via Derivion Academy LMS",
+    eligibility: "No formal entry requirements; basic literacy and numeracy and ability to study in English",
+    duration: "4–8 weeks typical completion",
+    deadline: "Open for enrolment",
+    nextCohort: "Rolling intake",
+    tuition: "Contact admissions for current fee details",
+    scholarshipAvailable: false,
+    scholarshipText: "Not currently advertised",
+    stats: [
+      { value: "3", label: "Units" },
+      { value: "3", label: "Credits" },
+      { value: "60 hrs", label: "TQT" },
+      { value: "4–8 weeks", label: "Typical duration" },
+    ],
+    overview: [
+      "This entry-level qualification is designed for beginners who want to understand how financial markets operate before they trade in them.",
+      "It introduces the structure of markets, the main asset classes, the mechanics of a trading platform, and the discipline required to manage risk before placing an order.",
+      "The programme combines study with practical application, including a written trading scenario in Unit 3 that learners must justify using a structured risk plan.",
+    ],
+    keyHighlights: [
+      "Built for true beginners with no prior trading knowledge or formal entry requirements.",
+      "Delivered under OCN London with a defined credit value, GLH/TQT and external quality assurance.",
+      "Focuses on market structure, instruments, platforms, orders and disciplined risk management.",
+      "Unit 3 includes a written scenario where learners choose an order type and justify their risk plan.",
+    ],
+    curriculum: [
+      {
+        number: "Unit 01",
+        title: "Financial Markets and Asset Classes",
+        duration: "1 credit • 10 GLH + 10 self-study",
+        description:
+          "Introduces the role and purpose of financial markets, the main asset classes and the participants who trade them.",
+        topics: [
+          "Purpose and structure of markets",
+          "The main asset classes",
+          "Who participates and why",
+          "NSE and BSE in a global context",
+        ],
+        skills: ["Explaining market purpose", "Identifying asset classes", "Understanding participants"],
+        project: "Describe the role of financial markets and the characteristics of the main asset classes.",
+      },
+      {
+        number: "Unit 02",
+        title: "Market Structure and Trading Instruments",
+        duration: "1 credit • 9 GLH + 11 self-study",
+        description:
+          "Explains how markets are structured, how orders travel through exchanges and brokers, and how to read basic terminology such as bid, offer and spread.",
+        topics: [
+          "How markets are structured",
+          "Trading instruments",
+          "Market terminology",
+          "Reading a basic quote",
+        ],
+        skills: ["Reading bid and offer", "Understanding spot and derivative instruments", "Interpreting a quote"],
+        project: "Define key terms such as bid, offer, spread, volume and liquidity in a simple market scenario.",
+      },
+      {
+        number: "Unit 03",
+        title: "Trading Platforms, Orders and Risk Management",
+        duration: "1 credit • 9 GLH + 11 self-study",
+        description:
+          "Builds the applied skills needed to navigate a trading platform, choose an appropriate order type, size a position and justify a stop-loss.",
+        topics: [
+          "Trading platforms",
+          "Order types",
+          "Risk management",
+          "Trading discipline",
+        ],
+        skills: ["Selecting an order type", "Sizing a position", "Justifying a stop-loss and risk approach"],
+        project: "Write a 400–600 word trading scenario explaining the chosen order type, position size and stop-loss plan.",
+      },
+    ],
+    toolsAndPlatforms: [
+      "Derivion Academy LMS",
+      "Video lectures and written study materials",
+      "Auto-marked unit MCQs",
+      "Written trading scenario on the LMS",
+    ],
+    mentors: [
+      {
+        name: "Neil Crammond",
+        role: "Head Educator",
+        pastOrg: "LIFFE • CBOT • CME",
+        bio: "A practising financial markets trader with 40+ years of active experience across major global exchanges.",
+        image: "/Home/hero-section.jpg",
+      },
+      {
+        name: "Derivion Academic Team",
+        role: "Assessment and Delivery Team",
+        pastOrg: "Derivion International Private Limited",
+        bio: "Supports learner progression, quality assurance and applied delivery aligned with OCN London standards.",
+        image: "/Home/hero-section.jpg",
+      },
+    ],
+    careerPaths: [
+      {
+        role: "Beginner Trader",
+        avgCtc: "Foundational understanding",
+        description: "Gain a clear introduction to how markets are structured and how risk-aware trading decisions are formed.",
+      },
+      {
+        role: "Market Learner",
+        avgCtc: "Confidence-building",
+        description: "Develop core literacy in market structure, instruments and trading discipline before progressing to specialised study.",
+      },
+      {
+        role: "Progression Pathway",
+        avgCtc: "Next-step readiness",
+        description: "Prepare for continued study in financial markets, trading and risk management through a recognised Level 3 qualification.",
+      },
+    ],
+    admissionSteps: [
+      { step: "01", title: "Review entry requirements", description: "No formal entry requirements; basic literacy and numeracy and ability to study in English are expected." },
+      { step: "02", title: "Access the LMS", description: "Begin the online, self-paced programme and study the units in sequence." },
+      { step: "03", title: "Complete assessments", description: "Pass each unit MCQ and complete the written scenario in Unit 3 under the Head Educator’s guidance." },
+    ],
+    faqs: [
+      {
+        question: "Do I need prior trading experience?",
+        answer:
+          "No. This qualification is designed for learners starting from zero and requires no prior knowledge of financial markets or a trading account.",
+      },
+      {
+        question: "Who is it suitable for?",
+        answer:
+          "It is suitable for recent school leavers, graduates, and adult learners in India who want a structured introduction to how markets work and how to trade with discipline.",
+      },
+      {
+        question: "How is it assessed?",
+        answer:
+          "Each unit closes with an online MCQ, and Unit 3 includes a written trading scenario assessed by the Head Educator against a published marking brief.",
+      },
+      {
+        question: "How long does it take to complete?",
+        answer:
+          "Most learners finish within four to eight weeks, depending on their study pace and prior knowledge.",
+      },
+    ],
+  },
+  {
+    id: "isft-award-in-introduction-to-risk-management",
+    slug: "isft-award-in-introduction-to-risk-management",
+    title: "ISFT Award in Introduction to Risk Management",
+    shortTitle: "Introduction to Risk Management",
+    category: "OCN London",
+    targetAge: "Level 3 award",
+    coreReflex: "Quantify risk, size position, and protect the account",
+    tagline: "The discipline that protects the account.",
+    description:
+      "A practitioner-designed Level 3 OCN London award that teaches learners how to quantify leverage, size a position appropriately, document a trading plan and manage risk with discipline in real market conditions.",
+    heroImage: "/Home/hero-section.jpg",
+    format: "Online, self-paced via Derivion Academy LMS",
+    eligibility: "Recommended prior learning: Level 2 Award in Introduction to Financial Trading, or equivalent foundational market knowledge",
+    duration: "6–10 weeks typical completion",
+    deadline: "Open for enrolment",
+    nextCohort: "Rolling intake",
+    tuition: "Contact admissions for current fee details",
+    scholarshipAvailable: false,
+    scholarshipText: "Not currently advertised",
+    stats: [
+      { value: "4", label: "Units" },
+      { value: "8", label: "Credits" },
+      { value: "Level 3", label: "Qualification" },
+      { value: "6–10 weeks", label: "Typical duration" },
+    ],
+    overview: [
+      "This qualification focuses on the risk decisions that separate disciplined trading from impulsive execution by showing learners how to quantify leverage, size a position and protect the account.",
+      "It moves from the mechanics of leverage and margin to practical risk-adjusted decision-making, helping learners build a personal system for managing money wisely in volatile markets.",
+      "Learners then apply the concepts in a written analytical report, recommending and justifying a risk management approach for a real trading scenario.",
+    ],
+    keyHighlights: [
+      "Practitioner-designed by the centre’s Head Educator with more than 40 years of active risk management and trading experience.",
+      "Delivered under OCN London with a defined credit value, level and external quality assurance.",
+      "Covers leverage, margin, risk-per-trade, position sizing, trading plans and strategy selection.",
+      "Includes a written analytical report in which learners evaluate a trading scenario and justify the recommended risk approach.",
+    ],
+    curriculum: [
+      {
+        number: "Unit 01",
+        title: "Understanding Leverage and Margin",
+        duration: "2 credits • Level 3",
+        description:
+          "Explains how leverage amplifies both gains and losses and how margin requirements protect the market and the account from excessive exposure.",
+        topics: [
+          "The concept of leverage",
+          "Margin requirements and risk",
+          "Risk implications of high leverage",
+          "Worked leverage calculations",
+        ],
+        skills: ["Calculating leverage effects", "Explaining margin relationships", "Assessing risk from leverage"],
+        project: "Calculate the effect of a given leverage ratio on a trade outcome and explain the risk it creates.",
+      },
+      {
+        number: "Unit 02",
+        title: "Risk and Money Management",
+        duration: "2 credits • Level 3",
+        description:
+          "Introduces risk-per-trade as a proportion of capital, explains how diversification helps manage portfolio exposure, and shows how to size a position prudently.",
+        topics: [
+          "Risk-per-trade principles",
+          "Position sizing calculations and worked examples",
+          "Diversification",
+          "Appropriate risk tolerance",
+        ],
+        skills: ["Applying risk-per-trade methods", "Calculating position size", "Balancing risk and capital"],
+        project: "Determine whether a given position size is consistent with a stated account size and risk tolerance.",
+      },
+      {
+        number: "Unit 03",
+        title: "Building a Trading Plan",
+        duration: "2 credits • Level 3",
+        description:
+          "Focuses on why a documented trading plan supports discipline and how entry, exit, risk and review criteria can be built into a repeatable framework.",
+        topics: [
+          "Purpose and structure of a trading plan",
+          "Defining risk parameters",
+          "Review and refinement of a plan",
+          "Entry and exit criteria",
+        ],
+        skills: ["Designing a trading plan", "Defining risk parameters", "Reviewing and improving decision rules"],
+        project: "Design a basic trading plan for a scenario and identify the risk parameters that support disciplined execution.",
+      },
+      {
+        number: "Unit 04",
+        title: "Risk Management Strategies",
+        duration: "2 credits • Level 3",
+        description:
+          "Compares stop-losses, scaling out and hedging as risk tools, and requires learners to choose and defend an approach in a real trading scenario.",
+        topics: [
+          "Comparative risk management strategies",
+          "Structured analytical report task",
+          "Market-condition-dependent risk approaches",
+          "Applying strategies to a scenario",
+        ],
+        skills: ["Comparing risk tools", "Analysing a scenario", "Justifying a recommended approach"],
+        project: "Write a 1,000–1,500 word analytical report recommending and justifying an appropriate risk management approach for a given market scenario.",
+      },
+    ],
+    toolsAndPlatforms: [
+      "Derivion Academy LMS",
+      "Video lectures and written study materials",
+      "Auto-marked unit MCQs",
+      "Written analytical report",
+    ],
+    mentors: [
+      {
+        name: "Head Educator",
+        role: "Programme Author",
+        pastOrg: "ISFT / Derivion",
+        bio: "A practitioner with more than 40 years of active trading and risk-management expertise across global financial markets.",
+        image: "/Home/hero-section.jpg",
+      },
+      {
+        name: "Derivion Academic Team",
+        role: "Assessment and Delivery Team",
+        pastOrg: "Derivion International Private Limited",
+        bio: "Supports quality assurance, learner progression and applied delivery aligned with OCN London standards.",
+        image: "/Home/hero-section.jpg",
+      },
+    ],
+    careerPaths: [
+      {
+        role: "Risk-Aware Trader",
+        avgCtc: "Discipline",
+        description: "Build a repeatable framework for managing leverage, money and risk in a way that protects the account and supports consistency.",
+      },
+      {
+        role: "Portfolio Decision-Maker",
+        avgCtc: "Capital protection",
+        description: "Apply risk-per-trade thinking, position sizing and structured planning to more careful financial decision-making.",
+      },
+      {
+        role: "Progression Pathway",
+        avgCtc: "Next-step readiness",
+        description: "Develop the risk vocabulary and discipline needed for continued study in technical analysis, behavioural trading and advanced market analysis.",
+      },
+    ],
+    admissionSteps: [
+      { step: "01", title: "Review prior learning", description: "Check your recommended Level 2 foundation or equivalent market knowledge before enrolling." },
+      { step: "02", title: "Access the LMS", description: "Begin the online, self-paced programme and work through the study materials and calculations." },
+      { step: "03", title: "Complete assessments", description: "Pass each unit MCQ and complete the Unit 4 analytical report under the Head Educator’s guidance." },
+    ],
+    faqs: [
+      {
+        question: "Is this qualification accredited?",
+        answer:
+          "Yes. It is delivered under OCN London and carries a defined credit value, level and annual quality review with external assurance.",
+      },
+      {
+        question: "Who is this qualification for?",
+        answer:
+          "It is designed for traders and finance professionals who want a structured approach to risk management, including personal trading plans and documented decision rules.",
+      },
+      {
+        question: "How is it assessed?",
+        answer:
+          "Each unit closes with an online MCQ, and Unit 4 includes a written analytical report of 1,000–1,500 words assessed against a published marking brief.",
+      },
+      {
+        question: "How long does it take to complete?",
+        answer:
+          "Most learners complete the award within six to ten weeks, depending on their study pace and previous knowledge.",
+      },
+    ],
+  },
+  {
+    id: "isft-award-in-introduction-to-trading-government-bonds",
+    slug: "isft-award-in-introduction-to-trading-government-bonds",
+    title: "ISFT Award in Introduction to Trading Government Bonds",
+    shortTitle: "Introduction to Trading Government Bonds",
+    category: "OCN London",
+    targetAge: "Level 3 award",
+    coreReflex: "Understand bond structure, price and risk before trading or hedging",
+    tagline: "The steadiest asset class, made accessible.",
+    description:
+      "A practitioner-designed Level 3 OCN London award that introduces learners to bond market fundamentals, Indian government securities, pricing, yield curves and applied bond trading or hedging decisions.",
+    heroImage: "/Home/hero-section.jpg",
+    format: "Online, self-paced via Derivion Academy LMS",
+    eligibility: "Recommended prior learning: Level 3 Award in Introduction to Financial Markets, or equivalent foundational knowledge of financial markets",
+    duration: "8–12 weeks typical completion",
+    deadline: "Open for enrolment",
+    nextCohort: "Rolling intake",
+    tuition: "Contact admissions for current fee details",
+    scholarshipAvailable: false,
+    scholarshipText: "Not currently advertised",
+    stats: [
+      { value: "6", label: "Units" },
+      { value: "12", label: "Credits" },
+      { value: "Level 3", label: "Qualification" },
+      { value: "8–12 weeks", label: "Typical duration" },
+    ],
+    overview: [
+      "This qualification builds a fixed-income foundation for learners who want to understand government bonds as a serious, practical asset class rather than an abstract concept.",
+      "It covers bond features, pricing, risk, yield curves, Indian government securities and the way bond futures can be used for hedging and market strategy.",
+      "Learners also complete a written analytical report that applies bond market knowledge to a real trading or hedging scenario and justifies the approach using sound market principles.",
+    ],
+    keyHighlights: [
+      "Practitioner-designed by the centre’s Head Educator to address a gap in structured bond market education for Indian learners.",
+      "Delivered under OCN London with a defined credit value, level and external quality assurance.",
+      "Includes a dedicated unit on Indian G-Secs, RBI market structure and how retail investors can access the market.",
+      "Covers bond pricing, yield analysis, risk drivers and a practical bond futures hedging decision.",
+    ],
+    curriculum: [
+      {
+        number: "Unit 01",
+        title: "Understanding Bonds and How They Work",
+        duration: "2 credits • Level 3",
+        description:
+          "Introduces the basic features of a bond, how it generates a return and why government bonds are held as part of a diversified portfolio.",
+        topics: [
+          "Bond features and terminology",
+          "Bond coupon and maturity",
+          "Bonds as a portfolio diversifier",
+          "Bonds versus equities",
+        ],
+        skills: ["Explaining bond structure", "Comparing bond and equity characteristics", "Describing bond returns"],
+        project: "Explain the key features of a bond and describe how it generates returns for an investor.",
+      },
+      {
+        number: "Unit 02",
+        title: "Bond Risks, Market Structure and Price Drivers",
+        duration: "2 credits • Level 3",
+        description:
+          "Covers the main risks of holding bonds, duration, market structure and the macroeconomic forces that drive government bond prices.",
+        topics: [
+          "Interest rate, credit and inflation risk",
+          "Duration and interest-rate sensitivity",
+          "Bond market structure",
+          "Macroeconomic price drivers",
+        ],
+        skills: ["Assessing bond risks", "Understanding duration", "Identifying market drivers"],
+        project: "Explain the main risks of holding a bond and identify the factors that move government bond prices.",
+      },
+      {
+        number: "Unit 03",
+        title: "Bond Types, Issuers and Classifications",
+        duration: "2 credits • Level 3",
+        description:
+          "Explores the differences between government, corporate and municipal bonds and how credit ratings shape issuer risk.",
+        topics: [
+          "Government, corporate and municipal bonds",
+          "Maturity classifications",
+          "Credit ratings",
+          "Sovereign versus corporate risk",
+        ],
+        skills: ["Classifying bond types", "Comparing issuer risk", "Using credit-rating concepts"],
+        project: "Identify the differences between bond types and compare the credit risk profile of a sovereign issuer with a corporate issuer.",
+      },
+      {
+        number: "Unit 04",
+        title: "Bond Yields, Pricing and Yield Curve Trading",
+        duration: "2 credits • Level 3",
+        description:
+          "Explains the inverse relationship between bond price and yield, simple current-yield calculations and the meaning of a yield curve’s shape.",
+        topics: [
+          "Price-yield relationship",
+          "Current yield calculation",
+          "Yield curve construction",
+          "Normal, flat and inverted curves",
+        ],
+        skills: ["Calculating current yield", "Interpreting yield curves", "Relating price to yield"],
+        project: "Calculate a simple current yield and explain the significance of a given yield curve shape.",
+      },
+      {
+        number: "Unit 05",
+        title: "Indian Government Securities — Market and Access",
+        duration: "2 credits • Level 3",
+        description:
+          "Looks at the structure of the Indian G-Sec market, the Reserve Bank of India’s role and how retail investors can access government securities through RBI Retail Direct.",
+        topics: [
+          "RBI’s role in the G-Sec market",
+          "RBI Retail Direct platform",
+          "Retail participation process",
+          "T-bills and dated securities",
+        ],
+        skills: ["Understanding the G-Sec market", "Explaining retail access", "Identifying market participants"],
+        project: "Explain how the Indian G-Sec market is structured and how a retail investor can access government securities.",
+      },
+      {
+        number: "Unit 06",
+        title: "Bond Futures and Applied Market Strategies",
+        duration: "2 credits • Level 3",
+        description:
+          "Shows how bond futures are structured and priced and how they can be used to hedge interest rate risk in a practical market scenario.",
+        topics: [
+          "Bond futures structure and pricing",
+          "Applied analytical report task",
+          "Hedging interest rate risk",
+          "Bond market scenario analysis",
+        ],
+        skills: ["Explaining bond futures", "Applying hedging logic", "Justifying a trading or hedging strategy"],
+        project: "Write a 1,500–2,000 word analytical report analysing a bond market scenario and justifying an appropriate trading or hedging approach.",
+      },
+    ],
+    toolsAndPlatforms: [
+      "Derivion Academy LMS",
+      "Video lectures and written study materials",
+      "Auto-marked unit MCQs",
+      "Written analytical report",
+    ],
+    mentors: [
+      {
+        name: "Head Educator",
+        role: "Programme Author",
+        pastOrg: "ISFT / Derivion",
+        bio: "A practitioner with direct experience developing structured fixed-income education for learners seeking to understand Indian government securities and bond markets.",
+        image: "/Home/hero-section.jpg",
+      },
+      {
+        name: "Derivion Academic Team",
+        role: "Assessment and Delivery Team",
+        pastOrg: "Derivion International Private Limited",
+        bio: "Supports learner progression, quality assurance and applied delivery aligned with OCN London standards.",
+        image: "/Home/hero-section.jpg",
+      },
+    ],
+    careerPaths: [
+      {
+        role: "Fixed Income Learner",
+        avgCtc: "Bond market awareness",
+        description: "Develop a structured understanding of government bonds, yield curves and market behaviour before pursuing more specialised fixed-income roles.",
+      },
+      {
+        role: "Treasury / Wealth Professional",
+        avgCtc: "Structured fixed-income knowledge",
+        description: "Build the vocabulary and analytical approach needed for treasury, portfolio or wealth management contexts involving bond markets.",
+      },
+      {
+        role: "Progression Pathway",
+        avgCtc: "Next-step readiness",
+        description: "Prepare for further study in fixed income or investment management with a specialist Level 3 qualification grounded in real market application.",
+      },
+    ],
+    admissionSteps: [
+      { step: "01", title: "Review prior learning", description: "Check your recommended Level 3 foundation or equivalent market knowledge before enrolling." },
+      { step: "02", title: "Access the LMS", description: "Begin the online, self-paced programme and work through the study materials and examples." },
+      { step: "03", title: "Complete assessments", description: "Pass each unit MCQ and complete the Unit 6 analytical report under the Head Educator’s guidance." },
+    ],
+    faqs: [
+      {
+        question: "Is this qualification accredited?",
+        answer:
+          "Yes. It is delivered under OCN London and carries a defined credit value, level and annual quality review with external assurance.",
+      },
+      {
+        question: "Who is this qualification for?",
+        answer:
+          "It is designed for learners who wish to develop specialised knowledge of fixed income markets for treasury, wealth management, investment or personal market participation.",
+      },
+      {
+        question: "How is it assessed?",
+        answer:
+          "Each unit closes with an online MCQ, and Unit 6 includes a written analytical report of 1,500–2,000 words assessed against a published marking brief.",
+      },
+      {
+        question: "How long does it take to complete?",
+        answer:
+          "Most learners complete the award within eight to twelve weeks, depending on their pace and prior knowledge.",
+      },
+    ],
+  },
+  {
+    id: "isft-certificate-in-introduction-to-technical-analysis-in-trading",
+    slug: "isft-certificate-in-introduction-to-technical-analysis-in-trading",
+    title: "ISFT Certificate in Introduction to Technical Analysis in Trading",
+    shortTitle: "Introduction to Technical Analysis in Trading",
+    category: "OCN London",
+    targetAge: "Level 3 certificate",
+    coreReflex: "Read the chart, confirm the trend, and justify the decision",
+    tagline: "Every chart tells a story. Learn to read it.",
+    description:
+      "A practitioner-designed Level 3 OCN London certificate that introduces learners to the principles and practical use of technical analysis across equities, FX, commodities and futures, with a strong emphasis on systematic chart reading and portfolio application.",
+    heroImage: "/Home/hero-section.jpg",
+    format: "Online, self-paced via Derivion Academy LMS",
+    eligibility: "Recommended prior learning: Level 3 Award in Applied Financial Markets Trading or Introduction to Financial Markets, or equivalent market knowledge",
+    duration: "10–14 weeks typical completion",
+    deadline: "Open for enrolment",
+    nextCohort: "Rolling intake",
+    tuition: "Contact admissions for current fee details",
+    scholarshipAvailable: false,
+    scholarshipText: "Not currently advertised",
+    stats: [
+      { value: "8", label: "Units" },
+      { value: "16", label: "Credits" },
+      { value: "Level 3", label: "Qualification" },
+      { value: "10–14 weeks", label: "Typical duration" },
+    ],
+    overview: [
+      "This flagship qualification provides a structured and market-agnostic introduction to technical analysis, teaching learners how to interpret price action and chart behaviour across a range of asset classes and timeframes.",
+      "It covers chart foundations, candlestick patterns, reversal structures, trendlines, chart patterns, Fibonacci analysis, moving averages, Bollinger Bands, oscillators and advanced tools for volatility and market profile analysis.",
+      "The programme culminates in a Practical Chart Analysis Portfolio: five annotated charts across different markets and timeframes, supported by a written analytical report that justifies the technical interpretation.",
+    ],
+    keyHighlights: [
+      "Practitioner-designed by the centre’s Head Educator, drawing on decades of applied chart-based trading experience across multiple asset classes and timeframes.",
+      "Delivered under OCN London with a defined credit value, level and external quality assurance.",
+      "Uses a systematic, professional-level approach to chart reading that transfers across equities, FX, commodities and futures.",
+      "Includes a portfolio of five annotated charts and an accompanying written technical analysis report.",
+    ],
+    curriculum: [
+      {
+        number: "Unit 01",
+        title: "Foundations of Technical Analysis",
+        duration: "2 credits • Level 3",
+        description:
+          "Introduces the core assumptions behind technical analysis, compares it to fundamental analysis and explains how chart type and timeframe affect the way price action is interpreted.",
+        topics: [
+          "Core assumptions of technical analysis",
+          "Chart types",
+          "Timeframe selection",
+          "Technical versus fundamental analysis",
+        ],
+        skills: ["Explaining technical-analysis assumptions", "Selecting chart types", "Assessing timeframe effects"],
+        project: "Explain the core assumptions of technical analysis and compare it to fundamental analysis as a framework for interpreting markets.",
+      },
+      {
+        number: "Unit 02",
+        title: "Candlestick Patterns — Structure and Types",
+        duration: "2 credits • Level 3",
+        description:
+          "Explores the anatomy of a candlestick and the common single- and multi-candle patterns that signal market context and potential directional bias.",
+        topics: [
+          "Candlestick anatomy",
+          "Market context for pattern significance",
+          "Doji, hammer and engulfing patterns",
+          "Structure and interpretation",
+        ],
+        skills: ["Reading candlestick structure", "Identifying common patterns", "Assessing pattern significance"],
+        project: "Identify and explain common candlestick patterns and the market context in which they are considered significant.",
+      },
+      {
+        number: "Unit 03",
+        title: "Candlestick Reversal Patterns",
+        duration: "2 credits • Level 3",
+        description:
+          "Looks at bullish and bearish reversal patterns such as morning star, evening star and shooting star, and explains how reliability can be judged in a chart scenario.",
+        topics: [
+          "Bullish and bearish reversal patterns",
+          "Applied chart recognition exercises",
+          "Reliability conditions",
+          "Trend reversal signatures",
+        ],
+        skills: ["Identifying reversal patterns", "Judging reliability", "Reading chart context"],
+        project: "Identify reversal patterns in a chart example and explain the factors that strengthen or weaken their reliability.",
+      },
+      {
+        number: "Unit 04",
+        title: "Support, Resistance and Breakout Trading",
+        duration: "2 credits • Level 3",
+        description:
+          "Teaches how support and resistance levels are identified, how breakouts form and how false breakouts can be managed as a risk consideration.",
+        topics: [
+          "Identifying support and resistance",
+          "Breakout trading",
+          "False breakouts and risk management",
+          "Significance of tested levels",
+        ],
+        skills: ["Reading support and resistance", "Interpreting breakouts", "Managing false-breakout risk"],
+        project: "Explain how support and resistance levels are identified and describe how breakout trading can be approached with discipline.",
+      },
+      {
+        number: "Unit 05",
+        title: "Trends, Channels and Wedges",
+        duration: "2 credits • Level 3",
+        description:
+          "Shows how uptrends, downtrends and sideways conditions are identified, then expands into channels and wedge patterns as directional chart structures.",
+        topics: [
+          "Trend identification and classification",
+          "Price channels",
+          "Rising and falling wedges",
+          "Trendline construction",
+        ],
+        skills: ["Identifying trend structure", "Drawing trendlines", "Interpreting channels and wedges"],
+        project: "Identify a trend, channel or wedge in a chart and explain what the structure implies for trend behaviour.",
+      },
+      {
+        number: "Unit 06",
+        title: "Chart Patterns and Fibonacci Analysis",
+        duration: "2 credits • Level 3",
+        description:
+          "Introduces classical chart patterns and Fibonacci retracement or extension levels as tools for estimating structure, targets and likely continuation or reversal zones.",
+        topics: [
+          "Head and shoulders, double top/bottom and triangles",
+          "Fibonacci retracement and extension",
+          "Price target projection",
+          "Chart pattern reliability",
+        ],
+        skills: ["Recognising classical patterns", "Applying Fibonacci analysis", "Projecting potential targets"],
+        project: "Identify a classical chart pattern on a given chart and explain the price target implied by the structure.",
+      },
+      {
+        number: "Unit 07",
+        title: "Moving Averages, Bollinger Bands and Oscillators",
+        duration: "2 credits • Level 3",
+        description:
+          "Explains the difference between moving average types, how Bollinger Bands measure volatility and how indicators such as RSI and MACD are used to read momentum.",
+        topics: [
+          "Simple versus exponential moving averages",
+          "Bollinger Bands",
+          "RSI and MACD oscillators",
+          "Moving average crossovers",
+        ],
+        skills: ["Reading moving averages", "Using momentum indicators", "Assessing volatility and trend change"],
+        project: "Explain how moving averages, Bollinger Bands and a momentum oscillator can be used together to interpret a chart.",
+      },
+      {
+        number: "Unit 08",
+        title: "Market Profile, Volatility Time Bands and Advanced Tools",
+        duration: "2 credits • Level 3",
+        description:
+          "Introduces advanced tools used by professional traders to understand volume at price, volatility windows and key structural levels, then asks learners to apply the full set in a portfolio task.",
+        topics: [
+          "Market Profile principles",
+          "Range Deviation Pivots",
+          "Volatility Time Bands",
+          "Multi-chart portfolio exercise",
+        ],
+        skills: ["Applying advanced chart tools", "Building a portfolio", "Justifying market interpretation"],
+        project: "Produce five annotated charts and an accompanying analytical report demonstrating applied technical analysis across different markets and timeframes.",
+      },
+    ],
+    toolsAndPlatforms: [
+      "Derivion Academy LMS",
+      "Video instruction and written study materials",
+      "Auto-marked unit MCQs",
+      "Practical Chart Analysis Portfolio and report",
+    ],
+    mentors: [
+      {
+        name: "Head Educator",
+        role: "Programme Author",
+        pastOrg: "ISFT / Derivion",
+        bio: "A practitioner with decades of applied chart-based trading experience across multiple asset classes and timeframes.",
+        image: "/Home/hero-section.jpg",
+      },
+      {
+        name: "Derivion Academic Team",
+        role: "Assessment and Delivery Team",
+        pastOrg: "Derivion International Private Limited",
+        bio: "Supports quality assurance, learner progression and applied delivery aligned with OCN London standards.",
+        image: "/Home/hero-section.jpg",
+      },
+    ],
+    careerPaths: [
+      {
+        role: "Technical Trader",
+        avgCtc: "Chart-based decision-making",
+        description: "Build a systematic approach to reading price action, trend structure and reversals across different markets and timeframes.",
+      },
+      {
+        role: "Chart Analyst",
+        avgCtc: "Structured technical insight",
+        description: "Develop the analytical skill set to interpret moving averages, momentum and breakout structures with greater confidence.",
+      },
+      {
+        role: "Progression Pathway",
+        avgCtc: "Advanced readiness",
+        description: "Prepare for further study in advanced technical analysis, algorithmic trading or professional trading programmes at Level 4 and above.",
+      },
+    ],
+    admissionSteps: [
+      { step: "01", title: "Review prior learning", description: "Check your recommended Level 3 foundation or equivalent market knowledge before enrolling." },
+      { step: "02", title: "Access the LMS", description: "Begin the online, self-paced programme and work through the study materials and chart exercises." },
+      { step: "03", title: "Complete assessments", description: "Pass each unit MCQ and complete the Unit 8 Practical Chart Analysis Portfolio under the Head Educator’s guidance." },
+    ],
+    faqs: [
+      {
+        question: "Is this qualification accredited?",
+        answer:
+          "Yes. It is delivered under OCN London and carries a defined credit value, level and annual quality review with external assurance.",
+      },
+      {
+        question: "Who is this qualification for?",
+        answer:
+          "It is designed for active traders, finance professionals and graduates who want a systematic, professional-level approach to chart analysis across multiple markets.",
+      },
+      {
+        question: "How is it assessed?",
+        answer:
+          "Each unit closes with an online MCQ, and Unit 8 adds a Practical Chart Analysis Portfolio of five annotated charts plus a 1,500–2,000 word written analytical report.",
+      },
+      {
+        question: "How long does it take to complete?",
+        answer:
+          "Most learners complete the certificate within ten to fourteen weeks, depending on their study pace and prior knowledge.",
+      },
+    ],
+  },
+  {
+    id: "isft-award-in-introduction-to-behavioural-psychology-in-trading",
+    slug: "isft-award-in-introduction-to-behavioural-psychology-in-trading",
+    title: "ISFT Award in Introduction to Behavioural Psychology in Trading",
+    shortTitle: "Introduction to Behavioural Psychology in Trading",
+    category: "OCN London",
+    targetAge: "Level 3 award",
+    coreReflex: "Recognise emotion, bias and decision pressure before they become a trade",
+    tagline: "The market moves on numbers. You move on emotion.",
+    description:
+      "A practitioner-designed Level 3 OCN London award for traders who already understand the market and want to understand the behavioural and emotional factors that shape performance under pressure.",
+    heroImage: "/Home/hero-section.jpg",
+    format: "Online, self-paced via Derivion Academy LMS",
+    eligibility: "Recommended prior learning: Level 2 Award in Introduction to Financial Trading, or equivalent foundational market knowledge",
+    duration: "6–10 weeks typical completion",
+    deadline: "Open for enrolment",
+    nextCohort: "Rolling intake",
+    tuition: "Contact admissions for current fee details",
+    scholarshipAvailable: false,
+    scholarshipText: "Not currently advertised",
+    stats: [
+      { value: "4", label: "Units" },
+      { value: "8", label: "Credits" },
+      { value: "Level 3", label: "Qualification" },
+      { value: "6–10 weeks", label: "Typical duration" },
+    ],
+    overview: [
+      "This qualification is designed for traders who already know the market but want to understand how fear, greed, bias and decision pressure influence execution and discipline.",
+      "It is grounded in behavioural finance and practical market psychology, helping learners identify how group behaviour, cognitive bias and emotional triggers can distort judgment.",
+      "Learners complete structured reflection, unit assessment and a final reflective journal, building the psychological discipline needed to trade more consistently under stress.",
+    ],
+    keyHighlights: [
+      "Practitioner-designed by the centre’s Head Educator with direct experience of the psychological demands of professional trading.",
+      "Delivered under OCN London with a defined credit value, level and external quality assurance.",
+      "Covers emotional recognition, behavioural finance, mental performance and discipline in execution.",
+      "Includes a structured reflective journal that applies the learning to real trading behaviour and decision-making.",
+    ],
+    curriculum: [
+      {
+        number: "Unit 01",
+        title: "Trading Emotions — Recognition and Control",
+        duration: "2 credits • Level 3",
+        description:
+          "Explores the emotional responses that can distort trade decisions and introduces practical techniques for recognising and managing them before they become destructive behaviour.",
+        topics: [
+          "Common trading emotions and triggers",
+          "Recognising emotional states in real time",
+          "Structured decision processes",
+          "Case studies of emotionally driven losses",
+        ],
+        skills: ["Identifying emotional responses", "Recognising triggers", "Applying structured decision processes"],
+        project: "Assess a trading scenario where emotion affected decision quality and explain how a structured process would improve the outcome.",
+      },
+      {
+        number: "Unit 02",
+        title: "Market Psychology and Behavioural Finance",
+        duration: "2 credits • Level 3",
+        description:
+          "Examines cognitive bias, loss aversion and herd behaviour, and connects these ideas to market bubbles, crashes and collective behaviour in financial markets.",
+        topics: [
+          "Confirmation bias, loss aversion and herd behaviour",
+          "Historical examples of market psychology",
+          "Behavioural finance theory",
+          "How biases shape crowd decisions",
+        ],
+        skills: ["Explaining cognitive bias", "Linking psychology to market behaviour", "Assessing decision distortion"],
+        project: "Use a historical or hypothetical market event to identify behavioural finance concepts and explain their influence on trader decisions.",
+      },
+      {
+        number: "Unit 03",
+        title: "Visualisation, Self-Talk and Mental Performance",
+        duration: "2 credits • Level 3",
+        description:
+          "Introduces mental performance techniques that help traders prepare deliberately before a session and maintain calm, focused execution when the market becomes volatile.",
+        topics: [
+          "Visualisation techniques",
+          "Professional preparation routines",
+          "Constructive versus destructive self-talk",
+          "Mental rehearsal before a trading session",
+        ],
+        skills: ["Applying visualisation", "Using self-talk constructively", "Preparing the mind for disciplined execution"],
+        project: "Construct a mental performance routine for a defined trading scenario and explain how it supports consistent decision-making.",
+      },
+      {
+        number: "Unit 04",
+        title: "Trade Execution, Goal Setting and P&L Management",
+        duration: "2 credits • Level 3",
+        description:
+          "Connects execution discipline to realistic goal setting and effective P&L management, with a focus on avoiding the common emotional pitfalls of cutting winners early or holding losers too long.",
+        topics: [
+          "Goal-setting principles for traders",
+          "Structured reflective journalling",
+          "Psychological pitfalls in P&L management",
+          "Trade execution discipline",
+        ],
+        skills: ["Setting realistic goals", "Evaluating own behaviour", "Managing emotional decision-making in execution"],
+        project: "Complete a 1,000–1,200 word reflective journal evaluating your own emotional responses and trading behaviour across the unit.",
+      },
+    ],
+    toolsAndPlatforms: [
+      "Derivion Academy LMS",
+      "Video lectures and written study materials",
+      "Auto-marked unit MCQs",
+      "Structured reflective journal",
+    ],
+    mentors: [
+      {
+        name: "Head Educator",
+        role: "Programme Author",
+        pastOrg: "ISFT / Derivion",
+        bio: "A practitioner with direct experience of the emotional and behavioural demands of professional trading over four decades.",
+        image: "/Home/hero-section.jpg",
+      },
+      {
+        name: "Derivion Academic Team",
+        role: "Assessment and Delivery Team",
+        pastOrg: "Derivion International Private Limited",
+        bio: "Supports quality assurance, learner progression and applied delivery aligned with OCN London standards.",
+        image: "/Home/hero-section.jpg",
+      },
+    ],
+    careerPaths: [
+      {
+        role: "Professional Trader",
+        avgCtc: "Emotional discipline",
+        description: "Develop the self-awareness and control needed to execute decisions calmly and consistently under pressure.",
+      },
+      {
+        role: "Market Decision-Maker",
+        avgCtc: "Behavioural awareness",
+        description: "Recognise how fear, greed, bias and herd behaviour influence trading judgments before action is taken.",
+      },
+      {
+        role: "Progression Pathway",
+        avgCtc: "Higher-level readiness",
+        description: "Build a psychologically informed foundation that supports continued study in risk management, technical analysis and market discipline.",
+      },
+    ],
+    admissionSteps: [
+      { step: "01", title: "Review prior learning", description: "Check your recommended Level 2 foundation or equivalent market knowledge before enrolling." },
+      { step: "02", title: "Access the LMS", description: "Begin the online, self-paced programme and work through the study materials and activities." },
+      { step: "03", title: "Complete assessments", description: "Pass each unit MCQ and complete the Unit 4 reflective journal under the Head Educator’s guidance." },
+    ],
+    faqs: [
+      {
+        question: "Is this qualification accredited?",
+        answer:
+          "Yes. It is delivered under OCN London and carries a defined credit value, level and annual quality review with external assurance.",
+      },
+      {
+        question: "Who is this qualification for?",
+        answer:
+          "It is designed for traders and finance professionals who already have technical market knowledge but want to understand the behavioural and emotional factors that influence decision-making.",
+      },
+      {
+        question: "How is it assessed?",
+        answer:
+          "Each unit closes with an online MCQ. Unit 4 also includes a structured reflective journal of 1,000–1,200 words, assessed against a published brief.",
+      },
+      {
+        question: "How long does it take to complete?",
+        answer:
+          "Most learners complete the award within six to ten weeks, depending on their study pace and prior knowledge.",
+      },
+    ],
+  },
+  {
+    id: "isft-award-in-introduction-to-futures-trading",
+    slug: "isft-award-in-introduction-to-futures-trading",
+    title: "ISFT Award in Introduction to Futures Trading",
+    shortTitle: "Introduction to Futures Trading",
+    category: "OCN London",
+    targetAge: "Level 3 award",
+    coreReflex: "Price it, margin it, hedge it, trade it",
+    tagline: "The layer between analysis and execution.",
+    description:
+      "A practitioner-designed Level 3 OCN London award that introduces learners to the mechanics of futures contracts, pricing, margin, hedging and applied strategy in a risk-aware framework.",
+    heroImage: "/Home/hero-section.jpg",
+    format: "Online, self-paced via Derivion Academy LMS",
+    eligibility: "Recommended prior learning: Level 2 Award in Introduction to Financial Trading, or equivalent foundational market knowledge",
+    duration: "6–10 weeks typical completion",
+    deadline: "Open for enrolment",
+    nextCohort: "Rolling intake",
+    tuition: "Contact admissions for current fee details",
+    scholarshipAvailable: false,
+    scholarshipText: "Not currently advertised",
+    stats: [
+      { value: "4", label: "Units" },
+      { value: "8", label: "Credits" },
+      { value: "Level 3", label: "Qualification" },
+      { value: "6–10 weeks", label: "Typical duration" },
+    ],
+    overview: [
+      "This qualification builds the critical step between analysis and execution by teaching learners how futures contracts are specified, priced and margined before they are used in hedging or speculative trading.",
+      "It focuses on the mechanics first: contract specification, spot-futures pricing, basis, margin and the operational realities of running a leveraged position.",
+      "Learners then apply the concepts in a written scenario report that constructs a hedge, calculates margin requirement and justifies the decision using disciplined risk management.",
+    ],
+    keyHighlights: [
+      "Practitioner-designed by the centre’s Head Educator with direct experience trading futures across LIFFE, CBOT and CME.",
+      "Delivered under OCN London with a defined credit value, level and external quality assurance.",
+      "Covers futures contracts, pricing, margin, basis and hedging in a structured and applied way.",
+      "Includes a written applied strategy report that assesses how a hedge and its margin requirement are constructed and justified.",
+    ],
+    curriculum: [
+      {
+        number: "Unit 01",
+        title: "Introduction to Futures and Derivatives",
+        duration: "2 credits • Level 3",
+        description:
+          "Explains what a standardised futures contract is, how it differs from forwards and options, and how exchanges and clearing houses make the market function.",
+        topics: [
+          "Futures contract specification",
+          "Exchange and clearing house function",
+          "Contract standardisation",
+          "Futures versus forwards and options",
+        ],
+        skills: ["Explaining futures contract features", "Comparing derivatives", "Understanding market infrastructure"],
+        project: "Describe the key features of a standardised futures contract and explain how it differs from a forward or option.",
+      },
+      {
+        number: "Unit 02",
+        title: "Futures Pricing, Margin and Basis",
+        duration: "2 credits • Level 3",
+        description:
+          "Examines the relationship between spot and futures prices, why basis changes over time, and how initial and maintenance margin protect the market and the participant.",
+        topics: [
+          "Spot-futures relationship",
+          "Initial and maintenance margin",
+          "Margin call mechanics",
+          "Basis and convergence",
+        ],
+        skills: ["Explaining pricing relationships", "Calculating simple margin scenarios", "Interpreting basis variation"],
+        project: "Explain the relationship between spot and futures prices and calculate a simple margin call scenario from provided data.",
+      },
+      {
+        number: "Unit 03",
+        title: "Hedging and Risk Management with Futures",
+        duration: "2 credits • Level 3",
+        description:
+          "Shows how futures contracts can protect an existing exposure and why leverage is both a resource and a major risk when trading them.",
+        topics: [
+          "Hedging principles and worked examples",
+          "Stop-losses and position sizing",
+          "Leverage and amplified risk",
+          "Managing futures risk",
+        ],
+        skills: ["Matching contracts to exposures", "Identifying risk management tools", "Assessing leverage risk"],
+        project: "Explain how a futures contract can hedge a given exposure and identify the key risk management issues involved.",
+      },
+      {
+        number: "Unit 04",
+        title: "Applied Futures Trading Strategies",
+        duration: "2 credits • Level 3",
+        description:
+          "Brings pricing, margin and hedging knowledge together in a realistic trading decision, including trend-following and spread strategies in a written applied scenario.",
+        topics: [
+          "Trend-following in futures",
+          "Applied scenario evaluation",
+          "Integrating pricing, margin and hedging",
+          "Spread trading",
+        ],
+        skills: ["Constructing a hedge", "Calculating margin requirements", "Justifying a futures trade under risk principles"],
+        project: "Write an 800–1,200 word applied futures scenario report constructing a hedge, calculating margin and justifying the decision.",
+      },
+    ],
+    toolsAndPlatforms: [
+      "Derivion Academy LMS",
+      "Video lectures and written study materials",
+      "Auto-marked unit MCQs",
+      "Written applied futures scenario report",
+    ],
+    mentors: [
+      {
+        name: "Neil Crammond",
+        role: "Head Educator",
+        pastOrg: "LIFFE • CBOT • CME",
+        bio: "A practitioner with more than 40 years of active experience trading across major global futures exchanges.",
+        image: "/Home/hero-section.jpg",
+      },
+      {
+        name: "Derivion Academic Team",
+        role: "Assessment and Delivery Team",
+        pastOrg: "Derivion International Private Limited",
+        bio: "Supports learner progression, quality assurance and applied delivery aligned with OCN London standards.",
+        image: "/Home/hero-section.jpg",
+      },
+    ],
+    careerPaths: [
+      {
+        role: "Futures Trader",
+        avgCtc: "Exposure management",
+        description: "Use futures contracts to hedge or trade positions with a stronger understanding of pricing, margin and leverage.",
+      },
+      {
+        role: "Risk-Aware Market Participant",
+        avgCtc: "Disciplined execution",
+        description: "Learn how to size and justify a futures position while staying grounded in the actual mechanics of leverage and margin.",
+      },
+      {
+        role: "Progression Pathway",
+        avgCtc: "Next-step readiness",
+        description: "Prepare for further study in risk management, technical analysis and advanced market decision-making with a recognised Level 3 qualification.",
+      },
+    ],
+    admissionSteps: [
+      { step: "01", title: "Review prior learning", description: "Check your recommended Level 2 foundation or equivalent market knowledge before enrolling." },
+      { step: "02", title: "Access the LMS", description: "Begin the online, self-paced programme and work through the study materials and examples." },
+      { step: "03", title: "Complete assessments", description: "Pass each unit MCQ and complete the Unit 4 applied futures report under the Head Educator’s guidance." },
+    ],
+    faqs: [
+      {
+        question: "Is this qualification accredited?",
+        answer:
+          "Yes. It is delivered under OCN London and carries a defined credit value, level and annual quality review with external assurance.",
+      },
+      {
+        question: "Who is this qualification for?",
+        answer:
+          "It is designed for learners with foundational market knowledge who want a specialised, practical understanding of futures trading for both hedging and speculative purposes.",
+      },
+      {
+        question: "How is it assessed?",
+        answer:
+          "Each unit closes with an online MCQ, and Unit 4 includes a written 800–1,200 word applied futures report assessed against a published marking brief.",
+      },
+      {
+        question: "How long does it take to complete?",
+        answer:
+          "Most learners complete the award within six to ten weeks, depending on their study pace and prior knowledge.",
       },
     ],
   },
@@ -559,7 +1977,7 @@ export const PROGRAMMES: Programme[] = [
           "UPI AutoPay and Silent Recurring Mandate Traps",
           "Dark Patterns in Consumer Apps: Forced Continuity, Misdirection, and Drip Pricing",
           "Buy Now Pay Later (BNPL): The Psychology of Invisible Debt",
-          "Digital Identity, Behavioral Tracking, and Targeted Financial Advertising",
+          "Digital Identity, Behavioural Tracking, and Targeted Financial Advertising",
           "Digital Records, Account Hygiene, and Digital Asset Succession",
         ],
         skills: ["AutoPay Auditing", "Dark Pattern Detection", "BNPL Risk Containment", "Digital Record Keeping"],

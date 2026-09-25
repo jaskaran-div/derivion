@@ -24,13 +24,13 @@ export default function Placement() {
             {/* Quote Block */}
             <div className="space-y-3">
               <Quote className="w-8 h-8 text-[#ED1654] opacity-90" />
-              <p className="text-[#D9D9D9] text-sm sm:text-base leading-relaxed font-light italic">
-                &ldquo;Real-world competence in modern markets isn&apos;t built through passive memorisation; it is measured by the clarity of your instincts, your habit of independent verification, and the reflexes you deploy when risk emerges.&rdquo;
+              <p className="text-white text-sm sm:text-base leading-relaxed font-light italic">
+                “Real-world competence in modern markets isn&apos;t built through passive memorisation; it is measured by the clarity of your instincts, your habit of independent verification, and the reflexes you deploy when risk emerges.”
               </p>
             </div>
 
             {/* Metrics & Statistics Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 py-4 border-y border-[#141414]/80">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 py-4 border-y border-white/10">
               {stats.map((stat, index) => (
                 <div
                   key={index}
@@ -39,7 +39,7 @@ export default function Placement() {
                   <span className={`text-2xl sm:text-3xl font-extrabold tracking-tight ${index === 0 ? "text-[#A8FF24]" : "text-white"}`}>
                     {stat.value}
                   </span>
-                  <span className="text-[11px] sm:text-xs text-[#737373] font-medium leading-tight">
+                  <span className="text-[11px] sm:text-xs text-white/80 font-medium leading-tight">
                     {stat.label}
                   </span>
                 </div>
@@ -110,7 +110,7 @@ export default function Placement() {
                 <span className="text-[10px] font-bold text-[#ED1654] uppercase tracking-wider">
                   Approach
                 </span>
-                <p className="text-[11px] sm:text-xs text-[#737373] leading-relaxed line-clamp-4">
+                <p className="text-[11px] sm:text-xs text-[#111111]/80 leading-relaxed line-clamp-4">
                   Derivion connects financial mechanics, screen psychology, and cybersecurity into automated personal reflexes: Stop &amp; Ask for young minds, Verify Before You Act for teenagers, and Judge, Verify &amp; Know Your Recourse for earning adults.
                 </p>
               </div>
