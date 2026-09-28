@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import AnimateOnScroll from "@/app/components/AnimateOnScroll";
 
 export default function OurAlumni() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -54,7 +55,7 @@ export default function OurAlumni() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-6 items-start">
 
           {/* ─── Left Sidebar: Title, Description & CTA ─── */}
-          <div className="lg:col-span-4 space-y-4 sm:space-y-6 lg:sticky lg:top-28">
+          <AnimateOnScroll animation="fade-right" duration={700} className="lg:col-span-4 space-y-4 sm:space-y-6 lg:sticky lg:top-28">
             <div className="space-y-2">
               <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
                 Proven Network
@@ -78,10 +79,10 @@ export default function OurAlumni() {
               <span>EXPLORE NETWORK</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
-          </div>
+          </AnimateOnScroll>
 
           {/* ─── Right Side: Alumni Card Grid ─── */}
-          <div className="lg:col-span-8 space-y-6">
+          <AnimateOnScroll animation="fade-left" delay={150} duration={700} className="lg:col-span-8 space-y-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {currentAlumni.map((alumnus, index) => {
                 return (
@@ -176,7 +177,7 @@ export default function OurAlumni() {
               </div>
             </div>
 
-          </div>
+          </AnimateOnScroll>
 
         </div>
       </div>

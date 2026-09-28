@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import AnimateOnScroll from "@/app/components/AnimateOnScroll";
 
 export default function WhyUs() {
   return (
@@ -11,7 +12,7 @@ export default function WhyUs() {
       <div className="max-w-7xl mx-auto space-y-8 sm:space-y-10">
 
         {/* ─── Header: Title & CTA Button ─── */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <AnimateOnScroll animation="fade-up" duration={600} className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="space-y-1">
             <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
               The Derivion Advantage
@@ -25,21 +26,21 @@ export default function WhyUs() {
           </div>
           <Link
             href="/about"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full border border-[#000000] hover:bg-[#000000] hover:text-white text-[#000000] text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-200"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full border border-[#ED1654] hover:bg-[#ED1654] text-[#ED1654] hover:text-white text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-200"
           >
             <span>SEE ALL DETAILS</span>
             <ArrowUpRight className="w-4 h-4" />
           </Link>
-        </div>
+        </AnimateOnScroll>
 
         {/* ─── Bento Layout Grid ─── */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6">
 
           {/* Top Left Card: Image + Text Side-by-Side */}
-          <div className="md:col-span-5 bg-[#D9D9D9]/20 border border-[#D9D9D9] rounded-2xl overflow-hidden p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5 hover:shadow-lg transition-all duration-300">
+          <AnimateOnScroll animation="fade-right" delay={100} duration={600} className="md:col-span-5 bg-[#D9D9D9]/20 border border-[#D9D9D9] rounded-2xl overflow-hidden p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5 hover:shadow-lg transition-all duration-300">
             <div className="relative w-full sm:w-1/2 h-44 rounded-xl overflow-hidden bg-[#D9D9D9] shrink-0">
               <Image
-                src="/Home/hero-section.jpg"
+                src="/Home/why.jpg"
                 alt="Practitioner-crafted education"
                 fill
                 className="object-cover"
@@ -53,13 +54,13 @@ export default function WhyUs() {
                 Designed around actual economic shifts, digital payment realities, and modern cyber risk vectors.
               </p>
             </div>
-          </div>
+          </AnimateOnScroll>
 
           {/* Top Right Featured Large Card */}
-          <div className="md:col-span-7 bg-[#F5F5F5] text-[#111111] border border-[#E7E7E7] rounded-2xl overflow-hidden relative min-h-[220px] sm:min-h-[240px] group flex flex-col justify-end p-6 sm:p-8 hover:shadow-xl transition-all duration-300">
+          <AnimateOnScroll animation="fade-left" delay={150} duration={600} className="md:col-span-7 bg-[#F5F5F5] text-[#111111] border border-[#E7E7E7] rounded-2xl overflow-hidden relative min-h-[220px] sm:min-h-[240px] group flex flex-col justify-end p-6 sm:p-8 hover:shadow-xl transition-all duration-300">
             <div className="absolute inset-0 z-0 opacity-30 group-hover:scale-105 transition-transform duration-500">
               <Image
-                src="/Home/hero-section.jpg"
+                src="/Home/5 pillars.webp"
                 alt="Holistic multi-pillar education"
                 fill
                 className="object-cover"
@@ -76,13 +77,13 @@ export default function WhyUs() {
                 Combining Financial, Digital, AI, Cyber, and Legal literacy into a single unified capability built for modern life.
               </p>
             </div>
-          </div>
+          </AnimateOnScroll>
 
           {/* Bottom Left Tall Card */}
-          <div className="md:col-span-5 bg-[#D9D9D9]/20 border border-[#D9D9D9] rounded-2xl overflow-hidden relative min-h-[200px] sm:min-h-[220px] group flex flex-col justify-end p-6 sm:p-8 hover:shadow-lg transition-all duration-300">
+          <AnimateOnScroll animation="fade-right" delay={200} duration={600} className="md:col-span-5 bg-[#D9D9D9]/20 border border-[#D9D9D9] rounded-2xl overflow-hidden relative min-h-[200px] sm:min-h-[220px] group flex flex-col justify-end p-6 sm:p-8 hover:shadow-lg transition-all duration-300">
             <div className="absolute inset-0 z-0 opacity-20 group-hover:scale-105 transition-transform duration-500">
               <Image
-                src="/Home/hero-section.jpg"
+                src="/Home/3rd.jpg"
                 alt="Reflex-driven habits"
                 fill
                 className="object-cover"
@@ -99,13 +100,13 @@ export default function WhyUs() {
                 Instilling automated behavioural reflexes: Stop &amp; Ask, Verify Before You Act, and Statutory Recourse.
               </p>
             </div>
-          </div>
+          </AnimateOnScroll>
 
           {/* Bottom Right Card: Image + Text Side-by-Side */}
-          <div className="md:col-span-7 bg-[#D9D9D9]/20 border border-[#D9D9D9] rounded-2xl overflow-hidden p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5 hover:shadow-lg transition-all duration-300">
+          <AnimateOnScroll animation="fade-left" delay={250} duration={600} className="md:col-span-7 bg-[#D9D9D9]/20 border border-[#D9D9D9] rounded-2xl overflow-hidden p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5 hover:shadow-lg transition-all duration-300">
             <div className="relative w-full sm:w-1/2 h-48 rounded-xl overflow-hidden bg-[#D9D9D9] shrink-0">
               <Image
-                src="/Home/hero-section.jpg"
+                src="/Home/case.jpg"
                 alt="Reconstructed Case Studies"
                 fill
                 className="object-cover"
@@ -119,7 +120,7 @@ export default function WhyUs() {
                 Deconstructing market collapses, rogue losses, synthetic voice scams, and predatory debt traps to inoculate capital before risk arrives.
               </p>
             </div>
-          </div>
+          </AnimateOnScroll>
 
         </div>
       </div>

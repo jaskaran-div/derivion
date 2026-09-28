@@ -3,6 +3,7 @@
 import React, { useRef } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
+import AnimateOnScroll from "@/app/components/AnimateOnScroll";
 
 export default function Masters() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -66,8 +67,7 @@ export default function Masters() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
 
           {/* ─── Left Sidebar: Heading, Bio & Navigation ─── */}
-          <div className="lg:col-span-5 space-y-4 sm:space-y-6">
-
+          <AnimateOnScroll animation="fade-right" duration={700} className="lg:col-span-5 space-y-4 sm:space-y-6">
             {/* Section Tag */}
             <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
               Our Mentors
@@ -98,16 +98,16 @@ export default function Masters() {
               </button>
               <button
                 onClick={() => handleScroll("right")}
-                className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#000000] hover:bg-[#141414] text-white flex items-center justify-center transition-all shadow-md active:scale-95"
+                className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#ED1654] hover:bg-[#d6124b] text-white flex items-center justify-center transition-all shadow-md active:scale-95"
                 aria-label="Next card"
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
             </div>
-          </div>
+          </AnimateOnScroll>
 
           {/* ─── Right Side: Tall Vertical Video Cards Carousel ─── */}
-          <div className="lg:col-span-7 overflow-hidden">
+          <AnimateOnScroll animation="fade-left" delay={150} duration={700} className="lg:col-span-7 overflow-hidden">
             <div
               ref={scrollContainerRef}
               className="flex items-stretch gap-4 sm:gap-5 overflow-x-auto pb-4 no-scrollbar scroll-smooth snap-x snap-mandatory"
@@ -139,7 +139,7 @@ export default function Masters() {
                 </div>
               ))}
             </div>
-          </div>
+          </AnimateOnScroll>
 
         </div>
       </div>

@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
+import AnimateOnScroll from "@/app/components/AnimateOnScroll";
 
 export default function AboutUsPage() {
   const pillars = [
@@ -99,7 +100,7 @@ export default function AboutUsPage() {
         <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
-            <div className="lg:col-span-7 space-y-4">
+            <AnimateOnScroll animation="fade-right" duration={700} className="lg:col-span-7 space-y-4">
               <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
                 About Derivion
               </span>
@@ -121,7 +122,7 @@ export default function AboutUsPage() {
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <Link
                   href="/programs"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#000000] hover:bg-[#141414] text-white text-xs sm:text-sm font-semibold transition-all active:scale-95 shadow-sm"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#ED1654] hover:bg-[#d6124b] text-white text-xs sm:text-sm font-semibold transition-all active:scale-95 shadow-sm"
                 >
                   <span>Explore Our Programmes</span>
                   <ArrowRight className="w-4 h-4" />
@@ -129,15 +130,15 @@ export default function AboutUsPage() {
 
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#000000] hover:bg-[#000000] hover:text-white text-[#000000] text-xs sm:text-sm font-semibold transition-all active:scale-95"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#ED1654] hover:bg-[#ED1654] hover:text-white text-[#ED1654] text-xs sm:text-sm font-semibold transition-all active:scale-95"
                 >
                   <span>Get in Touch</span>
                 </Link>
               </div>
-            </div>
+            </AnimateOnScroll>
 
             {/* Overlapping Stats Card */}
-            <div className="lg:col-span-5 flex items-center justify-center lg:justify-end -space-x-4 py-4">
+            <AnimateOnScroll animation="fade-left" delay={150} duration={700} className="lg:col-span-5 flex items-center justify-center lg:justify-end -space-x-4 py-4">
               <div className="w-32 h-32 sm:w-44 sm:h-44 rounded-full border border-[#D9D9D9] bg-white shadow-md flex flex-col items-center justify-center text-center p-3 hover:scale-105 transition-transform">
                 <span className="text-2xl sm:text-4xl font-bold text-[#ED1654]">3</span>
                 <span className="text-[10px] sm:text-xs text-[#737373] mt-1 font-medium max-w-[90px]">
@@ -156,44 +157,46 @@ export default function AboutUsPage() {
                   Practitioner Focus
                 </span>
               </div>
-            </div>
+            </AnimateOnScroll>
 
           </div>
         </section>
 
         {/* ─── Hero Cinematic Media Frame ─── */}
         <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
-          <div className="relative w-full h-[320px] sm:h-[440px] rounded-3xl overflow-hidden bg-[#F2F2F2] shadow-xl">
-            <Image
-              src="/Home/about-us-pic.png"
-              alt="Derivion Learning Environment"
-              fill
-              className="object-cover opacity-85"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-            
-            <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 text-white">
-              <div className="space-y-1 max-w-xl">
-                <span className="text-xs font-bold uppercase tracking-widest text-[#A8FF24]">
-                  The Derivion Environment
+          <AnimateOnScroll animation="fade-up" duration={700}>
+            <div className="relative w-full h-[320px] sm:h-[440px] rounded-3xl overflow-hidden bg-[#F2F2F2] shadow-xl">
+              <Image
+                src="/Home/about-us-pic.png"
+                alt="Derivion Learning Environment"
+                fill
+                className="object-cover opacity-85"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+              
+              <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 text-white">
+                <div className="space-y-1 max-w-xl">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#A8FF24]">
+                    The Derivion Environment
+                  </span>
+                  <h3
+                    className="text-xl sm:text-2xl font-medium tracking-tight"
+                    style={{ fontFamily: "var(--font-serif)" }}
+                  >
+                    Designed for active inquiry, real-world case deconstruction, and structured habit formation.
+                  </h3>
+                </div>
+                <span className="px-4 py-2 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-xs font-mono text-[#D9D9D9]">
+                  HYBRID LEARNING • CASE-BASED
                 </span>
-                <h3
-                  className="text-xl sm:text-2xl font-medium tracking-tight"
-                  style={{ fontFamily: "var(--font-serif)" }}
-                >
-                  Designed for active inquiry, real-world case deconstruction, and structured habit formation.
-                </h3>
               </div>
-              <span className="px-4 py-2 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-xs font-mono text-[#D9D9D9]">
-                HYBRID LEARNING • CASE-BASED
-              </span>
             </div>
-          </div>
+          </AnimateOnScroll>
         </section>
 
         {/* ─── The Derivion Thesis: Comparison Table ─── */}
         <section className="w-full bg-[#F7F7F5] text-[#111111] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-y border-[#D9D9D9]">
-          <div className="max-w-7xl mx-auto space-y-10">
+          <AnimateOnScroll animation="fade-up" duration={700} className="max-w-7xl mx-auto space-y-10">
             <div className="max-w-3xl space-y-2">
               <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
                 The Foundational Imperative
@@ -271,12 +274,12 @@ export default function AboutUsPage() {
                 </ul>
               </div>
             </div>
-          </div>
+          </AnimateOnScroll>
         </section>
 
         {/* ─── 4 Core Pillars Bento Grid ─── */}
         <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
-          <div className="space-y-10">
+          <AnimateOnScroll animation="fade-up" duration={700} className="space-y-10">
             <div className="space-y-2">
               <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
                 Foundational DNA
@@ -319,12 +322,12 @@ export default function AboutUsPage() {
                 </div>
               ))}
             </div>
-          </div>
+          </AnimateOnScroll>
         </section>
 
         {/* ─── Academic Stewardship & Disciplines ─── */}
         <section className="w-full bg-[#F7F7F5] text-[#111111] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
-          <div className="max-w-7xl mx-auto space-y-10">
+          <AnimateOnScroll animation="fade-up" duration={700} className="max-w-7xl mx-auto space-y-10">
             <div className="space-y-2">
               <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
                 Curricular Disciplines
@@ -372,12 +375,12 @@ export default function AboutUsPage() {
                 </div>
               ))}
             </div>
-          </div>
+          </AnimateOnScroll>
         </section>
 
         {/* ─── Educational Statement ─── */}
         <section className="w-full bg-[#F7F7F5] text-[#111111] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
-          <div className="max-w-7xl mx-auto space-y-10">
+          <AnimateOnScroll animation="fade-up" duration={700} className="max-w-7xl mx-auto space-y-10">
             <div className="bg-white text-[#111111] rounded-3xl p-6 sm:p-12 border border-[#E6E6E6] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-sm">
               <div className="lg:col-span-8 space-y-4">
                 <Quote className="w-10 h-10 text-[#ED1654]" />
@@ -421,12 +424,12 @@ export default function AboutUsPage() {
                 </div>
               </div>
             </div>
-          </div>
+          </AnimateOnScroll>
         </section>
 
         {/* ─── Bottom CTA ─── */}
         <section className="w-full bg-[#F7F7F5] py-14 px-4 sm:px-8 text-[#111111] border-t border-[#D9D9D9]">
-          <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+          <AnimateOnScroll animation="fade-up" duration={700} className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="space-y-1">
               <h3
                 className="text-2xl sm:text-3xl font-medium tracking-tight"
@@ -446,7 +449,7 @@ export default function AboutUsPage() {
                 Get in Touch
               </Link>
             </div>
-          </div>
+          </AnimateOnScroll>
         </section>
       </main>
 

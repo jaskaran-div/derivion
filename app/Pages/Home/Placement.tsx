@@ -4,17 +4,10 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Quote, CheckCircle2, Newspaper, ExternalLink } from "lucide-react";
+import AnimateOnScroll from "@/app/components/AnimateOnScroll";
 
 export default function Placement() {
   const [showFullArticle, setShowFullArticle] = useState(false);
-
-  const stats = [
-    { value: "100%", label: "Improved Prospects" },
-    { value: "5★", label: "Cohort Satisfaction" },
-    { value: "Level 5", label: "UK-Regulated Diploma" },
-    { value: "100%", label: "Career Aspiration" },
-    { value: "Tier-1", label: "Market Systems" },
-  ];
 
   return (
     <section id="framework" className="w-full bg-[#F7F7F5] py-12 sm:py-16 px-4 sm:px-8 text-[#111111]">
@@ -22,8 +15,7 @@ export default function Placement() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
 
           {/* ─── Left Column: Founder's Quote, Stats & CTAs ─── */}
-          <div className="lg:col-span-7 flex flex-col justify-between space-y-8">
-            
+          <AnimateOnScroll animation="fade-right" duration={700} className="lg:col-span-7 flex flex-col justify-center space-y-6">
             {/* Header Tag + Founder Quote Block */}
             <div className="space-y-4">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ED1654]/10 text-[#ED1654] border border-[#ED1654]/20 text-xs font-bold uppercase tracking-wider">
@@ -45,25 +37,8 @@ export default function Placement() {
               </div>
             </div>
 
-            {/* Metrics & Statistics Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 py-4 border-y border-[#E7E7E7]">
-              {stats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col space-y-1 p-2.5 rounded-xl bg-[#F7F7F5]"
-                >
-                  <span className={`text-xl sm:text-2xl font-extrabold tracking-tight ${index === 0 || index === 3 ? "text-[#ED1654]" : "text-[#111111]"}`}>
-                    {stat.value}
-                  </span>
-                  <span className="text-[10px] sm:text-xs text-[#525252] font-medium leading-tight">
-                    {stat.label}
-                  </span>
-                </div>
-              ))}
-            </div>
-
             {/* CTA Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <Link
                 href="/programs"
                 className="inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-full bg-[#ED1654] hover:bg-[#d6124b] text-white text-xs sm:text-sm font-semibold transition-all duration-200 shadow-md active:scale-95"
@@ -78,11 +53,10 @@ export default function Placement() {
                 <span>ADMISSIONS INQUIRY</span>
               </Link>
             </div>
-
-          </div>
+          </AnimateOnScroll>
 
           {/* ─── Right Column: Press Release Article Card ─── */}
-          <div className="lg:col-span-5 flex flex-col justify-between border border-[#D9D9D9] rounded-2xl overflow-hidden bg-white shadow-sm">
+          <AnimateOnScroll animation="fade-left" delay={150} duration={700} className="lg:col-span-5 flex flex-col justify-between border border-[#D9D9D9] rounded-2xl overflow-hidden bg-white shadow-sm">
             <div className="p-6 space-y-4">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] uppercase font-bold tracking-widest text-[#ED1654] bg-[#ED1654]/10 px-2.5 py-1 rounded">
@@ -130,28 +104,7 @@ export default function Placement() {
                 <ArrowRight className={`w-3.5 h-3.5 transition-transform ${showFullArticle ? "rotate-90" : ""}`} />
               </button>
             </div>
-
-            {/* Bottom Highlight Box */}
-            {/* <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 p-4 sm:p-6 bg-[#D9D9D9]/20 border-t border-[#D9D9D9] items-center">
-              <div className="sm:col-span-5 relative h-28 sm:h-full min-h-[100px] rounded-lg overflow-hidden bg-[#D9D9D9]">
-                <Image
-                  src="/Home/hero-section.jpg"
-                  alt="Derivion educational session"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="sm:col-span-7 space-y-1">
-                <span className="text-[10px] font-bold text-[#ED1654] uppercase tracking-wider">
-                  ISFT by Derivion Standard
-                </span>
-                <p className="text-[11px] sm:text-xs text-[#111111]/90 leading-relaxed line-clamp-4 font-normal">
-                  Delivering UK-regulated qualifications that bridge academic learning and professional market practice across India with international presence in London, UK.
-                </p>
-              </div>
-            </div> */}
-
-          </div>
+          </AnimateOnScroll>
 
         </div>
       </div>

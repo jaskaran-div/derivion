@@ -63,3 +63,42 @@ body {
 /* ─── Scrollbar Hide Utility ─── */
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ─── Scroll-Triggered Animation System ─── */
+
+/* Initial hidden states */
+.anim-hidden {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+.anim-hidden.anim-fade-up    { transform: translateY(36px); }
+.anim-hidden.anim-fade-down  { transform: translateY(-36px); }
+.anim-hidden.anim-fade-left  { transform: translateX(40px); }
+.anim-hidden.anim-fade-right { transform: translateX(-40px); }
+.anim-hidden.anim-scale-up   { transform: scale(0.93); }
+.anim-hidden.anim-fade-in    { transform: none; }
+
+/* Visible (animated-in) state */
+.anim-visible {
+  opacity: 1 !important;
+  transform: none !important;
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* Delay helpers */
+.anim-delay-0   { transition-delay: 0ms; }
+.anim-delay-100 { transition-delay: 100ms; }
+.anim-delay-150 { transition-delay: 150ms; }
+.anim-delay-200 { transition-delay: 200ms; }
+.anim-delay-300 { transition-delay: 300ms; }
+.anim-delay-400 { transition-delay: 400ms; }
+.anim-delay-500 { transition-delay: 500ms; }
+.anim-delay-600 { transition-delay: 600ms; }
+
+/* Duration helpers */
+.anim-duration-400 { transition-duration: 400ms; }
+.anim-duration-500 { transition-duration: 500ms; }
+.anim-duration-600 { transition-duration: 600ms; }
+.anim-duration-700 { transition-duration: 700ms; }
+.anim-duration-800 { transition-duration: 800ms; }

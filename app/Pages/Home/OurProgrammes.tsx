@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Sparkles, BookOpen, Clock, Users } from "lucide-react";
 import { PROGRAMMES } from "@/app/data/programmes";
+import AnimateOnScroll from "@/app/components/AnimateOnScroll";
 
 export default function OurProgrammes() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -22,7 +23,7 @@ export default function OurProgrammes() {
       <div className="max-w-7xl mx-auto space-y-8">
         
         {/* ─── Top Header & Category Filter Tabs ─── */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <AnimateOnScroll animation="fade-up" duration={600} className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-2 max-w-xl">
             <span className="text-xs font-bold uppercase tracking-wider text-[#ED1654] flex items-center gap-1.5">
               <Sparkles className="w-3.5 h-3.5 text-[#ED1654]" />
@@ -46,10 +47,10 @@ export default function OurProgrammes() {
             <span>View Full Catalogue</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
-        </div>
+        </AnimateOnScroll>
 
         {/* ─── Interactive Filter Tabs ─── */}
-        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 pt-1 border-b border-[#E5E7EB]">
+        <AnimateOnScroll animation="fade-up" delay={100} duration={600} className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 pt-1 border-b border-[#E5E7EB]">
           {categories.map((category) => {
             const isActive = activeCategory === category;
             return (
@@ -66,76 +67,75 @@ export default function OurProgrammes() {
               </button>
             );
           })}
-        </div>
+        </AnimateOnScroll>
 
         {/* ─── Compact User-Friendly Grid Layout (3 Columns) ─── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProgrammes.slice(0, 6).map((prog) => (
-            <div
-              key={prog.id}
-              className="bg-white border border-[#E5E7EB] rounded-2xl p-5 flex flex-col justify-between hover:shadow-md hover:border-[#D1D5DB] transition-all duration-300 group space-y-4"
-            >
-              <div className="space-y-3.5">
-                {/* Image Frame */}
-                <div className="relative w-full h-44 rounded-xl overflow-hidden bg-[#F3F4F6]">
-                  <Image
-                    src={prog.heroImage}
-                    alt={prog.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute top-3 left-3 flex items-center gap-2">
-                    <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-md bg-white/95 text-[#ED1654] shadow-sm">
-                      {prog.category}
-                    </span>
+        <AnimateOnScroll animation="fade-up" delay={200} duration={700}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredProgrammes.slice(0, 6).map((prog) => (
+              <div
+                key={prog.id}
+                className="bg-white border border-[#E5E7EB] rounded-2xl p-5 flex flex-col justify-between hover:shadow-md hover:border-[#D1D5DB] transition-all duration-300 group space-y-4"
+              >
+                <div className="space-y-3.5">
+                  {/* Image Frame */}
+                  <div className="relative w-full h-44 rounded-xl overflow-hidden bg-[#F3F4F6]">
+                    <Image
+                      src={prog.heroImage}
+                      alt={prog.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute top-3 left-3 flex items-center gap-2">
+                      <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-md bg-white/95 text-[#ED1654] shadow-sm">
+                        {prog.category}
+                      </span>
+                    </div>
+                    <div className="absolute bottom-3 right-3">
+                      <span className="text-[10px] font-semibold text-white bg-black/60 backdrop-blur-sm px-2.5 py-1 rounded-md">
+                        {prog.targetAge}
+                      </span>
+                    </div>
                   </div>
-                  <div className="absolute bottom-3 right-3">
-                    <span className="text-[10px] font-semibold text-white bg-black/60 backdrop-blur-sm px-2.5 py-1 rounded-md">
-                      {prog.targetAge}
-                    </span>
+
+                  {/* Content */}
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between text-xs text-[#6B7280]">
+                      <span className="flex items-center gap-1">
+                        <Clock className="w-3.5 h-3.5 text-[#ED1654]" />
+                        {prog.duration}
+                      </span>
+                    </div>
+
+                    <h3 className="text-base sm:text-lg font-bold text-[#111111] leading-snug line-clamp-2">
+                      <Link href={`/programs/${prog.slug}`} className="hover:text-[#ED1654] transition-colors">
+                        {prog.title}
+                      </Link>
+                    </h3>
+
+                    <p className="text-xs text-[#6B7280] leading-relaxed line-clamp-2">
+                      {prog.description}
+                    </p>
                   </div>
                 </div>
 
-                {/* Content */}
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between text-xs text-[#6B7280]">
-                    <span className="flex items-center gap-1">
-                      <Clock className="w-3.5 h-3.5 text-[#ED1654]" />
-                      {prog.duration}
-                    </span>
-                    {/* <span className="text-[10px] font-bold text-[#059669] bg-[#10B981]/10 px-2 py-0.5 rounded">
-                      Reflex: {prog.coreReflex}
-                    </span> */}
-                  </div>
-
-                  <h3 className="text-base sm:text-lg font-bold text-[#111111] leading-snug line-clamp-2">
-                    <Link href={`/programs/${prog.slug}`} className="hover:text-[#ED1654] transition-colors">
-                      {prog.title}
-                    </Link>
-                  </h3>
-
-                  <p className="text-xs text-[#6B7280] leading-relaxed line-clamp-2">
-                    {prog.description}
-                  </p>
+                {/* Action Button */}
+                <div className="pt-2">
+                  <Link
+                    href={`/programs/${prog.slug}`}
+                    className="w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-[#F3F4F6] hover:bg-[#ED1654] text-[#111111] hover:text-white text-xs font-semibold transition-all duration-200"
+                  >
+                    <span>Explore Programme</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
                 </div>
               </div>
-
-              {/* Action Button */}
-              <div className="pt-2">
-                <Link
-                  href={`/programs/${prog.slug}`}
-                  className="w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-[#F3F4F6] hover:bg-[#ED1654] text-[#111111] hover:text-white text-xs font-semibold transition-all duration-200"
-                >
-                  <span>Explore Programme</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </AnimateOnScroll>
 
         {/* View All Bottom Banner */}
-        <div className="text-center pt-4">
+        <AnimateOnScroll animation="fade-up" delay={250} duration={600} className="text-center pt-4">
           <Link
             href="/programs"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#111111] hover:bg-[#111111] text-[#111111] hover:text-white text-xs font-bold uppercase tracking-wider transition-all"
@@ -143,7 +143,7 @@ export default function OurProgrammes() {
             <span>Explore All {PROGRAMMES.length} Programmes &amp; OCN Qualifications</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
-        </div>
+        </AnimateOnScroll>
 
       </div>
     </section>

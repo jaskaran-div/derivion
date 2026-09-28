@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Search, ArrowRight, Sparkles, Clock } from "lucide-react";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
+import AnimateOnScroll from "@/app/components/AnimateOnScroll";
 import { PROGRAMMES } from "@/app/data/programmes";
 
 export default function ProgrammesDirectoryPage() {
@@ -34,7 +35,7 @@ export default function ProgrammesDirectoryPage() {
       <main className="flex-1">
         {/* ─── Hero Section ─── */}
         <section className="w-full bg-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
-          <div className="max-w-3xl space-y-4">
+          <AnimateOnScroll animation="fade-up" duration={600} className="max-w-3xl space-y-4">
             <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#ED1654]">
               <Sparkles className="w-4 h-4 text-[#ED1654]" />
               <span>Derivion Academic Catalogue</span>
@@ -52,10 +53,10 @@ export default function ProgrammesDirectoryPage() {
             <p className="text-sm sm:text-base md:text-lg text-[#737373] leading-relaxed">
               Explore Derivion&apos;s practitioner-crafted programmes designed to build safe instincts, screen hygiene, AI verification, and financial defence across youth and adulthood.
             </p>
-          </div>
+          </AnimateOnScroll>
 
           {/* ─── Search & Category Filter Row ─── */}
-          <div className="mt-8 sm:mt-12 space-y-4">
+          <AnimateOnScroll animation="fade-up" delay={150} duration={600} className="mt-8 sm:mt-12 space-y-4">
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
               {/* Search input */}
               <div className="relative w-full sm:max-w-md">
@@ -94,7 +95,7 @@ export default function ProgrammesDirectoryPage() {
                 );
               })}
             </div>
-          </div>
+          </AnimateOnScroll>
         </section>
 
         {/* ─── Programmes Grid ─── */}
@@ -113,64 +114,66 @@ export default function ProgrammesDirectoryPage() {
               </button>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredProgrammes.map((programme) => (
-                <div
-                  key={programme.id}
-                  className="bg-white rounded-2xl border border-[#E5E7EB] overflow-hidden flex flex-col group hover:shadow-md hover:border-[#D1D5DB] transition-all duration-300"
-                >
-                  {/* Image */}
-                  <div className="relative w-full h-44 overflow-hidden bg-[#F3F4F6]">
-                    <Image
-                      src={programme.heroImage}
-                      alt={programme.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    {/* Category badge top-left */}
-                    <div className="absolute top-3 left-3">
-                      <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white text-[#ED1654] border border-[#ED1654]/20 shadow-sm">
-                        {programme.category}
-                      </span>
+            <AnimateOnScroll animation="fade-up" delay={200} duration={700}>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredProgrammes.map((programme) => (
+                  <div
+                    key={programme.id}
+                    className="bg-white rounded-2xl border border-[#E5E7EB] overflow-hidden flex flex-col group hover:shadow-md hover:border-[#D1D5DB] transition-all duration-300"
+                  >
+                    {/* Image */}
+                    <div className="relative w-full h-44 overflow-hidden bg-[#F3F4F6]">
+                      <Image
+                        src={programme.heroImage}
+                        alt={programme.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      {/* Category badge top-left */}
+                      <div className="absolute top-3 left-3">
+                        <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white text-[#ED1654] border border-[#ED1654]/20 shadow-sm">
+                          {programme.category}
+                        </span>
+                      </div>
+                      {/* Age badge top-right */}
+                      <div className="absolute top-3 right-3">
+                        <span className="px-2.5 py-1 rounded-full text-[10px] font-semibold bg-white text-[#374151] border border-[#E5E7EB] shadow-sm">
+                          {programme.targetAge}
+                        </span>
+                      </div>
                     </div>
-                    {/* Age badge top-right */}
-                    <div className="absolute top-3 right-3">
-                      <span className="px-2.5 py-1 rounded-full text-[10px] font-semibold bg-white text-[#374151] border border-[#E5E7EB] shadow-sm">
-                        {programme.targetAge}
-                      </span>
+
+                    {/* Content */}
+                    <div className="p-5 flex flex-col flex-1 gap-3">
+                      {/* Duration */}
+                      <div className="flex items-center gap-1.5 text-xs text-[#9CA3AF]">
+                        <Clock className="w-3.5 h-3.5 text-[#ED1654] shrink-0" />
+                        <span>{programme.duration}</span>
+                      </div>
+
+                      {/* Title */}
+                      <h3 className="text-base sm:text-lg font-bold text-[#111111] leading-snug group-hover:text-[#ED1654] transition-colors">
+                        {programme.title}
+                      </h3>
+
+                      {/* Short description — 2 lines max */}
+                      <p className="text-xs sm:text-sm text-[#6B7280] leading-relaxed line-clamp-2 flex-1">
+                        {programme.description}
+                      </p>
+
+                      {/* CTA button */}
+                      <Link
+                        href={`/programs/${programme.slug}`}
+                        className="mt-1 w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-[#F3F4F6] hover:bg-[#ED1654] text-[#111111] hover:text-white text-xs font-semibold transition-all duration-200"
+                      >
+                        <span>View Programme</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
                     </div>
                   </div>
-
-                  {/* Content */}
-                  <div className="p-5 flex flex-col flex-1 gap-3">
-                    {/* Duration */}
-                    <div className="flex items-center gap-1.5 text-xs text-[#9CA3AF]">
-                      <Clock className="w-3.5 h-3.5 text-[#ED1654] shrink-0" />
-                      <span>{programme.duration}</span>
-                    </div>
-
-                    {/* Title */}
-                    <h3 className="text-base sm:text-lg font-bold text-[#111111] leading-snug group-hover:text-[#ED1654] transition-colors">
-                      {programme.title}
-                    </h3>
-
-                    {/* Short description — 2 lines max */}
-                    <p className="text-xs sm:text-sm text-[#6B7280] leading-relaxed line-clamp-2 flex-1">
-                      {programme.description}
-                    </p>
-
-                    {/* CTA button */}
-                    <Link
-                      href={`/programs/${programme.slug}`}
-                      className="mt-1 w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-[#F3F4F6] hover:bg-[#ED1654] text-[#111111] hover:text-white text-xs font-semibold transition-all duration-200"
-                    >
-                      <span>View Programme</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            </AnimateOnScroll>
           )}
         </section>
       </main>

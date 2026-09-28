@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
+import AnimateOnScroll from "@/app/components/AnimateOnScroll";
 import { PROGRAMMES } from "@/app/data/programmes";
 
 function ContactFormInner() {
@@ -329,7 +330,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             
             {/* Left Column: Direct Info & Location */}
-            <div className="lg:col-span-6 space-y-8">
+            <AnimateOnScroll animation="fade-right" duration={700} className="lg:col-span-6 space-y-8">
               <div className="space-y-4">
                 <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
                   Get In Touch
@@ -358,7 +359,7 @@ export default function ContactPage() {
                       className="p-5 rounded-2xl border border-[#D9D9D9] bg-[#D9D9D9]/10 hover:border-[#ED1654] transition-all duration-200 space-y-2.5 flex flex-col justify-between"
                     >
                       <div className="space-y-2">
-                        <div className="w-9 h-9 rounded-full bg-[#000000] text-white flex items-center justify-center">
+                        <div className="w-9 h-9 rounded-full bg-[#ED1654]/10 text-[#ED1654] flex items-center justify-center">
                           <Icon className="w-4 h-4 text-[#ED1654]" />
                         </div>
                         <div>
@@ -404,27 +405,27 @@ export default function ContactPage() {
                   Prospective learners and parents are encouraged to connect with our admissions desk to review course modules, workbook exercises, and interactive simulation schedules.
                 </p>
               </div>
-            </div>
+            </AnimateOnScroll>
 
             {/* Right Column: Interactive Form */}
-            <div className="lg:col-span-6">
+            <AnimateOnScroll animation="fade-left" delay={150} duration={700} className="lg:col-span-6">
               <Suspense
                 fallback={
-                  <div className="p-10 rounded-3xl bg-[#0A0A0A] text-white text-center">
+                  <div className="p-10 rounded-3xl bg-white text-[#111111] text-center border border-[#E6E6E6]">
                     Loading Form...
                   </div>
                 }
               >
                 <ContactFormInner />
               </Suspense>
-            </div>
+            </AnimateOnScroll>
 
           </div>
         </section>
 
         {/* ─── Institutional Alliances & Group Inquiries ─── */}
         <section className="w-full bg-[#F7F7F5] text-[#111111] py-14 px-4 sm:px-8 border-t border-[#D9D9D9]">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+          <AnimateOnScroll animation="fade-up" duration={700} className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-6 rounded-2xl bg-white border border-[#E6E6E6] space-y-2 shadow-sm">
               <span className="text-xs font-bold text-[#ED1654] uppercase tracking-widest">
                 School Partnerships
@@ -475,7 +476,7 @@ export default function ContactPage() {
                 <ArrowRight className="w-3.5 h-3.5" />
               </a>
             </div>
-          </div>
+          </AnimateOnScroll>
         </section>
       </main>
 

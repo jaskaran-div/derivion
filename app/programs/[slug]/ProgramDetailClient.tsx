@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
+import AnimateOnScroll from "@/app/components/AnimateOnScroll";
 import { Programme } from "@/app/data/programmes";
 
 export default function ProgramDetailClient({ programme }: { programme: Programme }) {
@@ -65,7 +66,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             {/* Left Content Column */}
-            <div className="lg:col-span-7 space-y-5">
+            <AnimateOnScroll animation="fade-right" duration={700} className="lg:col-span-7 space-y-5">
               {/* Category & Reflex Pill */}
               <div className="flex flex-wrap items-center gap-2.5">
                 <span className="px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#ED1654]/10 text-[#ED1654] border border-[#ED1654]/20">
@@ -75,9 +76,9 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   <span className="w-2 h-2 rounded-full bg-[#ED1654] animate-pulse" />
                   Target: {programme.targetAge}
                 </span>
-                <span className="px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#D9D9D9]/30 text-[#000000] border border-[#D9D9D9]">
+                {/* <span className="px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#D9D9D9]/30 text-[#000000] border border-[#D9D9D9]">
                   Reflex: {programme.coreReflex}
-                </span>
+                </span> */}
               </div>
 
               {/* Main Heading */}
@@ -108,7 +109,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   </p>
                 </div>
 
-                <div className="space-y-1">
+                {/* <div className="space-y-1">
                   <div className="flex items-center gap-1.5 text-xs text-[#737373]">
                     <Building2 className="w-3.5 h-3.5 text-[#ED1654]" />
                     <span>Format</span>
@@ -116,7 +117,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   <p className="text-xs sm:text-sm font-bold text-[#000000]">
                     {programme.format}
                   </p>
-                </div>
+                </div> */}
 
                 <div className="space-y-1">
                   <div className="flex items-center gap-1.5 text-xs text-[#737373]">
@@ -128,7 +129,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   </p>
                 </div>
 
-                <div className="space-y-1">
+                {/* <div className="space-y-1">
                   <div className="flex items-center gap-1.5 text-xs text-[#737373]">
                     <ShieldCheck className="w-3.5 h-3.5 text-[#A8FF24] fill-[#A8FF24]" />
                     <span>Core Reflex</span>
@@ -136,7 +137,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   <p className="text-xs sm:text-sm font-bold text-[#ED1654] truncate">
                     {programme.coreReflex}
                   </p>
-                </div>
+                </div> */}
               </div>
 
               {/* Action Buttons */}
@@ -151,7 +152,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
 
                 <button
                   onClick={handleDownloadSyllabus}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-[#000000] hover:bg-[#000000] hover:text-white text-[#000000] text-xs sm:text-sm font-semibold transition-all duration-200 active:scale-95"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-[#ED1654] hover:bg-[#ED1654] hover:text-white text-[#ED1654] text-xs sm:text-sm font-semibold transition-all duration-200 active:scale-95"
                 >
                   <Download className="w-4 h-4" />
                   <span>
@@ -166,10 +167,10 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   <span>{programme.scholarshipText}</span>
                 </div>
               )}
-            </div>
+            </AnimateOnScroll>
 
             {/* Right Media Card Column */}
-            <div className="lg:col-span-5">
+            <AnimateOnScroll animation="fade-left" delay={150} duration={700} className="lg:col-span-5">
               <div className="relative rounded-3xl overflow-hidden border border-[#D9D9D9] shadow-2xl bg-[#F3F3F3] group">
                 <div className="relative w-full h-[320px] sm:h-[400px]">
                   <Image
@@ -194,14 +195,14 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   </div>
                 </div>
               </div>
-            </div>
+            </AnimateOnScroll>
 
           </div>
         </section>
 
         {/* ─── Key Stats Bar ─── */}
         <section className="w-full bg-[#F7F7F5] text-[#111111] py-8 px-4 sm:px-6 lg:px-8 border-y border-[#D9D9D9]">
-          <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <AnimateOnScroll animation="fade-up" duration={600} className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {programme.stats.map((item, idx) => (
               <div key={idx} className="space-y-1 p-3">
                 <div className="text-3xl sm:text-4xl font-black tracking-tight text-[#ED1654]">
@@ -212,7 +213,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                 </div>
               </div>
             ))}
-          </div>
+          </AnimateOnScroll>
         </section>
 
         {/* ─── Section Anchor Nav ─── */}
@@ -249,7 +250,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
 
         {/* ─── Overview & Highlights Bento Grid ─── */}
         <section id="overview" className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-          <div className="space-y-8">
+          <AnimateOnScroll animation="fade-up" duration={700} className="space-y-8">
             <div className="max-w-3xl space-y-2">
               <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
                 Curriculum Foundation
@@ -265,19 +266,19 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
               {/* Left narrative */}
-<div className="lg:col-span-5 space-y-4 text-sm sm:text-base text-[#111111] leading-relaxed">
-                  {programme.overview.map((para, pIdx) => (
-                    <p key={pIdx}>{para}</p>
-                  ))}
+              <div className="lg:col-span-5 space-y-4 text-sm sm:text-base text-[#111111] leading-relaxed">
+                {programme.overview.map((para, pIdx) => (
+                  <p key={pIdx}>{para}</p>
+                ))}
 
-                  <div className="p-5 rounded-2xl bg-[#D9D9D9]/20 border border-[#D9D9D9] space-y-2">
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#000000]">
-                      Core Aim &amp; Reflex
-                    </h4>
-                    <div className="text-xl font-bold text-[#ED1654]">
-                      Reflex: {programme.coreReflex}
-                    </div>
-                    <p className="text-xs text-[#111111]">
+                <div className="p-5 rounded-2xl bg-[#D9D9D9]/20 border border-[#D9D9D9] space-y-2">
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-[#000000]">
+                    Core Aim &amp; Reflex
+                  </h4>
+                  <div className="text-xl font-bold text-[#ED1654]">
+                    Reflex: {programme.coreReflex}
+                  </div>
+                  <p className="text-xs text-[#111111]">
                     {programme.tagline}
                   </p>
                 </div>
@@ -304,12 +305,12 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                 ))}
               </div>
             </div>
-          </div>
+          </AnimateOnScroll>
         </section>
 
         {/* ─── Interactive Curriculum Section ─── */}
         <section id="curriculum" className="w-full bg-[#F7F7F5] text-[#111111] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
-          <div className="max-w-7xl mx-auto space-y-10">
+          <AnimateOnScroll animation="fade-up" duration={700} className="max-w-7xl mx-auto space-y-10">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <div className="space-y-2">
                 <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
@@ -414,13 +415,13 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                 </div>
               </div>
             )}
-          </div>
+          </AnimateOnScroll>
         </section>
 
         {/* ─── Harvest Behavioural Finance Case Studies (When Applicable) ─── */}
         {programme.caseStudies && programme.caseStudies.length > 0 && (
           <section id="case-studies" className="w-full bg-[#F7F7F5] text-[#111111] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
-            <div className="max-w-7xl mx-auto space-y-10">
+            <AnimateOnScroll animation="fade-up" duration={700} className="max-w-7xl mx-auto space-y-10">
               <div className="space-y-2 max-w-3xl">
                 <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
                   Empirical Risk Analysis
@@ -467,13 +468,13 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   </div>
                 ))}
               </div>
-            </div>
+            </AnimateOnScroll>
           </section>
         )}
 
         {/* ─── Learning Tools & Environment ─── */}
         <section id="tools" className="w-full bg-white text-[#000000] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
-          <div className="max-w-7xl mx-auto space-y-10">
+          <AnimateOnScroll animation="fade-up" duration={700} className="max-w-7xl mx-auto space-y-10">
             <div className="max-w-3xl space-y-2">
               <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
                 Learning Ecosystem
@@ -501,12 +502,12 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                 </div>
               ))}
             </div>
-          </div>
+          </AnimateOnScroll>
         </section>
 
         {/* ─── Curriculum Mentors ─── */}
         <section id="faculty" className="w-full bg-white text-[#000000] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
-          <div className="max-w-7xl mx-auto space-y-10">
+          <AnimateOnScroll animation="fade-up" duration={700} className="max-w-7xl mx-auto space-y-10">
             <div className="space-y-2">
               <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
                 Curriculum Stewardship
@@ -556,12 +557,12 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                 </div>
               ))}
             </div>
-          </div>
+          </AnimateOnScroll>
         </section>
 
         {/* ─── Competencies & Reflex Outcomes ─── */}
         <section id="outcomes" className="w-full bg-[#F7F7F5] text-[#111111] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
-          <div className="max-w-7xl mx-auto space-y-10">
+          <AnimateOnScroll animation="fade-up" duration={700} className="max-w-7xl mx-auto space-y-10">
             <div className="space-y-2">
               <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
                 Competency Outcomes
@@ -595,12 +596,12 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                 </div>
               ))}
             </div>
-          </div>
+          </AnimateOnScroll>
         </section>
 
         {/* ─── Admissions Roadmap ─── */}
         <section id="admissions" className="w-full bg-white text-[#000000] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
-          <div className="max-w-7xl mx-auto space-y-10">
+          <AnimateOnScroll animation="fade-up" duration={700} className="max-w-7xl mx-auto space-y-10">
             <div className="space-y-2">
               <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
                 Enrollment Process
@@ -623,7 +624,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   className="p-6 rounded-2xl border border-[#D9D9D9] bg-[#D9D9D9]/10 relative flex flex-col justify-between space-y-4"
                 >
                   <div className="space-y-2">
-                    <div className="w-10 h-10 rounded-full bg-[#000000] text-white flex items-center justify-center text-sm font-bold">
+                    <div className="w-10 h-10 rounded-full bg-[#ED1654] text-white flex items-center justify-center text-sm font-bold shadow-sm">
                       {step.step}
                     </div>
                     <h4 className="text-base font-bold text-[#000000]">
@@ -639,12 +640,12 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                 </div>
               ))}
             </div>
-          </div>
+          </AnimateOnScroll>
         </section>
 
         {/* ─── Frequently Asked Questions ─── */}
         <section id="faq" className="w-full bg-[#F7F7F5] text-[#111111] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
-          <div className="max-w-4xl mx-auto space-y-8">
+          <AnimateOnScroll animation="fade-up" duration={700} className="max-w-4xl mx-auto space-y-8">
             <div className="text-center space-y-2">
               <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
                 Clear Answers
@@ -683,12 +684,12 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                 </div>
               ))}
             </div>
-          </div>
+          </AnimateOnScroll>
         </section>
 
         {/* ─── Bottom CTA Banner ─── */}
         <section className="w-full bg-[#F7F7F5] py-14 px-4 sm:px-8 text-[#111111] border-t border-[#D9D9D9]">
-          <div className="max-w-7xl mx-auto bg-white border border-[#E6E6E6] rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-xl">
+          <AnimateOnScroll animation="fade-up" duration={700} className="max-w-7xl mx-auto bg-white border border-[#E6E6E6] rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-xl">
             <div className="space-y-2 max-w-2xl">
               <h3
                 className="text-2xl sm:text-4xl tracking-tight text-[#111111]"
@@ -713,7 +714,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
-          </div>
+          </AnimateOnScroll>
         </section>
       </main>
 

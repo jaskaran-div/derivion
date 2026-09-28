@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
+import AnimateOnScroll from "@/app/components/AnimateOnScroll";
 
 const sections = [
   {
@@ -72,7 +73,7 @@ export default function PrivacyPolicyPage() {
 
       <main className="flex-1 px-4 py-12 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto space-y-8">
-          <div className="space-y-3">
+          <AnimateOnScroll animation="fade-up" duration={600} className="space-y-3">
             <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
               Legal
             </span>
@@ -85,33 +86,30 @@ export default function PrivacyPolicyPage() {
             <p className="text-sm text-[#737373]">
               Last updated: September 2026
             </p>
-          </div>
+          </AnimateOnScroll>
 
-          <div className="rounded-3xl border border-[#D9D9D9] bg-[#F7F7F7] p-6 sm:p-8 space-y-5">
-            <p className="text-sm leading-relaxed text-[#000000]">
-              Derivion International Private Limited (“Derivion,” “we,” “our,” or “us”) is committed to safeguarding your personal information and respecting your privacy. This policy explains what personal data we collect, how we use and protect it, and the rights you have in connection with your information.
-            </p>
+          <AnimateOnScroll animation="fade-up" delay={150} duration={700}>
+            <div className="rounded-3xl border border-[#D9D9D9] bg-[#F7F7F7] p-6 sm:p-8 space-y-5">
+              <p className="text-sm leading-relaxed text-[#000000]">
+                Derivion International Private Limited (“Derivion,” “we,” “our,” or “us”) is committed to safeguarding your personal information and respecting your privacy. This policy explains what personal data we collect, how we use and protect it, and the rights you have in connection with your information.
+              </p>
 
-            {sections.map((section) => (
-              <div key={section.title} className="space-y-2">
-                <h2 className="text-lg sm:text-xl font-bold text-[#000000]">{section.title}</h2>
-                <p className="text-sm leading-relaxed text-[#404040]">{section.text}</p>
+              {sections.map((section) => (
+                <div key={section.title} className="space-y-2">
+                  <h2 className="text-lg sm:text-xl font-bold text-[#000000]">{section.title}</h2>
+                  <p className="text-sm leading-relaxed text-[#404040]">{section.text}</p>
+                </div>
+              ))}
+
+              <div className="pt-4 border-t border-[#D9D9D9] text-xs text-[#737373]">
+                For questions regarding this policy, please email{" "}
+                <a href="mailto:privacy@derivion.in" className="text-[#ED1654] font-medium hover:underline">
+                  privacy@derivion.in
+                </a>
+                .
               </div>
-            ))}
-
-            <div className="rounded-2xl bg-[#F7F7F7] p-5 text-[#111111] space-y-2 border border-[#E6E6E6]">
-              <h3 className="text-lg font-bold">Contact Us</h3>
-              <p className="text-sm text-[#525252]">
-                For questions or requests related to this policy, contact us at info@derivion.in.
-              </p>
-              <p className="text-sm text-[#525252]">
-                Plot No 42, Phase IV, Sector 18, Gurugram, Sarhol, Haryana 122015
-              </p>
-              <p className="text-sm text-[#525252]">
-                Office 3A:1, Rathbone House, Dexter House, Croydon CR0 1BT, United Kingdom
-              </p>
             </div>
-          </div>
+          </AnimateOnScroll>
         </div>
       </main>
 
