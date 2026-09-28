@@ -96,13 +96,36 @@ export default function Placement() {
                 </div>
               )}
 
-              <button
-                onClick={() => setShowFullArticle(!showFullArticle)}
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#ED1654] hover:text-[#d6124b] transition-colors"
-              >
-                <span>{showFullArticle ? "Show Less" : "Read Full Article Details"}</span>
-                <ArrowRight className={`w-3.5 h-3.5 transition-transform ${showFullArticle ? "rotate-90" : ""}`} />
-              </button>
+            
+              {/* Read Article + Expand Details */}
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+
+                {/* External Article */}
+                <a
+                  href="https://thezishi.com/news/2026/04/all-participants-report-improved-financial-career-prospects-f112hei/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#ED1654] hover:text-[#d6124b] transition-colors"
+                >
+                  <span>Read Full Article</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+
+                {/* Existing Expand / Collapse */}
+                <button
+                  onClick={() => setShowFullArticle(!showFullArticle)}
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#737373] hover:text-[#111111] transition-colors"
+                >
+                  {/* <span>{showFullArticle ? "Show Less" : "Article Details"}</span> */}
+                  {/* <ArrowRight
+                    className={`w-3.5 h-3.5 transition-transform ${showFullArticle ? "rotate-90" : ""
+                      }`}
+                  /> */}
+                </button>
+
+              </div>
+             
+
             </div>
           </AnimateOnScroll>
 
