@@ -146,9 +146,9 @@ export default function Hero() {
                         className="text-3xl sm:text-5xl md:text-6xl font-semibold text-[#000000] tracking-tight leading-[1.1]"
                         style={{ fontFamily: "var(--font-sans)" }}
                     >
-                        Inspiring Minds, <br className="hidden sm:inline" />
-                        Igniting Change at <br className="hidden sm:inline" />
-                        <span className="text-[#000000]">Derivion</span>
+                        Know Markets. <br className="hidden sm:inline" />
+                        Manage Risks. <br className="hidden sm:inline" />
+                        <span className="text-[#000000]">at Derivion</span>
                     </h1>
                 </AnimateOnScroll>
 

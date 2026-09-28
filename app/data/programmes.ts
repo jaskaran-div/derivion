@@ -810,7 +810,7 @@ export const PROGRAMMES: Programme[] = [
     tagline: "Understand the market. Trade with discipline.",
     description:
       "A beginner-friendly Level 3 qualification that introduces learners to how financial markets work, the main trading instruments, and the risk-aware process of placing and justifying an order.",
-    heroImage: "/programme/aift.png",
+    heroImage: "/programme/aift-1.png",
     format: "Online, self-paced via Derivion Academy LMS",
     eligibility: "No formal entry requirements; basic literacy and numeracy and ability to study in English",
     duration: "4–8 weeks typical completion",
