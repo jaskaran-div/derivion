@@ -91,6 +91,7 @@ body {
 .anim-delay-100 { transition-delay: 100ms; }
 .anim-delay-150 { transition-delay: 150ms; }
 .anim-delay-200 { transition-delay: 200ms; }
+.anim-delay-250 { transition-delay: 250ms; }
 .anim-delay-300 { transition-delay: 300ms; }
 .anim-delay-400 { transition-delay: 400ms; }
 .anim-delay-500 { transition-delay: 500ms; }

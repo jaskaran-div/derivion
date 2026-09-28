@@ -13,8 +13,8 @@ type AnimationType =
 interface AnimateOnScrollProps {
   children: React.ReactNode;
   animation?: AnimationType;
-  delay?: 0 | 100 | 150 | 200 | 300 | 400 | 500 | 600;
-  duration?: 400 | 500 | 600 | 700 | 800;
+  delay?: 0 | 100 | 150 | 200 | 250 | 300 | 400 | 500 | 600 | number;
+  duration?: 400 | 500 | 600 | 700 | 800 | number;
   className?: string;
   as?: React.ElementType;
   /** Fraction of element that must be visible before animating (0–1) */
