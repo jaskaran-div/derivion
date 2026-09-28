@@ -201,7 +201,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
         </section>
 
         {/* ─── Key Stats Bar ─── */}
-        <section className="w-full bg-[#F7F7F5] text-[#111111] py-8 px-4 sm:px-6 lg:px-8 border-y border-[#D9D9D9]">
+        {/* <section className="w-full bg-[#F7F7F5] text-[#111111] py-8 px-4 sm:px-6 lg:px-8 border-y border-[#D9D9D9]">
           <AnimateOnScroll animation="fade-up" duration={600} className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {programme.stats.map((item, idx) => (
               <div key={idx} className="space-y-1 p-3">
@@ -214,7 +214,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
               </div>
             ))}
           </AnimateOnScroll>
-        </section>
+        </section> */}
 
         {/* ─── Section Anchor Nav ─── */}
         <div className="sticky top-[73px] z-40 w-full bg-white/95 backdrop-blur-md border-b border-[#D9D9D9] py-3 px-4 sm:px-8">

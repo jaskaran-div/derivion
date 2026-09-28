@@ -463,7 +463,7 @@ export const PROGRAMMES: Programme[] = [
     tagline: "Trade with the forces that move the market.",
     description:
       "A practitioner-designed Level 3 qualification that builds applied understanding of fundamental analysis, central bank policy, and disciplined trading around scheduled market-moving news.",
-    heroImage: "/Home/hero-section.jpg",
+    heroImage: "/programme/afmt.png",
     format: "Online, self-paced via Derivion Academy LMS",
     eligibility: "Completion of a Level 2 introduction to financial trading, or equivalent market knowledge",
     duration: "6–10 weeks typical completion",
@@ -629,7 +629,7 @@ export const PROGRAMMES: Programme[] = [
     tagline: "Five markets, one shared vocabulary.",
     description:
       "A broad, practitioner-designed Level 3 qualification that introduces learners to the structure and interplay of equities, foreign exchange, commodities, bonds and derivatives across global markets.",
-    heroImage: "/Home/hero-section.jpg",
+    heroImage: "/programme/ifm.png",
     format: "Online, self-paced via Derivion Academy LMS",
     eligibility: "Completion of a Level 2 introduction to financial trading, or equivalent foundational knowledge of financial markets and trading",
     duration: "8–12 weeks typical completion",
@@ -810,7 +810,7 @@ export const PROGRAMMES: Programme[] = [
     tagline: "Understand the market. Trade with discipline.",
     description:
       "A beginner-friendly Level 3 qualification that introduces learners to how financial markets work, the main trading instruments, and the risk-aware process of placing and justifying an order.",
-    heroImage: "/programme/aift-1.png",
+    heroImage: "/programme/ift-financial.png",
     format: "Online, self-paced via Derivion Academy LMS",
     eligibility: "No formal entry requirements; basic literacy and numeracy and ability to study in English",
     duration: "4–8 weeks typical completion",
@@ -961,7 +961,7 @@ export const PROGRAMMES: Programme[] = [
     tagline: "The discipline that protects the account.",
     description:
       "A practitioner-designed Level 3 OCN London award that teaches learners how to quantify leverage, size a position appropriately, document a trading plan and manage risk with discipline in real market conditions.",
-    heroImage: "/Home/hero-section.jpg",
+    heroImage: "/programme/irm.png",
     format: "Online, self-paced via Derivion Academy LMS",
     eligibility: "Recommended prior learning: Level 2 Award in Introduction to Financial Trading, or equivalent foundational market knowledge",
     duration: "6–10 weeks typical completion",
@@ -1127,7 +1127,7 @@ export const PROGRAMMES: Programme[] = [
     tagline: "The steadiest asset class, made accessible.",
     description:
       "A practitioner-designed Level 3 OCN London award that introduces learners to bond market fundamentals, Indian government securities, pricing, yield curves and applied bond trading or hedging decisions.",
-    heroImage: "/Home/hero-section.jpg",
+    heroImage: "/programme/itgb.png",
     format: "Online, self-paced via Derivion Academy LMS",
     eligibility: "Recommended prior learning: Level 3 Award in Introduction to Financial Markets, or equivalent foundational knowledge of financial markets",
     duration: "8–12 weeks typical completion",
@@ -1323,7 +1323,7 @@ export const PROGRAMMES: Programme[] = [
     tagline: "Every chart tells a story. Learn to read it.",
     description:
       "A practitioner-designed Level 3 OCN London certificate that introduces learners to the principles and practical use of technical analysis across equities, FX, commodities and futures, with a strong emphasis on systematic chart reading and portfolio application.",
-    heroImage: "/Home/hero-section.jpg",
+    heroImage: "/programme/itat.png",
     format: "Online, self-paced via Derivion Academy LMS",
     eligibility: "Recommended prior learning: Level 3 Award in Applied Financial Markets Trading or Introduction to Financial Markets, or equivalent market knowledge",
     duration: "10–14 weeks typical completion",
@@ -1549,7 +1549,7 @@ export const PROGRAMMES: Programme[] = [
     tagline: "The market moves on numbers. You move on emotion.",
     description:
       "A practitioner-designed Level 3 OCN London award for traders who already understand the market and want to understand the behavioural and emotional factors that shape performance under pressure.",
-    heroImage: "/Home/hero-section.jpg",
+    heroImage: "/programme/ibpt.png",
     format: "Online, self-paced via Derivion Academy LMS",
     eligibility: "Recommended prior learning: Level 2 Award in Introduction to Financial Trading, or equivalent foundational market knowledge",
     duration: "6–10 weeks typical completion",
@@ -1715,7 +1715,7 @@ export const PROGRAMMES: Programme[] = [
     tagline: "The layer between analysis and execution.",
     description:
       "A practitioner-designed Level 3 OCN London award that introduces learners to the mechanics of futures contracts, pricing, margin, hedging and applied strategy in a risk-aware framework.",
-    heroImage: "/Home/hero-section.jpg",
+    heroImage: "/programme/ift-future-trading.png",
     format: "Online, self-paced via Derivion Academy LMS",
     eligibility: "Recommended prior learning: Level 2 Award in Introduction to Financial Trading, or equivalent foundational market knowledge",
     duration: "6–10 weeks typical completion",
