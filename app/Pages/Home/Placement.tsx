@@ -26,7 +26,7 @@ export default function Placement() {
               <div className="space-y-3">
                 <Quote className="w-8 h-8 text-[#ED1654] opacity-90" />
                 <blockquote className="text-[#111111] text-base sm:text-lg lg:text-xl leading-relaxed font-light italic" style={{ fontFamily: "var(--font-serif)" }}>
-                  &ldquo;Completing our first cohort with ZISHI has validated what we set out to build – a programme where students go beyond learning about financial markets to operating within them. Seeing 100% of participants report improved career confidence and aspiration is exactly the outcome we designed this for. This is the foundation for what comes next across India.&rdquo;
+                  &ldquo;Completing our first cohort has validated what we set out to build – a programme where students go beyond learning about financial markets to operating within them. Seeing 100% of participants report improved career confidence and aspiration is exactly the outcome we designed this for. This is the foundation for what comes next across India.&rdquo;
                 </blockquote>
                 <div className="pt-1 flex items-center gap-2">
                   <span className="text-xs font-bold text-[#111111] uppercase tracking-wider">
@@ -70,7 +70,7 @@ export default function Placement() {
               </h3>
 
               <p className="text-xs sm:text-sm text-[#525252] leading-relaxed">
-                Following ZISHI &amp; ISFT by Derivion Trading Diploma. First cohort results validate UK-regulated delivery model in India, demonstrating measurable gains in trading capability and professional behaviours.
+                Following ISFT by Derivion Trading Diploma. First cohort results validate UK-regulated delivery model in India, demonstrating measurable gains in trading capability and professional behaviours.
               </p>
 
               <div className="p-4 rounded-xl bg-[#F7F7F5] border border-[#E7E7E7] space-y-2">
@@ -81,7 +81,7 @@ export default function Placement() {
                   &ldquo;This first cohort provides clear evidence that regulated, practitioner-led trading education can be delivered effectively within international higher-education environments.&rdquo;
                 </p>
                 <p className="text-[11px] font-semibold text-[#ED1654]">
-                  — Robert Russell, Global Head of Professional Trader Qualifications, ZISHI
+                  — Robert Russell, Global Head of Professional Trader Qualifications
                 </p>
               </div>
 

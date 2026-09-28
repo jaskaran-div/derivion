@@ -80,7 +80,7 @@ export default function Navbar() {
               alt="Derivion Logo"
               width={50}
               height={50}
-              className="h-10 sm:h-8 w-auto object-contain"
+              className="h-10 sm:h-6 w-auto object-contain"
               priority
             />
         </Link>
