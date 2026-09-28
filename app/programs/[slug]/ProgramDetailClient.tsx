@@ -233,9 +233,9 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
             <a href="#tools" className="px-4 py-1.5 rounded-full hover:bg-[#D9D9D9]/50 text-[#737373] hover:text-[#000000] shrink-0">
               Learning Tools
             </a>
-            <a href="#faculty" className="px-4 py-1.5 rounded-full hover:bg-[#D9D9D9]/50 text-[#737373] hover:text-[#000000] shrink-0">
+            {/* <a href="#faculty" className="px-4 py-1.5 rounded-full hover:bg-[#D9D9D9]/50 text-[#737373] hover:text-[#000000] shrink-0">
               Curriculum Leads
-            </a>
+            </a> */}
             <a href="#outcomes" className="px-4 py-1.5 rounded-full hover:bg-[#D9D9D9]/50 text-[#737373] hover:text-[#000000] shrink-0">
               Reflex Outcomes
             </a>
@@ -506,7 +506,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
         </section>
 
         {/* ─── Curriculum Mentors ─── */}
-        <section id="faculty" className="w-full bg-white text-[#000000] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
+        {/* <section id="faculty" className="w-full bg-white text-[#000000] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
           <AnimateOnScroll animation="fade-up" duration={700} className="max-w-7xl mx-auto space-y-10">
             <div className="space-y-2">
               <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
@@ -558,7 +558,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
               ))}
             </div>
           </AnimateOnScroll>
-        </section>
+        </section> */}
 
         {/* ─── Competencies & Reflex Outcomes ─── */}
         <section id="outcomes" className="w-full bg-[#F7F7F5] text-[#111111] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">

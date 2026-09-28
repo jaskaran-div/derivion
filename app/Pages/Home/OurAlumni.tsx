@@ -40,9 +40,19 @@ export default function OurAlumni() {
       quote:
         '“Derivion gave me the clarity and practical framework I needed to move from curiosity to confidence. The combination of structured learning, market context, and mentor guidance helped me build a much sharper foundation for my career path.”',
     },
+    {
+      name: "Sonia Poria",
+      role: "Financial Analyst",
+      company: "ZWC",
+      companyLogo: "/Home/sonia.png",
+      batch: "Batch of 2024",
+      photo: "/Home/sonia.png",
+      quote:
+        '“ISFT’s ACFT provided me with the necessary knowledge, skills and mentorship to begin my journey as a professional trader.”',
+    },
   ];
 
-  const itemsPerPage = 3;
+  const itemsPerPage = 4;
   const totalPages = Math.ceil(alumniData.length / itemsPerPage);
   const currentAlumni = alumniData.slice(
     currentPage * itemsPerPage,
@@ -138,44 +148,46 @@ export default function OurAlumni() {
             </div>
 
             {/* ─── Bottom Navigation & Pagination Indicators ─── */}
-            <div className="flex items-center justify-between pt-3 border-t border-[#D9D9D9]">
-              {/* Indicator Pills */}
-              <div className="flex items-center gap-2">
-                {Array.from({ length: totalPages }).map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setCurrentPage(idx)}
-                    className={`h-2 rounded-full transition-all duration-300 ${currentPage === idx
-                        ? "w-8 bg-[#ED1654]"
-                        : "w-2.5 bg-[#D9D9D9] hover:bg-[#737373]"
-                      }`}
-                    aria-label={`Go to page ${idx + 1}`}
-                  />
-                ))}
-              </div>
+            {totalPages > 1 && (
+              <div className="flex items-center justify-between pt-3 border-t border-[#D9D9D9]">
+                {/* Indicator Pills */}
+                <div className="flex items-center gap-2">
+                  {Array.from({ length: totalPages }).map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setCurrentPage(idx)}
+                      className={`h-2 rounded-full transition-all duration-300 ${currentPage === idx
+                          ? "w-8 bg-[#ED1654]"
+                          : "w-2.5 bg-[#D9D9D9] hover:bg-[#737373]"
+                        }`}
+                      aria-label={`Go to page ${idx + 1}`}
+                    />
+                  ))}
+                </div>
 
-              {/* Slider Arrows */}
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={() =>
-                    setCurrentPage((prev) => (prev > 0 ? prev - 1 : totalPages - 1))
-                  }
-                  className="w-10 h-10 rounded-full border border-[#D9D9D9] bg-white hover:bg-[#D9D9D9]/30 text-[#737373] hover:text-[#000000] flex items-center justify-center transition-all active:scale-95 shadow-sm"
-                  aria-label="Previous page"
-                >
-                  <ChevronLeft className="w-4 h-4" />
-                </button>
-                <button
-                  onClick={() =>
-                    setCurrentPage((prev) => (prev < totalPages - 1 ? prev + 1 : 0))
-                  }
-                  className="w-10 h-10 rounded-full border border-[#D9D9D9] bg-white hover:bg-[#D9D9D9]/30 text-[#737373] hover:text-[#000000] flex items-center justify-center transition-all active:scale-95 shadow-sm"
-                  aria-label="Next page"
-                >
-                  <ChevronRight className="w-4 h-4" />
-                </button>
+                {/* Slider Arrows */}
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() =>
+                      setCurrentPage((prev) => (prev > 0 ? prev - 1 : totalPages - 1))
+                    }
+                    className="w-10 h-10 rounded-full border border-[#D9D9D9] bg-white hover:bg-[#D9D9D9]/30 text-[#737373] hover:text-[#000000] flex items-center justify-center transition-all active:scale-95 shadow-sm"
+                    aria-label="Previous page"
+                  >
+                    <ChevronLeft className="w-4 h-4" />
+                  </button>
+                  <button
+                    onClick={() =>
+                      setCurrentPage((prev) => (prev < totalPages - 1 ? prev + 1 : 0))
+                    }
+                    className="w-10 h-10 rounded-full border border-[#D9D9D9] bg-white hover:bg-[#D9D9D9]/30 text-[#737373] hover:text-[#000000] flex items-center justify-center transition-all active:scale-95 shadow-sm"
+                    aria-label="Next page"
+                  >
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+                </div>
               </div>
-            </div>
+            )}
 
           </AnimateOnScroll>
 
