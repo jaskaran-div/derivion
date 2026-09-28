@@ -1,22 +1,13 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ChevronLeft,
-  ChevronRight,
-  GraduationCap,
-  Building2,
-  Clock,
-  ShieldCheck,
-  ArrowRight,
-} from "lucide-react";
+import { ArrowRight, Sparkles, BookOpen, Clock, Users } from "lucide-react";
 import { PROGRAMMES } from "@/app/data/programmes";
 
 export default function OurProgrammes() {
   const [activeCategory, setActiveCategory] = useState("All");
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const categories = ["All", "Young Learners", "Adult Learners", "OCN London"];
 
@@ -26,214 +17,132 @@ export default function OurProgrammes() {
       ? PROGRAMMES
       : PROGRAMMES.filter((p) => p.category === activeCategory);
 
-  // Handle horizontal scroll via top right arrows
-  const handleScroll = (direction: "left" | "right") => {
-    if (scrollContainerRef.current) {
-      const scrollAmount = 360;
-      scrollContainerRef.current.scrollBy({
-        left: direction === "left" ? -scrollAmount : scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
-
   return (
-    <section id="programmes" className="w-full bg-[#0A0A0A] text-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8 border-t border-[#141414]">
-      <div className="max-w-7xl mx-auto space-y-6 sm:space-y-8">
-
-        {/* ─── Header: Section Title + View All Link ─── */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
-          <div className="space-y-1">
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
-              Derivion Curriculum
+    <section id="programmes" className="w-full bg-[#F9FAFB] text-[#111111] py-12 sm:py-16 px-4 sm:px-6 lg:px-8 border-t border-[#E5E7EB]">
+      <div className="max-w-7xl mx-auto space-y-8">
+        
+        {/* ─── Top Header & Category Filter Tabs ─── */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div className="space-y-2 max-w-xl">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#ED1654] flex items-center gap-1.5">
+              <Sparkles className="w-3.5 h-3.5 text-[#ED1654]" />
+              <span>Derivion Curriculum Catalogue</span>
             </span>
             <h2
-              className="text-3xl sm:text-4xl font-medium tracking-tight text-white italic"
+              className="text-3xl sm:text-4xl font-semibold tracking-tight text-[#111111]"
               style={{ fontFamily: "var(--font-serif)" }}
             >
-              Our Programmes
+              Our Featured <span className="italic font-normal text-[#ED1654]">Programmes</span>
             </h2>
+            <p className="text-xs sm:text-sm text-[#6B7280]">
+              Explore practitioner-crafted education calibrated for young minds, teenagers, and adult decision-makers.
+            </p>
           </div>
 
           <Link
             href="/programs"
-            className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#A8FF24] hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#ED1654] hover:bg-[#d6124b] text-white text-xs sm:text-sm font-semibold transition-all shadow-sm shrink-0"
           >
-            <span>View All Programmes</span>
+            <span>View Full Catalogue</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 
-        {/* ─── Control Row: Category Tabs + Slider Arrows ─── */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-2">
-          {/* Pill Tabs */}
-          <div className="flex items-center gap-2 overflow-x-auto w-full sm:w-auto pb-2 sm:pb-0 no-scrollbar">
-            {categories.map((category) => {
-              const isActive = activeCategory === category;
-              return (
-                <button
-                  key={category}
-                  onClick={() => setActiveCategory(category)}
-                  className={`px-4 sm:px-5 py-2 text-xs sm:text-sm font-medium rounded-full transition-all duration-200 shrink-0 ${
-                    isActive
-                      ? "bg-white text-[#0A0A0A] shadow-md font-semibold"
-                      : "bg-[#141414]/80 text-white/70 hover:text-white hover:bg-[#141414] border border-[#141414]"
-                  }`}
-                >
-                  {category}
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Slider Controls */}
-          <div className="hidden sm:flex items-center gap-2">
-            <button
-              onClick={() => handleScroll("left")}
-              className="w-10 h-10 rounded-full border border-[#141414] bg-[#0A0A0A] hover:bg-[#141414] hover:border-[#737373] flex items-center justify-center transition-colors text-[#D9D9D9] hover:text-white active:scale-95"
-              aria-label="Scroll left"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button
-              onClick={() => handleScroll("right")}
-              className="w-10 h-10 rounded-full border border-[#141414] bg-[#0A0A0A] hover:bg-[#141414] hover:border-[#737373] flex items-center justify-center transition-colors text-[#D9D9D9] hover:text-white active:scale-95"
-              aria-label="Scroll right"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div>
+        {/* ─── Interactive Filter Tabs ─── */}
+        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 pt-1 border-b border-[#E5E7EB]">
+          {categories.map((category) => {
+            const isActive = activeCategory === category;
+            return (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`px-5 py-2 text-xs sm:text-sm font-semibold rounded-full transition-all duration-200 shrink-0 ${
+                  isActive
+                    ? "bg-[#111111] text-white shadow-sm"
+                    : "bg-white text-[#4B5563] hover:text-[#111111] border border-[#E5E7EB] hover:bg-[#F3F4F6]"
+                }`}
+              >
+                {category}
+              </button>
+            );
+          })}
         </div>
 
-        {/* ─── Horizontal Carousel Track ─── */}
-        <div
-          ref={scrollContainerRef}
-          className="flex items-stretch gap-3 sm:gap-5 lg:gap-6 overflow-x-auto pb-6 pt-2 scroll-smooth no-scrollbar snap-x snap-mandatory -mx-1 px-1"
-        >
-          {filteredProgrammes.map((prog) => (
+        {/* ─── Compact User-Friendly Grid Layout (3 Columns) ─── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredProgrammes.slice(0, 6).map((prog) => (
             <div
               key={prog.id}
-              className="w-[85vw] min-w-[280px] max-w-[340px] sm:w-[46vw] sm:max-w-[380px] md:w-[40vw] md:max-w-[420px] lg:w-[31vw] lg:max-w-[360px] xl:w-[360px] bg-[#141414]/90 border border-[#141414]/80 rounded-2xl p-4 sm:p-5 flex flex-col justify-between shrink-0 snap-start hover:border-[#737373]/80 transition-all duration-300 shadow-xl group"
+              className="bg-white border border-[#E5E7EB] rounded-2xl p-5 flex flex-col justify-between hover:shadow-md hover:border-[#D1D5DB] transition-all duration-300 group space-y-4"
             >
-              <div className="space-y-4 sm:space-y-5">
-                {/* Media Container */}
-                <div className="relative w-full h-44 sm:h-52 rounded-xl overflow-hidden bg-[#0A0A0A]">
+              <div className="space-y-3.5">
+                {/* Image Frame */}
+                <div className="relative w-full h-44 rounded-xl overflow-hidden bg-[#F3F4F6]">
                   <Image
                     src={prog.heroImage}
                     alt={prog.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500 opacity-80"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2">
-                    <span className="text-[10px] uppercase tracking-wider font-semibold text-[#A8FF24]">
-                      Programme image
-                    </span>
-                    <Link
-                      href={`/programs/${prog.slug}`}
-                      className="inline-flex items-center gap-1 rounded-full border border-white/30 bg-white/10 px-2.5 py-1 text-[10px] font-medium text-white backdrop-blur-sm hover:bg-white/20 transition-colors"
-                    >
-                      View details
-                    </Link>
-                  </div>
-                </div>
-
-                {/* Title & Description */}
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between gap-2">
-                    <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-[#ED1654]/20 text-[#ED1654] border border-[#ED1654]/30">
+                  <div className="absolute top-3 left-3 flex items-center gap-2">
+                    <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-md bg-white/95 text-[#ED1654] shadow-sm">
                       {prog.category}
                     </span>
-                    <span className="text-[10px] font-mono text-[#A8FF24]">
+                  </div>
+                  <div className="absolute bottom-3 right-3">
+                    <span className="text-[10px] font-semibold text-white bg-black/60 backdrop-blur-sm px-2.5 py-1 rounded-md">
                       {prog.targetAge}
                     </span>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white leading-snug break-words">
-                    <Link href={`/programs/${prog.slug}`} className="hover:text-[#ED1654] transition-colors break-words">
+                </div>
+
+                {/* Content */}
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between text-xs text-[#6B7280]">
+                    <span className="flex items-center gap-1">
+                      <Clock className="w-3.5 h-3.5 text-[#ED1654]" />
+                      {prog.duration}
+                    </span>
+                    {/* <span className="text-[10px] font-bold text-[#059669] bg-[#10B981]/10 px-2 py-0.5 rounded">
+                      Reflex: {prog.coreReflex}
+                    </span> */}
+                  </div>
+
+                  <h3 className="text-base sm:text-lg font-bold text-[#111111] leading-snug line-clamp-2">
+                    <Link href={`/programs/${prog.slug}`} className="hover:text-[#ED1654] transition-colors">
                       {prog.title}
                     </Link>
                   </h3>
-                  <p className="text-xs sm:text-sm text-white/75 leading-relaxed line-clamp-3 font-normal break-words">
+
+                  <p className="text-xs text-[#6B7280] leading-relaxed line-clamp-2">
                     {prog.description}
                   </p>
                 </div>
               </div>
 
-              {/* 2x2 Specs Grid */}
-              <div className="grid grid-cols-2 gap-4 pt-5 mt-5 border-t border-[#141414]/80">
-                {/* Target Audience */}
-                <div className="flex items-start gap-2.5">
-                  <div className="w-7 h-7 rounded-full bg-[#0A0A0A] border border-[#141414]/50 flex items-center justify-center text-white/80 shrink-0 mt-0.5">
-                    <GraduationCap className="w-3.5 h-3.5" />
-                  </div>
-                  <div className="space-y-0.5">
-                    <span className="text-[11px] font-semibold text-[#D9D9D9] block">
-                      Target Age
-                    </span>
-                    <span className="text-[11px] text-white/80 block leading-tight break-words">
-                      {prog.targetAge}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Duration */}
-                <div className="flex items-start gap-2.5">
-                  <div className="w-7 h-7 rounded-full bg-[#0A0A0A] border border-[#141414]/50 flex items-center justify-center text-white/80 shrink-0 mt-0.5">
-                    <Clock className="w-3.5 h-3.5" />
-                  </div>
-                  <div className="space-y-0.5">
-                    <span className="text-[11px] font-semibold text-[#D9D9D9] block">
-                      Duration
-                    </span>
-                    <span className="text-[11px] text-white/80 block leading-tight break-words">
-                      {prog.duration}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Mode */}
-                <div className="flex items-start gap-2.5">
-                  <div className="w-7 h-7 rounded-full bg-[#0A0A0A] border border-[#141414]/50 flex items-center justify-center text-white/80 shrink-0 mt-0.5">
-                    <Building2 className="w-3.5 h-3.5" />
-                  </div>
-                  <div className="space-y-0.5">
-                    <span className="text-[11px] font-semibold text-[#D9D9D9] block">
-                      Mode
-                    </span>
-                    <span className="text-[11px] text-white/80 block leading-tight break-words">
-                      {prog.format}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Core Reflex */}
-                <div className="flex items-start gap-2.5">
-                  <div className="w-7 h-7 rounded-full bg-[#0A0A0A] border border-[#141414]/50 flex items-center justify-center text-[#A8FF24] shrink-0 mt-0.5">
-                    <ShieldCheck className="w-3.5 h-3.5" />
-                  </div>
-                  <div className="space-y-0.5">
-                    <span className="text-[11px] font-semibold text-[#D9D9D9] block">
-                      Core Reflex
-                    </span>
-                    <span className="text-[11px] text-[#A8FF24] font-medium block leading-tight break-words">
-                      {prog.coreReflex}
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Card Action Link */}
-              <div className="pt-4 mt-4 border-t border-[#141414]/60">
+              {/* Action Button */}
+              <div className="pt-2">
                 <Link
                   href={`/programs/${prog.slug}`}
-                  className="w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-[#0A0A0A] hover:bg-[#ED1654] text-white text-xs font-semibold transition-all duration-200"
+                  className="w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-[#F3F4F6] hover:bg-[#ED1654] text-[#111111] hover:text-white text-xs font-semibold transition-all duration-200"
                 >
-                  <span>Explore Curriculum</span>
+                  <span>Explore Programme</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* View All Bottom Banner */}
+        <div className="text-center pt-4">
+          <Link
+            href="/programs"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#111111] hover:bg-[#111111] text-[#111111] hover:text-white text-xs font-bold uppercase tracking-wider transition-all"
+          >
+            <span>Explore All {PROGRAMMES.length} Programmes &amp; OCN Qualifications</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
 
       </div>

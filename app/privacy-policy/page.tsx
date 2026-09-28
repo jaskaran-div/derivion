@@ -99,15 +99,15 @@ export default function PrivacyPolicyPage() {
               </div>
             ))}
 
-            <div className="rounded-2xl bg-[#0A0A0A] p-5 text-white space-y-2">
+            <div className="rounded-2xl bg-[#F7F7F7] p-5 text-[#111111] space-y-2 border border-[#E6E6E6]">
               <h3 className="text-lg font-bold">Contact Us</h3>
-              <p className="text-sm text-[#D9D9D9]">
+              <p className="text-sm text-[#525252]">
                 For questions or requests related to this policy, contact us at info@derivion.in.
               </p>
-              <p className="text-sm text-[#D9D9D9]">
+              <p className="text-sm text-[#525252]">
                 Plot No 42, Phase IV, Sector 18, Gurugram, Sarhol, Haryana 122015
               </p>
-              <p className="text-sm text-[#D9D9D9]">
+              <p className="text-sm text-[#525252]">
                 Office 3A:1, Rathbone House, Dexter House, Croydon CR0 1BT, United Kingdom
               </p>
             </div>

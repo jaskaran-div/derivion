@@ -71,38 +71,38 @@ function ContactFormInner() {
   };
 
   return (
-    <div className="bg-[#0A0A0A] text-white p-6 sm:p-10 rounded-3xl border border-[#141414] shadow-2xl space-y-6">
+    <div className="bg-white text-[#111111] p-6 sm:p-10 rounded-3xl border border-[#E6E6E6] shadow-xl space-y-6">
       <div className="space-y-1">
         <span className="text-xs font-bold uppercase tracking-widest text-[#ED1654]">
           Admissions &amp; Inquiries
         </span>
         <h3
-          className="text-2xl sm:text-3xl font-medium tracking-tight text-white"
+          className="text-2xl sm:text-3xl font-medium tracking-tight text-[#111111]"
           style={{ fontFamily: "var(--font-serif)" }}
         >
           Book a Programme{" "}
           <span className="italic font-normal text-[#ED1654]">Orientation</span>
         </h3>
-        <p className="text-xs sm:text-sm text-white/75">
+        <p className="text-xs sm:text-sm text-[#525252]">
           Connect with a Derivion curriculum advisor to discuss learning outcomes, cohorts, and schedules.
         </p>
       </div>
 
       {isSubmitted ? (
-        <div className="p-8 rounded-2xl bg-[#141414] border border-[#A8FF24]/40 text-center space-y-4 animate-in fade-in zoom-in-95 duration-300">
-          <div className="w-14 h-14 rounded-full bg-[#A8FF24]/10 text-[#A8FF24] flex items-center justify-center mx-auto">
+        <div className="p-8 rounded-2xl bg-[#F7F7F5] border border-[#ED1654]/20 text-center space-y-4 animate-in fade-in zoom-in-95 duration-300">
+          <div className="w-14 h-14 rounded-full bg-[#10B981]/10 text-[#059669] flex items-center justify-center mx-auto">
             <CheckCircle2 className="w-8 h-8" />
           </div>
           <div className="space-y-1">
-            <h4 className="text-xl font-bold text-white">Inquiry Received!</h4>
-            <p className="text-xs sm:text-sm text-[#D9D9D9] max-w-sm mx-auto leading-relaxed">
-              Thank you, <span className="text-white font-semibold">{formData.fullName}</span>. A Derivion advisor will reach out to you via email and phone within 24 hours.
+            <h4 className="text-xl font-bold text-[#111111]">Inquiry Received!</h4>
+            <p className="text-xs sm:text-sm text-[#4B5563] max-w-sm mx-auto leading-relaxed">
+              Thank you, <span className="text-[#111111] font-semibold">{formData.fullName}</span>. A Derivion advisor will reach out to you via email and phone within 24 hours.
             </p>
           </div>
           <div className="pt-2">
             <button
               onClick={() => setIsSubmitted(false)}
-              className="px-6 py-2.5 rounded-full bg-white text-black text-xs font-semibold hover:bg-neutral-200 transition-colors"
+              className="px-6 py-2.5 rounded-full bg-[#ED1654] text-white text-xs font-semibold hover:bg-[#d6124b] transition-colors"
             >
               Submit Another Inquiry
             </button>
@@ -111,14 +111,14 @@ function ContactFormInner() {
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4">
           {submitError ? (
-            <div className="rounded-xl border border-[#ED1654]/40 bg-[#ED1654]/10 px-4 py-3 text-xs text-[#FFD5E1]">
+            <div className="rounded-xl border border-[#ED1654]/40 bg-[#ED1654]/10 px-4 py-3 text-xs text-[#ED1654]">
               {submitError}
             </div>
           ) : null}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* Full Name */}
             <div className="space-y-1.5">
-              <label className="text-xs font-medium text-[#D9D9D9]">
+              <label className="text-xs font-semibold text-[#374151]">
                 Full Name <span className="text-[#ED1654]">*</span>
               </label>
               <input
@@ -129,13 +129,13 @@ function ContactFormInner() {
                   setFormData({ ...formData, fullName: e.target.value })
                 }
                 placeholder="e.g. Aryan Sharma"
-                className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-white/10 text-xs sm:text-sm text-white placeholder-[#737373] focus:outline-none focus:border-[#ED1654] transition-colors"
+                className="w-full px-4 py-3 rounded-xl bg-[#F9FAFB] border border-[#E5E7EB] text-xs sm:text-sm text-[#111111] placeholder-[#9CA3AF] focus:outline-none focus:border-[#ED1654] transition-colors"
               />
             </div>
 
             {/* Email Address */}
             <div className="space-y-1.5">
-              <label className="text-xs font-medium text-[#D9D9D9]">
+              <label className="text-xs font-semibold text-[#374151]">
                 Email Address <span className="text-[#ED1654]">*</span>
               </label>
               <input
@@ -146,7 +146,7 @@ function ContactFormInner() {
                   setFormData({ ...formData, email: e.target.value })
                 }
                 placeholder="aryan@example.com"
-                className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-white/10 text-xs sm:text-sm text-white placeholder-[#737373] focus:outline-none focus:border-[#ED1654] transition-colors"
+                className="w-full px-4 py-3 rounded-xl bg-[#F9FAFB] border border-[#E5E7EB] text-xs sm:text-sm text-[#111111] placeholder-[#9CA3AF] focus:outline-none focus:border-[#ED1654] transition-colors"
               />
             </div>
           </div>
@@ -154,7 +154,7 @@ function ContactFormInner() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* Phone Number */}
             <div className="space-y-1.5">
-              <label className="text-xs font-medium text-[#D9D9D9]">
+              <label className="text-xs font-semibold text-[#374151]">
                 Phone Number <span className="text-[#ED1654]">*</span>
               </label>
               <input
@@ -165,13 +165,13 @@ function ContactFormInner() {
                   setFormData({ ...formData, phone: e.target.value })
                 }
                 placeholder="+91 98765 43210"
-                className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-white/10 text-xs sm:text-sm text-white placeholder-[#737373] focus:outline-none focus:border-[#ED1654] transition-colors"
+                className="w-full px-4 py-3 rounded-xl bg-[#F9FAFB] border border-[#E5E7EB] text-xs sm:text-sm text-[#111111] placeholder-[#9CA3AF] focus:outline-none focus:border-[#ED1654] transition-colors"
               />
             </div>
 
             {/* Programme of Interest */}
             <div className="space-y-1.5">
-              <label className="text-xs font-medium text-[#D9D9D9]">
+              <label className="text-xs font-semibold text-[#374151]">
                 Programme of Interest <span className="text-[#ED1654]">*</span>
               </label>
               <select
@@ -179,10 +179,10 @@ function ContactFormInner() {
                 onChange={(e) =>
                   setFormData({ ...formData, programme: e.target.value })
                 }
-                className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-white/10 text-xs sm:text-sm text-white focus:outline-none focus:border-[#ED1654] transition-colors"
+                className="w-full px-4 py-3 rounded-xl bg-[#F9FAFB] border border-[#E5E7EB] text-xs sm:text-sm text-[#111111] focus:outline-none focus:border-[#ED1654] transition-colors"
               >
                 {PROGRAMMES.map((prog) => (
-                  <option key={prog.slug} value={prog.slug} className="bg-[#141414] text-white">
+                  <option key={prog.slug} value={prog.slug} className="bg-white text-[#111111]">
                     {prog.title} ({prog.category} • {prog.targetAge})
                   </option>
                 ))}
@@ -193,7 +193,7 @@ function ContactFormInner() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* Current Background */}
             <div className="space-y-1.5">
-              <label className="text-xs font-medium text-[#D9D9D9]">
+              <label className="text-xs font-semibold text-[#374151]">
                 Applicant / Inquirer Background
               </label>
               <select
@@ -201,7 +201,7 @@ function ContactFormInner() {
                 onChange={(e) =>
                   setFormData({ ...formData, background: e.target.value })
                 }
-                className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-white/10 text-xs sm:text-sm text-white focus:outline-none focus:border-[#ED1654] transition-colors"
+                className="w-full px-4 py-3 rounded-xl bg-[#F9FAFB] border border-[#E5E7EB] text-xs sm:text-sm text-[#111111] focus:outline-none focus:border-[#ED1654] transition-colors"
               >
                 <option value="Parent of Learner (Ages 9–11)">Parent of Learner (Ages 9–11)</option>
                 <option value="Parent of Learner (Ages 11–14)">Parent of Learner (Ages 11–14)</option>
@@ -214,7 +214,7 @@ function ContactFormInner() {
 
             {/* Preferred Consultation Mode */}
             <div className="space-y-1.5">
-              <label className="text-xs font-medium text-[#D9D9D9]">
+              <label className="text-xs font-semibold text-[#374151]">
                 Preferred Orientation Mode
               </label>
               <select
@@ -222,7 +222,7 @@ function ContactFormInner() {
                 onChange={(e) =>
                   setFormData({ ...formData, counselingMode: e.target.value })
                 }
-                className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-white/10 text-xs sm:text-sm text-white focus:outline-none focus:border-[#ED1654] transition-colors"
+                className="w-full px-4 py-3 rounded-xl bg-[#F9FAFB] border border-[#E5E7EB] text-xs sm:text-sm text-[#111111] focus:outline-none focus:border-[#ED1654] transition-colors"
               >
                 <option value="1-on-1 Virtual Consultation">1-on-1 Virtual Consultation</option>
                 <option value="Direct Telephone Discussion">Direct Telephone Discussion</option>
@@ -233,7 +233,7 @@ function ContactFormInner() {
 
           {/* Message / Questions */}
           <div className="space-y-1.5">
-            <label className="text-xs font-medium text-[#D9D9D9]">
+            <label className="text-xs font-semibold text-[#374151]">
               Questions or Specific Interests (Optional)
             </label>
             <textarea
@@ -243,7 +243,7 @@ function ContactFormInner() {
                 setFormData({ ...formData, message: e.target.value })
               }
               placeholder="Tell us about your learning goals, cohort preferences, or specific inquiries..."
-              className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-white/10 text-xs sm:text-sm text-white placeholder-[#737373] focus:outline-none focus:border-[#ED1654] transition-colors resize-none"
+              className="w-full px-4 py-3 rounded-xl bg-[#F9FAFB] border border-[#E5E7EB] text-xs sm:text-sm text-[#111111] placeholder-[#9CA3AF] focus:outline-none focus:border-[#ED1654] transition-colors resize-none"
             />
           </div>
 
@@ -263,7 +263,7 @@ function ContactFormInner() {
             )}
           </button>
 
-          <p className="text-[11px] text-center text-white/70">
+          <p className="text-[11px] text-center text-[#6B7280]">
             We respect your privacy. All consultations are completely confidential.
           </p>
         </form>
@@ -389,18 +389,18 @@ export default function ContactPage() {
               </div>
 
               {/* Curriculum Orientation Box */}
-              <div className="p-6 rounded-3xl bg-[#0A0A0A] text-white border border-[#141414] space-y-3">
-                <div className="flex items-center gap-2 text-xs font-bold text-[#A8FF24] uppercase tracking-wider">
+              <div className="p-6 rounded-3xl bg-[#F7F7F5] text-[#111111] border border-[#E6E6E6] space-y-3">
+                <div className="flex items-center gap-2 text-xs font-bold text-[#ED1654] uppercase tracking-wider">
                   <ShieldCheck className="w-4 h-4" />
                   <span>Curriculum Orientation</span>
                 </div>
                 <h4
-                  className="text-lg sm:text-xl font-medium text-white"
+                  className="text-lg sm:text-xl font-medium text-[#111111]"
                   style={{ fontFamily: "var(--font-serif)" }}
                 >
                   Personalised Guidance for Learners &amp; Parents
                 </h4>
-                <p className="text-xs text-[#D9D9D9] font-light leading-relaxed">
+                <p className="text-xs text-[#525252] font-light leading-relaxed">
                   Prospective learners and parents are encouraged to connect with our admissions desk to review course modules, workbook exercises, and interactive simulation schedules.
                 </p>
               </div>
@@ -423,14 +423,14 @@ export default function ContactPage() {
         </section>
 
         {/* ─── Institutional Alliances & Group Inquiries ─── */}
-        <section className="w-full bg-[#141414] text-white py-14 px-4 sm:px-8">
+        <section className="w-full bg-[#F7F7F5] text-[#111111] py-14 px-4 sm:px-8 border-t border-[#D9D9D9]">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-2xl bg-[#0A0A0A] border border-white/5 space-y-2">
-              <span className="text-xs font-bold text-[#A8FF24] uppercase tracking-widest">
+            <div className="p-6 rounded-2xl bg-white border border-[#E6E6E6] space-y-2 shadow-sm">
+              <span className="text-xs font-bold text-[#ED1654] uppercase tracking-widest">
                 School Partnerships
               </span>
-              <h4 className="text-lg font-bold text-white">Youth Cohorts &amp; Schools</h4>
-              <p className="text-xs text-white/75 leading-relaxed">
+              <h4 className="text-lg font-bold text-[#111111]">Youth Cohorts &amp; Schools</h4>
+              <p className="text-xs text-[#525252] leading-relaxed">
                 Connect with our academic team to introduce Sprout (9–11) or Bloom (11–14) literacy programmes to your student community.
               </p>
               <a
@@ -442,12 +442,12 @@ export default function ContactPage() {
               </a>
             </div>
 
-            <div className="p-6 rounded-2xl bg-[#0A0A0A] border border-white/5 space-y-2">
-              <span className="text-xs font-bold text-[#A8FF24] uppercase tracking-widest">
+            <div className="p-6 rounded-2xl bg-white border border-[#E6E6E6] space-y-2 shadow-sm">
+              <span className="text-xs font-bold text-[#ED1654] uppercase tracking-widest">
                 Corporate &amp; Group
               </span>
-              <h4 className="text-lg font-bold text-white">Harvest Adult Workshops</h4>
-              <p className="text-xs text-white/75 leading-relaxed">
+              <h4 className="text-lg font-bold text-[#111111]">Harvest Adult Workshops</h4>
+              <p className="text-xs text-[#525252] leading-relaxed">
                 Organise dedicated Harvest Literacy masterclasses for employees, alumni groups, or professional associations.
               </p>
               <a
@@ -459,12 +459,12 @@ export default function ContactPage() {
               </a>
             </div>
 
-            <div className="p-6 rounded-2xl bg-[#0A0A0A] border border-white/5 space-y-2">
-              <span className="text-xs font-bold text-[#A8FF24] uppercase tracking-widest">
+            <div className="p-6 rounded-2xl bg-white border border-[#E6E6E6] space-y-2 shadow-sm">
+              <span className="text-xs font-bold text-[#ED1654] uppercase tracking-widest">
                 General Correspondence
               </span>
-              <h4 className="text-lg font-bold text-white">Institutional Desk</h4>
-              <p className="text-xs text-white/75 leading-relaxed">
+              <h4 className="text-lg font-bold text-[#111111]">Institutional Desk</h4>
+              <p className="text-xs text-[#525252] leading-relaxed">
                 For research queries, curriculum documentation, and official administrative communication with Derivion.
               </p>
               <a

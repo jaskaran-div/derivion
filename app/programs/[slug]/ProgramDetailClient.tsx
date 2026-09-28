@@ -71,8 +71,8 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                 <span className="px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#ED1654]/10 text-[#ED1654] border border-[#ED1654]/20">
                   {programme.category}
                 </span>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-[#0A0A0A] text-[#A8FF24] border border-[#141414]">
-                  <span className="w-2 h-2 rounded-full bg-[#A8FF24] animate-pulse" />
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-[#F5F5F5] text-[#111111] border border-[#D9D9D9]">
+                  <span className="w-2 h-2 rounded-full bg-[#ED1654] animate-pulse" />
                   Target: {programme.targetAge}
                 </span>
                 <span className="px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#D9D9D9]/30 text-[#000000] border border-[#D9D9D9]">
@@ -170,7 +170,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
 
             {/* Right Media Card Column */}
             <div className="lg:col-span-5">
-              <div className="relative rounded-3xl overflow-hidden border border-[#D9D9D9] shadow-2xl bg-[#0A0A0A] group">
+              <div className="relative rounded-3xl overflow-hidden border border-[#D9D9D9] shadow-2xl bg-[#F3F3F3] group">
                 <div className="relative w-full h-[320px] sm:h-[400px]">
                   <Image
                     src={programme.heroImage}
@@ -200,14 +200,14 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
         </section>
 
         {/* ─── Key Stats Bar ─── */}
-        <section className="w-full bg-[#0A0A0A] text-white py-8 px-4 sm:px-6 lg:px-8 border-y border-[#141414]">
+        <section className="w-full bg-[#F7F7F5] text-[#111111] py-8 px-4 sm:px-6 lg:px-8 border-y border-[#D9D9D9]">
           <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {programme.stats.map((item, idx) => (
               <div key={idx} className="space-y-1 p-3">
-                <div className="text-3xl sm:text-4xl font-black tracking-tight text-[#A8FF24]">
+                <div className="text-3xl sm:text-4xl font-black tracking-tight text-[#ED1654]">
                   {item.value}
                 </div>
-                <div className="text-xs sm:text-sm font-medium text-[#D9D9D9]">
+                <div className="text-xs sm:text-sm font-medium text-[#525252]">
                   {item.label}
                 </div>
               </div>
@@ -308,7 +308,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
         </section>
 
         {/* ─── Interactive Curriculum Section ─── */}
-        <section id="curriculum" className="w-full bg-[#0A0A0A] text-white py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#141414]">
+        <section id="curriculum" className="w-full bg-[#F7F7F5] text-[#111111] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
           <div className="max-w-7xl mx-auto space-y-10">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <div className="space-y-2">
@@ -316,13 +316,13 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   Comprehensive Syllabus
                 </span>
                 <h2
-                  className="text-3xl sm:text-4xl font-medium tracking-tight text-white"
+                  className="text-3xl sm:text-4xl font-medium tracking-tight text-[#111111]"
                   style={{ fontFamily: "var(--font-serif)" }}
                 >
                   Curriculum <span className="italic font-normal text-[#ED1654]">Architecture</span>
                 </h2>
               </div>
-              <p className="text-xs sm:text-sm text-[#D9D9D9] max-w-md">
+              <p className="text-xs sm:text-sm text-[#525252] max-w-md">
                 Structured into progressive modules with hands-on scenario analysis, habit drills, and concrete reflection milestones.
               </p>
             </div>
@@ -335,8 +335,8 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   onClick={() => setActiveModuleIndex(mIdx)}
                   className={`px-5 py-3 rounded-2xl text-xs sm:text-sm font-semibold transition-all duration-200 shrink-0 flex items-center gap-2 ${
                     activeModuleIndex === mIdx
-                      ? "bg-white text-[#000000] shadow-xl"
-                      : "bg-[#141414] text-[#737373] hover:text-white border border-[#141414]"
+                      ? "bg-white text-[#000000] shadow-xl border border-[#E6E6E6]"
+                      : "bg-[#F3F3F3] text-[#525252] hover:text-[#111111] border border-[#D9D9D9]"
                   }`}
                 >
                   <span>{mod.number}</span>
@@ -349,14 +349,14 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
 
             {/* Active Module Card */}
             {programme.curriculum[activeModuleIndex] && (
-              <div className="bg-[#141414] border border-[#141414] rounded-3xl p-6 sm:p-10 shadow-2xl space-y-8 animate-in fade-in duration-300">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-6">
+              <div className="bg-white border border-[#E6E6E6] rounded-3xl p-6 sm:p-10 shadow-xl space-y-8 animate-in fade-in duration-300">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E6E6E6] pb-6">
                   <div>
-                    <span className="text-xs font-bold text-[#A8FF24] uppercase tracking-wider block mb-1">
+                    <span className="text-xs font-bold text-[#ED1654] uppercase tracking-wider block mb-1">
                       {programme.curriculum[activeModuleIndex].number} — {programme.curriculum[activeModuleIndex].duration}
                     </span>
                     <h3
-                      className="text-2xl sm:text-3xl font-medium text-white"
+                      className="text-2xl sm:text-3xl font-medium text-[#111111]"
                       style={{ fontFamily: "var(--font-serif)" }}
                     >
                       {programme.curriculum[activeModuleIndex].title}
@@ -364,46 +364,46 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   </div>
                 </div>
 
-                <p className="text-sm sm:text-base text-[#D9D9D9] font-light leading-relaxed">
+                <p className="text-sm sm:text-base text-[#525252] font-light leading-relaxed">
                   {programme.curriculum[activeModuleIndex].description}
                 </p>
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-2">
                   {/* Topics Covered */}
                   <div className="lg:col-span-7 space-y-3">
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#D9D9D9]">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#111111]">
                       Topics &amp; Episodes
                     </h4>
                     <ul className="space-y-2.5">
                       {programme.curriculum[activeModuleIndex].topics.map((t, tIdx) => (
-                        <li key={tIdx} className="flex items-start gap-3 text-xs sm:text-sm text-white/80">
+                        <li key={tIdx} className="flex items-start gap-3 text-xs sm:text-sm text-[#525252]">
                           <CheckCircle2 className="w-4 h-4 text-[#ED1654] shrink-0 mt-0.5" />
-                          <span className="text-[#D9D9D9]">{t}</span>
+                          <span>{t}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
                   {/* Hands-On Project & Skills */}
-                  <div className="lg:col-span-5 space-y-4 bg-[#0A0A0A] p-5 sm:p-6 rounded-2xl border border-white/5">
+                  <div className="lg:col-span-5 space-y-4 bg-[#F7F7F5] p-5 sm:p-6 rounded-2xl border border-[#E6E6E6]">
                     <div className="space-y-1.5">
-                      <span className="text-[10px] font-bold text-[#A8FF24] uppercase tracking-widest block">
+                      <span className="text-[10px] font-bold text-[#ED1654] uppercase tracking-widest block">
                         Milestone Project / Drill
                       </span>
-                      <p className="text-xs sm:text-sm text-white font-medium leading-relaxed">
+                      <p className="text-xs sm:text-sm text-[#111111] font-medium leading-relaxed">
                         {programme.curriculum[activeModuleIndex].project}
                       </p>
                     </div>
 
-                    <div className="space-y-2 pt-2 border-t border-white/10">
-                      <span className="text-[10px] font-bold text-white/70 uppercase tracking-widest block">
+                    <div className="space-y-2 pt-2 border-t border-[#E6E6E6]">
+                      <span className="text-[10px] font-bold text-[#525252] uppercase tracking-widest block">
                         Core Competencies
                       </span>
                       <div className="flex flex-wrap gap-2">
                         {programme.curriculum[activeModuleIndex].skills.map((skill, sIdx) => (
                           <span
                             key={sIdx}
-                            className="px-2.5 py-1 rounded-md text-[11px] font-medium bg-[#141414] text-[#D9D9D9] border border-white/10"
+                            className="px-2.5 py-1 rounded-md text-[11px] font-medium bg-white text-[#111111] border border-[#E6E6E6]"
                           >
                             {skill}
                           </span>
@@ -419,19 +419,19 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
 
         {/* ─── Harvest Behavioural Finance Case Studies (When Applicable) ─── */}
         {programme.caseStudies && programme.caseStudies.length > 0 && (
-          <section id="case-studies" className="w-full bg-[#141414] text-white py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10">
+          <section id="case-studies" className="w-full bg-[#F7F7F5] text-[#111111] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
             <div className="max-w-7xl mx-auto space-y-10">
               <div className="space-y-2 max-w-3xl">
                 <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
                   Empirical Risk Analysis
                 </span>
                 <h2
-                  className="text-3xl sm:text-4xl font-medium tracking-tight text-white"
+                  className="text-3xl sm:text-4xl font-medium tracking-tight text-[#111111]"
                   style={{ fontFamily: "var(--font-serif)" }}
                 >
-                  Reconstructed <span className="italic font-normal text-[#A8FF24]">Case Studies</span>
+                  Reconstructed <span className="italic font-normal text-[#ED1654]">Case Studies</span>
                 </h2>
-                <p className="text-xs sm:text-sm text-[#D9D9D9] leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#525252] leading-relaxed">
                   Historical autopsies of real-world market collapses, hidden risk, and impossible-yield schemes integrated into the curriculum to teach the anatomy of financial failure.
                 </p>
               </div>
@@ -440,28 +440,28 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                 {programme.caseStudies.map((cs, cIdx) => (
                   <div
                     key={cIdx}
-                    className="p-6 rounded-3xl bg-[#0A0A0A] border border-white/10 flex flex-col justify-between space-y-4 hover:border-[#ED1654] transition-colors"
+                    className="p-6 rounded-3xl bg-white border border-[#E6E6E6] flex flex-col justify-between space-y-4 hover:border-[#ED1654] transition-colors shadow-sm"
                   >
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-xs">
-                        <span className="text-[10px] font-bold text-[#A8FF24] uppercase tracking-widest">
+                        <span className="text-[10px] font-bold text-[#ED1654] uppercase tracking-widest">
                           Case 0{cIdx + 1}
                         </span>
                         <BookOpen className="w-4 h-4 text-[#737373]" />
                       </div>
-                      <h3 className="text-lg font-bold text-white leading-snug">
+                      <h3 className="text-lg font-bold text-[#111111] leading-snug">
                         {cs.title}
                       </h3>
                       <p className="text-xs text-[#ED1654] font-medium">
                         {cs.subtitle}
                       </p>
-                      <p className="text-xs text-white/75 leading-relaxed pt-2 border-t border-white/5">
+                      <p className="text-xs text-[#525252] leading-relaxed pt-2 border-t border-[#E6E6E6]">
                         {cs.description}
                       </p>
                     </div>
 
-                    <div className="p-3 rounded-xl bg-[#141414] border border-white/5 text-[11px] text-[#D9D9D9]">
-                      <span className="font-semibold text-[#A8FF24] block mb-0.5">Core Takeaway:</span>
+                    <div className="p-3 rounded-xl bg-[#F7F7F5] border border-[#E6E6E6] text-[11px] text-[#111111]">
+                      <span className="font-semibold text-[#ED1654] block mb-0.5">Core Takeaway:</span>
                       {cs.keyTakeaway}
                     </div>
                   </div>
@@ -494,10 +494,10 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
               {programme.toolsAndPlatforms.map((tool, idx) => (
                 <div
                   key={idx}
-                  className="p-5 rounded-2xl bg-[#0A0A0A] text-white border border-[#141414] flex items-center justify-between shadow-md hover:border-[#A8FF24] transition-colors"
+                  className="p-5 rounded-2xl bg-white text-[#111111] border border-[#E6E6E6] flex items-center justify-between shadow-sm hover:border-[#ED1654] transition-colors"
                 >
                   <span className="text-xs sm:text-sm font-semibold">{tool}</span>
-                  <Cpu className="w-4 h-4 text-[#A8FF24] shrink-0 ml-2" />
+                  <Cpu className="w-4 h-4 text-[#ED1654] shrink-0 ml-2" />
                 </div>
               ))}
             </div>
@@ -526,16 +526,16 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
               {programme.mentors.map((mentor, idx) => (
                 <div
                   key={idx}
-                  className="bg-[#0A0A0A] text-white border border-[#141414] rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:border-[#737373] transition-all duration-300 shadow-xl"
+                  className="bg-white text-[#111111] border border-[#E6E6E6] rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:border-[#D1D1D1] transition-all duration-300 shadow-sm"
                 >
                   <div className="space-y-4">
                     <div className="flex items-start justify-between gap-4">
                       <div>
-                        <h3 className="text-xl font-bold text-white">{mentor.name}</h3>
+                        <h3 className="text-xl font-bold text-[#111111]">{mentor.name}</h3>
                         <p className="text-xs text-[#ED1654] font-medium">{mentor.role}</p>
-                        <p className="text-xs text-white/70">{mentor.pastOrg}</p>
+                        <p className="text-xs text-[#525252]">{mentor.pastOrg}</p>
                       </div>
-                      <div className="w-14 h-14 rounded-2xl overflow-hidden relative bg-[#141414] shrink-0 border border-white/10">
+                      <div className="w-14 h-14 rounded-2xl overflow-hidden relative bg-[#F2F2F2] shrink-0 border border-[#E6E6E6]">
                         <Image
                           src={mentor.image}
                           alt={mentor.name}
@@ -544,14 +544,14 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                         />
                       </div>
                     </div>
-                    <p className="text-xs sm:text-sm text-[#D9D9D9] font-light leading-relaxed">
+                    <p className="text-xs sm:text-sm text-[#525252] font-light leading-relaxed">
                       {mentor.bio}
                     </p>
                   </div>
 
-                  <div className="pt-6 mt-6 border-t border-[#141414] flex items-center justify-between text-xs text-white/70">
+                  <div className="pt-6 mt-6 border-t border-[#E6E6E6] flex items-center justify-between text-xs text-[#525252]">
                     <span>Derivion Academic Faculty</span>
-                    <span className="text-[#A8FF24] font-medium">Active Cohort Support</span>
+                    <span className="text-[#ED1654] font-medium">Active Cohort Support</span>
                   </div>
                 </div>
               ))}
@@ -560,17 +560,17 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
         </section>
 
         {/* ─── Competencies & Reflex Outcomes ─── */}
-        <section id="outcomes" className="w-full bg-[#0A0A0A] text-white py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#141414]">
+        <section id="outcomes" className="w-full bg-[#F7F7F5] text-[#111111] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
           <div className="max-w-7xl mx-auto space-y-10">
             <div className="space-y-2">
               <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
                 Competency Outcomes
               </span>
               <h2
-                className="text-3xl sm:text-4xl font-medium tracking-tight text-white"
+                className="text-3xl sm:text-4xl font-medium tracking-tight text-[#111111]"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
-                Key Reflexes &amp; <span className="italic font-normal text-[#A8FF24]">Capability Pillars</span>
+                Key Reflexes &amp; <span className="italic font-normal text-[#ED1654]">Capability Pillars</span>
               </h2>
             </div>
 
@@ -578,18 +578,18 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
               {programme.careerPaths.map((career, idx) => (
                 <div
                   key={idx}
-                  className="p-6 rounded-2xl bg-[#141414] border border-white/5 hover:border-[#ED1654] transition-all duration-300 space-y-3"
+                  className="p-6 rounded-2xl bg-white border border-[#E6E6E6] hover:border-[#ED1654] transition-all duration-300 space-y-3 shadow-sm"
                 >
                   <div className="flex items-center justify-between">
                     <ShieldCheck className="w-5 h-5 text-[#ED1654]" />
-                    <span className="px-2.5 py-1 rounded bg-[#0A0A0A] text-[#A8FF24] text-xs font-bold border border-[#A8FF24]/20">
+                    <span className="px-2.5 py-1 rounded bg-[#F7F7F5] text-[#111111] text-xs font-bold border border-[#E6E6E6]">
                       {career.avgCtc}
                     </span>
                   </div>
-                  <h3 className="text-base sm:text-lg font-bold text-white">
+                  <h3 className="text-base sm:text-lg font-bold text-[#111111]">
                     {career.role}
                   </h3>
-                  <p className="text-xs text-white/70 leading-relaxed">
+                  <p className="text-xs text-[#525252] leading-relaxed">
                     {career.description}
                   </p>
                 </div>
@@ -643,14 +643,14 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
         </section>
 
         {/* ─── Frequently Asked Questions ─── */}
-        <section id="faq" className="w-full bg-[#0A0A0A] text-white py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#141414]">
+        <section id="faq" className="w-full bg-[#F7F7F5] text-[#111111] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
           <div className="max-w-4xl mx-auto space-y-8">
             <div className="text-center space-y-2">
               <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
                 Clear Answers
               </span>
               <h2
-                className="text-3xl sm:text-4xl font-medium tracking-tight text-white"
+                className="text-3xl sm:text-4xl font-medium tracking-tight text-[#111111]"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
                 Programme <span className="italic font-normal text-[#ED1654]">FAQs</span>
@@ -661,11 +661,11 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
               {programme.faqs.map((faq, fIdx) => (
                 <div
                   key={fIdx}
-                  className="border border-[#141414] bg-[#141414] rounded-2xl overflow-hidden transition-all duration-200"
+                  className="border border-[#E6E6E6] bg-white rounded-2xl overflow-hidden transition-all duration-200 shadow-sm"
                 >
                   <button
                     onClick={() => setOpenFaqIndex(openFaqIndex === fIdx ? null : fIdx)}
-                    className="w-full flex items-center justify-between p-5 text-left text-sm sm:text-base font-semibold text-white hover:text-[#ED1654]"
+                    className="w-full flex items-center justify-between p-5 text-left text-sm sm:text-base font-semibold text-[#111111] hover:text-[#ED1654]"
                   >
                     <span>{faq.question}</span>
                     <ChevronDown
@@ -676,7 +676,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   </button>
 
                   {openFaqIndex === fIdx && (
-                    <div className="px-5 pb-5 text-xs sm:text-sm text-[#D9D9D9] font-light leading-relaxed border-t border-white/5 pt-3">
+                    <div className="px-5 pb-5 text-xs sm:text-sm text-[#525252] font-light leading-relaxed border-t border-[#E6E6E6] pt-3">
                       {faq.answer}
                     </div>
                   )}
@@ -687,11 +687,11 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
         </section>
 
         {/* ─── Bottom CTA Banner ─── */}
-        <section className="w-full bg-[#141414] py-14 px-4 sm:px-8 text-white">
-          <div className="max-w-7xl mx-auto bg-gradient-to-r from-[#0A0A0A] via-[#141414] to-[#0A0A0A] border border-white/10 rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-2xl">
+        <section className="w-full bg-[#F7F7F5] py-14 px-4 sm:px-8 text-[#111111] border-t border-[#D9D9D9]">
+          <div className="max-w-7xl mx-auto bg-white border border-[#E6E6E6] rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-xl">
             <div className="space-y-2 max-w-2xl">
               <h3
-                className="text-2xl sm:text-4xl tracking-tight text-white"
+                className="text-2xl sm:text-4xl tracking-tight text-[#111111]"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
                 Ready to Join{" "}
@@ -699,7 +699,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   {programme.title}
                 </span>?
               </h3>
-              <p className="text-[#D9D9D9] text-xs sm:text-sm font-normal">
+              <p className="text-[#525252] text-xs sm:text-sm font-normal">
                 Next cohort starts in {programme.nextCohort}. Cohort sizes are intentionally limited.
               </p>
             </div>

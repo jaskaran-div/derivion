@@ -56,8 +56,8 @@ export default function WhyUs() {
           </div>
 
           {/* Top Right Featured Large Card */}
-          <div className="md:col-span-7 bg-[#0A0A0A] text-white border border-[#141414] rounded-2xl overflow-hidden relative min-h-[220px] sm:min-h-[240px] group flex flex-col justify-end p-6 sm:p-8 hover:shadow-xl transition-all duration-300">
-            <div className="absolute inset-0 z-0 opacity-40 group-hover:scale-105 transition-transform duration-500">
+          <div className="md:col-span-7 bg-[#F5F5F5] text-[#111111] border border-[#E7E7E7] rounded-2xl overflow-hidden relative min-h-[220px] sm:min-h-[240px] group flex flex-col justify-end p-6 sm:p-8 hover:shadow-xl transition-all duration-300">
+            <div className="absolute inset-0 z-0 opacity-30 group-hover:scale-105 transition-transform duration-500">
               <Image
                 src="/Home/hero-section.jpg"
                 alt="Holistic multi-pillar education"
@@ -66,13 +66,13 @@ export default function WhyUs() {
               />
             </div>
             <div className="relative z-10 space-y-2 max-w-lg">
-              <span className="inline-block text-[10px] font-bold text-[#A8FF24] uppercase tracking-widest bg-black/50 px-2.5 py-1 rounded backdrop-blur-sm border border-[#A8FF24]/30">
+              <span className="inline-block text-[10px] font-bold text-[#ED1654] uppercase tracking-widest bg-white/70 px-2.5 py-1 rounded border border-[#ED1654]/20">
                 COMPREHENSIVE ECOSYSTEM
               </span>
-              <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-tight text-white">
+              <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#111111]">
                 INTEGRATED 5-PILLAR PROTECTION
               </h3>
-              <p className="text-xs sm:text-sm text-[#D9D9D9] leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#525252] leading-relaxed">
                 Combining Financial, Digital, AI, Cyber, and Legal literacy into a single unified capability built for modern life.
               </p>
             </div>

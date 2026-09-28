@@ -78,9 +78,9 @@ export default function Navbar() {
             <Image
               src="/Home/derivion-logo.png"
               alt="Derivion Logo"
-              width={60}
-              height={60}
-              className="h-10 sm:h-12 w-auto object-contain"
+              width={50}
+              height={50}
+              className="h-10 sm:h-8 w-auto object-contain"
               priority
             />
         </Link>
@@ -92,7 +92,7 @@ export default function Navbar() {
             href="/"
             className={`px-5 py-2 text-xs sm:text-sm font-medium rounded-full transition-all duration-200 ${
               isHomeActive
-                ? "bg-[#000000] text-white shadow-md"
+                ? "bg-[#ED1654] text-white shadow-md"
                 : "text-[#737373] hover:text-[#000000] hover:bg-[#D9D9D9]/50"
             }`}
           >
@@ -105,7 +105,7 @@ export default function Navbar() {
               href="/programs"
               className={`flex items-center gap-1.5 px-5 py-2 text-xs sm:text-sm font-medium rounded-full transition-all duration-200 ${
                 isProgrammesActive
-                  ? "bg-[#000000] text-white shadow-md"
+                  ? "bg-[#ED1654] text-white shadow-md"
                   : "text-[#737373] hover:text-[#000000] hover:bg-[#D9D9D9]/50"
               }`}
             >
@@ -161,7 +161,7 @@ export default function Navbar() {
             href="/about"
             className={`px-5 py-2 text-xs sm:text-sm font-medium rounded-full transition-all duration-200 ${
               isAboutActive
-                ? "bg-[#000000] text-white shadow-md"
+                ? "bg-[#ED1654] text-white shadow-md"
                 : "text-[#737373] hover:text-[#000000] hover:bg-[#D9D9D9]/50"
             }`}
           >
@@ -176,7 +176,7 @@ export default function Navbar() {
             className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 shadow-sm active:scale-95 ${
               isContactActive
                 ? "bg-[#ED1654] text-white"
-                : "bg-[#000000] hover:bg-[#141414] text-white"
+                : "bg-[#ED1654] hover:bg-[#d6124b] text-white"
             }`}
           >
             <User className="w-4 h-4 text-[#D9D9D9]" />

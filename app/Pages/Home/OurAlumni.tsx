@@ -87,46 +87,46 @@ export default function OurAlumni() {
                 return (
                   <div
                     key={index}
-                    className="group bg-[#0A0A0A] border border-[#141414] rounded-2xl overflow-hidden p-2.5 sm:p-3 transition-all duration-300 shadow-lg hover:border-[#737373]"
+                    className="group bg-white border border-[#E6E6E6] rounded-2xl overflow-hidden p-2.5 sm:p-3 transition-all duration-300 shadow-sm hover:border-[#D4D4D4]"
                   >
                     <div className="flex items-stretch gap-3 sm:gap-3.5">
-                      <div className="relative w-[42%] min-w-[42%] overflow-hidden rounded-xl border border-[#141414] bg-[#141414]">
+                      <div className="relative w-[42%] min-w-[42%] overflow-hidden rounded-xl border border-[#E6E6E6] bg-[#F3F3F3]">
                         <Image
                           src={alumnus.photo}
                           alt={alumnus.name}
                           fill
                           className="object-cover object-center scale-105 group-hover:scale-110 transition-transform duration-500"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/0 to-transparent" />
                       </div>
 
                       <div className="flex-1 min-w-0 py-1 pr-1">
                         <div className="flex items-center justify-between gap-2 mb-1.5">
-                          <h3 className="text-sm sm:text-base font-bold text-white tracking-tight leading-tight truncate">
+                          <h3 className="text-sm sm:text-base font-bold text-[#111111] tracking-tight leading-tight truncate">
                             {alumnus.name}
                           </h3>
                           {alumnus.company ? (
-                            <span className="inline-flex items-center rounded-full border border-[#A8FF24]/40 bg-[#A8FF24]/10 px-1.5 py-0.5 text-[8px] uppercase tracking-[0.12em] text-[#A8FF24] font-semibold whitespace-nowrap">
+                            <span className="inline-flex items-center rounded-full border border-[#ED1654]/20 bg-[#ED1654]/5 px-1.5 py-0.5 text-[8px] uppercase tracking-[0.12em] text-[#ED1654] font-semibold whitespace-nowrap">
                               {alumnus.company}
                             </span>
                           ) : null}
                         </div>
 
-                        <p className="text-[11px] text-[#D9D9D9] font-medium italic mb-2">
+                        <p className="text-[11px] text-[#525252] font-medium italic mb-2">
                           {alumnus.role}
                           {alumnus.company ? `, ${alumnus.company}` : ""}
                         </p>
 
-                        <p className="text-[10.5px] leading-relaxed text-[#D9D9D9] italic line-clamp-3">
+                        <p className="text-[10.5px] leading-relaxed text-[#525252] italic line-clamp-3">
                           {alumnus.quote}
                         </p>
 
-                        <div className="flex items-center justify-between pt-2.5 mt-2.5 border-t border-[#141414]">
-                          <span className="inline-block px-2 py-1 rounded-md bg-[#141414] border border-[#737373]/30 text-[9px] font-medium text-[#D9D9D9]">
+                        <div className="flex items-center justify-between pt-2.5 mt-2.5 border-t border-[#E6E6E6]">
+                          <span className="inline-block px-2 py-1 rounded-md bg-[#F5F5F5] border border-[#E1E1E1] text-[9px] font-medium text-[#111111]">
                             {alumnus.batch}
                           </span>
-                          <span className="text-[9px] text-[#A8FF24] font-medium flex items-center gap-1">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#A8FF24]" /> Verified Outcome
+                          <span className="text-[9px] text-[#ED1654] font-medium flex items-center gap-1">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#ED1654]" /> Verified Outcome
                           </span>
                         </div>
                       </div>

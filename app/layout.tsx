@@ -7,9 +7,9 @@ export const metadata: Metadata = {
   description:
     "A forward-looking educational institute empowering learners across financial literacy, digital systems, AI awareness, and risk intelligence.",
   icons: {
-    icon: "/Home/derivion-logo.png",
-    shortcut: "/Home/derivion-logo.png",
-    apple: "/Home/derivion-logo.png",
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
   },
 };
 

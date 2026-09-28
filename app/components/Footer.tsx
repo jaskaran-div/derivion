@@ -59,38 +59,12 @@ export default function Footer() {
     { name: "LinkedIn", icon: LinkedinIcon, href: "https://www.linkedin.com/company/derivion-international/" },
     { name: "Twitter", icon: TwitterIcon, href: "https://x.com" },
     { name: "Instagram", icon: InstagramIcon, href: "https://www.instagram.com/isftglobal/" },
-    { name: "YouTube", icon: YoutubeIcon, href: "www.youtube.com/@DerivionInternational" },
+    { name: "YouTube", icon: YoutubeIcon, href: "https://www.youtube.com/@DerivionInternational" },
   ];
 
   return (
-    <footer className="w-full bg-[#0A0A0A] text-white pt-16 pb-8 px-4 sm:px-8 border-t border-[#141414]">
+    <footer className="w-full bg-[#F8F9FA] text-[#111111] pt-16 pb-8 px-4 sm:px-8 border-t border-[#E5E7EB]">
       <div className="max-w-7xl mx-auto space-y-12">
-
-        {/* ─── Top Callout CTA Card ─── */}
-        {/* <div className="bg-gradient-to-r from-[#141414] via-[#141414] to-[#141414]/80 border border-[#141414]/80 rounded-3xl p-6 sm:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-2xl">
-          <div className="space-y-2 max-w-2xl">
-            <h3
-              className="text-2xl sm:text-3xl tracking-tight text-white"
-              style={{ fontFamily: "var(--font-serif)" }}
-            >
-              Build safe financial instincts &amp;{" "}
-              <span className="italic font-normal text-[#ED1654]">real market capability</span>
-            </h3>
-            <p className="text-[#737373] text-xs sm:text-sm font-normal">
-              Explore Derivion&apos;s practitioner-crafted curricula for young minds, teenagers, and adult decision-makers.
-            </p>
-          </div>
-
-          <div className="flex items-center gap-3 w-full sm:w-auto">
-            <Link
-              href="/programs"
-              className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#ED1654] hover:bg-[#d6124b] text-white text-xs sm:text-sm font-semibold transition-all duration-200 shadow-lg active:scale-95"
-            >
-              <span>Explore Programmes</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div> */}
 
         {/* ─── Main Footer Content Grid ─── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-8 pt-4">
@@ -99,26 +73,26 @@ export default function Footer() {
           <div className="sm:col-span-2 md:col-span-4 space-y-4">
             <Link href="/" className="inline-flex items-center gap-3 w-fit">
               <Image
-                src="/footer/derivion-logo.png"
+                src="/Home/derivion-logo.png"
                 alt="Derivion Logo"
-                width={360}
-                height={150}
-                className="w-[170px] sm:w-[70px] md:w-[100px] lg:w-[160px] h-auto object-contain drop-shadow-[0_0_14px_rgba(237,22,84,0.2)]"
+                width={160}
+                height={60}
+                className="h-10 sm:h-12 w-auto object-contain"
               />
             </Link>
 
-            <p className="text-white text-xs sm:text-sm leading-relaxed max-w-sm">
+            <p className="text-[#4B5563] text-xs sm:text-sm leading-relaxed max-w-sm">
               Derivion is a forward-looking educational institute empowering learners across financial literacy, digital systems, AI awareness, and risk intelligence.
             </p>
 
             {/* Quick Stats Pill */}
-            <div className="flex items-center gap-4 py-2 text-xs font-semibold text-[#D9D9D9]">
+            <div className="flex items-center gap-4 py-2 text-xs font-semibold text-[#374151]">
               <div>
-                <span className="text-[#A8FF24] font-bold">3</span> Targeted Programmes
+                <span className="text-[#ED1654] font-bold">3</span> Targeted Programmes
               </div>
-              <div className="w-1 h-1 rounded-full bg-[#141414]" />
+              <div className="w-1.5 h-1.5 rounded-full bg-[#ED1654]" />
               <div>
-                <span className="text-[#A8FF24] font-bold">5</span> Core Literacies
+                <span className="text-[#ED1654] font-bold">5</span> Core Literacies
               </div>
             </div>
 
@@ -133,7 +107,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={item.name}
-                    className="w-9 h-9 rounded-full bg-[#141414] border border-[#141414] hover:border-[#737373] hover:bg-[#141414] text-white hover:text-white flex items-center justify-center transition-colors"
+                    className="w-9 h-9 rounded-full bg-white border border-[#E5E7EB] hover:border-[#ED1654] hover:bg-[#ED1654] text-[#374151] hover:text-white flex items-center justify-center transition-colors shadow-sm"
                   >
                     <IconComponent className="w-4 h-4" />
                   </a>
@@ -144,7 +118,7 @@ export default function Footer() {
 
           {/* Quick Links (Col 2) */}
           <div className="space-y-4 md:col-span-2">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-[#D9D9D9]">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-[#111111]">
               Navigation
             </h4>
             <ul className="space-y-2.5">
@@ -152,7 +126,7 @@ export default function Footer() {
                 <li key={idx}>
                   <Link
                     href={link.href}
-                    className="text-xs sm:text-sm text-white hover:text-white transition-colors"
+                    className="text-xs sm:text-sm text-[#4B5563] hover:text-[#ED1654] transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -163,7 +137,7 @@ export default function Footer() {
 
           {/* Programmes (Col 3) */}
           <div className="space-y-4 md:col-span-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-[#D9D9D9]">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-[#111111]">
               Programmes
             </h4>
             <ul className="space-y-2.5">
@@ -171,7 +145,7 @@ export default function Footer() {
                 <li key={idx}>
                   <Link
                     href={prog.href}
-                    className="text-xs sm:text-sm text-white hover:text-white transition-colors block line-clamp-1"
+                    className="text-xs sm:text-sm text-[#4B5563] hover:text-[#ED1654] transition-colors block line-clamp-1"
                   >
                     {prog.name}
                   </Link>
@@ -182,23 +156,23 @@ export default function Footer() {
 
           {/* Contact Details (Col 4) */}
           <div className="sm:col-span-2 md:col-span-3 space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-[#D9D9D9]">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-[#111111]">
               Get in Touch
             </h4>
-            <ul className="space-y-3 text-xs sm:text-sm text-white">
+            <ul className="space-y-3 text-xs sm:text-sm text-[#4B5563]">
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[#ED1654] shrink-0 mt-0.5" />
                 <span>Plot No 42, Phase IV, Sector 18, Gurugram, Sarhol, Haryana 122015</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-[#ED1654] shrink-0" />
-                <a href="mailto:info@derivion.in" className="hover:text-white transition-colors">
+                <a href="mailto:info@derivion.in" className="hover:text-[#ED1654] transition-colors">
                   info@derivion.in
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[#ED1654] shrink-0" />
-                <a href="tel:+917056057913" className="hover:text-white transition-colors">
+                <a href="tel:+917056057913" className="hover:text-[#ED1654] transition-colors">
                   +91 70560 57913
                 </a>
               </li>
@@ -216,14 +190,14 @@ export default function Footer() {
         </div>
 
         {/* ─── Bottom Sub-Footer ─── */}
-        <div className="pt-8 border-t border-[#141414] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/70">
+        <div className="pt-8 border-t border-[#E5E7EB] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#6B7280]">
           <p>&copy; {new Date().getFullYear()} Derivion. All rights reserved.</p>
 
           <div className="flex items-center gap-6">
-            <Link href="/privacy-policy" className="hover:text-[#D9D9D9] transition-colors">
+            <Link href="/privacy-policy" className="hover:text-[#111111] transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms-of-service" className="hover:text-[#D9D9D9] transition-colors">
+            <Link href="/terms-of-service" className="hover:text-[#111111] transition-colors">
               Terms of Service
             </Link>
           </div>

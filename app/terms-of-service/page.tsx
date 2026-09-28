@@ -99,9 +99,9 @@ export default function TermsOfServicePage() {
               </div>
             ))}
 
-            <div className="rounded-2xl bg-[#0A0A0A] p-5 text-white space-y-2">
+            <div className="rounded-2xl bg-[#F7F7F7] p-5 text-[#111111] space-y-2 border border-[#E6E6E6]">
               <h3 className="text-lg font-bold">Need help?</h3>
-              <p className="text-sm text-[#D9D9D9]">
+              <p className="text-sm text-[#525252]">
                 Contact us at info@derivion.in or call +91 70560 57913.
               </p>
             </div>

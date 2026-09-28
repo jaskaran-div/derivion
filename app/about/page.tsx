@@ -144,9 +144,9 @@ export default function AboutUsPage() {
                   Core Programmes
                 </span>
               </div>
-              <div className="w-32 h-32 sm:w-44 sm:h-44 rounded-full border border-[#D9D9D9] bg-[#0A0A0A] text-white shadow-xl flex flex-col items-center justify-center text-center p-3 hover:scale-105 transition-transform z-10">
-                <span className="text-2xl sm:text-4xl font-bold text-[#A8FF24]">5</span>
-                <span className="text-[10px] sm:text-xs text-[#D9D9D9] mt-1 font-medium max-w-[90px]">
+              <div className="w-32 h-32 sm:w-44 sm:h-44 rounded-full border border-[#D9D9D9] bg-[#F5F5F5] text-[#111111] shadow-xl flex flex-col items-center justify-center text-center p-3 hover:scale-105 transition-transform z-10">
+                <span className="text-2xl sm:text-4xl font-bold text-[#ED1654]">5</span>
+                <span className="text-[10px] sm:text-xs text-[#525252] mt-1 font-medium max-w-[90px]">
                   Key Literacies
                 </span>
               </div>
@@ -163,7 +163,7 @@ export default function AboutUsPage() {
 
         {/* ─── Hero Cinematic Media Frame ─── */}
         <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
-          <div className="relative w-full h-[320px] sm:h-[440px] rounded-3xl overflow-hidden bg-[#141414] shadow-xl">
+          <div className="relative w-full h-[320px] sm:h-[440px] rounded-3xl overflow-hidden bg-[#F2F2F2] shadow-xl">
             <Image
               src="/Home/about-us-pic.png"
               alt="Derivion Learning Environment"
@@ -192,34 +192,34 @@ export default function AboutUsPage() {
         </section>
 
         {/* ─── The Derivion Thesis: Comparison Table ─── */}
-        <section className="w-full bg-[#0A0A0A] text-white py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-y border-[#141414]">
+        <section className="w-full bg-[#F7F7F5] text-[#111111] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-y border-[#D9D9D9]">
           <div className="max-w-7xl mx-auto space-y-10">
             <div className="max-w-3xl space-y-2">
               <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
                 The Foundational Imperative
               </span>
               <h2
-                className="text-3xl sm:text-4xl font-medium tracking-tight text-white"
+                className="text-3xl sm:text-4xl font-medium tracking-tight text-[#111111]"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
                 Why Conventional Education Leaves Learners{" "}
                 <span className="italic font-normal text-[#ED1654]">Vulnerable</span>
               </h2>
-              <p className="text-xs sm:text-sm text-[#D9D9D9] font-light leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#525252] font-light leading-relaxed">
                 Traditional curricula teach arithmetic and theoretical banking while ignoring the realities of instant digital payments, synthetic screens, and aggressive behavioural manipulation.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Conventional Education */}
-              <div className="p-6 sm:p-8 rounded-3xl bg-[#141414] border border-white/5 space-y-6">
-                <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                  <span className="text-xs font-bold uppercase tracking-wider text-white/70">
+              <div className="p-6 sm:p-8 rounded-3xl bg-white border border-[#E6E6E6] space-y-6 shadow-sm">
+                <div className="flex items-center justify-between border-b border-[#E6E6E6] pb-4">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#111111]">
                     Conventional Model
                   </span>
-                  <span className="text-xs text-white/70">Theoretical Only</span>
+                  <span className="text-xs text-[#737373]">Theoretical Only</span>
                 </div>
-                <ul className="space-y-4 text-xs sm:text-sm text-white/80">
+                <ul className="space-y-4 text-xs sm:text-sm text-[#525252]">
                   <li className="flex items-start gap-3">
                     <span className="text-red-500 font-bold">✕</span>
                     <span>Focuses on theoretical formulas while ignoring modern screen-based spending.</span>
@@ -240,18 +240,18 @@ export default function AboutUsPage() {
               </div>
 
               {/* The Derivion Edge */}
-              <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#141414] to-[#0A0A0A] border border-[#ED1654]/40 shadow-2xl space-y-6 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#ED1654]/10 rounded-full blur-3xl pointer-events-none" />
+              <div className="p-6 sm:p-8 rounded-3xl bg-white border border-[#ED1654]/20 shadow-xl space-y-6 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#ED1654]/5 rounded-full blur-3xl pointer-events-none" />
                 
-                <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                <div className="flex items-center justify-between border-b border-[#E6E6E6] pb-4">
                   <span className="text-xs font-bold uppercase tracking-wider text-[#ED1654]">
                     The Derivion Framework
                   </span>
-                  <span className="text-xs font-bold text-[#A8FF24] bg-[#A8FF24]/10 px-2 py-0.5 rounded">
+                  <span className="text-xs font-bold text-[#111111] bg-[#F3F3F3] px-2 py-0.5 rounded">
                     Practical Standard
                   </span>
                 </div>
-                <ul className="space-y-4 text-xs sm:text-sm text-white">
+                <ul className="space-y-4 text-xs sm:text-sm text-[#111111]">
                   <li className="flex items-start gap-3">
                     <span className="text-[#A8FF24] font-bold">✓</span>
                     <span>Tackles UPI AutoPay, dark patterns, and Buy Now Pay Later mechanics directly.</span>
@@ -323,19 +323,19 @@ export default function AboutUsPage() {
         </section>
 
         {/* ─── Academic Stewardship & Disciplines ─── */}
-        <section className="w-full bg-[#0A0A0A] text-white py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#141414]">
+        <section className="w-full bg-[#F7F7F5] text-[#111111] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
           <div className="max-w-7xl mx-auto space-y-10">
             <div className="space-y-2">
               <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
                 Curricular Disciplines
               </span>
               <h2
-                className="text-3xl sm:text-4xl font-medium tracking-tight text-white"
+                className="text-3xl sm:text-4xl font-medium tracking-tight text-[#111111]"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
                 Integrated Areas of <span className="italic font-normal text-[#ED1654]">Expertise</span>
               </h2>
-              <p className="text-xs sm:text-sm text-[#D9D9D9] max-w-lg">
+              <p className="text-xs sm:text-sm text-[#525252] max-w-lg">
                 Derivion synthesises economics, technology, and consumer law into an actionable learning continuum.
               </p>
             </div>
@@ -344,10 +344,10 @@ export default function AboutUsPage() {
               {disciplines.map((item, lIdx) => (
                 <div
                   key={lIdx}
-                  className="bg-[#141414] border border-[#141414] rounded-2xl overflow-hidden flex flex-col justify-between hover:border-[#737373] transition-colors p-5 space-y-4"
+                  className="bg-white border border-[#E6E6E6] rounded-2xl overflow-hidden flex flex-col justify-between hover:border-[#D1D1D1] transition-colors p-5 space-y-4 shadow-sm"
                 >
                   <div className="space-y-3">
-                    <div className="relative w-full h-40 rounded-xl overflow-hidden bg-[#0A0A0A]">
+                    <div className="relative w-full h-40 rounded-xl overflow-hidden bg-[#F2F2F2]">
                       <Image
                         src={item.image}
                         alt={item.name}
@@ -356,17 +356,17 @@ export default function AboutUsPage() {
                       />
                     </div>
                     <div>
-                      <h4 className="text-base font-bold text-white">{item.name}</h4>
+                      <h4 className="text-base font-bold text-[#111111]">{item.name}</h4>
                       <p className="text-xs text-[#ED1654] font-medium leading-tight mt-0.5">
                         {item.role}
                       </p>
                     </div>
-                    <p className="text-xs text-white/80 leading-relaxed font-light">
+                    <p className="text-xs text-[#525252] leading-relaxed font-light">
                       {item.bio}
                     </p>
                   </div>
 
-                  <div className="pt-3 border-t border-white/10 text-[11px] text-[#A8FF24] font-medium flex items-center gap-1">
+                  <div className="pt-3 border-t border-[#E6E6E6] text-[11px] text-[#111111] font-medium flex items-center gap-1">
                     <span>Derivion Academic Council</span>
                   </div>
                 </div>
@@ -376,13 +376,13 @@ export default function AboutUsPage() {
         </section>
 
         {/* ─── Educational Statement ─── */}
-        <section className="w-full bg-white text-[#000000] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
+        <section className="w-full bg-[#F7F7F5] text-[#111111] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
           <div className="max-w-7xl mx-auto space-y-10">
-            <div className="bg-[#0A0A0A] text-white rounded-3xl p-6 sm:p-12 border border-[#141414] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="bg-white text-[#111111] rounded-3xl p-6 sm:p-12 border border-[#E6E6E6] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-sm">
               <div className="lg:col-span-8 space-y-4">
                 <Quote className="w-10 h-10 text-[#ED1654]" />
                 <h3
-                  className="text-xl sm:text-3xl font-medium tracking-tight text-white leading-snug"
+                  className="text-xl sm:text-3xl font-medium tracking-tight text-[#111111] leading-snug"
                   style={{ fontFamily: "var(--font-serif)" }}
                 >
                   &ldquo;Modern financial education must not be confined to theoretical textbooks. In an era of instant digital payments, synthetic algorithms, and complex debt structures, learning must instill clear, actionable instincts.&rdquo;
@@ -391,32 +391,32 @@ export default function AboutUsPage() {
                   <span className="px-2.5 py-1 bg-[#ED1654] text-white text-xs font-bold rounded">
                     DERIVION
                   </span>
-                  <span className="text-xs sm:text-sm font-semibold text-[#D9D9D9]">
+                  <span className="text-xs sm:text-sm font-semibold text-[#525252]">
                     Educational Mission &amp; Purpose
                   </span>
                 </div>
               </div>
 
-              <div className="lg:col-span-4 p-6 rounded-2xl bg-[#141414] border border-white/5 space-y-3">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#A8FF24]">
+              <div className="lg:col-span-4 p-6 rounded-2xl bg-[#F7F7F7] border border-[#E6E6E6] space-y-3">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#ED1654]">
                   Programme Highlights
                 </span>
-                <div className="space-y-2 text-xs text-[#D9D9D9]">
-                  <div className="flex justify-between py-1.5 border-b border-white/5">
+                <div className="space-y-2 text-xs text-[#525252]">
+                  <div className="flex justify-between py-1.5 border-b border-[#E6E6E6]">
                     <span>Structured Programmes</span>
-                    <span className="font-bold text-white">3 Offerings</span>
+                    <span className="font-bold text-[#111111]">3 Offerings</span>
                   </div>
-                  <div className="flex justify-between py-1.5 border-b border-white/5">
+                  <div className="flex justify-between py-1.5 border-b border-[#E6E6E6]">
                     <span>Key Literacies</span>
-                    <span className="font-bold text-white">5 Core Pillars</span>
+                    <span className="font-bold text-[#111111]">5 Core Pillars</span>
                   </div>
-                  <div className="flex justify-between py-1.5 border-b border-white/5">
+                  <div className="flex justify-between py-1.5 border-b border-[#E6E6E6]">
                     <span>Total Curriculum Hours</span>
-                    <span className="font-bold text-[#A8FF24]">13.5 Hours</span>
+                    <span className="font-bold text-[#ED1654]">13.5 Hours</span>
                   </div>
                   <div className="flex justify-between py-1.5">
                     <span>Target Age Spectrum</span>
-                    <span className="font-bold text-white">9 to 18+ Years</span>
+                    <span className="font-bold text-[#111111]">9 to 18+ Years</span>
                   </div>
                 </div>
               </div>
@@ -425,7 +425,7 @@ export default function AboutUsPage() {
         </section>
 
         {/* ─── Bottom CTA ─── */}
-        <section className="w-full bg-[#141414] py-14 px-4 sm:px-8 text-white">
+        <section className="w-full bg-[#F7F7F5] py-14 px-4 sm:px-8 text-[#111111] border-t border-[#D9D9D9]">
           <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="space-y-1">
               <h3
@@ -434,7 +434,7 @@ export default function AboutUsPage() {
               >
                 Experience the Derivion Difference
               </h3>
-              <p className="text-xs sm:text-sm text-[#737373]">
+              <p className="text-xs sm:text-sm text-[#525252]">
                 Connect with our team to learn more about upcoming cohorts and workshops.
               </p>
             </div>

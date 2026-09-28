@@ -22,9 +22,9 @@ export default function StudentSuccess() {
             <div className="max-w-7xl mx-auto space-y-4 sm:space-y-6">
                 {/* Section Subheading */}
                 <div className="text-center space-y-1">
-                    <p className="text-xs sm:text-sm font-semibold tracking-widest text-[#737373] uppercase">
+                    {/* <p className="text-xs sm:text-sm font-semibold tracking-widest text-[#737373] uppercase">
                         Alumni &amp; Student Placements
-                    </p>
+                    </p> */}
                     <h2
                         className="text-lg sm:text-2xl font-bold text-[#000000] tracking-tight"
                         style={{ fontFamily: "var(--font-serif)" }}

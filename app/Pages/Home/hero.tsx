@@ -53,9 +53,9 @@ export default function Hero() {
                         Igniting Change at <br className="hidden sm:inline" />
                         <span className="text-[#000000]">Derivion</span>
                     </h1>
-                    <p className="max-w-2xl text-sm sm:text-base leading-relaxed text-[#111111] font-medium">
+                    {/* <p className="max-w-2xl text-sm sm:text-base leading-relaxed text-[#111111] font-medium">
                         Real-world competence in modern markets isn&apos;t built through passive memorisation; it is measured by the clarity of your instincts, your habit of independent verification, and the reflexes you deploy when risk emerges.
-                    </p>
+                    </p> */}
                 </div>
 
                 {/* Right Stats: Overlapping Circles */}
