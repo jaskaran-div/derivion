@@ -51,7 +51,7 @@ export default function Hero() {
                     <video
                         ref={videoRef}
                         className="absolute inset-0 w-full h-full object-cover"
-                        src="/Home/derivion-video.mp4"
+                        src="/Home/derivion-hero-video-1.mp4"
                         autoPlay
                         muted
                         loop
@@ -64,48 +64,7 @@ export default function Hero() {
                     {/* Dark Gradient */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-transparent pointer-events-none" />
 
-                    {/* ─── Video Controls ─── */}
-                    <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                        
-                        {/* Left Controls */}
-                        <div className="flex items-center gap-2 pointer-events-auto">
-
-                            {/* Play / Pause */}
-                            <button
-                                onClick={togglePlay}
-                                aria-label={isPlaying ? "Pause video" : "Play video"}
-                                className="w-11 h-11 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-black/80 transition-all duration-200"
-                            >
-                                {isPlaying ? (
-                                    <Pause className="w-4 h-4 fill-white" />
-                                ) : (
-                                    <Play className="w-4 h-4 fill-white ml-0.5" />
-                                )}
-                            </button>
-
-                            {/* Mute */}
-                            <button
-                                onClick={toggleMute}
-                                aria-label={isMuted ? "Unmute video" : "Mute video"}
-                                className="w-11 h-11 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-black/80 transition-all duration-200"
-                            >
-                                {isMuted ? (
-                                    <VolumeX className="w-4 h-4" />
-                                ) : (
-                                    <Volume2 className="w-4 h-4" />
-                                )}
-                            </button>
-                        </div>
-
-                        {/* Fullscreen */}
-                        <button
-                            onClick={toggleFullscreen}
-                            aria-label="Fullscreen"
-                            className="w-11 h-11 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-black/80 transition-all duration-200 pointer-events-auto"
-                        >
-                            <Maximize className="w-4 h-4" />
-                        </button>
-                    </div>
+                    
 
                     {/* ─── Bottom-Right Floating Info Card ─── */}
                     <div className="absolute bottom-0 right-0 bg-white p-4 sm:pt-6 sm:pl-8 sm:pr-6 sm:pb-6 rounded-tl-2xl sm:rounded-tl-[36px] max-w-full sm:max-w-xl md:max-w-2xl shadow-lg">
