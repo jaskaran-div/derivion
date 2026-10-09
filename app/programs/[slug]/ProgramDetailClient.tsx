@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -12,6 +12,7 @@ import {
   Download,
   CheckCircle2,
   ChevronDown,
+  ChevronLeft,
   Sparkles,
   Cpu,
   ShieldCheck,
@@ -26,6 +27,14 @@ import { Programme } from "@/app/data/programmes";
 export default function ProgramDetailClient({ programme }: { programme: Programme }) {
   const [activeModuleIndex, setActiveModuleIndex] = useState(0);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+  const moduleTabsRef = useRef<HTMLDivElement>(null);
+
+  const scrollModuleTabs = (direction: -1 | 1) => {
+    const tabs = moduleTabsRef.current;
+    if (tabs) {
+      tabs.scrollBy({ left: direction * tabs.clientWidth * 0.8, behavior: "smooth" });
+    }
+  };
 
   const titleWords = programme.title.split(" ");
   const firstWord = titleWords[0];
@@ -90,7 +99,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
               </p>
 
               {/* Quick Specs Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 py-4 border-y border-[#D9D9D9]">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 py-4 border-y border-[#D9D9D9]">
                 <div className="space-y-1">
                   <div className="flex items-center gap-1.5 text-xs text-[#737373]">
                     <Clock className="w-3.5 h-3.5 text-[#ED1654]" />
@@ -116,7 +125,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                     <GraduationCap className="w-3.5 h-3.5 text-[#ED1654]" />
                     <span>Eligibility</span>
                   </div>
-                  <p className="text-xs sm:text-sm font-bold text-[#000000] truncate">
+                  <p className="text-xs sm:text-sm font-bold text-[#000000] break-words">
                     {programme.eligibility}
                   </p>
                 </div>
@@ -320,23 +329,58 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
             </div>
 
             {/* Module Tabs Nav */}
-            <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2">
-              {programme.curriculum.map((mod, mIdx) => (
+            <div className="flex items-center gap-2">
+              {programme.curriculum.length > 3 && (
                 <button
-                  key={mIdx}
-                  onClick={() => setActiveModuleIndex(mIdx)}
-                  className={`px-5 py-3 rounded-2xl text-xs sm:text-sm font-semibold transition-all duration-200 shrink-0 flex items-center gap-2 ${
-                    activeModuleIndex === mIdx
-                      ? "bg-white text-[#000000] shadow-xl border border-[#E6E6E6]"
-                      : "bg-[#F3F3F3] text-[#525252] hover:text-[#111111] border border-[#D9D9D9]"
-                  }`}
+                  type="button"
+                  onClick={() => scrollModuleTabs(-1)}
+                  aria-label="Scroll curriculum modules left"
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#D9D9D9] bg-white text-[#525252] transition-colors hover:border-[#ED1654] hover:text-[#ED1654] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ED1654]"
                 >
-                  <span>{mod.number}</span>
-                  <span className="hidden sm:inline font-normal text-xs text-[#737373]">
-                    • {mod.duration}
-                  </span>
+                  <ChevronLeft className="h-4 w-4" />
                 </button>
-              ))}
+              )}
+              <div
+                ref={moduleTabsRef}
+                aria-label="Curriculum modules"
+                className="flex min-w-0 flex-1 items-center gap-2 overflow-x-auto no-scrollbar scroll-smooth pb-2"
+              >
+                {programme.curriculum.map((mod, mIdx) => (
+                  <button
+                    key={mIdx}
+                    type="button"
+                    onClick={(event) => {
+                      setActiveModuleIndex(mIdx);
+                      event.currentTarget.scrollIntoView({
+                        behavior: "smooth",
+                        block: "nearest",
+                        inline: "nearest",
+                      });
+                    }}
+                    aria-pressed={activeModuleIndex === mIdx}
+                    className={`px-5 py-3 rounded-2xl text-xs sm:text-sm font-semibold transition-all duration-200 shrink-0 flex items-center gap-2 ${
+                      activeModuleIndex === mIdx
+                        ? "bg-white text-[#000000] shadow-xl border border-[#E6E6E6]"
+                        : "bg-[#F3F3F3] text-[#525252] hover:text-[#111111] border border-[#D9D9D9]"
+                    }`}
+                  >
+                    <span>{mod.number}</span>
+                    <span className="hidden sm:inline font-normal text-xs text-[#737373]">
+                      • {mod.duration}
+                    </span>
+                  </button>
+                ))}
+              </div>
+              {programme.curriculum.length > 3 && (
+                <button
+                  type="button"
+                  onClick={() => scrollModuleTabs(1)}
+                  aria-label="Scroll curriculum modules right"
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#D9D9D9] bg-white text-[#525252] transition-colors hover:border-[#ED1654] hover:text-[#ED1654] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ED1654]"
+                >
+                  <ChevronRight className="h-4 w-4" />
+                </button>
+              )}
             </div>
 
             {/* Active Module Card */}

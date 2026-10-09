@@ -21,7 +21,7 @@ export interface Programme {
   title: string;
   shortTitle: string;
   brochure: string;
-  category: "Young Learners" | "Adult Learners" | "OCN London";
+  category: "Young Learners" | "Adult Learners" | "ISFT Awards";
   targetAge: string;
   coreReflex: string;
   tagline: string;
@@ -461,7 +461,7 @@ export const PROGRAMMES: Programme[] = [
     title: "ISFT Award in Applied Financial Markets Trading",
     shortTitle: "Applied Financial Markets Trading",
     brochure: "ISFT-Award in Applied Financial Markets Trading.pdf",
-    category: "OCN London",
+    category: "ISFT Awards",
     targetAge: "Level 3 qualification",
     coreReflex: "Understand, assess and trade with discipline",
     tagline: "Trade with the forces that move the market.",
@@ -489,7 +489,7 @@ export const PROGRAMMES: Programme[] = [
     ],
     keyHighlights: [
       "Practitioner-designed by the centre’s Head Educator with more than 40 years of professional trading experience.",
-      "Delivered under OCN London with a defined credit value, level and external quality assurance.",
+      "Delivered under ISFT Awards with a defined credit value, level and external quality assurance.",
       "Built around real market events, including central bank decisions and major economic data releases.",
       "Develops applied skills in fundamental analysis, central bank policy interpretation and risk-aware news trading.",
     ],
@@ -573,7 +573,7 @@ export const PROGRAMMES: Programme[] = [
         name: "Derivion Academic Team",
         role: "Assessment and Delivery Team",
         pastOrg: "Derivion International Private Limited",
-        bio: "Supports quality assurance, learner progression and applied market education aligned with OCN London standards.",
+        bio: "Supports quality assurance, learner progression and applied market education aligned with ISFT Awards standards.",
         image: "/Home/hero-section.jpg",
       },
     ],
@@ -603,7 +603,7 @@ export const PROGRAMMES: Programme[] = [
       {
         question: "Is this qualification accredited?",
         answer:
-          "Yes. It is delivered under OCN London and carries a defined credit value and level, with annual quality review and external quality assurance.",
+          "Yes. It is delivered under ISFT Awards and carries a defined credit value and level, with annual quality review and external quality assurance.",
       },
       {
         question: "Who is this qualification for?",
@@ -628,7 +628,7 @@ export const PROGRAMMES: Programme[] = [
     title: "ISFT Award in Introduction to Financial Markets",
     shortTitle: "Introduction to Financial Markets",
     brochure: "ISFT-Award in Introduction to Financial Markets.pdf",
-    category: "OCN London",
+    category: "ISFT Awards",
     targetAge: "Level 3 qualification",
     coreReflex: "Build a broad market map before specialising",
     tagline: "Five markets, one shared vocabulary.",
@@ -656,7 +656,7 @@ export const PROGRAMMES: Programme[] = [
     ],
     keyHighlights: [
       "Broad by design: creates a structured foundation across asset classes before specialisation.",
-      "Delivered under OCN London with a defined credit value, level and external quality assurance.",
+      "Delivered under ISFT Awards with a defined credit value, level and external quality assurance.",
       "Includes applied analysis of real market data and a written comparative report across two asset classes.",
       "Suitable for learners who want a clear overview of how major markets relate to each other.",
     ],
@@ -755,7 +755,7 @@ export const PROGRAMMES: Programme[] = [
         name: "Derivion Academic Team",
         role: "Assessment and Delivery Team",
         pastOrg: "Derivion International Private Limited",
-        bio: "Supports quality assurance, learner progression and applied education aligned with OCN London standards.",
+        bio: "Supports quality assurance, learner progression and applied education aligned with ISFT Awards standards.",
         image: "/Home/hero-section.jpg",
       },
     ],
@@ -785,7 +785,7 @@ export const PROGRAMMES: Programme[] = [
       {
         question: "Is this qualification accredited?",
         answer:
-          "Yes. It is delivered under OCN London and has a defined credit value, level and annual quality review.",
+          "Yes. It is delivered under ISFT Awards and has a defined credit value, level and annual quality review.",
       },
       {
         question: "Who is this qualification for?",
@@ -810,7 +810,7 @@ export const PROGRAMMES: Programme[] = [
     title: "ISFT Award in Introduction to Financial Trading",
     shortTitle: "Introduction to Financial Trading",
     brochure: "ISFT-Award in Introduction to Financial Trading.pdf",
-    category: "OCN London",
+    category: "ISFT Awards",
     targetAge: "Entry-level learner",
     coreReflex: "Understand the market before placing a trade",
     tagline: "Understand the market. Trade with discipline.",
@@ -838,7 +838,7 @@ export const PROGRAMMES: Programme[] = [
     ],
     keyHighlights: [
       "Built for true beginners with no prior trading knowledge or formal entry requirements.",
-      "Delivered under OCN London with a defined credit value, GLH/TQT and external quality assurance.",
+      "Delivered under ISFT Awards with a defined credit value, GLH/TQT and external quality assurance.",
       "Focuses on market structure, instruments, platforms, orders and disciplined risk management.",
       "Unit 3 includes a written scenario where learners choose an order type and justify their risk plan.",
     ],
@@ -907,7 +907,7 @@ export const PROGRAMMES: Programme[] = [
         name: "Derivion Academic Team",
         role: "Assessment and Delivery Team",
         pastOrg: "Derivion International Private Limited",
-        bio: "Supports learner progression, quality assurance and applied delivery aligned with OCN London standards.",
+        bio: "Supports learner progression, quality assurance and applied delivery aligned with ISFT Awards standards.",
         image: "/Home/hero-section.jpg",
       },
     ],
@@ -962,12 +962,12 @@ export const PROGRAMMES: Programme[] = [
     title: "ISFT Award in Introduction to Risk Management",
     shortTitle: "Introduction to Risk Management",
     brochure: "ISFT-Award in Introduction to Risk Management.pdf",
-    category: "OCN London",
+    category: "ISFT Awards",
     targetAge: "Level 3 award",
     coreReflex: "Quantify risk, size position, and protect the account",
     tagline: "The discipline that protects the account.",
     description:
-      "A practitioner-designed Level 3 OCN London award that teaches learners how to quantify leverage, size a position appropriately, document a trading plan and manage risk with discipline in real market conditions.",
+      "A practitioner-designed Level 3 ISFT Awards award that teaches learners how to quantify leverage, size a position appropriately, document a trading plan and manage risk with discipline in real market conditions.",
     heroImage: "/programme/irm.png",
     format: "Online, self-paced via Derivion Academy LMS",
     eligibility: "Recommended prior learning: Level 2 Award in Introduction to Financial Trading, or equivalent foundational market knowledge",
@@ -990,7 +990,7 @@ export const PROGRAMMES: Programme[] = [
     ],
     keyHighlights: [
       "Practitioner-designed by the centre’s Head Educator with more than 40 years of active risk management and trading experience.",
-      "Delivered under OCN London with a defined credit value, level and external quality assurance.",
+      "Delivered under ISFT Awards with a defined credit value, level and external quality assurance.",
       "Covers leverage, margin, risk-per-trade, position sizing, trading plans and strategy selection.",
       "Includes a written analytical report in which learners evaluate a trading scenario and justify the recommended risk approach.",
     ],
@@ -1074,7 +1074,7 @@ export const PROGRAMMES: Programme[] = [
         name: "Derivion Academic Team",
         role: "Assessment and Delivery Team",
         pastOrg: "Derivion International Private Limited",
-        bio: "Supports quality assurance, learner progression and applied delivery aligned with OCN London standards.",
+        bio: "Supports quality assurance, learner progression and applied delivery aligned with ISFT Awards standards.",
         image: "/Home/hero-section.jpg",
       },
     ],
@@ -1104,7 +1104,7 @@ export const PROGRAMMES: Programme[] = [
       {
         question: "Is this qualification accredited?",
         answer:
-          "Yes. It is delivered under OCN London and carries a defined credit value, level and annual quality review with external assurance.",
+          "Yes. It is delivered under ISFT Awards and carries a defined credit value, level and annual quality review with external assurance.",
       },
       {
         question: "Who is this qualification for?",
@@ -1129,12 +1129,12 @@ export const PROGRAMMES: Programme[] = [
     title: "ISFT Award in Introduction to Trading Government Bonds",
     shortTitle: "Introduction to Trading Government Bonds",
     brochure: "ISFT-Award in Introduction to Trading Government Bonds.pdf",
-    category: "OCN London",
+    category: "ISFT Awards",
     targetAge: "Level 3 award",
     coreReflex: "Understand bond structure, price and risk before trading or hedging",
     tagline: "The steadiest asset class, made accessible.",
     description:
-      "A practitioner-designed Level 3 OCN London award that introduces learners to bond market fundamentals, Indian government securities, pricing, yield curves and applied bond trading or hedging decisions.",
+      "A practitioner-designed Level 3 ISFT Awards award that introduces learners to bond market fundamentals, Indian government securities, pricing, yield curves and applied bond trading or hedging decisions.",
     heroImage: "/programme/itgb.png",
     format: "Online, self-paced via Derivion Academy LMS",
     eligibility: "Recommended prior learning: Level 3 Award in Introduction to Financial Markets, or equivalent foundational knowledge of financial markets",
@@ -1157,7 +1157,7 @@ export const PROGRAMMES: Programme[] = [
     ],
     keyHighlights: [
       "Practitioner-designed by the centre’s Head Educator to address a gap in structured bond market education for Indian learners.",
-      "Delivered under OCN London with a defined credit value, level and external quality assurance.",
+      "Delivered under ISFT Awards with a defined credit value, level and external quality assurance.",
       "Includes a dedicated unit on Indian G-Secs, RBI market structure and how retail investors can access the market.",
       "Covers bond pricing, yield analysis, risk drivers and a practical bond futures hedging decision.",
     ],
@@ -1271,7 +1271,7 @@ export const PROGRAMMES: Programme[] = [
         name: "Derivion Academic Team",
         role: "Assessment and Delivery Team",
         pastOrg: "Derivion International Private Limited",
-        bio: "Supports learner progression, quality assurance and applied delivery aligned with OCN London standards.",
+        bio: "Supports learner progression, quality assurance and applied delivery aligned with ISFT Awards standards.",
         image: "/Home/hero-section.jpg",
       },
     ],
@@ -1301,7 +1301,7 @@ export const PROGRAMMES: Programme[] = [
       {
         question: "Is this qualification accredited?",
         answer:
-          "Yes. It is delivered under OCN London and carries a defined credit value, level and annual quality review with external assurance.",
+          "Yes. It is delivered under ISFT Awards and carries a defined credit value, level and annual quality review with external assurance.",
       },
       {
         question: "Who is this qualification for?",
@@ -1326,12 +1326,12 @@ export const PROGRAMMES: Programme[] = [
     title: "ISFT Certificate in Introduction to Technical Analysis in Trading",
     shortTitle: "Introduction to Technical Analysis in Trading",
     brochure: "ISFT-Certificate in Introduction to Technical Analysis in Trading.pdf",
-    category: "OCN London",
+    category: "ISFT Awards",
     targetAge: "Level 3 certificate",
     coreReflex: "Read the chart, confirm the trend, and justify the decision",
     tagline: "Every chart tells a story. Learn to read it.",
     description:
-      "A practitioner-designed Level 3 OCN London certificate that introduces learners to the principles and practical use of technical analysis across equities, FX, commodities and futures, with a strong emphasis on systematic chart reading and portfolio application.",
+      "A practitioner-designed Level 3 ISFT Awards certificate that introduces learners to the principles and practical use of technical analysis across equities, FX, commodities and futures, with a strong emphasis on systematic chart reading and portfolio application.",
     heroImage: "/programme/itat.png",
     format: "Online, self-paced via Derivion Academy LMS",
     eligibility: "Recommended prior learning: Level 3 Award in Applied Financial Markets Trading or Introduction to Financial Markets, or equivalent market knowledge",
@@ -1354,7 +1354,7 @@ export const PROGRAMMES: Programme[] = [
     ],
     keyHighlights: [
       "Practitioner-designed by the centre’s Head Educator, drawing on decades of applied chart-based trading experience across multiple asset classes and timeframes.",
-      "Delivered under OCN London with a defined credit value, level and external quality assurance.",
+      "Delivered under ISFT Awards with a defined credit value, level and external quality assurance.",
       "Uses a systematic, professional-level approach to chart reading that transfers across equities, FX, commodities and futures.",
       "Includes a portfolio of five annotated charts and an accompanying written technical analysis report.",
     ],
@@ -1498,7 +1498,7 @@ export const PROGRAMMES: Programme[] = [
         name: "Derivion Academic Team",
         role: "Assessment and Delivery Team",
         pastOrg: "Derivion International Private Limited",
-        bio: "Supports quality assurance, learner progression and applied delivery aligned with OCN London standards.",
+        bio: "Supports quality assurance, learner progression and applied delivery aligned with ISFT Awards standards.",
         image: "/Home/hero-section.jpg",
       },
     ],
@@ -1528,7 +1528,7 @@ export const PROGRAMMES: Programme[] = [
       {
         question: "Is this qualification accredited?",
         answer:
-          "Yes. It is delivered under OCN London and carries a defined credit value, level and annual quality review with external assurance.",
+          "Yes. It is delivered under ISFT Awards and carries a defined credit value, level and annual quality review with external assurance.",
       },
       {
         question: "Who is this qualification for?",
@@ -1553,12 +1553,12 @@ export const PROGRAMMES: Programme[] = [
     title: "ISFT Award in Introduction to Behavioural Psychology in Trading",
     shortTitle: "Introduction to Behavioural Psychology in Trading",
     brochure: "ISFT-Award in Introduction to Behavioural Psychology in Trading.pdf",
-    category: "OCN London",
+    category: "ISFT Awards",
     targetAge: "Level 3 award",
     coreReflex: "Recognise emotion, bias and decision pressure before they become a trade",
     tagline: "The market moves on numbers. You move on emotion.",
     description:
-      "A practitioner-designed Level 3 OCN London award for traders who already understand the market and want to understand the behavioural and emotional factors that shape performance under pressure.",
+      "A practitioner-designed Level 3 ISFT Awards award for traders who already understand the market and want to understand the behavioural and emotional factors that shape performance under pressure.",
     heroImage: "/programme/ibpt.png",
     format: "Online, self-paced via Derivion Academy LMS",
     eligibility: "Recommended prior learning: Level 2 Award in Introduction to Financial Trading, or equivalent foundational market knowledge",
@@ -1581,7 +1581,7 @@ export const PROGRAMMES: Programme[] = [
     ],
     keyHighlights: [
       "Practitioner-designed by the centre’s Head Educator with direct experience of the psychological demands of professional trading.",
-      "Delivered under OCN London with a defined credit value, level and external quality assurance.",
+      "Delivered under ISFT Awards with a defined credit value, level and external quality assurance.",
       "Covers emotional recognition, behavioural finance, mental performance and discipline in execution.",
       "Includes a structured reflective journal that applies the learning to real trading behaviour and decision-making.",
     ],
@@ -1665,7 +1665,7 @@ export const PROGRAMMES: Programme[] = [
         name: "Derivion Academic Team",
         role: "Assessment and Delivery Team",
         pastOrg: "Derivion International Private Limited",
-        bio: "Supports quality assurance, learner progression and applied delivery aligned with OCN London standards.",
+        bio: "Supports quality assurance, learner progression and applied delivery aligned with ISFT Awards standards.",
         image: "/Home/hero-section.jpg",
       },
     ],
@@ -1695,7 +1695,7 @@ export const PROGRAMMES: Programme[] = [
       {
         question: "Is this qualification accredited?",
         answer:
-          "Yes. It is delivered under OCN London and carries a defined credit value, level and annual quality review with external assurance.",
+          "Yes. It is delivered under ISFT Awards and carries a defined credit value, level and annual quality review with external assurance.",
       },
       {
         question: "Who is this qualification for?",
@@ -1720,12 +1720,12 @@ export const PROGRAMMES: Programme[] = [
     title: "ISFT Award in Introduction to Futures Trading",
     shortTitle: "Introduction to Futures Trading",
     brochure: "ISFT-Award in Introduction to Futures Trading.pdf",
-    category: "OCN London",
+    category: "ISFT Awards",
     targetAge: "Level 3 award",
     coreReflex: "Price it, margin it, hedge it, trade it",
     tagline: "The layer between analysis and execution.",
     description:
-      "A practitioner-designed Level 3 OCN London award that introduces learners to the mechanics of futures contracts, pricing, margin, hedging and applied strategy in a risk-aware framework.",
+      "A practitioner-designed Level 3 ISFT Awards award that introduces learners to the mechanics of futures contracts, pricing, margin, hedging and applied strategy in a risk-aware framework.",
     heroImage: "/programme/ift-future-trading.png",
     format: "Online, self-paced via Derivion Academy LMS",
     eligibility: "Recommended prior learning: Level 2 Award in Introduction to Financial Trading, or equivalent foundational market knowledge",
@@ -1748,7 +1748,7 @@ export const PROGRAMMES: Programme[] = [
     ],
     keyHighlights: [
       "Practitioner-designed by the centre’s Head Educator with direct experience trading futures across LIFFE, CBOT and CME.",
-      "Delivered under OCN London with a defined credit value, level and external quality assurance.",
+      "Delivered under ISFT Awards with a defined credit value, level and external quality assurance.",
       "Covers futures contracts, pricing, margin, basis and hedging in a structured and applied way.",
       "Includes a written applied strategy report that assesses how a hedge and its margin requirement are constructed and justified.",
     ],
@@ -1832,7 +1832,7 @@ export const PROGRAMMES: Programme[] = [
         name: "Derivion Academic Team",
         role: "Assessment and Delivery Team",
         pastOrg: "Derivion International Private Limited",
-        bio: "Supports learner progression, quality assurance and applied delivery aligned with OCN London standards.",
+        bio: "Supports learner progression, quality assurance and applied delivery aligned with ISFT Awards standards.",
         image: "/Home/hero-section.jpg",
       },
     ],
@@ -1862,7 +1862,7 @@ export const PROGRAMMES: Programme[] = [
       {
         question: "Is this qualification accredited?",
         answer:
-          "Yes. It is delivered under OCN London and carries a defined credit value, level and annual quality review with external assurance.",
+          "Yes. It is delivered under ISFT Awards and carries a defined credit value, level and annual quality review with external assurance.",
       },
       {
         question: "Who is this qualification for?",

@@ -10,7 +10,7 @@ import AnimateOnScroll from "@/app/components/AnimateOnScroll";
 export default function OurProgrammes() {
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const categories = ["All", "Young Learners", "Adult Learners", "OCN London"];
+  const categories = ["All", "Young Learners", "Adult Learners", "ISFT Awards"];
 
   // Filter programmes based on active category selection
   const filteredProgrammes =

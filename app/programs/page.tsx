@@ -13,7 +13,7 @@ export default function ProgrammesDirectoryPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [searchQuery, setSearchQuery] = useState<string>("");
 
-  const categories = ["All", "Young Learners", "Adult Learners", "OCN London"];
+  const categories = ["All", "Young Learners", "Adult Learners", "ISFT Awards"];
 
   const filteredProgrammes = PROGRAMMES.filter((prog) => {
     const matchesCategory =
