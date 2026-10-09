@@ -26,14 +26,6 @@ import { Programme } from "@/app/data/programmes";
 export default function ProgramDetailClient({ programme }: { programme: Programme }) {
   const [activeModuleIndex, setActiveModuleIndex] = useState(0);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
-  const [syllabusDownloaded, setSyllabusDownloaded] = useState(false);
-
-  const handleDownloadSyllabus = () => {
-    setSyllabusDownloaded(true);
-    setTimeout(() => {
-      setSyllabusDownloaded(false);
-    }, 4000);
-  };
 
   const titleWords = programme.title.split(" ");
   const firstWord = titleWords[0];
@@ -150,15 +142,14 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   <ArrowRight className="w-4 h-4" />
                 </Link>
 
-                <button
-                  onClick={handleDownloadSyllabus}
+                <a
+                  href={`/course-pdf/${encodeURIComponent(programme.brochure)}`}
+                  download={programme.brochure}
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-[#ED1654] hover:bg-[#ED1654] hover:text-white text-[#ED1654] text-xs sm:text-sm font-semibold transition-all duration-200 active:scale-95"
                 >
                   <Download className="w-4 h-4" />
-                  <span>
-                    {syllabusDownloaded ? "Curriculum Guide Sent!" : "Download Curriculum"}
-                  </span>
-                </button>
+                  <span>Download Brochure</span>
+                </a>
               </div>
 
               {programme.scholarshipAvailable && (

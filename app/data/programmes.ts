@@ -20,6 +20,7 @@ export interface Programme {
   slug: string;
   title: string;
   shortTitle: string;
+  brochure: string;
   category: "Young Learners" | "Adult Learners" | "OCN London";
   targetAge: string;
   coreReflex: string;
@@ -72,6 +73,7 @@ export const PROGRAMMES: Programme[] = [
     slug: "sprout-literacy",
     title: "Sprout Literacy",
     shortTitle: "Sprout Literacy",
+    brochure: "ISFT sprout.pdf",
     category: "Young Learners",
     targetAge: "9–11 years",
     coreReflex: "STOP & ASK",
@@ -264,6 +266,7 @@ export const PROGRAMMES: Programme[] = [
     slug: "bloom-literacy",
     title: "Bloom Literacy",
     shortTitle: "Bloom Literacy",
+    brochure: "ISFT bloom.pdf",
     category: "Young Learners",
     targetAge: "11–14 years",
     coreReflex: "VERIFY BEFORE YOU ACT",
@@ -457,6 +460,7 @@ export const PROGRAMMES: Programme[] = [
     slug: "isft-award-in-applied-financial-markets-trading",
     title: "ISFT Award in Applied Financial Markets Trading",
     shortTitle: "Applied Financial Markets Trading",
+    brochure: "ISFT-Award in Applied Financial Markets Trading.pdf",
     category: "OCN London",
     targetAge: "Level 3 qualification",
     coreReflex: "Understand, assess and trade with discipline",
@@ -623,6 +627,7 @@ export const PROGRAMMES: Programme[] = [
     slug: "isft-award-in-introduction-to-financial-markets",
     title: "ISFT Award in Introduction to Financial Markets",
     shortTitle: "Introduction to Financial Markets",
+    brochure: "ISFT-Award in Introduction to Financial Markets.pdf",
     category: "OCN London",
     targetAge: "Level 3 qualification",
     coreReflex: "Build a broad market map before specialising",
@@ -804,6 +809,7 @@ export const PROGRAMMES: Programme[] = [
     slug: "isft-award-in-introduction-to-financial-trading",
     title: "ISFT Award in Introduction to Financial Trading",
     shortTitle: "Introduction to Financial Trading",
+    brochure: "ISFT-Award in Introduction to Financial Trading.pdf",
     category: "OCN London",
     targetAge: "Entry-level learner",
     coreReflex: "Understand the market before placing a trade",
@@ -955,6 +961,7 @@ export const PROGRAMMES: Programme[] = [
     slug: "isft-award-in-introduction-to-risk-management",
     title: "ISFT Award in Introduction to Risk Management",
     shortTitle: "Introduction to Risk Management",
+    brochure: "ISFT-Award in Introduction to Risk Management.pdf",
     category: "OCN London",
     targetAge: "Level 3 award",
     coreReflex: "Quantify risk, size position, and protect the account",
@@ -1121,6 +1128,7 @@ export const PROGRAMMES: Programme[] = [
     slug: "isft-award-in-introduction-to-trading-government-bonds",
     title: "ISFT Award in Introduction to Trading Government Bonds",
     shortTitle: "Introduction to Trading Government Bonds",
+    brochure: "ISFT-Award in Introduction to Trading Government Bonds.pdf",
     category: "OCN London",
     targetAge: "Level 3 award",
     coreReflex: "Understand bond structure, price and risk before trading or hedging",
@@ -1317,6 +1325,7 @@ export const PROGRAMMES: Programme[] = [
     slug: "isft-certificate-in-introduction-to-technical-analysis-in-trading",
     title: "ISFT Certificate in Introduction to Technical Analysis in Trading",
     shortTitle: "Introduction to Technical Analysis in Trading",
+    brochure: "ISFT-Certificate in Introduction to Technical Analysis in Trading.pdf",
     category: "OCN London",
     targetAge: "Level 3 certificate",
     coreReflex: "Read the chart, confirm the trend, and justify the decision",
@@ -1543,6 +1552,7 @@ export const PROGRAMMES: Programme[] = [
     slug: "isft-award-in-introduction-to-behavioural-psychology-in-trading",
     title: "ISFT Award in Introduction to Behavioural Psychology in Trading",
     shortTitle: "Introduction to Behavioural Psychology in Trading",
+    brochure: "ISFT-Award in Introduction to Behavioural Psychology in Trading.pdf",
     category: "OCN London",
     targetAge: "Level 3 award",
     coreReflex: "Recognise emotion, bias and decision pressure before they become a trade",
@@ -1709,6 +1719,7 @@ export const PROGRAMMES: Programme[] = [
     slug: "isft-award-in-introduction-to-futures-trading",
     title: "ISFT Award in Introduction to Futures Trading",
     shortTitle: "Introduction to Futures Trading",
+    brochure: "ISFT-Award in Introduction to Futures Trading.pdf",
     category: "OCN London",
     targetAge: "Level 3 award",
     coreReflex: "Price it, margin it, hedge it, trade it",
@@ -1875,6 +1886,7 @@ export const PROGRAMMES: Programme[] = [
     slug: "harvest-literacy",
     title: "Harvest Literacy",
     shortTitle: "Harvest Literacy",
+    brochure: "ISFT Harvest Literacy (Adults).pdf",
     category: "Adult Learners",
     targetAge: "Adults 18+",
     coreReflex: "JUDGE, VERIFY & KNOW YOUR RECOURSE",
