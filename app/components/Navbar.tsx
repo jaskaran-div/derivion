@@ -27,7 +27,7 @@ export default function Navbar() {
       ],
     },
     {
-      category: "OCN London",
+      category: "ISFT Awards",
       subItems: [
         {
           name: "ISFT Award in Applied Financial Markets Trading",
