@@ -204,6 +204,24 @@ export default function Footer() {
         </div>
 
       </div>
+
+      <a
+        href="https://blog.derivionacademy.in/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visit the Derivion Academy blog"
+        title="Visit the Derivion Academy blog"
+        className="fixed bottom-5 right-5 z-50 flex h-20 w-20 items-center justify-center overflow-hidden rounded-full border border-[#E5E7EB] bg-white shadow-lg transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ED1654] focus-visible:ring-offset-2 sm:bottom-6 sm:right-6 sm:h-24 sm:w-24"
+      >
+        <Image
+          src="https://isftglobal.com/wp-content/uploads/2026/10/Chiaki.__1_-removebg-preview.png"
+          alt=""
+          width={256}
+          height={256}
+          unoptimized
+          className="h-[76%] w-[76%] object-contain"
+        />
+      </a>
     </footer>
   );
 }
