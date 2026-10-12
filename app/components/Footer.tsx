@@ -180,6 +180,12 @@ export default function Footer() {
                 <MapPin className="w-4 h-4 text-[#ED1654] shrink-0 mt-0.5" />
                 <span>Office 3A:1, Rathbone House, Dexter House, Croydon CR0 1BT, United Kingdom</span>
               </li>
+               <li className="flex items-center gap-3">
+                <Phone className="w-4 h-4 text-[#ED1654] shrink-0" />
+                <a href="tel:+447990064079" className="hover:text-[#ED1654] transition-colors">
+                  +44 7990 064079
+                </a>
+              </li>
               <li className="flex items-center gap-3">
                 <Clock className="w-4 h-4 text-[#ED1654] shrink-0" />
                 <span>Mon-Fri: 10:30am-6:30pm</span>

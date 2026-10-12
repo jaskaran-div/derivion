@@ -1,6 +1,3 @@
-"use client";
-
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -20,8 +17,14 @@ import {
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import AnimateOnScroll from "@/app/components/AnimateOnScroll";
+import { PROGRAMMES } from "@/app/data/programmes";
 
 export default function AboutUsPage() {
+  const programmeCount = PROGRAMMES.length;
+  const programmeCategoryCount = new Set(
+    PROGRAMMES.map((programme) => programme.category),
+  ).size;
+
   const pillars = [
     {
       title: "PRACTITIONER-CRAFTED CURRICULA",
@@ -140,7 +143,7 @@ export default function AboutUsPage() {
             {/* Overlapping Stats Card */}
             <AnimateOnScroll animation="fade-left" delay={150} duration={700} className="lg:col-span-5 flex items-center justify-center lg:justify-end -space-x-4 py-4">
               <div className="w-32 h-32 sm:w-44 sm:h-44 rounded-full border border-[#D9D9D9] bg-white shadow-md flex flex-col items-center justify-center text-center p-3 hover:scale-105 transition-transform">
-                <span className="text-2xl sm:text-4xl font-bold text-[#ED1654]">3</span>
+                <span className="text-2xl sm:text-4xl font-bold text-[#ED1654]">{programmeCount}</span>
                 <span className="text-[10px] sm:text-xs text-[#737373] mt-1 font-medium max-w-[90px]">
                   Core Programmes
                 </span>
@@ -407,15 +410,15 @@ export default function AboutUsPage() {
                 <div className="space-y-2 text-xs text-[#525252]">
                   <div className="flex justify-between py-1.5 border-b border-[#E6E6E6]">
                     <span>Structured Programmes</span>
-                    <span className="font-bold text-[#111111]">3 Offerings</span>
+                    <span className="font-bold text-[#111111]">{programmeCount} Programmes</span>
                   </div>
                   <div className="flex justify-between py-1.5 border-b border-[#E6E6E6]">
                     <span>Key Literacies</span>
                     <span className="font-bold text-[#111111]">5 Core Pillars</span>
                   </div>
                   <div className="flex justify-between py-1.5 border-b border-[#E6E6E6]">
-                    <span>Total Curriculum Hours</span>
-                    <span className="font-bold text-[#ED1654]">13.5 Hours</span>
+                    <span>Programme Categories</span>
+                    <span className="font-bold text-[#ED1654]">{programmeCategoryCount}</span>
                   </div>
                   <div className="flex justify-between py-1.5">
                     <span>Target Age Spectrum</span>
