@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "isftglobal.com",
+        hostname: "derivion.in",
       },
     ],
   },

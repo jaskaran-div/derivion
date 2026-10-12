@@ -18,6 +18,7 @@ import {
   ShieldCheck,
   ChevronRight,
   BookOpen,
+  X,
 } from "lucide-react";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
@@ -27,7 +28,47 @@ import { Programme } from "@/app/data/programmes";
 export default function ProgramDetailClient({ programme }: { programme: Programme }) {
   const [activeModuleIndex, setActiveModuleIndex] = useState(0);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+  const [isBrochureFormOpen, setIsBrochureFormOpen] = useState(false);
+  const [brochureLead, setBrochureLead] = useState({ fullName: "", email: "", phone: "" });
+  const [isSubmittingBrochureLead, setIsSubmittingBrochureLead] = useState(false);
+  const [brochureLeadError, setBrochureLeadError] = useState<string | null>(null);
   const moduleTabsRef = useRef<HTMLDivElement>(null);
+
+  const submitBrochureLead = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmittingBrochureLead(true);
+    setBrochureLeadError(null);
+
+    try {
+      const response = await fetch("/api/brochure-lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...brochureLead, programmeSlug: programme.slug }),
+      });
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(result?.error || "Unable to submit your details. Please try again.");
+      }
+
+      const downloadLink = document.createElement("a");
+      downloadLink.href = `/course-pdf/${encodeURIComponent(programme.brochure)}`;
+      downloadLink.download = programme.brochure;
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      downloadLink.remove();
+      setIsBrochureFormOpen(false);
+      setBrochureLead({ fullName: "", email: "", phone: "" });
+    } catch (error) {
+      setBrochureLeadError(
+        error instanceof Error
+          ? error.message
+          : "Unable to submit your details. Please try again."
+      );
+    } finally {
+      setIsSubmittingBrochureLead(false);
+    }
+  };
 
   const scrollModuleTabs = (direction: -1 | 1) => {
     const tabs = moduleTabsRef.current;
@@ -151,14 +192,17 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   <ArrowRight className="w-4 h-4" />
                 </Link>
 
-                <a
-                  href={`/course-pdf/${encodeURIComponent(programme.brochure)}`}
-                  download={programme.brochure}
+                <button
+                  type="button"
+                  onClick={() => {
+                    setBrochureLeadError(null);
+                    setIsBrochureFormOpen(true);
+                  }}
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-[#ED1654] hover:bg-[#ED1654] hover:text-white text-[#ED1654] text-xs sm:text-sm font-semibold transition-all duration-200 active:scale-95"
                 >
                   <Download className="w-4 h-4" />
                   <span>Download Brochure</span>
-                </a>
+                </button>
               </div>
 
               {programme.scholarshipAvailable && (
@@ -752,6 +796,120 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
           </AnimateOnScroll>
         </section>
       </main>
+
+      {isBrochureFormOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
+          onClick={(event) => {
+            if (event.target === event.currentTarget && !isSubmittingBrochureLead) {
+              setIsBrochureFormOpen(false);
+            }
+          }}
+          onKeyDown={(event) => {
+            if (event.key === "Escape" && !isSubmittingBrochureLead) {
+              setIsBrochureFormOpen(false);
+            }
+          }}
+        >
+          <section
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="brochure-lead-title"
+            className="relative w-full max-w-lg rounded-3xl bg-white p-6 shadow-2xl sm:p-8"
+          >
+            <button
+              type="button"
+              onClick={() => setIsBrochureFormOpen(false)}
+              disabled={isSubmittingBrochureLead}
+              aria-label="Close brochure form"
+              className="absolute right-5 top-5 rounded-full p-2 text-[#737373] transition-colors hover:bg-[#F5F5F5] hover:text-[#111111] disabled:opacity-50"
+            >
+              <X className="h-5 w-5" />
+            </button>
+            <div className="mb-6 space-y-2 pr-8">
+              <p className="text-xs font-bold uppercase tracking-widest text-[#ED1654]">
+                Get the brochure
+              </p>
+              <h2 id="brochure-lead-title" className="text-2xl font-semibold text-[#111111]">
+                {programme.title}
+              </h2>
+              <p className="text-sm text-[#737373]">
+                Enter your contact details to download this programme brochure.
+              </p>
+            </div>
+
+            <form onSubmit={submitBrochureLead} className="space-y-4">
+              {brochureLeadError && (
+                <p role="alert" className="rounded-xl bg-[#ED1654]/10 px-4 py-3 text-sm text-[#ED1654]">
+                  {brochureLeadError}
+                </p>
+              )}
+              <div className="space-y-1.5">
+                <label htmlFor="brochure-full-name" className="text-sm font-medium text-[#374151]">
+                  Name
+                </label>
+                <input
+                  id="brochure-full-name"
+                  name="fullName"
+                  type="text"
+                  autoComplete="name"
+                  autoFocus
+                  required
+                  maxLength={120}
+                  value={brochureLead.fullName}
+                  onChange={(event) =>
+                    setBrochureLead({ ...brochureLead, fullName: event.target.value })
+                  }
+                  className="w-full rounded-xl border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-3 text-sm text-[#111111] focus:border-[#ED1654] focus:outline-none"
+                />
+              </div>
+              <div className="space-y-1.5">
+                <label htmlFor="brochure-phone" className="text-sm font-medium text-[#374151]">
+                  Phone
+                </label>
+                <input
+                  id="brochure-phone"
+                  name="phone"
+                  type="tel"
+                  autoComplete="tel"
+                  required
+                  maxLength={30}
+                  value={brochureLead.phone}
+                  onChange={(event) =>
+                    setBrochureLead({ ...brochureLead, phone: event.target.value })
+                  }
+                  className="w-full rounded-xl border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-3 text-sm text-[#111111] focus:border-[#ED1654] focus:outline-none"
+                />
+              </div>
+              <div className="space-y-1.5">
+                <label htmlFor="brochure-email" className="text-sm font-medium text-[#374151]">
+                  Email
+                </label>
+                <input
+                  id="brochure-email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  required
+                  maxLength={254}
+                  value={brochureLead.email}
+                  onChange={(event) =>
+                    setBrochureLead({ ...brochureLead, email: event.target.value })
+                  }
+                  className="w-full rounded-xl border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-3 text-sm text-[#111111] focus:border-[#ED1654] focus:outline-none"
+                />
+              </div>
+              <button
+                type="submit"
+                disabled={isSubmittingBrochureLead}
+                className="inline-flex w-full items-center justify-center rounded-full bg-[#ED1654] px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#d6124b] disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                {isSubmittingBrochureLead ? "Submitting..." : "Submit & Download"}
+              </button>
+            </form>
+          </section>
+        </div>
+      )}
 
       <Footer />
     </div>

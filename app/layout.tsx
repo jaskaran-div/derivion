@@ -3,7 +3,7 @@ import "./globals.css";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Derivion — Know Markets. Manage Risks.",
+  title: "Derivion — Enabling trained risk",
   description:
     "A forward-looking educational institute empowering learners across financial literacy, digital systems, AI awareness, and risk intelligence.",
   icons: {

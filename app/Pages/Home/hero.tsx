@@ -105,8 +105,8 @@ export default function Hero() {
                         className="text-3xl sm:text-5xl md:text-6xl font-semibold text-[#000000] tracking-tight leading-[1.1]"
                         style={{ fontFamily: "var(--font-sans)" }}
                     >
-                        Know Markets. <br className="hidden sm:inline" />
-                        Manage Risks. <br className="hidden sm:inline" />
+                        Enabling trained risk <br className="hidden sm:inline" />
+                        {/* Manage Risks. <br className="hidden sm:inline" /> */}
                         <span className="text-[#000000]">at Derivion</span>
                     </h1>
                 </AnimateOnScroll>

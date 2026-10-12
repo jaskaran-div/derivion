@@ -1,7 +1,20 @@
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { escapeHtml } from "@/app/lib/email";
+import { createMailTransporter } from "@/app/lib/mail-transport";
+import { checkRateLimit } from "@/app/lib/rate-limit";
 
 export async function POST(request: Request) {
+  const rateLimit = checkRateLimit(request, "contact");
+  if (rateLimit.limited) {
+    return NextResponse.json(
+      { error: "Too many requests. Please try again later." },
+      {
+        status: 429,
+        headers: { "Retry-After": String(rateLimit.retryAfterSeconds) },
+      }
+    );
+  }
+
   try {
     const body = await request.json();
     const {
@@ -21,46 +34,23 @@ export async function POST(request: Request) {
       );
     }
 
-    const smtpHost = process.env.SMTP_HOST;
-    const smtpPort = Number(process.env.SMTP_PORT || 587);
-    const smtpUser = process.env.SMTP_USER;
-    const smtpPass = process.env.SMTP_PASS;
     const recipient = process.env.CONTACT_TO || "admissions@derivion.in";
     const fromAddress =
       process.env.SMTP_FROM ||
-      (smtpUser ? `Derivion Admissions <${smtpUser}>` : "Derivion Admissions <admissions@derivion.in>");
-
-    if (!smtpHost || !smtpUser || !smtpPass) {
-      return NextResponse.json(
-        {
-          error:
-            "Email configuration is not set. Add SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, and optionally CONTACT_TO in your environment variables.",
-        },
-        { status: 500 }
-      );
-    }
-
-    const transporter = nodemailer.createTransport({
-      host: smtpHost,
-      port: smtpPort,
-      secure: smtpPort === 465,
-      auth: {
-        user: smtpUser,
-        pass: smtpPass,
-      },
-    });
+      `Derivion Admissions <${process.env.SMTP_USER || "admissions@derivion.in"}>`;
+    const transporter = createMailTransporter();
 
     const html = `
       <div style="font-family: Arial, sans-serif; line-height:1.6; color:#111827;">
         <h2 style="margin-bottom: 12px;">New Derivion Admission Inquiry</h2>
-        <p><strong>Full Name:</strong> ${fullName}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Programme:</strong> ${programme || "Not specified"}</p>
-        <p><strong>Background:</strong> ${background || "Not specified"}</p>
-        <p><strong>Preferred Orientation Mode:</strong> ${counselingMode || "Not specified"}</p>
+        <p><strong>Full Name:</strong> ${escapeHtml(fullName)}</p>
+        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+        <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
+        <p><strong>Programme:</strong> ${escapeHtml(programme || "Not specified")}</p>
+        <p><strong>Background:</strong> ${escapeHtml(background || "Not specified")}</p>
+        <p><strong>Preferred Orientation Mode:</strong> ${escapeHtml(counselingMode || "Not specified")}</p>
         <p><strong>Message:</strong></p>
-        <p>${(message || "No additional message").replace(/\n/g, "<br />")}</p>
+        <p>${escapeHtml(message || "No additional message").replace(/\n/g, "<br />")}</p>
       </div>
     `;
 
