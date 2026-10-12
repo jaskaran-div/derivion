@@ -7,6 +7,11 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "derivion.in",
       },
+      {
+        protocol: "https",
+        hostname: "isftglobal.com",
+        pathname: "/wp-content/uploads/**",
+      },
     ],
   },
 };
