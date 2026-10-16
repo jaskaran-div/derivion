@@ -59,12 +59,14 @@ export default function Hero() {
                         preload="metadata"
                         onPlay={() => setIsPlaying(true)}
                         onPause={() => setIsPlaying(false)}
-                    />
+                    >
+                        Your browser does not support embedded videos.
+                    </video>
 
                     {/* Dark Gradient */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-transparent pointer-events-none" />
 
-                    
+
 
                     {/* ─── Bottom-Right Floating Info Card ─── */}
                     <div className="absolute bottom-0 right-0 bg-white p-4 sm:pt-6 sm:pl-8 sm:pr-6 sm:pb-6 rounded-tl-2xl sm:rounded-tl-[36px] max-w-full sm:max-w-xl md:max-w-2xl shadow-lg">
@@ -72,9 +74,9 @@ export default function Hero() {
                         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-6">
 
                             <p className="text-xs sm:text-sm text-[#737373] font-normal leading-relaxed">
-                                Derivion is dedicated to empowering modern learners with practitioner-led
-                                education across financial instincts, digital payment safety, AI awareness,
-                                and risk management.
+                                Derivion delivers practitioner-led education in financial markets,
+                                trading, risk management, digital payment safety and AI awareness
+                                to help learners build practical knowledge and informed decision-making skills.
                             </p>
 
                             <Link
@@ -106,7 +108,7 @@ export default function Hero() {
                         style={{ fontFamily: "var(--font-sans)" }}
                     >
                         <span className="text-[#000000]">Derivion</span>
-                        <br className="hidden sm:inline" /> Enabling trained risk 
+                        <br className="hidden sm:inline" /> Enabling trained risk
                     </h1>
                 </AnimateOnScroll>
 
