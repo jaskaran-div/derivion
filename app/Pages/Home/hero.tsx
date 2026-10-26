@@ -2,26 +2,53 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, Play, Pause, Volume2, VolumeX, Maximize } from "lucide-react";
 import AnimateOnScroll from "@/app/components/AnimateOnScroll";
 import { PROGRAMMES } from "@/app/data/programmes";
 
 export default function Hero() {
     const videoRef = useRef<HTMLVideoElement>(null);
+    const videoSource = "/Home/derivion-hero-video-1.mp4";
 
     const [isPlaying, setIsPlaying] = useState(false);
     const [isMuted, setIsMuted] = useState(true);
+    const [hasVideoFrame, setHasVideoFrame] = useState(false);
 
     useEffect(() => {
-        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-            videoRef.current?.pause();
-        }
+        const video = videoRef.current;
+        if (!video) return;
+
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+        const desktop = window.matchMedia("(min-width: 768px)");
+
+        const syncPlayback = () => {
+            if (reducedMotion.matches || !desktop.matches) {
+                video.pause();
+                video.autoplay = false;
+                return;
+            }
+
+            if (!video.src) video.src = videoSource;
+            video.autoplay = true;
+            void video.play().catch(() => setIsPlaying(false));
+        };
+
+        syncPlayback();
+        desktop.addEventListener("change", syncPlayback);
+        reducedMotion.addEventListener("change", syncPlayback);
+
+        return () => {
+            desktop.removeEventListener("change", syncPlayback);
+            reducedMotion.removeEventListener("change", syncPlayback);
+        };
     }, []);
 
     const togglePlay = () => {
         if (!videoRef.current) return;
 
         if (videoRef.current.paused) {
+            if (!videoRef.current.src) videoRef.current.src = videoSource;
             void videoRef.current.play().catch((error: unknown) => {
                 console.error("Unable to play the homepage hero video.", error);
                 setIsPlaying(false);
@@ -56,18 +83,27 @@ export default function Hero() {
             <AnimateOnScroll animation="fade-up" duration={700}>
                 <div className="relative w-full h-[380px] sm:h-[440px] md:h-[500px] rounded-3xl sm:rounded-[40px] overflow-hidden bg-[#141414] shadow-sm group">
 
+                    <Image
+                        src="/Home/hero-section.jpg"
+                        alt=""
+                        fill
+                        sizes="(max-width: 768px) calc(100vw - 2rem), (max-width: 1280px) calc(100vw - 3rem), 1216px"
+                        preload
+                        className="object-cover"
+                    />
+
                     {/* Local Video */}
                     <video
                         ref={videoRef}
-                        className="absolute inset-0 w-full h-full object-cover"
-                        src="/Home/derivion-hero-video-1.mp4"
-                        poster="/Home/hero-section.jpg"
-                        autoPlay
+                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${hasVideoFrame ? "opacity-100" : "opacity-0"}`}
                         muted
                         loop
                         playsInline
-                        preload="metadata"
-                        onPlay={() => setIsPlaying(true)}
+                        preload="none"
+                        onPlay={() => {
+                            setIsPlaying(true);
+                            setHasVideoFrame(true);
+                        }}
                         onPause={() => setIsPlaying(false)}
                     >
                         Your browser does not support embedded videos.
