@@ -24,8 +24,23 @@ import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import AnimateOnScroll from "@/app/components/AnimateOnScroll";
 import { Programme } from "@/app/data/programmes";
+import type { ProgrammeAssessment } from "@/app/data/programme-assessment";
+import { trackEvent } from "@/app/lib/analytics";
 
-export default function ProgramDetailClient({ programme }: { programme: Programme }) {
+export default function ProgramDetailClient({
+  programme,
+  relatedProgrammes,
+  assessment,
+  relatedGuides,
+}: {
+  programme: Programme;
+  assessment?: ProgrammeAssessment;
+  relatedGuides: { slug: string; title: string }[];
+  relatedProgrammes: Pick<
+    Programme,
+    "slug" | "title" | "category" | "targetAge" | "description"
+  >[];
+}) {
   const [activeModuleIndex, setActiveModuleIndex] = useState(0);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   const [isBrochureFormOpen, setIsBrochureFormOpen] = useState(false);
@@ -51,6 +66,8 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
         throw new Error(result?.error || "Unable to submit your details. Please try again.");
       }
 
+      // GA4 enhanced measurement records the PDF itself as file_download.
+      trackEvent("generate_lead", { form_name: "brochure", programme: programme.slug });
       const downloadLink = document.createElement("a");
       downloadLink.href = `/course-pdf/${encodeURIComponent(programme.brochure)}`;
       downloadLink.download = programme.brochure;
@@ -87,7 +104,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
 
       {/* ─── Breadcrumbs ─── */}
       <div className="w-full bg-[#D9D9D9]/20 border-b border-[#D9D9D9]/60 py-3 px-4 sm:px-8">
-        <div className="max-w-7xl mx-auto flex items-center gap-2 text-xs text-[#737373] overflow-x-auto no-scrollbar">
+        <div className="max-w-7xl mx-auto flex items-center gap-2 text-xs text-[#595959] overflow-x-auto no-scrollbar">
           <Link href="/" className="hover:text-[#000000] transition-colors shrink-0">
             Home
           </Link>
@@ -270,6 +287,11 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
             <a href="#curriculum" className="px-4 py-1.5 rounded-full hover:bg-[#D9D9D9]/50 text-[#737373] hover:text-[#000000] shrink-0">
               Curriculum
             </a>
+            {assessment && (
+              <a href="#assessment" className="px-4 py-1.5 rounded-full hover:bg-[#D9D9D9]/50 text-[#737373] hover:text-[#000000] shrink-0">
+                Assessment
+              </a>
+            )}
             {programme.caseStudies && programme.caseStudies.length > 0 && (
               <a href="#case-studies" className="px-4 py-1.5 rounded-full hover:bg-[#D9D9D9]/50 text-[#737373] hover:text-[#000000] shrink-0">
                 Case Studies
@@ -317,9 +339,9 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                 ))}
 
                 <div className="p-5 rounded-2xl bg-[#D9D9D9]/20 border border-[#D9D9D9] space-y-2">
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-[#000000]">
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-[#000000]">
                     Core Aim &amp; Reflex
-                  </h4>
+                  </h3>
                   <div className="text-xl font-bold text-[#C20F42]">
                     Reflex: {programme.coreReflex}
                   </div>
@@ -404,6 +426,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                       });
                     }}
                     aria-pressed={activeModuleIndex === mIdx}
+                    aria-controls={`module-panel-${mIdx}`}
                     className={`px-5 py-3 rounded-2xl text-xs sm:text-sm font-semibold transition-all duration-200 shrink-0 flex items-center gap-2 ${
                       activeModuleIndex === mIdx
                         ? "bg-white text-[#000000] shadow-xl border border-[#E6E6E6]"
@@ -429,25 +452,30 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
               )}
             </div>
 
-            {/* Active Module Card */}
-            {programme.curriculum[activeModuleIndex] && (
-              <div className="bg-white border border-[#E6E6E6] rounded-3xl p-6 sm:p-10 shadow-xl space-y-8 animate-in fade-in duration-300">
+            {/* Module Cards — all rendered so every module is in the HTML; inactive ones are hidden */}
+            <div>
+            {programme.curriculum.map((mod, mIdx) => (
+              <div
+                key={mIdx}
+                id={`module-panel-${mIdx}`}
+                hidden={activeModuleIndex !== mIdx}
+                className="bg-white border border-[#E6E6E6] rounded-3xl p-6 sm:p-10 shadow-xl space-y-8 animate-in fade-in duration-300">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E6E6E6] pb-6">
                   <div>
                     <span className="text-xs font-bold text-[#C20F42] uppercase tracking-wider block mb-1">
-                      {programme.curriculum[activeModuleIndex].number} — {programme.curriculum[activeModuleIndex].duration}
+                      {mod.number} — {mod.duration}
                     </span>
                     <h3
                       className="text-2xl sm:text-3xl font-medium text-[#111111]"
                       style={{ fontFamily: "var(--font-serif)" }}
                     >
-                      {programme.curriculum[activeModuleIndex].title}
+                      {mod.title}
                     </h3>
                   </div>
                 </div>
 
                 <p className="text-sm sm:text-base text-[#525252] font-light leading-relaxed">
-                  {programme.curriculum[activeModuleIndex].description}
+                  {mod.description}
                 </p>
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-2">
@@ -457,7 +485,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                       Topics &amp; Episodes
                     </h4>
                     <ul className="space-y-2.5">
-                      {programme.curriculum[activeModuleIndex].topics.map((t, tIdx) => (
+                      {mod.topics.map((t, tIdx) => (
                         <li key={tIdx} className="flex items-start gap-3 text-xs sm:text-sm text-[#525252]">
                           <CheckCircle2 className="w-4 h-4 text-[#C20F42] shrink-0 mt-0.5" />
                           <span>{t}</span>
@@ -473,7 +501,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                         Milestone Project / Drill
                       </span>
                       <p className="text-xs sm:text-sm text-[#111111] font-medium leading-relaxed">
-                        {programme.curriculum[activeModuleIndex].project}
+                        {mod.project}
                       </p>
                     </div>
 
@@ -482,7 +510,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                         Core Competencies
                       </span>
                       <div className="flex flex-wrap gap-2">
-                        {programme.curriculum[activeModuleIndex].skills.map((skill, sIdx) => (
+                        {mod.skills.map((skill, sIdx) => (
                           <span
                             key={sIdx}
                             className="px-2.5 py-1 rounded-md text-[11px] font-medium bg-white text-[#111111] border border-[#E6E6E6]"
@@ -495,9 +523,49 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   </div>
                 </div>
               </div>
-            )}
+            ))}
+            </div>
           </AnimateOnScroll>
         </section>
+
+        {/* ─── Assessment (ISFT awards; from the course brochures) ─── */}
+        {assessment && (
+          <section
+            id="assessment"
+            className="w-full bg-white text-[#111111] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]"
+          >
+            <AnimateOnScroll animation="fade-up" duration={700} className="max-w-7xl mx-auto space-y-8">
+              <div className="space-y-2">
+                <span className="text-xs font-semibold uppercase tracking-widest text-[#C20F42]">
+                  How You&apos;re Assessed
+                </span>
+                <h2
+                  className="text-3xl sm:text-4xl font-medium tracking-tight text-[#111111]"
+                  style={{ fontFamily: "var(--font-serif)" }}
+                >
+                  Assessment <span className="italic font-normal text-[#C20F42]">Format</span>
+                </h2>
+              </div>
+              <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {[
+                  { label: "Unit tests", text: assessment.unitTest },
+                  { label: "Final written task", text: assessment.finalTask },
+                  { label: "Marking", text: assessment.marking },
+                ].map((item) => (
+                  <li
+                    key={item.label}
+                    className="p-6 rounded-2xl bg-[#F7F7F5] border border-[#E6E6E6] space-y-2"
+                  >
+                    <h3 className="text-xs font-bold uppercase tracking-wider text-[#C20F42]">
+                      {item.label}
+                    </h3>
+                    <p className="text-sm text-[#525252] leading-relaxed">{item.text}</p>
+                  </li>
+                ))}
+              </ul>
+            </AnimateOnScroll>
+          </section>
+        )}
 
         {/* ─── Harvest Behavioural Finance Case Studies (When Applicable) ─── */}
         {programme.caseStudies && programme.caseStudies.length > 0 && (
@@ -709,9 +777,9 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                     <div className="w-10 h-10 rounded-full bg-[#D6124B] text-white flex items-center justify-center text-sm font-bold shadow-sm">
                       {step.step}
                     </div>
-                    <h4 className="text-base font-bold text-[#000000]">
+                    <h3 className="text-base font-bold text-[#000000]">
                       {step.title}
-                    </h4>
+                    </h3>
                     <p className="text-xs text-[#111111] leading-relaxed">
                       {step.description}
                     </p>
@@ -771,14 +839,116 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                 </div>
               ))}
             </div>
+            {programme.category === "ISFT Awards" && (
+              <aside
+                aria-label="Risk and qualification notice"
+                className="rounded-2xl border border-[#E6E6E6] bg-white p-5 text-xs sm:text-sm text-[#525252] leading-relaxed space-y-2"
+              >
+                <p className="font-semibold text-[#111111]">Important information</p>
+                <p>
+                  This is an educational qualification, not investment advice. It does not guarantee trading
+                  profits, income or employment. Trading leveraged products such as futures and options carries a
+                  high risk of loss: a{" "}
+                  <a
+                    href="https://www.sebi.gov.in/media-and-notifications/press-releases/sep-2024/updated-sebi-study-reveals-93-of-individual-traders-incurred-losses-in-equity-fando-between-fy22-and-fy24-aggregate-losses-exceed-1-8-lakh-crores-over-three-years_86906.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-[#C20F42] underline underline-offset-2 hover:text-[#B50F40]"
+                  >
+                    SEBI study (September 2024)
+                  </a>{" "}
+                  found that 93% of individual traders in equity F&amp;O incurred losses between FY22 and FY24.
+                </p>
+                <p>
+                  ISFT awards are bespoke qualifications accredited by OCN London. Bespoke qualifications are not
+                  regulated by Ofqual.{" "}
+                  <Link
+                    href="/about#qualifications"
+                    className="font-medium text-[#C20F42] underline underline-offset-2 hover:text-[#B50F40]"
+                  >
+                    About our qualifications
+                  </Link>
+                </p>
+              </aside>
+            )}
           </AnimateOnScroll>
         </section>
+
+        {/* ─── Related Programmes & Guides ─── */}
+        {(relatedProgrammes.length > 0 || relatedGuides.length > 0) && (
+          <section
+            id="related-programmes"
+            className="w-full bg-white text-[#111111] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]"
+          >
+            <div className="max-w-7xl mx-auto space-y-10">
+              <div className="space-y-2">
+                <span className="text-xs font-semibold uppercase tracking-widest text-[#C20F42]">
+                  Continue Exploring
+                </span>
+                <h2
+                  className="text-3xl sm:text-4xl font-medium tracking-tight text-[#111111]"
+                  style={{ fontFamily: "var(--font-serif)" }}
+                >
+                  Related <span className="italic font-normal text-[#C20F42]">Programmes</span>
+                </h2>
+              </div>
+
+              <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {relatedProgrammes.map((related) => (
+                  <li key={related.slug}>
+                    <Link
+                      href={`/programs/${related.slug}`}
+                      className="group flex h-full flex-col justify-between gap-4 rounded-2xl border border-[#E6E6E6] bg-white p-6 shadow-sm transition-all duration-300 hover:border-[#ED1654]"
+                    >
+                      <div className="space-y-2">
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-[#C20F42]">
+                          {related.category} • {related.targetAge}
+                        </span>
+                        <h3 className="text-base sm:text-lg font-bold text-[#111111] group-hover:text-[#C20F42] transition-colors">
+                          {related.title}
+                        </h3>
+                        <p className="text-xs sm:text-sm text-[#525252] leading-relaxed line-clamp-3">
+                          {related.description}
+                        </p>
+                      </div>
+                      <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#C20F42]">
+                        View programme
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+
+              {relatedGuides.length > 0 && (
+                <div className="space-y-3">
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-[#111111]">
+                    Related guides
+                  </h3>
+                  <ul className="space-y-2">
+                    {relatedGuides.map((guide) => (
+                      <li key={guide.slug}>
+                        <Link
+                          href={`/learn/${guide.slug}`}
+                          className="inline-flex items-center gap-1.5 text-sm font-medium text-[#111111] underline underline-offset-2 hover:text-[#C20F42]"
+                        >
+                          {guide.title}
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </section>
+        )}
 
         {/* ─── Bottom CTA Banner ─── */}
         <section className="w-full bg-[#F7F7F5] py-14 px-4 sm:px-8 text-[#111111] border-t border-[#D9D9D9]">
           <AnimateOnScroll animation="fade-up" duration={700} className="max-w-7xl mx-auto bg-white border border-[#E6E6E6] rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-xl">
             <div className="space-y-2 max-w-2xl">
-              <h3
+              <h2
                 className="text-2xl sm:text-4xl tracking-tight text-[#111111]"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
@@ -786,7 +956,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                 <span className="italic font-normal text-[#C20F42]">
                   {programme.title}
                 </span>?
-              </h3>
+              </h2>
               <p className="text-[#525252] text-xs sm:text-sm font-normal">
                 Next cohort starts in {programme.nextCohort}. Cohort sizes are intentionally limited.
               </p>

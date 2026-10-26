@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
 import Hero from "./Pages/Home/hero";
-import StudentSuccess from "./Pages/Home/StudentSuccess";
 import Placement  from "./Pages/Home/Placement";
 import OurProgrammes from "./Pages/Home/OurProgrammes";
 import OurAlumni from "./Pages/Home/OurAlumni";
@@ -44,7 +43,9 @@ export default function Page() {
        <Navbar />
        <main id="main-content">
          <Hero />
-         <StudentSuccess />
+         {/* StudentSuccess ("Where Our Graduates Work" employer logos) is hidden
+             until each employer is backed by a named, consenting alumnus.
+             See docs/seo/trust-audit.md. */}
          <Placement />
          <OurAlumni />
          <OurProgrammes />

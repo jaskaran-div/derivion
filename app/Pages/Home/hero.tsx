@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, Play, Pause, Volume2, VolumeX, Maximize } from "lucide-react";
 import AnimateOnScroll from "@/app/components/AnimateOnScroll";
+import { PROGRAMMES } from "@/app/data/programmes";
 
 export default function Hero() {
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -127,7 +128,7 @@ export default function Hero() {
                                 href="/about"
                                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:py-3 rounded-full bg-[#D6124B] hover:bg-[#B50F40] text-white text-xs sm:text-sm font-medium transition-all duration-200 shrink-0 shadow-md hover:shadow-lg active:scale-95"
                             >
-                                <span>Learn More</span>
+                                <span>About Derivion</span>
                                 <ArrowUpRight className="w-4 h-4" />
                             </Link>
 
@@ -175,7 +176,7 @@ export default function Hero() {
 
                     <div className="w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full border border-[#D9D9D9] bg-white/90 backdrop-blur-sm flex flex-col items-center justify-center text-center p-3 shrink-0 shadow-sm hover:z-10 transition-transform duration-300 hover:scale-105">
                         <span className="text-xl sm:text-3xl font-bold text-[#000000]">
-                            12+
+                            {PROGRAMMES.length}
                         </span>
 
                         <span className="text-[10px] sm:text-xs text-[#111111] font-medium mt-0.5 sm:mt-1 leading-tight max-w-[70px] sm:max-w-[80px]">

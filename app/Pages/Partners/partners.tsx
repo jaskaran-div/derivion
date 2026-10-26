@@ -13,13 +13,14 @@ import {
     Loader2,
 } from "lucide-react";
 import AnimateOnScroll from "@/app/components/AnimateOnScroll";
+import { trackEvent } from "@/app/lib/analytics";
 import { PROGRAMMES } from "@/app/data/programmes";
 
 const isftAwardCount = PROGRAMMES.filter((p) => p.category === "ISFT Awards").length;
 
 const stats = [
-    { value: `${PROGRAMMES.length}`, label: "Accredited & literacy programmes" },
-    { value: `${isftAwardCount}`, label: "UK-regulated ISFT awards" },
+    { value: `${PROGRAMMES.length}`, label: "ISFT awards & literacy programmes" },
+    { value: `${isftAwardCount}`, label: "OCN London-accredited ISFT awards" },
     { value: "3", label: "Engagement models" },
     { value: "9–18+", label: "Learner age bands served" },
 ];
@@ -40,7 +41,7 @@ const models = [
         tag: "Academic",
         title: "Universities & Business Schools",
         description:
-            "Embed ISFT-certified market modules into MBA, finance, and commerce curricula as credit-bearing electives or pre-placement bootcamps.",
+            "Embed ISFT market modules into MBA, finance, and commerce curricula as credit-bearing electives or pre-placement bootcamps.",
         points: [
             "Co-branded certificates mapped to UK qualification levels",
             "Faculty enablement and guest practitioner sessions",
@@ -130,6 +131,7 @@ export default function Partners() {
             if (!response.ok) {
                 throw new Error(result?.error || "Unable to send your inquiry right now.");
             }
+            trackEvent("generate_lead", { form_name: "partner", partnership_model: formData.partnershipModel });
             setIsSubmitted(true);
         } catch (error) {
             setSubmitError(
@@ -157,7 +159,7 @@ export default function Partners() {
                     </h1>
                     <p className="text-sm sm:text-base text-[#5F5F5F] max-w-2xl mx-auto leading-relaxed">
                         We help academic institutions, trading firms, and mission-driven organisations turn
-                        financial knowledge into trained judgement — through UK-regulated ISFT qualifications
+                        financial knowledge into trained judgement — through OCN London-accredited ISFT qualifications
                         and age-calibrated literacy curricula.
                     </p>
                     <button

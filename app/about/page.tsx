@@ -21,8 +21,8 @@ import { BreadcrumbJsonLd } from "@/app/components/JsonLd";
 import { createPageMetadata } from "@/app/lib/seo";
 
 export const metadata = createPageMetadata(
-  "About Derivion",
-  "Learn about Derivion's educational focus across financial literacy, financial markets, digital payment systems, AI awareness, and risk management.",
+  "About Us — Financial Literacy & Trading Education",
+  "Learn how Derivion teaches financial literacy, digital payment safety, AI and deepfake awareness, financial markets and risk management to children, teenagers and adults.",
   "/about",
 );
 import { PROGRAMMES } from "@/app/data/programmes";
@@ -103,7 +103,7 @@ export default function AboutUsPage() {
 
       {/* ─── Breadcrumbs ─── */}
       <div className="w-full bg-[#D9D9D9]/20 border-b border-[#D9D9D9]/60 py-3 px-4 sm:px-8">
-        <div className="max-w-7xl mx-auto flex items-center gap-2 text-xs text-[#737373]">
+        <div className="max-w-7xl mx-auto flex items-center gap-2 text-xs text-[#595959]">
           <Link href="/" className="hover:text-[#000000] transition-colors">
             Home
           </Link>
@@ -445,6 +445,8 @@ export default function AboutUsPage() {
             </div>
           </AnimateOnScroll>
         </section>
+
+      
 
         {/* ─── Bottom CTA ─── */}
         <section className="w-full bg-[#F7F7F5] py-14 px-4 sm:px-8 text-[#111111] border-t border-[#D9D9D9]">

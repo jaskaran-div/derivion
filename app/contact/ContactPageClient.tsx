@@ -19,6 +19,7 @@ import {
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import AnimateOnScroll from "@/app/components/AnimateOnScroll";
+import { trackEvent } from "@/app/lib/analytics";
 import { PROGRAMMES } from "@/app/data/programmes";
 
 function ContactFormInner() {
@@ -64,6 +65,7 @@ function ContactFormInner() {
         throw new Error(result?.error || "Unable to send your inquiry right now.");
       }
 
+      trackEvent("generate_lead", { form_name: "contact", programme: formData.programme });
       setIsSubmitted(true);
     } catch (error) {
       setSubmitError(
@@ -346,7 +348,7 @@ export default function ContactPageClient() {
 
       {/* ─── Breadcrumbs ─── */}
       <div className="w-full bg-[#D9D9D9]/20 border-b border-[#D9D9D9]/60 py-3 px-4 sm:px-8">
-        <div className="max-w-7xl mx-auto flex items-center gap-2 text-xs text-[#737373]">
+        <div className="max-w-7xl mx-auto flex items-center gap-2 text-xs text-[#595959]">
           <Link href="/" className="hover:text-[#000000] transition-colors">
             Home
           </Link>

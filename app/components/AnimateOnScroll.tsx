@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 type AnimationType =
   | "fade-up"
@@ -35,6 +35,11 @@ export default function AnimateOnScroll({
   threshold = 0.12,
 }: AnimateOnScrollProps) {
   const ref = useRef<HTMLElement>(null);
+  // Content is server-rendered visible so it paints without waiting for
+  // JavaScript (and stays visible if scripts fail). After mount, only elements
+  // that start below the fold are hidden and animated in on scroll; they are
+  // off-screen at that point, so hiding them causes no visible flash.
+  const [phase, setPhase] = useState<"static" | "hidden" | "visible">("static");
 
   useEffect(() => {
     const el = ref.current;
@@ -44,16 +49,14 @@ export default function AnimateOnScroll({
     const prefersReduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
-    if (prefersReduced) {
-      el.classList.remove("anim-hidden", `anim-${animation}`);
-      el.classList.add("anim-visible");
-      return;
-    }
+    const startsInView = el.getBoundingClientRect().top < window.innerHeight;
+    if (prefersReduced || startsInView) return;
 
+    setPhase("hidden");
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          el.classList.add("anim-visible");
+          setPhase("visible");
           observer.unobserve(el);
         }
       },
@@ -62,7 +65,7 @@ export default function AnimateOnScroll({
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, [animation, threshold]);
+  }, [threshold]);
 
   return (
     <Tag
@@ -70,8 +73,9 @@ export default function AnimateOnScroll({
       role={role}
       aria-label={ariaLabel}
       className={[
-        "anim-hidden",
-        `anim-${animation}`,
+        phase !== "static" && "anim-hidden",
+        phase !== "static" && `anim-${animation}`,
+        phase === "visible" && "anim-visible",
         `anim-delay-${delay}`,
         `anim-duration-${duration}`,
         className,

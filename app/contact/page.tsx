@@ -3,8 +3,8 @@ import { createPageMetadata } from "@/app/lib/seo";
 import ContactPageClient from "./ContactPageClient";
 
 export const metadata = createPageMetadata(
-  "Contact Derivion",
-  "Contact Derivion's admissions team with questions about financial literacy, trading education, programme schedules, or institutional enquiries.",
+  "Contact Admissions",
+  "Contact Derivion admissions in Gurugram or the UK about financial literacy programmes, ISFT trading qualifications, cohort schedules, fees or school and institutional enquiries.",
   "/contact",
 );
 

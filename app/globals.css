@@ -60,6 +60,9 @@ body {
   animation: marquee 25s linear infinite;
 }
 
+/* Keep anchored section headings clear of the sticky header and sub-nav. */
+main section[id] { scroll-margin-top: 8rem; }
+
 /* ─── Scrollbar Hide Utility ─── */
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

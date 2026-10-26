@@ -8,7 +8,18 @@ import AnimateOnScroll from "@/app/components/AnimateOnScroll";
 export default function Masters() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  const cards = [
+  // Portraits are only shown when they are real photographs of the person.
+  // The previous images for cards 2–5 carried OpenAI C2PA credentials
+  // (AI-generated), and the former-employer titles on cards 4–5 are awaiting
+  // evidence; see docs/seo/trust-audit.md before restoring either.
+  const cards: {
+    id: number;
+    name: string;
+    title: string;
+    specialty: string;
+    description: string;
+    image?: string;
+  }[] = [
     {
       id: 1,
       name: "Neil Crammond",
@@ -23,7 +34,6 @@ export default function Masters() {
       title: "Trainer",
       specialty: "Payments, fraud awareness, and digital spending habits",
       description: "Helps students build healthy digital habits, recognise financial traps, and use tools responsibly.",
-      image: "https://isftglobal.com/wp-content/uploads/2026/09/ChatGPT-Image-Sep-18-2026-06_04_03-PM.png",
     },
     {
       id: 3,
@@ -31,23 +41,20 @@ export default function Masters() {
       title: "Trainer",
       specialty: "Verification, synthetic media, and algorithmic trust",
       description: "Teaches learners how to question digital content, identify manipulation, and think critically in AI-driven environments.",
-      image: "https://isftglobal.com/wp-content/uploads/2026/09/ChatGPT-Image-Sep-18-2026-06_03_03-PM.png",
     },
     {
       id: 4,
       name: "Jon Harman",
-      title: "Ex-Vice President at JP Morgan",
+      title: "Trainer",
       specialty: "Online safety, redressal, and digital rights",
       description: "Equips students with practical knowledge around privacy, cyber hygiene, and taking the right actions when issues arise.",
-      image: "https://isftglobal.com/wp-content/uploads/2026/09/ChatGPT-Image-Sep-19-2026-10_15_16-PM.png",
     },
     {
       id: 5,
       name: "Alex Wilson",
-      title: "Senior Manager at cmegroup",
+      title: "Trainer",
       specialty: "Confidence, decision-making, and digital resilience",
       description: "Builds everyday judgment, courage, and calm in high-pressure online and financial situations.",
-      image: "/Home/alex.png",
     },
   ];
 
@@ -121,13 +128,26 @@ export default function Masters() {
                 >
                   {/* Background Image */}
                   <div className="absolute inset-0 z-0">
-                    <Image
-                      src={card.image}
-                      alt={card.title}
-                      fill
-                      sizes="(max-width: 640px) 80vw, 270px"
-                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500 opacity-100"
-                    />
+                    {card.image ? (
+                      <Image
+                        src={card.image}
+                        alt={`${card.name}, ${card.title}`}
+                        fill
+                        sizes="(max-width: 640px) 80vw, 270px"
+                        className="object-cover object-center group-hover:scale-105 transition-transform duration-500 opacity-100"
+                      />
+                    ) : (
+                      <div
+                        aria-hidden="true"
+                        className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[#2A2A2A] to-[#141414] text-6xl font-semibold tracking-tight text-white/25"
+                        style={{ fontFamily: "var(--font-serif)" }}
+                      >
+                        {card.name
+                          .split(" ")
+                          .map((part) => part[0])
+                          .join("")}
+                      </div>
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
                   </div>
 

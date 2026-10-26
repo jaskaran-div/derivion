@@ -2,7 +2,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Script from "next/script";
+import { preconnect } from "react-dom";
 import { OrganizationJsonLd } from "@/app/components/JsonLd";
+import ContactClickTracking from "@/app/components/ContactClickTracking";
 import {
   DEFAULT_DESCRIPTION,
   DEFAULT_SOCIAL_IMAGE,
@@ -43,7 +45,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: DEFAULT_SOCIAL_IMAGE,
-        alt: "Derivion — Enabling trained risk",
+        alt: HOME_TITLE,
       },
     ],
   },
@@ -60,6 +62,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // Analytics loads after hydration; opening the connection early saves a round trip.
+  preconnect("https://www.googletagmanager.com");
+
   return (
     <html
       lang="en"
@@ -71,6 +76,7 @@ export default function RootLayout({
           Skip to main content
         </a>
         <OrganizationJsonLd />
+        <ContactClickTracking />
         {children}
 
         {/* Google Analytics */}

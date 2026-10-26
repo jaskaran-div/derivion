@@ -151,7 +151,7 @@ export default function OurProgrammes() {
             href="/programs"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#111111] hover:bg-[#111111] text-[#111111] hover:text-white text-xs font-bold uppercase tracking-wider transition-all"
           >
-            <span>Explore All {PROGRAMMES.length} Programmes &amp; OCN Qualifications</span>
+            <span>Explore All {PROGRAMMES.length} Programmes &amp; ISFT Awards</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </AnimateOnScroll>

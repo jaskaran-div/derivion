@@ -51,7 +51,7 @@ export default function ProgrammeDirectoryClient() {
             </h1>
 
             <p className="text-sm sm:text-base md:text-lg text-[#737373] leading-relaxed">
-              Explore Derivion&apos;s practitioner-crafted programmes designed to build safe instincts, screen hygiene, AI verification, and financial defence across youth and adulthood.
+              Explore Derivion&apos;s practitioner-crafted programmes designed to build safe instincts, screen hygiene, AI verification, and financial defence across youth and adulthood. Choose from literacy programmes for ages 9–11, 11–14 and adults, or online ISFT awards in financial markets and trading accredited by OCN London.
             </p>
           </AnimateOnScroll>
 
@@ -94,7 +94,7 @@ export default function ProgrammeDirectoryClient() {
                     className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 shrink-0 ${
                       isActive
                         ? "bg-[#D6124B] text-white shadow-sm font-semibold"
-                        : "bg-[#F3F4F6] text-[#6B7280] hover:text-[#111111] hover:bg-[#E5E7EB] border border-[#E5E7EB]"
+                        : "bg-[#F3F4F6] text-[#4B5563] hover:text-[#111111] hover:bg-[#E5E7EB] border border-[#E5E7EB]"
                     }`}
                   >
                     {category}

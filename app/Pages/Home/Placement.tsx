@@ -43,7 +43,7 @@ export default function Placement() {
                 href="/programs"
                 className="inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-full bg-[#D6124B] hover:bg-[#B50F40] text-white text-xs sm:text-sm font-semibold transition-all duration-200 shadow-md active:scale-95"
               >
-                <span>EXPLORE TRADING DIPLOMA</span>
+                <span>EXPLORE PROGRAMMES</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
@@ -66,11 +66,11 @@ export default function Placement() {
               </div>
 
               <h2 className="text-lg sm:text-xl font-bold text-[#111111] leading-snug">
-                100% of Participants Report Improved Financial Career Prospects
+                First Indian Cohort Reports Increased Career Aspiration in Financial Trading
               </h2>
 
               <p className="text-xs sm:text-sm text-[#525252] leading-relaxed">
-                Following ISFT by Derivion Trading Diploma. First cohort results validate UK-regulated delivery model in India, demonstrating measurable gains in trading capability and professional behaviours.
+                ZISHI reports participant-surveyed results from the first Indian cohort of the ZISHI &amp; ISFT by Derivion Trading Diploma (Level 5 Advanced Diploma in Financial Trading).
               </p>
 
               <div className="p-4 rounded-xl bg-[#F7F7F5] border border-[#E7E7E7] space-y-2">
@@ -81,7 +81,7 @@ export default function Placement() {
                   &ldquo;This first cohort provides clear evidence that regulated, practitioner-led trading education can be delivered effectively within international higher-education environments.&rdquo;
                 </p>
                 <p className="text-[11px] font-semibold text-[#C20F42]">
-                  — Robert Russell, Global Head of Professional Trader Qualifications
+                  — Robert Russell, Global Head of Professional Trader Qualifications, ZISHI
                 </p>
               </div>
 
@@ -91,7 +91,7 @@ export default function Placement() {
                     <strong>Applied Learning:</strong> Participants engaged with tier-one front-end trading systems, working with real-time pricing across multi-asset markets where execution, control, and risk management are critical.
                   </p>
                   <p>
-                    <strong>Measured Outcomes:</strong> Overall programme satisfaction achieved a 5★ rating, 100% of students would recommend the programme, and marked improvements were recorded across discipline, problem solving, adaptability, and resilience.
+                    <strong>Reported Outcomes:</strong> According to ZISHI&apos;s release, participants rated overall programme satisfaction 5★, all participants said they would recommend the programme, and all reported increased aspiration to pursue careers in financial trading. The release does not state the cohort size or survey method.
                   </p>
                 </div>
               )}

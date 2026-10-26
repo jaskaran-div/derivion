@@ -1,12 +1,28 @@
+import {
+  BreadcrumbJsonLd,
+  ProgrammeListJsonLd,
+} from "@/app/components/JsonLd";
+import { PROGRAMMES } from "@/app/data/programmes";
 import { createPageMetadata } from "@/app/lib/seo";
 import ProgrammeDirectoryClient from "./ProgrammeDirectoryClient";
 
 export const metadata = createPageMetadata(
-  "Financial Literacy and Trading Programmes",
-  "Browse Derivion programmes covering financial literacy, financial markets and trading, digital safety, AI awareness, and risk management.",
+  "Financial Literacy & Trading Courses and Qualifications",
+  "Browse Derivion's financial literacy programmes for ages 9–14 and adults, and online ISFT awards in financial markets, technical analysis, futures, bonds, trading psychology and risk management.",
   "/programs",
 );
 
 export default function ProgrammesDirectoryPage() {
-  return <ProgrammeDirectoryClient />;
+  return (
+    <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", pathname: "/" },
+          { name: "Programmes", pathname: "/programs" },
+        ]}
+      />
+      <ProgrammeListJsonLd programmes={PROGRAMMES} />
+      <ProgrammeDirectoryClient />
+    </>
+  );
 }

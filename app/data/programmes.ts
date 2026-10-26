@@ -469,7 +469,7 @@ export const PROGRAMMES: Programme[] = [
       "A practitioner-designed Level 3 qualification that builds applied understanding of fundamental analysis, central bank policy, and disciplined trading around scheduled market-moving news.",
     heroImage: "/programme/afmt.png",
     format: "Online, self-paced via Derivion Academy LMS",
-    eligibility: "Completion of a Level 2 introduction to financial trading, or equivalent market knowledge",
+    eligibility: "Completion of the ISFT Award in Introduction to Financial Trading, or equivalent market knowledge",
     duration: "6–10 weeks typical completion",
     deadline: "Open for enrolment",
     nextCohort: "Rolling intake",
@@ -489,7 +489,7 @@ export const PROGRAMMES: Programme[] = [
     ],
     keyHighlights: [
       "Practitioner-designed by the centre’s Head Educator with more than 40 years of professional trading experience.",
-      "Delivered under ISFT Awards with a defined credit value, level and external quality assurance.",
+      "Accredited by OCN London as a bespoke qualification, with a defined credit value, level and external quality assurance.",
       "Built around real market events, including central bank decisions and major economic data releases.",
       "Develops applied skills in fundamental analysis, central bank policy interpretation and risk-aware news trading.",
     ],
@@ -573,7 +573,7 @@ export const PROGRAMMES: Programme[] = [
         name: "Derivion Academic Team",
         role: "Assessment and Delivery Team",
         pastOrg: "Derivion International Private Limited",
-        bio: "Supports quality assurance, learner progression and applied market education aligned with ISFT Awards standards.",
+        bio: "Supports quality assurance, learner progression and applied market education aligned with ISFT programme standards.",
         image: "/Home/hero-section.jpg",
       },
     ],
@@ -603,12 +603,12 @@ export const PROGRAMMES: Programme[] = [
       {
         question: "Is this qualification accredited?",
         answer:
-          "Yes. It is delivered under ISFT Awards and carries a defined credit value and level, with annual quality review and external quality assurance.",
+          "It is a bespoke qualification accredited by OCN London (course code 1131234), with a defined credit value and level, internal quality assurance and external moderation by an OCN London External Quality Assurer. Bespoke qualifications are not regulated by Ofqual.",
       },
       {
         question: "Who is this qualification for?",
         answer:
-          "It is intended for learners who have completed a Level 2 introduction to financial trading or bring equivalent market knowledge and want to build applied analytical skills.",
+          "It is intended for learners who have completed the ISFT Award in Introduction to Financial Trading or bring equivalent market knowledge and want to build applied analytical skills.",
       },
       {
         question: "How are learners assessed?",
@@ -636,7 +636,7 @@ export const PROGRAMMES: Programme[] = [
       "A broad, practitioner-designed Level 3 qualification that introduces learners to the structure and interplay of equities, foreign exchange, commodities, bonds and derivatives across global markets.",
     heroImage: "/programme/ifm.png",
     format: "Online, self-paced via Derivion Academy LMS",
-    eligibility: "Completion of a Level 2 introduction to financial trading, or equivalent foundational knowledge of financial markets and trading",
+    eligibility: "Completion of the ISFT Award in Introduction to Financial Trading, or equivalent foundational knowledge of financial markets and trading",
     duration: "8–12 weeks typical completion",
     deadline: "Open for enrolment",
     nextCohort: "Rolling intake",
@@ -656,7 +656,7 @@ export const PROGRAMMES: Programme[] = [
     ],
     keyHighlights: [
       "Broad by design: creates a structured foundation across asset classes before specialisation.",
-      "Delivered under ISFT Awards with a defined credit value, level and external quality assurance.",
+      "Accredited by OCN London as a bespoke qualification, with a defined credit value, level and external quality assurance.",
       "Includes applied analysis of real market data and a written comparative report across two asset classes.",
       "Suitable for learners who want a clear overview of how major markets relate to each other.",
     ],
@@ -755,7 +755,7 @@ export const PROGRAMMES: Programme[] = [
         name: "Derivion Academic Team",
         role: "Assessment and Delivery Team",
         pastOrg: "Derivion International Private Limited",
-        bio: "Supports quality assurance, learner progression and applied education aligned with ISFT Awards standards.",
+        bio: "Supports quality assurance, learner progression and applied education aligned with ISFT programme standards.",
         image: "/Home/hero-section.jpg",
       },
     ],
@@ -785,7 +785,7 @@ export const PROGRAMMES: Programme[] = [
       {
         question: "Is this qualification accredited?",
         answer:
-          "Yes. It is delivered under ISFT Awards and has a defined credit value, level and annual quality review.",
+          "It is a bespoke qualification accredited by OCN London (course code 1131235), with a defined credit value and level, internal quality assurance and external moderation by an OCN London External Quality Assurer. Bespoke qualifications are not regulated by Ofqual.",
       },
       {
         question: "Who is this qualification for?",
@@ -815,7 +815,7 @@ export const PROGRAMMES: Programme[] = [
     coreReflex: "Understand the market before placing a trade",
     tagline: "Understand the market. Trade with discipline.",
     description:
-      "A beginner-friendly Level 3 qualification that introduces learners to how financial markets work, the main trading instruments, and the risk-aware process of placing and justifying an order.",
+      "A beginner-friendly qualification that introduces learners to how financial markets work, the main trading instruments, and the risk-aware process of placing and justifying an order.",
     heroImage: "/programme/ift-financial.png",
     format: "Online, self-paced via Derivion Academy LMS",
     eligibility: "No formal entry requirements; basic literacy and numeracy and ability to study in English",
@@ -838,7 +838,7 @@ export const PROGRAMMES: Programme[] = [
     ],
     keyHighlights: [
       "Built for true beginners with no prior trading knowledge or formal entry requirements.",
-      "Delivered under ISFT Awards with a defined credit value, GLH/TQT and external quality assurance.",
+      "Accredited by OCN London as a bespoke qualification, with a defined credit value, guided learning hours and external quality assurance.",
       "Focuses on market structure, instruments, platforms, orders and disciplined risk management.",
       "Unit 3 includes a written scenario where learners choose an order type and justify their risk plan.",
     ],
@@ -907,7 +907,7 @@ export const PROGRAMMES: Programme[] = [
         name: "Derivion Academic Team",
         role: "Assessment and Delivery Team",
         pastOrg: "Derivion International Private Limited",
-        bio: "Supports learner progression, quality assurance and applied delivery aligned with ISFT Awards standards.",
+        bio: "Supports learner progression, quality assurance and applied delivery aligned with ISFT programme standards.",
         image: "/Home/hero-section.jpg",
       },
     ],
@@ -925,7 +925,7 @@ export const PROGRAMMES: Programme[] = [
       {
         role: "Progression Pathway",
         avgCtc: "Next-step readiness",
-        description: "Prepare for continued study in financial markets, trading and risk management through a recognised Level 3 qualification.",
+        description: "Prepare for continued study in financial markets, trading and risk management through the Level 3 awards in the ISFT suite.",
       },
     ],
     admissionSteps: [
@@ -967,10 +967,10 @@ export const PROGRAMMES: Programme[] = [
     coreReflex: "Quantify risk, size position, and protect the account",
     tagline: "The discipline that protects the account.",
     description:
-      "A practitioner-designed Level 3 ISFT Awards award that teaches learners how to quantify leverage, size a position appropriately, document a trading plan and manage risk with discipline in real market conditions.",
+      "A practitioner-designed Level 3 ISFT award that teaches learners how to quantify leverage, size a position appropriately, document a trading plan and manage risk with discipline in real market conditions.",
     heroImage: "/programme/irm.png",
     format: "Online, self-paced via Derivion Academy LMS",
-    eligibility: "Recommended prior learning: Level 2 Award in Introduction to Financial Trading, or equivalent foundational market knowledge",
+    eligibility: "Recommended prior learning: ISFT Award in Introduction to Financial Trading, or equivalent foundational market knowledge",
     duration: "6–10 weeks typical completion",
     deadline: "Open for enrolment",
     nextCohort: "Rolling intake",
@@ -990,7 +990,7 @@ export const PROGRAMMES: Programme[] = [
     ],
     keyHighlights: [
       "Practitioner-designed by the centre’s Head Educator with more than 40 years of active risk management and trading experience.",
-      "Delivered under ISFT Awards with a defined credit value, level and external quality assurance.",
+      "Accredited by OCN London as a bespoke qualification, with a defined credit value, level and external quality assurance.",
       "Covers leverage, margin, risk-per-trade, position sizing, trading plans and strategy selection.",
       "Includes a written analytical report in which learners evaluate a trading scenario and justify the recommended risk approach.",
     ],
@@ -1074,7 +1074,7 @@ export const PROGRAMMES: Programme[] = [
         name: "Derivion Academic Team",
         role: "Assessment and Delivery Team",
         pastOrg: "Derivion International Private Limited",
-        bio: "Supports quality assurance, learner progression and applied delivery aligned with ISFT Awards standards.",
+        bio: "Supports quality assurance, learner progression and applied delivery aligned with ISFT programme standards.",
         image: "/Home/hero-section.jpg",
       },
     ],
@@ -1096,7 +1096,7 @@ export const PROGRAMMES: Programme[] = [
       },
     ],
     admissionSteps: [
-      { step: "01", title: "Review prior learning", description: "Check your recommended Level 2 foundation or equivalent market knowledge before enrolling." },
+      { step: "01", title: "Review prior learning", description: "Check the recommended prior learning (the ISFT Award in Introduction to Financial Trading) or equivalent market knowledge before enrolling." },
       { step: "02", title: "Access the LMS", description: "Begin the online, self-paced programme and work through the study materials and calculations." },
       { step: "03", title: "Complete assessments", description: "Pass each unit MCQ and complete the Unit 4 analytical report under the Head Educator’s guidance." },
     ],
@@ -1104,7 +1104,7 @@ export const PROGRAMMES: Programme[] = [
       {
         question: "Is this qualification accredited?",
         answer:
-          "Yes. It is delivered under ISFT Awards and carries a defined credit value, level and annual quality review with external assurance.",
+          "It is a bespoke qualification accredited by OCN London (course code 1131237), with a defined credit value and level, internal quality assurance and external moderation by an OCN London External Quality Assurer. Bespoke qualifications are not regulated by Ofqual.",
       },
       {
         question: "Who is this qualification for?",
@@ -1134,7 +1134,7 @@ export const PROGRAMMES: Programme[] = [
     coreReflex: "Understand bond structure, price and risk before trading or hedging",
     tagline: "The steadiest asset class, made accessible.",
     description:
-      "A practitioner-designed Level 3 ISFT Awards award that introduces learners to bond market fundamentals, Indian government securities, pricing, yield curves and applied bond trading or hedging decisions.",
+      "A practitioner-designed Level 3 ISFT award that introduces learners to bond market fundamentals, Indian government securities, pricing, yield curves and applied bond trading or hedging decisions.",
     heroImage: "/programme/itgb.png",
     format: "Online, self-paced via Derivion Academy LMS",
     eligibility: "Recommended prior learning: Level 3 Award in Introduction to Financial Markets, or equivalent foundational knowledge of financial markets",
@@ -1157,7 +1157,7 @@ export const PROGRAMMES: Programme[] = [
     ],
     keyHighlights: [
       "Practitioner-designed by the centre’s Head Educator to address a gap in structured bond market education for Indian learners.",
-      "Delivered under ISFT Awards with a defined credit value, level and external quality assurance.",
+      "Accredited by OCN London as a bespoke qualification, with a defined credit value, level and external quality assurance.",
       "Includes a dedicated unit on Indian G-Secs, RBI market structure and how retail investors can access the market.",
       "Covers bond pricing, yield analysis, risk drivers and a practical bond futures hedging decision.",
     ],
@@ -1271,7 +1271,7 @@ export const PROGRAMMES: Programme[] = [
         name: "Derivion Academic Team",
         role: "Assessment and Delivery Team",
         pastOrg: "Derivion International Private Limited",
-        bio: "Supports learner progression, quality assurance and applied delivery aligned with ISFT Awards standards.",
+        bio: "Supports learner progression, quality assurance and applied delivery aligned with ISFT programme standards.",
         image: "/Home/hero-section.jpg",
       },
     ],
@@ -1301,7 +1301,7 @@ export const PROGRAMMES: Programme[] = [
       {
         question: "Is this qualification accredited?",
         answer:
-          "Yes. It is delivered under ISFT Awards and carries a defined credit value, level and annual quality review with external assurance.",
+          "It is a bespoke qualification accredited by OCN London (course code 1131239), with a defined credit value and level, internal quality assurance and external moderation by an OCN London External Quality Assurer. Bespoke qualifications are not regulated by Ofqual.",
       },
       {
         question: "Who is this qualification for?",
@@ -1331,7 +1331,7 @@ export const PROGRAMMES: Programme[] = [
     coreReflex: "Read the chart, confirm the trend, and justify the decision",
     tagline: "Every chart tells a story. Learn to read it.",
     description:
-      "A practitioner-designed Level 3 ISFT Awards certificate that introduces learners to the principles and practical use of technical analysis across equities, FX, commodities and futures, with a strong emphasis on systematic chart reading and portfolio application.",
+      "A practitioner-designed Level 3 ISFT certificate that introduces learners to the principles and practical use of technical analysis across equities, FX, commodities and futures, with a strong emphasis on systematic chart reading and portfolio application.",
     heroImage: "/programme/itat.png",
     format: "Online, self-paced via Derivion Academy LMS",
     eligibility: "Recommended prior learning: Level 3 Award in Applied Financial Markets Trading or Introduction to Financial Markets, or equivalent market knowledge",
@@ -1354,7 +1354,7 @@ export const PROGRAMMES: Programme[] = [
     ],
     keyHighlights: [
       "Practitioner-designed by the centre’s Head Educator, drawing on decades of applied chart-based trading experience across multiple asset classes and timeframes.",
-      "Delivered under ISFT Awards with a defined credit value, level and external quality assurance.",
+      "Accredited by OCN London as a bespoke qualification, with a defined credit value, level and external quality assurance.",
       "Uses a systematic, professional-level approach to chart reading that transfers across equities, FX, commodities and futures.",
       "Includes a portfolio of five annotated charts and an accompanying written technical analysis report.",
     ],
@@ -1498,7 +1498,7 @@ export const PROGRAMMES: Programme[] = [
         name: "Derivion Academic Team",
         role: "Assessment and Delivery Team",
         pastOrg: "Derivion International Private Limited",
-        bio: "Supports quality assurance, learner progression and applied delivery aligned with ISFT Awards standards.",
+        bio: "Supports quality assurance, learner progression and applied delivery aligned with ISFT programme standards.",
         image: "/Home/hero-section.jpg",
       },
     ],
@@ -1528,7 +1528,7 @@ export const PROGRAMMES: Programme[] = [
       {
         question: "Is this qualification accredited?",
         answer:
-          "Yes. It is delivered under ISFT Awards and carries a defined credit value, level and annual quality review with external assurance.",
+          "It is a bespoke qualification accredited by OCN London (course code 1131240), with a defined credit value and level, internal quality assurance and external moderation by an OCN London External Quality Assurer. Bespoke qualifications are not regulated by Ofqual.",
       },
       {
         question: "Who is this qualification for?",
@@ -1558,10 +1558,10 @@ export const PROGRAMMES: Programme[] = [
     coreReflex: "Recognise emotion, bias and decision pressure before they become a trade",
     tagline: "The market moves on numbers. You move on emotion.",
     description:
-      "A practitioner-designed Level 3 ISFT Awards award for traders who already understand the market and want to understand the behavioural and emotional factors that shape performance under pressure.",
+      "A practitioner-designed Level 3 ISFT award for traders who already understand the market and want to understand the behavioural and emotional factors that shape performance under pressure.",
     heroImage: "/programme/ibpt.png",
     format: "Online, self-paced via Derivion Academy LMS",
-    eligibility: "Recommended prior learning: Level 2 Award in Introduction to Financial Trading, or equivalent foundational market knowledge",
+    eligibility: "Recommended prior learning: ISFT Award in Introduction to Financial Trading, or equivalent foundational market knowledge",
     duration: "6–10 weeks typical completion",
     deadline: "Open for enrolment",
     nextCohort: "Rolling intake",
@@ -1581,7 +1581,7 @@ export const PROGRAMMES: Programme[] = [
     ],
     keyHighlights: [
       "Practitioner-designed by the centre’s Head Educator with direct experience of the psychological demands of professional trading.",
-      "Delivered under ISFT Awards with a defined credit value, level and external quality assurance.",
+      "Accredited by OCN London as a bespoke qualification, with a defined credit value, level and external quality assurance.",
       "Covers emotional recognition, behavioural finance, mental performance and discipline in execution.",
       "Includes a structured reflective journal that applies the learning to real trading behaviour and decision-making.",
     ],
@@ -1665,7 +1665,7 @@ export const PROGRAMMES: Programme[] = [
         name: "Derivion Academic Team",
         role: "Assessment and Delivery Team",
         pastOrg: "Derivion International Private Limited",
-        bio: "Supports quality assurance, learner progression and applied delivery aligned with ISFT Awards standards.",
+        bio: "Supports quality assurance, learner progression and applied delivery aligned with ISFT programme standards.",
         image: "/Home/hero-section.jpg",
       },
     ],
@@ -1687,7 +1687,7 @@ export const PROGRAMMES: Programme[] = [
       },
     ],
     admissionSteps: [
-      { step: "01", title: "Review prior learning", description: "Check your recommended Level 2 foundation or equivalent market knowledge before enrolling." },
+      { step: "01", title: "Review prior learning", description: "Check the recommended prior learning (the ISFT Award in Introduction to Financial Trading) or equivalent market knowledge before enrolling." },
       { step: "02", title: "Access the LMS", description: "Begin the online, self-paced programme and work through the study materials and activities." },
       { step: "03", title: "Complete assessments", description: "Pass each unit MCQ and complete the Unit 4 reflective journal under the Head Educator’s guidance." },
     ],
@@ -1695,7 +1695,7 @@ export const PROGRAMMES: Programme[] = [
       {
         question: "Is this qualification accredited?",
         answer:
-          "Yes. It is delivered under ISFT Awards and carries a defined credit value, level and annual quality review with external assurance.",
+          "It is a bespoke qualification accredited by OCN London (course code 1131238), with a defined credit value and level, internal quality assurance and external moderation by an OCN London External Quality Assurer. Bespoke qualifications are not regulated by Ofqual.",
       },
       {
         question: "Who is this qualification for?",
@@ -1725,10 +1725,10 @@ export const PROGRAMMES: Programme[] = [
     coreReflex: "Price it, margin it, hedge it, trade it",
     tagline: "The layer between analysis and execution.",
     description:
-      "A practitioner-designed Level 3 ISFT Awards award that introduces learners to the mechanics of futures contracts, pricing, margin, hedging and applied strategy in a risk-aware framework.",
+      "A practitioner-designed Level 3 ISFT award that introduces learners to the mechanics of futures contracts, pricing, margin, hedging and applied strategy in a risk-aware framework.",
     heroImage: "/programme/ift-future-trading.png",
     format: "Online, self-paced via Derivion Academy LMS",
-    eligibility: "Recommended prior learning: Level 2 Award in Introduction to Financial Trading, or equivalent foundational market knowledge",
+    eligibility: "Recommended prior learning: ISFT Award in Introduction to Financial Trading, or equivalent foundational market knowledge",
     duration: "6–10 weeks typical completion",
     deadline: "Open for enrolment",
     nextCohort: "Rolling intake",
@@ -1748,7 +1748,7 @@ export const PROGRAMMES: Programme[] = [
     ],
     keyHighlights: [
       "Practitioner-designed by the centre’s Head Educator with direct experience trading futures across LIFFE, CBOT and CME.",
-      "Delivered under ISFT Awards with a defined credit value, level and external quality assurance.",
+      "Accredited by OCN London as a bespoke qualification, with a defined credit value, level and external quality assurance.",
       "Covers futures contracts, pricing, margin, basis and hedging in a structured and applied way.",
       "Includes a written applied strategy report that assesses how a hedge and its margin requirement are constructed and justified.",
     ],
@@ -1832,7 +1832,7 @@ export const PROGRAMMES: Programme[] = [
         name: "Derivion Academic Team",
         role: "Assessment and Delivery Team",
         pastOrg: "Derivion International Private Limited",
-        bio: "Supports learner progression, quality assurance and applied delivery aligned with ISFT Awards standards.",
+        bio: "Supports learner progression, quality assurance and applied delivery aligned with ISFT programme standards.",
         image: "/Home/hero-section.jpg",
       },
     ],
@@ -1850,11 +1850,11 @@ export const PROGRAMMES: Programme[] = [
       {
         role: "Progression Pathway",
         avgCtc: "Next-step readiness",
-        description: "Prepare for further study in risk management, technical analysis and advanced market decision-making with a recognised Level 3 qualification.",
+        description: "Prepare for further study in risk management, technical analysis and advanced market decision-making with a Level 3 award accredited by OCN London.",
       },
     ],
     admissionSteps: [
-      { step: "01", title: "Review prior learning", description: "Check your recommended Level 2 foundation or equivalent market knowledge before enrolling." },
+      { step: "01", title: "Review prior learning", description: "Check the recommended prior learning (the ISFT Award in Introduction to Financial Trading) or equivalent market knowledge before enrolling." },
       { step: "02", title: "Access the LMS", description: "Begin the online, self-paced programme and work through the study materials and examples." },
       { step: "03", title: "Complete assessments", description: "Pass each unit MCQ and complete the Unit 4 applied futures report under the Head Educator’s guidance." },
     ],
@@ -1862,7 +1862,7 @@ export const PROGRAMMES: Programme[] = [
       {
         question: "Is this qualification accredited?",
         answer:
-          "Yes. It is delivered under ISFT Awards and carries a defined credit value, level and annual quality review with external assurance.",
+          "It is a bespoke qualification accredited by OCN London (course code 1131236), with a defined credit value and level, internal quality assurance and external moderation by an OCN London External Quality Assurer. Bespoke qualifications are not regulated by Ofqual.",
       },
       {
         question: "Who is this qualification for?",
