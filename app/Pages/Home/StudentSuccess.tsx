@@ -46,6 +46,7 @@ export default function StudentSuccess() {
                                         alt={`${company.name} logo`}
                                         width={220}
                                         height={90}
+                                        sizes="(max-width: 768px) 180px, 220px"
                                         className="h-12 w-auto max-w-[180px] sm:h-16 sm:max-w-[220px] md:h-20 md:max-w-[260px] object-contain"
                                     />
                                 </div>
@@ -55,13 +56,15 @@ export default function StudentSuccess() {
                             {companies.map((company, index) => (
                                 <div
                                     key={`logo-2-${index}`}
+                                    aria-hidden="true"
                                     className="flex items-center justify-center grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer h-16 sm:h-20 md:h-24 px-4 sm:px-5"
                                 >
                                     <Image
                                         src={company.logo}
-                                        alt={`${company.name} logo`}
+                                        alt=""
                                         width={220}
                                         height={90}
+                                        sizes="(max-width: 768px) 180px, 220px"
                                         className="h-12 w-auto max-w-[180px] sm:h-16 sm:max-w-[220px] md:h-20 md:max-w-[260px] object-contain"
                                     />
                                 </div>

@@ -1,13 +1,13 @@
 
 import type { MetadataRoute } from "next";
 import { getAllProgrammeSlugs } from "@/app/data/programmes";
-
-const siteUrl = "https://www.derivion.in";
+import { SITE_URL } from "@/app/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const fixedRoutes = [
     "",
     "/about",
+    "/partners",
     "/contact",
     "/programs",
     "/privacy-policy",
@@ -21,6 +21,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const uniqueRoutes = [...new Set([...fixedRoutes, ...programmeRoutes])];
 
   return uniqueRoutes.map((route) => ({
-    url: `${siteUrl}${route}`,
+    url: `${SITE_URL}${route}`,
   }));
 }

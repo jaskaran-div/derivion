@@ -17,6 +17,8 @@ interface AnimateOnScrollProps {
   duration?: 400 | 500 | 600 | 700 | 800 | number;
   className?: string;
   as?: React.ElementType;
+  role?: React.AriaRole;
+  "aria-label"?: string;
   /** Fraction of element that must be visible before animating (0–1) */
   threshold?: number;
 }
@@ -28,6 +30,8 @@ export default function AnimateOnScroll({
   duration = 600,
   className = "",
   as: Tag = "div",
+  role,
+  "aria-label": ariaLabel,
   threshold = 0.12,
 }: AnimateOnScrollProps) {
   const ref = useRef<HTMLElement>(null);
@@ -63,6 +67,8 @@ export default function AnimateOnScroll({
   return (
     <Tag
       ref={ref}
+      role={role}
+      aria-label={ariaLabel}
       className={[
         "anim-hidden",
         `anim-${animation}`,

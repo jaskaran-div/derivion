@@ -69,7 +69,7 @@ export default function Masters() {
           {/* ─── Left Sidebar: Heading, Bio & Navigation ─── */}
           <AnimateOnScroll animation="fade-right" duration={700} className="lg:col-span-5 space-y-4 sm:space-y-6">
             {/* Section Tag */}
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#C20F42]">
               Our Mentors
             </span>
 
@@ -79,7 +79,7 @@ export default function Masters() {
               style={{ fontFamily: "var(--font-serif)" }}
             >
               Real guidance from mentors who train minds for a
-              <span className="italic font-normal text-[#ED1654]"> smarter tomorrow</span>
+              <span className="italic font-normal text-[#C20F42]"> smarter tomorrow</span>
             </h2>
 
             {/* Sub-text */}
@@ -90,6 +90,7 @@ export default function Masters() {
             {/* Carousel Navigation Buttons */}
             <div className="flex items-center gap-3 pt-2">
               <button
+                type="button"
                 onClick={() => handleScroll("left")}
                 className="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-[#D9D9D9] bg-white hover:bg-[#D9D9D9]/30 text-[#737373] hover:text-[#000000] flex items-center justify-center transition-all shadow-sm active:scale-95"
                 aria-label="Previous card"
@@ -97,8 +98,9 @@ export default function Masters() {
                 <ChevronLeft className="w-5 h-5" />
               </button>
               <button
+                type="button"
                 onClick={() => handleScroll("right")}
-                className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#ED1654] hover:bg-[#d6124b] text-white flex items-center justify-center transition-all shadow-md active:scale-95"
+                className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#D6124B] hover:bg-[#B50F40] text-white flex items-center justify-center transition-all shadow-md active:scale-95"
                 aria-label="Next card"
               >
                 <ChevronRight className="w-5 h-5" />
@@ -123,6 +125,7 @@ export default function Masters() {
                       src={card.image}
                       alt={card.title}
                       fill
+                      sizes="(max-width: 640px) 80vw, 270px"
                       className="object-cover object-center group-hover:scale-105 transition-transform duration-500 opacity-100"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />

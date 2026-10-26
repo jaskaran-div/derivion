@@ -25,15 +25,15 @@ export default function OurProgrammes() {
         {/* ─── Top Header & Category Filter Tabs ─── */}
         <AnimateOnScroll animation="fade-up" duration={600} className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-2 max-w-xl">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#ED1654] flex items-center gap-1.5">
-              <Sparkles className="w-3.5 h-3.5 text-[#ED1654]" />
+            <span className="text-xs font-bold uppercase tracking-wider text-[#C20F42] flex items-center gap-1.5">
+              <Sparkles className="w-3.5 h-3.5 text-[#C20F42]" />
               <span>Derivion Curriculum Catalogue</span>
             </span>
             <h2
               className="text-3xl sm:text-4xl font-semibold tracking-tight text-[#111111]"
               style={{ fontFamily: "var(--font-serif)" }}
             >
-              Our Featured <span className="italic font-normal text-[#ED1654]">Programmes</span>
+              Our Featured <span className="italic font-normal text-[#C20F42]">Programmes</span>
             </h2>
             <p className="text-xs sm:text-sm text-[#6B7280]">
               Explore practitioner-crafted education calibrated for young minds, teenagers, and adult decision-makers.
@@ -42,7 +42,7 @@ export default function OurProgrammes() {
 
           <Link
             href="/programs"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#ED1654] hover:bg-[#d6124b] text-white text-xs sm:text-sm font-semibold transition-all shadow-sm shrink-0"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#D6124B] hover:bg-[#B50F40] text-white text-xs sm:text-sm font-semibold transition-all shadow-sm shrink-0"
           >
             <span>View Full Catalogue</span>
             <ArrowRight className="w-4 h-4" />
@@ -50,12 +50,22 @@ export default function OurProgrammes() {
         </AnimateOnScroll>
 
         {/* ─── Interactive Filter Tabs ─── */}
-        <AnimateOnScroll animation="fade-up" delay={100} duration={600} className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 pt-1 border-b border-[#E5E7EB]">
+        <AnimateOnScroll
+          as="div"
+          animation="fade-up"
+          delay={100}
+          duration={600}
+          className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 pt-1 border-b border-[#E5E7EB]"
+          role="group"
+          aria-label="Filter featured programmes by category"
+        >
           {categories.map((category) => {
             const isActive = activeCategory === category;
             return (
               <button
                 key={category}
+                type="button"
+                aria-pressed={isActive}
                 onClick={() => setActiveCategory(category)}
                 className={`px-5 py-2 text-xs sm:text-sm font-semibold rounded-full transition-all duration-200 shrink-0 ${
                   isActive
@@ -84,10 +94,11 @@ export default function OurProgrammes() {
                       src={prog.heroImage}
                       alt={prog.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-3 left-3 flex items-center gap-2">
-                      <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-md bg-white/95 text-[#ED1654] shadow-sm">
+                      <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-md bg-white/95 text-[#C20F42] shadow-sm">
                         {prog.category}
                       </span>
                     </div>
@@ -102,13 +113,13 @@ export default function OurProgrammes() {
                   <div className="space-y-2">
                     <div className="flex items-center justify-between text-xs text-[#6B7280]">
                       <span className="flex items-center gap-1">
-                        <Clock className="w-3.5 h-3.5 text-[#ED1654]" />
+                        <Clock className="w-3.5 h-3.5 text-[#C20F42]" />
                         {prog.duration}
                       </span>
                     </div>
 
                     <h3 className="text-base sm:text-lg font-bold text-[#111111] leading-snug line-clamp-2">
-                      <Link href={`/programs/${prog.slug}`} className="hover:text-[#ED1654] transition-colors">
+                      <Link href={`/programs/${prog.slug}`} className="hover:text-[#C20F42] transition-colors">
                         {prog.title}
                       </Link>
                     </h3>
@@ -123,7 +134,7 @@ export default function OurProgrammes() {
                 <div className="pt-2">
                   <Link
                     href={`/programs/${prog.slug}`}
-                    className="w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-[#F3F4F6] hover:bg-[#ED1654] text-[#111111] hover:text-white text-xs font-semibold transition-all duration-200"
+                    className="w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-[#F3F4F6] hover:bg-[#D6124B] text-[#111111] hover:text-white text-xs font-semibold transition-all duration-200"
                   >
                     <span>Explore Programme</span>
                     <ArrowRight className="w-3.5 h-3.5" />

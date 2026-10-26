@@ -102,7 +102,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
         </div>
       </div>
 
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         {/* ─── Hero Section ─── */}
         <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -111,11 +111,11 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
             <AnimateOnScroll animation="fade-right" duration={700} className="lg:col-span-7 space-y-5">
               {/* Category & Reflex Pill */}
               <div className="flex flex-wrap items-center gap-2.5">
-                <span className="px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#ED1654]/10 text-[#ED1654] border border-[#ED1654]/20">
+                <span className="px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#D6124B]/10 text-[#C20F42] border border-[#ED1654]/20">
                   {programme.category}
                 </span>
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-[#F5F5F5] text-[#111111] border border-[#D9D9D9]">
-                  <span className="w-2 h-2 rounded-full bg-[#ED1654] animate-pulse" />
+                  <span className="w-2 h-2 rounded-full bg-[#D6124B] animate-pulse" />
                   Target: {programme.targetAge}
                 </span>
                 {/* <span className="px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#D9D9D9]/30 text-[#000000] border border-[#D9D9D9]">
@@ -129,7 +129,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                 style={{ fontFamily: "var(--font-serif)" }}
               >
                 {firstWord}{" "}
-                <span className="italic font-normal text-[#ED1654]">
+                <span className="italic font-normal text-[#C20F42]">
                   {restWords}
                 </span>
               </h1>
@@ -143,7 +143,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 py-4 border-y border-[#D9D9D9]">
                 <div className="space-y-1">
                   <div className="flex items-center gap-1.5 text-xs text-[#737373]">
-                    <Clock className="w-3.5 h-3.5 text-[#ED1654]" />
+                    <Clock className="w-3.5 h-3.5 text-[#C20F42]" />
                     <span>Duration</span>
                   </div>
                   <p className="text-xs sm:text-sm font-bold text-[#000000]">
@@ -153,7 +153,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
 
                 {/* <div className="space-y-1">
                   <div className="flex items-center gap-1.5 text-xs text-[#737373]">
-                    <Building2 className="w-3.5 h-3.5 text-[#ED1654]" />
+                    <Building2 className="w-3.5 h-3.5 text-[#C20F42]" />
                     <span>Format</span>
                   </div>
                   <p className="text-xs sm:text-sm font-bold text-[#000000]">
@@ -163,7 +163,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
 
                 <div className="space-y-1">
                   <div className="flex items-center gap-1.5 text-xs text-[#737373]">
-                    <GraduationCap className="w-3.5 h-3.5 text-[#ED1654]" />
+                    <GraduationCap className="w-3.5 h-3.5 text-[#C20F42]" />
                     <span>Eligibility</span>
                   </div>
                   <p className="text-xs sm:text-sm font-bold text-[#000000] break-words">
@@ -176,7 +176,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                     <ShieldCheck className="w-3.5 h-3.5 text-[#A8FF24] fill-[#A8FF24]" />
                     <span>Core Reflex</span>
                   </div>
-                  <p className="text-xs sm:text-sm font-bold text-[#ED1654] truncate">
+                  <p className="text-xs sm:text-sm font-bold text-[#C20F42] truncate">
                     {programme.coreReflex}
                   </p>
                 </div> */}
@@ -186,7 +186,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
                 <Link
                   href={`/contact?programme=${encodeURIComponent(programme.slug)}`}
-                  className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-[#ED1654] hover:bg-[#d6124b] text-white text-xs sm:text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-lg active:scale-95"
+                  className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-[#D6124B] hover:bg-[#B50F40] text-white text-xs sm:text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-lg active:scale-95"
                 >
                   <span>Enroll For Cohort</span>
                   <ArrowRight className="w-4 h-4" />
@@ -198,7 +198,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                     setBrochureLeadError(null);
                     setIsBrochureFormOpen(true);
                   }}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-[#ED1654] hover:bg-[#ED1654] hover:text-white text-[#ED1654] text-xs sm:text-sm font-semibold transition-all duration-200 active:scale-95"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-[#ED1654] hover:bg-[#D6124B] hover:text-white text-[#C20F42] text-xs sm:text-sm font-semibold transition-all duration-200 active:scale-95"
                 >
                   <Download className="w-4 h-4" />
                   <span>Download Brochure</span>
@@ -221,6 +221,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                     src={programme.heroImage}
                     alt={programme.title}
                     fill
+                    sizes="(max-width: 1024px) 100vw, 42vw"
                     className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
@@ -249,7 +250,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
           <AnimateOnScroll animation="fade-up" duration={600} className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {programme.stats.map((item, idx) => (
               <div key={idx} className="space-y-1 p-3">
-                <div className="text-3xl sm:text-4xl font-black tracking-tight text-[#ED1654]">
+                <div className="text-3xl sm:text-4xl font-black tracking-tight text-[#C20F42]">
                   {item.value}
                 </div>
                 <div className="text-xs sm:text-sm font-medium text-[#525252]">
@@ -296,7 +297,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
         <section id="overview" className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <AnimateOnScroll animation="fade-up" duration={700} className="space-y-8">
             <div className="max-w-3xl space-y-2">
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#C20F42]">
                 Curriculum Foundation
               </span>
               <h2
@@ -304,7 +305,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                 style={{ fontFamily: "var(--font-serif)" }}
               >
                 Why Choose This{" "}
-                <span className="italic font-normal text-[#ED1654]">Programme</span>?
+                <span className="italic font-normal text-[#C20F42]">Programme</span>?
               </h2>
             </div>
 
@@ -319,7 +320,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   <h4 className="text-xs font-bold uppercase tracking-wider text-[#000000]">
                     Core Aim &amp; Reflex
                   </h4>
-                  <div className="text-xl font-bold text-[#ED1654]">
+                  <div className="text-xl font-bold text-[#C20F42]">
                     Reflex: {programme.coreReflex}
                   </div>
                   <p className="text-xs text-[#111111]">
@@ -335,14 +336,14 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                     key={hIdx}
                     className="p-5 rounded-2xl border border-[#D9D9D9] bg-white hover:border-[#ED1654] hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
                   >
-                    <div className="w-8 h-8 rounded-full bg-[#ED1654]/10 text-[#ED1654] flex items-center justify-center font-bold text-xs mb-3">
+                    <div className="w-8 h-8 rounded-full bg-[#D6124B]/10 text-[#C20F42] flex items-center justify-center font-bold text-xs mb-3">
                       0{hIdx + 1}
                     </div>
                     <p className="text-xs sm:text-sm font-semibold text-[#000000] leading-snug">
                       {highlight}
                     </p>
                     <div className="pt-3 mt-3 border-t border-[#D9D9D9]/50 flex items-center gap-1.5 text-[11px] text-[#000000] font-semibold">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#ED1654]" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#C20F42]" />
                       <span>Derivion Standard</span>
                     </div>
                   </div>
@@ -357,14 +358,14 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
           <AnimateOnScroll animation="fade-up" duration={700} className="max-w-7xl mx-auto space-y-10">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <div className="space-y-2">
-                <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
+                <span className="text-xs font-semibold uppercase tracking-widest text-[#C20F42]">
                   Comprehensive Syllabus
                 </span>
                 <h2
                   className="text-3xl sm:text-4xl font-medium tracking-tight text-[#111111]"
                   style={{ fontFamily: "var(--font-serif)" }}
                 >
-                  Curriculum <span className="italic font-normal text-[#ED1654]">Architecture</span>
+                  Curriculum <span className="italic font-normal text-[#C20F42]">Architecture</span>
                 </h2>
               </div>
               <p className="text-xs sm:text-sm text-[#525252] max-w-md">
@@ -379,13 +380,14 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   type="button"
                   onClick={() => scrollModuleTabs(-1)}
                   aria-label="Scroll curriculum modules left"
-                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#D9D9D9] bg-white text-[#525252] transition-colors hover:border-[#ED1654] hover:text-[#ED1654] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ED1654]"
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#D9D9D9] bg-white text-[#525252] transition-colors hover:border-[#ED1654] hover:text-[#C20F42] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ED1654]"
                 >
                   <ChevronLeft className="h-4 w-4" />
                 </button>
               )}
               <div
                 ref={moduleTabsRef}
+                role="group"
                 aria-label="Curriculum modules"
                 className="flex min-w-0 flex-1 items-center gap-2 overflow-x-auto no-scrollbar scroll-smooth pb-2"
               >
@@ -420,7 +422,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   type="button"
                   onClick={() => scrollModuleTabs(1)}
                   aria-label="Scroll curriculum modules right"
-                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#D9D9D9] bg-white text-[#525252] transition-colors hover:border-[#ED1654] hover:text-[#ED1654] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ED1654]"
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#D9D9D9] bg-white text-[#525252] transition-colors hover:border-[#ED1654] hover:text-[#C20F42] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ED1654]"
                 >
                   <ChevronRight className="h-4 w-4" />
                 </button>
@@ -432,7 +434,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
               <div className="bg-white border border-[#E6E6E6] rounded-3xl p-6 sm:p-10 shadow-xl space-y-8 animate-in fade-in duration-300">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E6E6E6] pb-6">
                   <div>
-                    <span className="text-xs font-bold text-[#ED1654] uppercase tracking-wider block mb-1">
+                    <span className="text-xs font-bold text-[#C20F42] uppercase tracking-wider block mb-1">
                       {programme.curriculum[activeModuleIndex].number} — {programme.curriculum[activeModuleIndex].duration}
                     </span>
                     <h3
@@ -457,7 +459,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                     <ul className="space-y-2.5">
                       {programme.curriculum[activeModuleIndex].topics.map((t, tIdx) => (
                         <li key={tIdx} className="flex items-start gap-3 text-xs sm:text-sm text-[#525252]">
-                          <CheckCircle2 className="w-4 h-4 text-[#ED1654] shrink-0 mt-0.5" />
+                          <CheckCircle2 className="w-4 h-4 text-[#C20F42] shrink-0 mt-0.5" />
                           <span>{t}</span>
                         </li>
                       ))}
@@ -467,7 +469,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   {/* Hands-On Project & Skills */}
                   <div className="lg:col-span-5 space-y-4 bg-[#F7F7F5] p-5 sm:p-6 rounded-2xl border border-[#E6E6E6]">
                     <div className="space-y-1.5">
-                      <span className="text-[10px] font-bold text-[#ED1654] uppercase tracking-widest block">
+                      <span className="text-[10px] font-bold text-[#C20F42] uppercase tracking-widest block">
                         Milestone Project / Drill
                       </span>
                       <p className="text-xs sm:text-sm text-[#111111] font-medium leading-relaxed">
@@ -502,14 +504,14 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
           <section id="case-studies" className="w-full bg-[#F7F7F5] text-[#111111] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
             <AnimateOnScroll animation="fade-up" duration={700} className="max-w-7xl mx-auto space-y-10">
               <div className="space-y-2 max-w-3xl">
-                <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
+                <span className="text-xs font-semibold uppercase tracking-widest text-[#C20F42]">
                   Empirical Risk Analysis
                 </span>
                 <h2
                   className="text-3xl sm:text-4xl font-medium tracking-tight text-[#111111]"
                   style={{ fontFamily: "var(--font-serif)" }}
                 >
-                  Reconstructed <span className="italic font-normal text-[#ED1654]">Case Studies</span>
+                  Reconstructed <span className="italic font-normal text-[#C20F42]">Case Studies</span>
                 </h2>
                 <p className="text-xs sm:text-sm text-[#525252] leading-relaxed">
                   Historical autopsies of real-world market collapses, hidden risk, and impossible-yield schemes integrated into the curriculum to teach the anatomy of financial failure.
@@ -524,7 +526,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   >
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-xs">
-                        <span className="text-[10px] font-bold text-[#ED1654] uppercase tracking-widest">
+                        <span className="text-[10px] font-bold text-[#C20F42] uppercase tracking-widest">
                           Case 0{cIdx + 1}
                         </span>
                         <BookOpen className="w-4 h-4 text-[#737373]" />
@@ -532,7 +534,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                       <h3 className="text-lg font-bold text-[#111111] leading-snug">
                         {cs.title}
                       </h3>
-                      <p className="text-xs text-[#ED1654] font-medium">
+                      <p className="text-xs text-[#C20F42] font-medium">
                         {cs.subtitle}
                       </p>
                       <p className="text-xs text-[#525252] leading-relaxed pt-2 border-t border-[#E6E6E6]">
@@ -541,7 +543,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                     </div>
 
                     <div className="p-3 rounded-xl bg-[#F7F7F5] border border-[#E6E6E6] text-[11px] text-[#111111]">
-                      <span className="font-semibold text-[#ED1654] block mb-0.5">Core Takeaway:</span>
+                      <span className="font-semibold text-[#C20F42] block mb-0.5">Core Takeaway:</span>
                       {cs.keyTakeaway}
                     </div>
                   </div>
@@ -555,14 +557,14 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
         <section id="tools" className="w-full bg-white text-[#000000] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
           <AnimateOnScroll animation="fade-up" duration={700} className="max-w-7xl mx-auto space-y-10">
             <div className="max-w-3xl space-y-2">
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#C20F42]">
                 Learning Ecosystem
               </span>
               <h2
                 className="text-3xl sm:text-4xl font-medium tracking-tight text-[#000000]"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
-                Practical Learning <span className="italic font-normal text-[#ED1654]">Tools &amp; Worksheets</span>
+                Practical Learning <span className="italic font-normal text-[#C20F42]">Tools &amp; Worksheets</span>
               </h2>
               <p className="text-sm sm:text-base text-[#111111] leading-relaxed">
                 Derivion provides structured toolkits, calculators, and verification workflows so learners apply principles directly to their screens and accounts.
@@ -577,7 +579,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   className="p-5 rounded-2xl bg-white text-[#111111] border border-[#E6E6E6] flex items-center justify-between shadow-sm hover:border-[#ED1654] transition-colors"
                 >
                   <span className="text-xs sm:text-sm font-semibold">{tool}</span>
-                  <Cpu className="w-4 h-4 text-[#ED1654] shrink-0 ml-2" />
+                  <Cpu className="w-4 h-4 text-[#C20F42] shrink-0 ml-2" />
                 </div>
               ))}
             </div>
@@ -588,14 +590,14 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
         {/* <section id="faculty" className="w-full bg-white text-[#000000] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
           <AnimateOnScroll animation="fade-up" duration={700} className="max-w-7xl mx-auto space-y-10">
             <div className="space-y-2">
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#C20F42]">
                 Curriculum Stewardship
               </span>
               <h2
                 className="text-3xl sm:text-4xl font-medium tracking-tight text-[#000000]"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
-                Curriculum <span className="italic font-normal text-[#ED1654]">Mentorship</span>
+                Curriculum <span className="italic font-normal text-[#C20F42]">Mentorship</span>
               </h2>
               <p className="text-xs sm:text-sm text-[#111111] max-w-xl">
                 Guided by Derivion&apos;s multidisciplinary faculty across financial economics, digital psychology, and cybersecurity.
@@ -612,7 +614,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                     <div className="flex items-start justify-between gap-4">
                       <div>
                         <h3 className="text-xl font-bold text-[#111111]">{mentor.name}</h3>
-                        <p className="text-xs text-[#ED1654] font-medium">{mentor.role}</p>
+                        <p className="text-xs text-[#C20F42] font-medium">{mentor.role}</p>
                         <p className="text-xs text-[#525252]">{mentor.pastOrg}</p>
                       </div>
                       <div className="w-14 h-14 rounded-2xl overflow-hidden relative bg-[#F2F2F2] shrink-0 border border-[#E6E6E6]">
@@ -620,6 +622,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                           src={mentor.image}
                           alt={mentor.name}
                           fill
+                          sizes="(max-width: 1024px) 100vw, 25vw"
                           className="object-cover"
                         />
                       </div>
@@ -631,7 +634,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
 
                   <div className="pt-6 mt-6 border-t border-[#E6E6E6] flex items-center justify-between text-xs text-[#525252]">
                     <span>Derivion Academic Faculty</span>
-                    <span className="text-[#ED1654] font-medium">Active Cohort Support</span>
+                    <span className="text-[#C20F42] font-medium">Active Cohort Support</span>
                   </div>
                 </div>
               ))}
@@ -643,14 +646,14 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
         <section id="outcomes" className="w-full bg-[#F7F7F5] text-[#111111] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
           <AnimateOnScroll animation="fade-up" duration={700} className="max-w-7xl mx-auto space-y-10">
             <div className="space-y-2">
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#C20F42]">
                 Competency Outcomes
               </span>
               <h2
                 className="text-3xl sm:text-4xl font-medium tracking-tight text-[#111111]"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
-                Key Reflexes &amp; <span className="italic font-normal text-[#ED1654]">Capability Pillars</span>
+                Key Reflexes &amp; <span className="italic font-normal text-[#C20F42]">Capability Pillars</span>
               </h2>
             </div>
 
@@ -661,7 +664,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   className="p-6 rounded-2xl bg-white border border-[#E6E6E6] hover:border-[#ED1654] transition-all duration-300 space-y-3 shadow-sm"
                 >
                   <div className="flex items-center justify-between">
-                    <ShieldCheck className="w-5 h-5 text-[#ED1654]" />
+                    <ShieldCheck className="w-5 h-5 text-[#C20F42]" />
                     <span className="px-2.5 py-1 rounded bg-[#F7F7F5] text-[#111111] text-xs font-bold border border-[#E6E6E6]">
                       {career.avgCtc}
                     </span>
@@ -682,14 +685,14 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
         <section id="admissions" className="w-full bg-white text-[#000000] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
           <AnimateOnScroll animation="fade-up" duration={700} className="max-w-7xl mx-auto space-y-10">
             <div className="space-y-2">
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#C20F42]">
                 Enrollment Process
               </span>
               <h2
                 className="text-3xl sm:text-4xl font-medium tracking-tight text-[#000000]"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
-                How to <span className="italic font-normal text-[#ED1654]">Join</span>
+                How to <span className="italic font-normal text-[#C20F42]">Join</span>
               </h2>
               <p className="text-xs sm:text-sm text-[#111111] max-w-lg">
                 Cohorts are scheduled regularly with dedicated timings for individual learners, school batches, and professional groups.
@@ -703,7 +706,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   className="p-6 rounded-2xl border border-[#D9D9D9] bg-[#D9D9D9]/10 relative flex flex-col justify-between space-y-4"
                 >
                   <div className="space-y-2">
-                    <div className="w-10 h-10 rounded-full bg-[#ED1654] text-white flex items-center justify-center text-sm font-bold shadow-sm">
+                    <div className="w-10 h-10 rounded-full bg-[#D6124B] text-white flex items-center justify-center text-sm font-bold shadow-sm">
                       {step.step}
                     </div>
                     <h4 className="text-base font-bold text-[#000000]">
@@ -713,7 +716,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                       {step.description}
                     </p>
                   </div>
-                  <span className="text-[10px] font-semibold uppercase tracking-wider text-[#ED1654]">
+                  <span className="text-[10px] font-semibold uppercase tracking-wider text-[#C20F42]">
                     Step {step.step}
                   </span>
                 </div>
@@ -726,14 +729,14 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
         <section id="faq" className="w-full bg-[#F7F7F5] text-[#111111] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
           <AnimateOnScroll animation="fade-up" duration={700} className="max-w-4xl mx-auto space-y-8">
             <div className="text-center space-y-2">
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#C20F42]">
                 Clear Answers
               </span>
               <h2
                 className="text-3xl sm:text-4xl font-medium tracking-tight text-[#111111]"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
-                Programme <span className="italic font-normal text-[#ED1654]">FAQs</span>
+                Programme <span className="italic font-normal text-[#C20F42]">FAQs</span>
               </h2>
             </div>
 
@@ -744,22 +747,27 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                   className="border border-[#E6E6E6] bg-white rounded-2xl overflow-hidden transition-all duration-200 shadow-sm"
                 >
                   <button
+                    type="button"
                     onClick={() => setOpenFaqIndex(openFaqIndex === fIdx ? null : fIdx)}
-                    className="w-full flex items-center justify-between p-5 text-left text-sm sm:text-base font-semibold text-[#111111] hover:text-[#ED1654]"
+                    aria-expanded={openFaqIndex === fIdx}
+                    aria-controls={`faq-answer-${programme.slug}-${fIdx}`}
+                    className="w-full flex items-center justify-between p-5 text-left text-sm sm:text-base font-semibold text-[#111111] hover:text-[#C20F42]"
                   >
                     <span>{faq.question}</span>
                     <ChevronDown
                       className={`w-4 h-4 text-[#737373] transition-transform duration-200 shrink-0 ml-4 ${
-                        openFaqIndex === fIdx ? "rotate-180 text-[#ED1654]" : ""
+                        openFaqIndex === fIdx ? "rotate-180 text-[#C20F42]" : ""
                       }`}
                     />
                   </button>
 
-                  {openFaqIndex === fIdx && (
-                    <div className="px-5 pb-5 text-xs sm:text-sm text-[#525252] font-light leading-relaxed border-t border-[#E6E6E6] pt-3">
-                      {faq.answer}
-                    </div>
-                  )}
+                  <div
+                    id={`faq-answer-${programme.slug}-${fIdx}`}
+                    hidden={openFaqIndex !== fIdx}
+                    className="px-5 pb-5 text-xs sm:text-sm text-[#525252] font-light leading-relaxed border-t border-[#E6E6E6] pt-3"
+                  >
+                    {faq.answer}
+                  </div>
                 </div>
               ))}
             </div>
@@ -775,7 +783,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
                 style={{ fontFamily: "var(--font-serif)" }}
               >
                 Ready to Join{" "}
-                <span className="italic font-normal text-[#ED1654]">
+                <span className="italic font-normal text-[#C20F42]">
                   {programme.title}
                 </span>?
               </h3>
@@ -787,7 +795,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
             <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
               <Link
                 href={`/contact?programme=${encodeURIComponent(programme.slug)}`}
-                className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#ED1654] hover:bg-[#d6124b] text-white text-xs sm:text-sm font-semibold transition-all duration-200 shadow-xl active:scale-95"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#D6124B] hover:bg-[#B50F40] text-white text-xs sm:text-sm font-semibold transition-all duration-200 shadow-xl active:scale-95"
               >
                 <span>Enroll in Cohort</span>
                 <ArrowRight className="w-4 h-4" />
@@ -827,7 +835,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
               <X className="h-5 w-5" />
             </button>
             <div className="mb-6 space-y-2 pr-8">
-              <p className="text-xs font-bold uppercase tracking-widest text-[#ED1654]">
+              <p className="text-xs font-bold uppercase tracking-widest text-[#C20F42]">
                 Get the brochure
               </p>
               <h2 id="brochure-lead-title" className="text-2xl font-semibold text-[#111111]">
@@ -840,7 +848,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
 
             <form onSubmit={submitBrochureLead} className="space-y-4">
               {brochureLeadError && (
-                <p role="alert" className="rounded-xl bg-[#ED1654]/10 px-4 py-3 text-sm text-[#ED1654]">
+                <p role="alert" className="rounded-xl bg-[#D6124B]/10 px-4 py-3 text-sm text-[#C20F42]">
                   {brochureLeadError}
                 </p>
               )}
@@ -902,7 +910,7 @@ export default function ProgramDetailClient({ programme }: { programme: Programm
               <button
                 type="submit"
                 disabled={isSubmittingBrochureLead}
-                className="inline-flex w-full items-center justify-center rounded-full bg-[#ED1654] px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#d6124b] disabled:cursor-not-allowed disabled:opacity-60"
+                className="inline-flex w-full items-center justify-center rounded-full bg-[#D6124B] px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#B50F40] disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {isSubmittingBrochureLead ? "Submitting..." : "Submit & Download"}
               </button>

@@ -17,6 +17,14 @@ import {
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import AnimateOnScroll from "@/app/components/AnimateOnScroll";
+import { BreadcrumbJsonLd } from "@/app/components/JsonLd";
+import { createPageMetadata } from "@/app/lib/seo";
+
+export const metadata = createPageMetadata(
+  "About Derivion",
+  "Learn about Derivion's educational focus across financial literacy, financial markets, digital payment systems, AI awareness, and risk management.",
+  "/about",
+);
 import { PROGRAMMES } from "@/app/data/programmes";
 
 export default function AboutUsPage() {
@@ -85,6 +93,12 @@ export default function AboutUsPage() {
 
   return (
     <div className="min-h-screen bg-white text-[#000000] flex flex-col">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", pathname: "/" },
+          { name: "About Derivion", pathname: "/about" },
+        ]}
+      />
       <Navbar />
 
       {/* ─── Breadcrumbs ─── */}
@@ -98,13 +112,13 @@ export default function AboutUsPage() {
         </div>
       </div>
 
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         {/* ─── Hero Section ─── */}
         <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             <AnimateOnScroll animation="fade-right" duration={700} className="lg:col-span-7 space-y-4">
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#C20F42]">
                 About Derivion
               </span>
 
@@ -113,7 +127,7 @@ export default function AboutUsPage() {
                 style={{ fontFamily: "var(--font-serif)" }}
               >
                 Empowering Minds for Modern{" "}
-                <span className="italic font-normal text-[#ED1654]">
+                <span className="italic font-normal text-[#C20F42]">
                   Markets &amp; Digital Systems
                 </span>
               </h1>
@@ -125,7 +139,7 @@ export default function AboutUsPage() {
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <Link
                   href="/programs"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#ED1654] hover:bg-[#d6124b] text-white text-xs sm:text-sm font-semibold transition-all active:scale-95 shadow-sm"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#D6124B] hover:bg-[#B50F40] text-white text-xs sm:text-sm font-semibold transition-all active:scale-95 shadow-sm"
                 >
                   <span>Explore Our Programmes</span>
                   <ArrowRight className="w-4 h-4" />
@@ -133,7 +147,7 @@ export default function AboutUsPage() {
 
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#ED1654] hover:bg-[#ED1654] hover:text-white text-[#ED1654] text-xs sm:text-sm font-semibold transition-all active:scale-95"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#ED1654] hover:bg-[#D6124B] hover:text-white text-[#C20F42] text-xs sm:text-sm font-semibold transition-all active:scale-95"
                 >
                   <span>Get in Touch</span>
                 </Link>
@@ -143,13 +157,13 @@ export default function AboutUsPage() {
             {/* Overlapping Stats Card */}
             <AnimateOnScroll animation="fade-left" delay={150} duration={700} className="lg:col-span-5 flex items-center justify-center lg:justify-end -space-x-4 py-4">
               <div className="w-32 h-32 sm:w-44 sm:h-44 rounded-full border border-[#D9D9D9] bg-white shadow-md flex flex-col items-center justify-center text-center p-3 hover:scale-105 transition-transform">
-                <span className="text-2xl sm:text-4xl font-bold text-[#ED1654]">{programmeCount}</span>
+                <span className="text-2xl sm:text-4xl font-bold text-[#C20F42]">{programmeCount}</span>
                 <span className="text-[10px] sm:text-xs text-[#737373] mt-1 font-medium max-w-[90px]">
                   Core Programmes
                 </span>
               </div>
               <div className="w-32 h-32 sm:w-44 sm:h-44 rounded-full border border-[#D9D9D9] bg-[#F5F5F5] text-[#111111] shadow-xl flex flex-col items-center justify-center text-center p-3 hover:scale-105 transition-transform z-10">
-                <span className="text-2xl sm:text-4xl font-bold text-[#ED1654]">5</span>
+                <span className="text-2xl sm:text-4xl font-bold text-[#C20F42]">5</span>
                 <span className="text-[10px] sm:text-xs text-[#525252] mt-1 font-medium max-w-[90px]">
                   Key Literacies
                 </span>
@@ -173,6 +187,7 @@ export default function AboutUsPage() {
                 src="/Home/about-us-pic.png"
                 alt="Derivion Learning Environment"
                 fill
+                sizes="(max-width: 1024px) 100vw, 58vw"
                 className="object-cover opacity-85"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
@@ -182,12 +197,12 @@ export default function AboutUsPage() {
                   <span className="text-xs font-bold uppercase tracking-widest text-[#A8FF24]">
                     The Derivion Environment
                   </span>
-                  <h3
+                  <h2
                     className="text-xl sm:text-2xl font-medium tracking-tight"
                     style={{ fontFamily: "var(--font-serif)" }}
                   >
                     Designed for active inquiry, real-world case deconstruction, and structured habit formation.
-                  </h3>
+                  </h2>
                 </div>
                 <span className="px-4 py-2 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-xs font-mono text-[#D9D9D9]">
                   HYBRID LEARNING • CASE-BASED
@@ -201,7 +216,7 @@ export default function AboutUsPage() {
         <section className="w-full bg-[#F7F7F5] text-[#111111] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-y border-[#D9D9D9]">
           <AnimateOnScroll animation="fade-up" duration={700} className="max-w-7xl mx-auto space-y-10">
             <div className="max-w-3xl space-y-2">
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#C20F42]">
                 The Foundational Imperative
               </span>
               <h2
@@ -209,7 +224,7 @@ export default function AboutUsPage() {
                 style={{ fontFamily: "var(--font-serif)" }}
               >
                 Why Conventional Education Leaves Learners{" "}
-                <span className="italic font-normal text-[#ED1654]">Vulnerable</span>
+                <span className="italic font-normal text-[#C20F42]">Vulnerable</span>
               </h2>
               <p className="text-xs sm:text-sm text-[#525252] font-light leading-relaxed">
                 Traditional curricula teach arithmetic and theoretical banking while ignoring the realities of instant digital payments, synthetic screens, and aggressive behavioural manipulation.
@@ -247,10 +262,10 @@ export default function AboutUsPage() {
 
               {/* The Derivion Edge */}
               <div className="p-6 sm:p-8 rounded-3xl bg-white border border-[#ED1654]/20 shadow-xl space-y-6 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#ED1654]/5 rounded-full blur-3xl pointer-events-none" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#D6124B]/5 rounded-full blur-3xl pointer-events-none" />
                 
                 <div className="flex items-center justify-between border-b border-[#E6E6E6] pb-4">
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#ED1654]">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#C20F42]">
                     The Derivion Framework
                   </span>
                   <span className="text-xs font-bold text-[#111111] bg-[#F3F3F3] px-2 py-0.5 rounded">
@@ -259,19 +274,19 @@ export default function AboutUsPage() {
                 </div>
                 <ul className="space-y-4 text-xs sm:text-sm text-[#111111]">
                   <li className="flex items-start gap-3">
-                    <span className="text-[#A8FF24] font-bold">✓</span>
+                    <span className="text-[#237A3B] font-bold">✓</span>
                     <span>Tackles UPI AutoPay, dark patterns, and Buy Now Pay Later mechanics directly.</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-[#A8FF24] font-bold">✓</span>
+                    <span className="text-[#237A3B] font-bold">✓</span>
                     <span>Teaches multi-channel verification against synthetic voice, video, and social lures.</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-[#A8FF24] font-bold">✓</span>
+                    <span className="text-[#237A3B] font-bold">✓</span>
                     <span>Integrates financial prudence with cybersecurity hygiene and statutory legal recourse.</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-[#A8FF24] font-bold">✓</span>
+                    <span className="text-[#237A3B] font-bold">✓</span>
                     <span>Conditions automatic behavioural reflexes: Stop &amp; Ask, Verify, and Recourse.</span>
                   </li>
                 </ul>
@@ -281,17 +296,17 @@ export default function AboutUsPage() {
         </section>
 
         {/* ─── 4 Core Pillars Bento Grid ─── */}
-        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+        <section id="pillars" className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
           <AnimateOnScroll animation="fade-up" duration={700} className="space-y-10">
             <div className="space-y-2">
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#C20F42]">
                 Foundational DNA
               </span>
               <h2
                 className="text-3xl sm:text-4xl font-medium tracking-tight text-[#000000]"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
-                Our Four <span className="italic font-normal text-[#ED1654]">Pillars</span>
+                Our Four <span className="italic font-normal text-[#C20F42]">Pillars</span>
               </h2>
             </div>
 
@@ -303,7 +318,7 @@ export default function AboutUsPage() {
                 >
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-bold uppercase tracking-widest text-[#ED1654]">
+                      <span className="text-xs font-bold uppercase tracking-widest text-[#C20F42]">
                         0{idx + 1}
                       </span>
                       <span className="text-xs font-medium text-[#737373]">
@@ -320,7 +335,7 @@ export default function AboutUsPage() {
 
                   <div className="pt-4 border-t border-[#D9D9D9]/60 flex items-center justify-between text-xs text-[#000000] font-semibold">
                     <span>Derivion Standard</span>
-                    <ShieldCheck className="w-4 h-4 text-[#ED1654]" />
+                    <ShieldCheck className="w-4 h-4 text-[#C20F42]" />
                   </div>
                 </div>
               ))}
@@ -329,17 +344,17 @@ export default function AboutUsPage() {
         </section>
 
         {/* ─── Academic Stewardship & Disciplines ─── */}
-        <section className="w-full bg-[#F7F7F5] text-[#111111] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
+        <section id="disciplines" className="w-full bg-[#F7F7F5] text-[#111111] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
           <AnimateOnScroll animation="fade-up" duration={700} className="max-w-7xl mx-auto space-y-10">
             <div className="space-y-2">
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#C20F42]">
                 Curricular Disciplines
               </span>
               <h2
                 className="text-3xl sm:text-4xl font-medium tracking-tight text-[#111111]"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
-                Integrated Areas of <span className="italic font-normal text-[#ED1654]">Expertise</span>
+                Integrated Areas of <span className="italic font-normal text-[#C20F42]">Expertise</span>
               </h2>
               <p className="text-xs sm:text-sm text-[#525252] max-w-lg">
                 Derivion synthesises economics, technology, and consumer law into an actionable learning continuum.
@@ -358,12 +373,13 @@ export default function AboutUsPage() {
                         src={item.image}
                         alt={item.name}
                         fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                         className="object-cover"
                       />
                     </div>
                     <div>
-                      <h4 className="text-base font-bold text-[#111111]">{item.name}</h4>
-                      <p className="text-xs text-[#ED1654] font-medium leading-tight mt-0.5">
+                      <h3 className="text-base font-bold text-[#111111]">{item.name}</h3>
+                      <p className="text-xs text-[#C20F42] font-medium leading-tight mt-0.5">
                         {item.role}
                       </p>
                     </div>
@@ -386,15 +402,15 @@ export default function AboutUsPage() {
           <AnimateOnScroll animation="fade-up" duration={700} className="max-w-7xl mx-auto space-y-10">
             <div className="bg-white text-[#111111] rounded-3xl p-6 sm:p-12 border border-[#E6E6E6] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-sm">
               <div className="lg:col-span-8 space-y-4">
-                <Quote className="w-10 h-10 text-[#ED1654]" />
-                <h3
+                <Quote className="w-10 h-10 text-[#C20F42]" />
+                <h2
                   className="text-xl sm:text-3xl font-medium tracking-tight text-[#111111] leading-snug"
                   style={{ fontFamily: "var(--font-serif)" }}
                 >
                   &ldquo;Modern financial education must not be confined to theoretical textbooks. In an era of instant digital payments, synthetic algorithms, and complex debt structures, learning must instill clear, actionable instincts.&rdquo;
-                </h3>
+                </h2>
                 <div className="flex items-center gap-3 pt-2">
-                  <span className="px-2.5 py-1 bg-[#ED1654] text-white text-xs font-bold rounded">
+                  <span className="px-2.5 py-1 bg-[#D6124B] text-white text-xs font-bold rounded">
                     DERIVION
                   </span>
                   <span className="text-xs sm:text-sm font-semibold text-[#525252]">
@@ -404,7 +420,7 @@ export default function AboutUsPage() {
               </div>
 
               <div className="lg:col-span-4 p-6 rounded-2xl bg-[#F7F7F7] border border-[#E6E6E6] space-y-3">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#ED1654]">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#C20F42]">
                   Programme Highlights
                 </span>
                 <div className="space-y-2 text-xs text-[#525252]">
@@ -418,7 +434,7 @@ export default function AboutUsPage() {
                   </div>
                   <div className="flex justify-between py-1.5 border-b border-[#E6E6E6]">
                     <span>Programme Categories</span>
-                    <span className="font-bold text-[#ED1654]">{programmeCategoryCount}</span>
+                    <span className="font-bold text-[#C20F42]">{programmeCategoryCount}</span>
                   </div>
                   <div className="flex justify-between py-1.5">
                     <span>Target Age Spectrum</span>
@@ -434,12 +450,12 @@ export default function AboutUsPage() {
         <section className="w-full bg-[#F7F7F5] py-14 px-4 sm:px-8 text-[#111111] border-t border-[#D9D9D9]">
           <AnimateOnScroll animation="fade-up" duration={700} className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="space-y-1">
-              <h3
+              <h2
                 className="text-2xl sm:text-3xl font-medium tracking-tight"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
                 Experience the Derivion Difference
-              </h3>
+              </h2>
               <p className="text-xs sm:text-sm text-[#525252]">
                 Connect with our team to learn more about upcoming cohorts and workshops.
               </p>
@@ -447,7 +463,7 @@ export default function AboutUsPage() {
             <div className="flex items-center gap-3">
               <Link
                 href="/contact"
-                className="px-7 py-3 rounded-full bg-[#ED1654] hover:bg-[#d6124b] text-white text-xs sm:text-sm font-semibold transition-all shadow-lg active:scale-95"
+                className="px-7 py-3 rounded-full bg-[#D6124B] hover:bg-[#B50F40] text-white text-xs sm:text-sm font-semibold transition-all shadow-lg active:scale-95"
               >
                 Get in Touch
               </Link>

@@ -103,3 +103,53 @@ body {
 .anim-duration-600 { transition-duration: 600ms; }
 .anim-duration-700 { transition-duration: 700ms; }
 .anim-duration-800 { transition-duration: 800ms; }
+
+:focus-visible {
+  outline: 2px solid #111111;
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  transform: translateY(-200%);
+  border-radius: 0.5rem;
+  background: #111111;
+  padding: 0.75rem 1rem;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .anim-hidden,
+  .anim-hidden.anim-fade-up,
+  .anim-hidden.anim-fade-down,
+  .anim-hidden.anim-fade-left,
+  .anim-hidden.anim-fade-right,
+  .anim-hidden.anim-scale-up,
+  .anim-hidden.anim-fade-in {
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+  }
+}

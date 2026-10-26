@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, Play, Pause, Volume2, VolumeX, Maximize } from "lucide-react";
 import AnimateOnScroll from "@/app/components/AnimateOnScroll";
@@ -8,18 +8,25 @@ import AnimateOnScroll from "@/app/components/AnimateOnScroll";
 export default function Hero() {
     const videoRef = useRef<HTMLVideoElement>(null);
 
-    const [isPlaying, setIsPlaying] = useState(true);
+    const [isPlaying, setIsPlaying] = useState(false);
     const [isMuted, setIsMuted] = useState(true);
+
+    useEffect(() => {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            videoRef.current?.pause();
+        }
+    }, []);
 
     const togglePlay = () => {
         if (!videoRef.current) return;
 
         if (videoRef.current.paused) {
-            videoRef.current.play();
-            setIsPlaying(true);
+            void videoRef.current.play().catch((error: unknown) => {
+                console.error("Unable to play the homepage hero video.", error);
+                setIsPlaying(false);
+            });
         } else {
             videoRef.current.pause();
-            setIsPlaying(false);
         }
     };
 
@@ -33,11 +40,12 @@ export default function Hero() {
     const toggleFullscreen = () => {
         if (!videoRef.current) return;
 
-        if (document.fullscreenElement) {
-            document.exitFullscreen();
-        } else {
-            videoRef.current.requestFullscreen();
-        }
+        const fullscreenAction = document.fullscreenElement
+            ? document.exitFullscreen()
+            : videoRef.current.requestFullscreen();
+        void fullscreenAction.catch((error: unknown) => {
+            console.error("Unable to change hero video fullscreen mode.", error);
+        });
     };
 
     return (
@@ -52,6 +60,7 @@ export default function Hero() {
                         ref={videoRef}
                         className="absolute inset-0 w-full h-full object-cover"
                         src="/Home/derivion-hero-video-1.mp4"
+                        poster="/Home/hero-section.jpg"
                         autoPlay
                         muted
                         loop
@@ -62,6 +71,41 @@ export default function Hero() {
                     >
                         Your browser does not support embedded videos.
                     </video>
+
+                    <div className="absolute right-4 top-4 z-10 flex items-center gap-2">
+                        <button
+                            type="button"
+                            onClick={togglePlay}
+                            aria-label={isPlaying ? "Pause hero video" : "Play hero video"}
+                            className="flex h-10 w-10 items-center justify-center rounded-full bg-black/65 text-white transition-colors hover:bg-black/85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                        >
+                            {isPlaying ? (
+                                <Pause aria-hidden="true" className="h-4 w-4" />
+                            ) : (
+                                <Play aria-hidden="true" className="h-4 w-4" />
+                            )}
+                        </button>
+                        <button
+                            type="button"
+                            onClick={toggleMute}
+                            aria-label={isMuted ? "Unmute hero video" : "Mute hero video"}
+                            className="flex h-10 w-10 items-center justify-center rounded-full bg-black/65 text-white transition-colors hover:bg-black/85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                        >
+                            {isMuted ? (
+                                <VolumeX aria-hidden="true" className="h-4 w-4" />
+                            ) : (
+                                <Volume2 aria-hidden="true" className="h-4 w-4" />
+                            )}
+                        </button>
+                        <button
+                            type="button"
+                            onClick={toggleFullscreen}
+                            aria-label="View hero video fullscreen"
+                            className="flex h-10 w-10 items-center justify-center rounded-full bg-black/65 text-white transition-colors hover:bg-black/85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                        >
+                            <Maximize aria-hidden="true" className="h-4 w-4" />
+                        </button>
+                    </div>
 
                     {/* Dark Gradient */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-transparent pointer-events-none" />
@@ -81,7 +125,7 @@ export default function Hero() {
 
                             <Link
                                 href="/about"
-                                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:py-3 rounded-full bg-[#ED1654] hover:bg-[#d6124b] text-white text-xs sm:text-sm font-medium transition-all duration-200 shrink-0 shadow-md hover:shadow-lg active:scale-95"
+                                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:py-3 rounded-full bg-[#D6124B] hover:bg-[#B50F40] text-white text-xs sm:text-sm font-medium transition-all duration-200 shrink-0 shadow-md hover:shadow-lg active:scale-95"
                             >
                                 <span>Learn More</span>
                                 <ArrowUpRight className="w-4 h-4" />
@@ -120,7 +164,7 @@ export default function Hero() {
                     className="lg:col-span-5 flex items-center justify-center lg:justify-end -space-x-3 sm:-space-x-4 py-2"
                 >
                     <div className="w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full border border-[#D9D9D9] bg-white/90 backdrop-blur-sm flex flex-col items-center justify-center text-center p-3 shrink-0 shadow-sm hover:z-10 transition-transform duration-300 hover:scale-105">
-                        <span className="text-xl sm:text-3xl font-bold text-[#ED1654]">
+                        <span className="text-xl sm:text-3xl font-bold text-[#C20F42]">
                             100%
                         </span>
 
@@ -144,4 +188,3 @@ export default function Hero() {
         </section>
     );
 }
-

@@ -14,19 +14,19 @@ export default function WhyUs() {
         {/* ─── Header: Title & CTA Button ─── */}
         <AnimateOnScroll animation="fade-up" duration={600} className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="space-y-1">
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#C20F42]">
               The Derivion Advantage
             </span>
             <h2
               className="text-3xl sm:text-4xl lg:text-5xl tracking-tight text-[#000000] font-medium"
               style={{ fontFamily: "var(--font-serif)" }}
             >
-              Why Choose <span className="italic font-normal text-[#ED1654]">Derivion</span>?
+              Why Choose <span className="italic font-normal text-[#C20F42]">Derivion</span>?
             </h2>
           </div>
           <Link
             href="/about"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full border border-[#ED1654] hover:bg-[#ED1654] text-[#ED1654] hover:text-white text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-200"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full border border-[#ED1654] hover:bg-[#D6124B] text-[#C20F42] hover:text-white text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-200"
           >
             <span>SEE ALL DETAILS</span>
             <ArrowUpRight className="w-4 h-4" />
@@ -43,6 +43,7 @@ export default function WhyUs() {
                 src="/Home/why.jpg"
                 alt="Practitioner-crafted education"
                 fill
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 20vw"
                 className="object-cover"
               />
             </div>
@@ -63,11 +64,12 @@ export default function WhyUs() {
                 src="/Home/5 pillars.webp"
                 alt="Holistic multi-pillar education"
                 fill
+                sizes="(max-width: 768px) 100vw, 58vw"
                 className="object-cover"
               />
             </div>
             <div className="relative z-10 space-y-2 max-w-lg">
-              <span className="inline-block text-[10px] font-bold text-[#ED1654] uppercase tracking-widest bg-white/70 px-2.5 py-1 rounded border border-[#ED1654]/20">
+              <span className="inline-block text-[10px] font-bold text-[#C20F42] uppercase tracking-widest bg-white/70 px-2.5 py-1 rounded border border-[#ED1654]/20">
                 COMPREHENSIVE ECOSYSTEM
               </span>
               <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#111111]">
@@ -86,11 +88,12 @@ export default function WhyUs() {
                 src="/Home/3rd.jpg"
                 alt="Reflex-driven habits"
                 fill
+                sizes="(max-width: 768px) 100vw, 42vw"
                 className="object-cover"
               />
             </div>
             <div className="relative z-10 space-y-2">
-              <span className="text-[10px] font-bold text-[#ED1654] uppercase tracking-widest">
+              <span className="text-[10px] font-bold text-[#C20F42] uppercase tracking-widest">
                 ACTIONABLE DEFENCE
               </span>
               <h3 className="text-lg sm:text-xl font-bold uppercase tracking-tight text-[#000000]">
@@ -109,6 +112,7 @@ export default function WhyUs() {
                 src="/Home/case.jpg"
                 alt="Reconstructed Case Studies"
                 fill
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 30vw"
                 className="object-cover"
               />
             </div>

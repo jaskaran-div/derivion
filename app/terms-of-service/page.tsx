@@ -2,6 +2,14 @@ import Link from "next/link";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import AnimateOnScroll from "@/app/components/AnimateOnScroll";
+import { BreadcrumbJsonLd } from "@/app/components/JsonLd";
+import { createPageMetadata } from "@/app/lib/seo";
+
+export const metadata = createPageMetadata(
+  "Terms of Service",
+  "Review the terms that govern access to the Derivion website, educational content, programme services, and related communications.",
+  "/terms-of-service",
+);
 
 const sections = [
   {
@@ -59,6 +67,12 @@ const sections = [
 export default function TermsOfServicePage() {
   return (
     <div className="min-h-screen bg-white text-[#000000] flex flex-col">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", pathname: "/" },
+          { name: "Terms of Service", pathname: "/terms-of-service" },
+        ]}
+      />
       <Navbar />
 
       <div className="w-full bg-[#D9D9D9]/20 border-b border-[#D9D9D9]/60 py-3 px-4 sm:px-8">
@@ -71,10 +85,10 @@ export default function TermsOfServicePage() {
         </div>
       </div>
 
-      <main className="flex-1 px-4 py-12 sm:px-6 lg:px-8">
+      <main id="main-content" className="flex-1 px-4 py-12 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto space-y-8">
           <AnimateOnScroll animation="fade-up" duration={600} className="space-y-3">
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#C20F42]">
               Legal
             </span>
             <h1
@@ -103,7 +117,7 @@ export default function TermsOfServicePage() {
 
               <div className="pt-4 border-t border-[#D9D9D9] text-xs text-[#737373]">
                 For questions regarding these terms, please contact{" "}
-                <a href="mailto:info@derivion.in" className="text-[#ED1654] font-medium hover:underline">
+                <a href="mailto:info@derivion.in" className="text-[#C20F42] font-medium hover:underline">
                   info@derivion.in
                 </a>
                 .

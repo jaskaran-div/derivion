@@ -67,7 +67,7 @@ export default function OurAlumni() {
           {/* ─── Left Sidebar: Title, Description & CTA ─── */}
           <AnimateOnScroll animation="fade-right" duration={700} className="lg:col-span-4 space-y-4 sm:space-y-6 lg:sticky lg:top-28">
             <div className="space-y-2">
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#ED1654]">
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#C20F42]">
                 Proven Network
               </span>
               <h2
@@ -84,7 +84,7 @@ export default function OurAlumni() {
 
             <Link
               href="/about"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-full bg-[#ED1654] hover:bg-[#d6124b] text-white text-xs sm:text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-lg active:scale-95"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-full bg-[#D6124B] hover:bg-[#B50F40] text-white text-xs sm:text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-lg active:scale-95"
             >
               <span>EXPLORE NETWORK</span>
               <ArrowRight className="w-4 h-4" />
@@ -106,6 +106,7 @@ export default function OurAlumni() {
                           src={alumnus.photo}
                           alt={alumnus.name}
                           fill
+                          sizes="(max-width: 640px) 42vw, (max-width: 1024px) 21vw, 16vw"
                           className="object-cover object-center scale-105 group-hover:scale-110 transition-transform duration-500"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/0 to-transparent" />
@@ -117,7 +118,7 @@ export default function OurAlumni() {
                             {alumnus.name}
                           </h3>
                           {alumnus.company ? (
-                            <span className="inline-flex items-center rounded-full border border-[#ED1654]/20 bg-[#ED1654]/5 px-1.5 py-0.5 text-[8px] uppercase tracking-[0.12em] text-[#ED1654] font-semibold whitespace-nowrap">
+                            <span className="inline-flex items-center rounded-full border border-[#ED1654]/20 bg-[#D6124B]/5 px-1.5 py-0.5 text-[8px] uppercase tracking-[0.12em] text-[#C20F42] font-semibold whitespace-nowrap">
                               {alumnus.company}
                             </span>
                           ) : null}
@@ -136,8 +137,8 @@ export default function OurAlumni() {
                           <span className="inline-block px-2 py-1 rounded-md bg-[#F5F5F5] border border-[#E1E1E1] text-[9px] font-medium text-[#111111]">
                             {alumnus.batch}
                           </span>
-                          <span className="text-[9px] text-[#ED1654] font-medium flex items-center gap-1">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#ED1654]" /> Verified Outcome
+                          <span className="text-[9px] text-[#C20F42] font-medium flex items-center gap-1">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#D6124B]" /> Verified Outcome
                           </span>
                         </div>
                       </div>
@@ -157,7 +158,7 @@ export default function OurAlumni() {
                       key={idx}
                       onClick={() => setCurrentPage(idx)}
                       className={`h-2 rounded-full transition-all duration-300 ${currentPage === idx
-                          ? "w-8 bg-[#ED1654]"
+                          ? "w-8 bg-[#D6124B]"
                           : "w-2.5 bg-[#D9D9D9] hover:bg-[#737373]"
                         }`}
                       aria-label={`Go to page ${idx + 1}`}

@@ -50,8 +50,8 @@ export default function Footer() {
     { name: "All Programmes", href: "/programs" },
     { name: "About Derivion", href: "/about" },
     { name: "Contact & Admissions", href: "/contact" },
-    { name: "Core Learning Pillars", href: "/#pillars" },
-    { name: "Curricular Disciplines", href: "/#disciplines" },
+    { name: "Core Learning Pillars", href: "/about#pillars" },
+    { name: "Curricular Disciplines", href: "/about#disciplines" },
     { name: "Why Derivion", href: "/#why-us" },
   ];
 
@@ -88,11 +88,11 @@ export default function Footer() {
             {/* Quick Stats Pill */}
             <div className="flex items-center gap-4 py-2 text-xs font-semibold text-[#374151]">
               <div>
-                <span className="text-[#ED1654] font-bold">3</span> Targeted Programmes
+                <span className="text-[#C20F42] font-bold">3</span> Targeted Programmes
               </div>
-              <div className="w-1.5 h-1.5 rounded-full bg-[#ED1654]" />
+              <div className="w-1.5 h-1.5 rounded-full bg-[#D6124B]" />
               <div>
-                <span className="text-[#ED1654] font-bold">5</span> Core Literacies
+                <span className="text-[#C20F42] font-bold">5</span> Core Literacies
               </div>
             </div>
 
@@ -107,7 +107,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={item.name}
-                    className="w-9 h-9 rounded-full bg-white border border-[#E5E7EB] hover:border-[#ED1654] hover:bg-[#ED1654] text-[#374151] hover:text-white flex items-center justify-center transition-colors shadow-sm"
+                    className="w-9 h-9 rounded-full bg-white border border-[#E5E7EB] hover:border-[#ED1654] hover:bg-[#D6124B] text-[#374151] hover:text-white flex items-center justify-center transition-colors shadow-sm"
                   >
                     <IconComponent className="w-4 h-4" />
                   </a>
@@ -118,15 +118,15 @@ export default function Footer() {
 
           {/* Quick Links (Col 2) */}
           <div className="space-y-4 md:col-span-2">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-[#111111]">
+            <h2 className="text-xs font-bold uppercase tracking-wider text-[#111111]">
               Navigation
-            </h4>
+            </h2>
             <ul className="space-y-2.5">
               {quickLinks.map((link, idx) => (
                 <li key={idx}>
                   <Link
                     href={link.href}
-                    className="text-xs sm:text-sm text-[#4B5563] hover:text-[#ED1654] transition-colors"
+                    className="text-xs sm:text-sm text-[#4B5563] hover:text-[#C20F42] transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -137,15 +137,15 @@ export default function Footer() {
 
           {/* Programmes (Col 3) */}
           <div className="space-y-4 md:col-span-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-[#111111]">
+            <h2 className="text-xs font-bold uppercase tracking-wider text-[#111111]">
               Programmes
-            </h4>
+            </h2>
             <ul className="space-y-2.5">
               {programmeLinks.map((prog, idx) => (
                 <li key={idx}>
                   <Link
                     href={prog.href}
-                    className="text-xs sm:text-sm text-[#4B5563] hover:text-[#ED1654] transition-colors block line-clamp-1"
+                    className="text-xs sm:text-sm text-[#4B5563] hover:text-[#C20F42] transition-colors block line-clamp-1"
                   >
                     {prog.name}
                   </Link>
@@ -156,38 +156,38 @@ export default function Footer() {
 
           {/* Contact Details (Col 4) */}
           <div className="sm:col-span-2 md:col-span-3 space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-[#111111]">
+            <h2 className="text-xs font-bold uppercase tracking-wider text-[#111111]">
               Get in Touch
-            </h4>
+            </h2>
             <ul className="space-y-3 text-xs sm:text-sm text-[#4B5563]">
               <li className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-[#ED1654] shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#C20F42] shrink-0 mt-0.5" />
                 <span>Plot No 42, Phase IV, Sector 18, Gurugram, Sarhol, Haryana 122015</span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-[#ED1654] shrink-0" />
-                <a href="mailto:info@derivion.in" className="hover:text-[#ED1654] transition-colors">
+                <Mail className="w-4 h-4 text-[#C20F42] shrink-0" />
+                <a href="mailto:info@derivion.in" className="hover:text-[#C20F42] transition-colors">
                   info@derivion.in
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-[#ED1654] shrink-0" />
-                <a href="tel:+917056057913" className="hover:text-[#ED1654] transition-colors">
+                <Phone className="w-4 h-4 text-[#C20F42] shrink-0" />
+                <a href="tel:+917056057913" className="hover:text-[#C20F42] transition-colors">
                   +91 70560 57913
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-[#ED1654] shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#C20F42] shrink-0 mt-0.5" />
                 <span>Office 3A:1, Rathbone House, Dexter House, Croydon CR0 1BT, United Kingdom</span>
               </li>
                <li className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-[#ED1654] shrink-0" />
-                <a href="tel:+447990064079" className="hover:text-[#ED1654] transition-colors">
+                <Phone className="w-4 h-4 text-[#C20F42] shrink-0" />
+                <a href="tel:+447990064079" className="hover:text-[#C20F42] transition-colors">
                   +44 7990 064079
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Clock className="w-4 h-4 text-[#ED1654] shrink-0" />
+                <Clock className="w-4 h-4 text-[#C20F42] shrink-0" />
                 <span>Mon-Fri: 10:30am-6:30pm</span>
               </li>
             </ul>

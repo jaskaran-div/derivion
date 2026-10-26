@@ -6,12 +6,12 @@ import {
   getAllProgrammeSlugs,
 } from "@/app/data/programmes";
 import ProgramDetailClient from "./ProgramDetailClient";
+import { BreadcrumbJsonLd } from "@/app/components/JsonLd";
+import { createPageMetadata } from "@/app/lib/seo";
 
 interface Props {
   params: Promise<{ slug: string }>;
 }
-
-const siteUrl = "https://www.derivion.in";
 
 export async function generateStaticParams() {
   const slugs = getAllProgrammeSlugs();
@@ -27,44 +27,28 @@ export async function generateMetadata({
 
   if (!programme) {
     return {
-      title: "Programme Not Found | Derivion",
+      title: { absolute: "Programme Not Found | Derivion" },
       robots: {
         index: false,
         follow: false,
+        googleBot: {
+          index: false,
+          follow: false,
+        },
       },
     };
   }
 
-  const title = `${programme.title} | Derivion`;
-  const description = programme.description;
-  const canonicalUrl = `${siteUrl}/programs/${slug}`;
-
   return {
-    title,
-    description,
-
-    alternates: {
-      canonical: `/programs/${slug}`,
-    },
-
+    ...createPageMetadata(
+      programme.title,
+      programme.description,
+      `/programs/${programme.slug}`,
+      programme.heroImage,
+    ),
     robots: {
       index: true,
       follow: true,
-    },
-
-    openGraph: {
-      type: "website",
-      url: canonicalUrl,
-      siteName: "Derivion",
-      locale: "en_IN",
-      title,
-      description,
-    },
-
-    twitter: {
-      card: "summary",
-      title,
-      description,
     },
   };
 }
@@ -77,5 +61,19 @@ export default async function ProgramPage({ params }: Props) {
     notFound();
   }
 
-  return <ProgramDetailClient programme={programme} />;
+  return (
+    <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", pathname: "/" },
+          { name: "Programmes", pathname: "/programs" },
+          {
+            name: programme.title,
+            pathname: `/programs/${programme.slug}`,
+          },
+        ]}
+      />
+      <ProgramDetailClient programme={programme} />
+    </>
+  );
 }

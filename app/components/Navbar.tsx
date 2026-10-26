@@ -10,6 +10,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileCategoryOpen, setMobileCategoryOpen] = useState<string | null>(null);
+  const [desktopCategoryOpen, setDesktopCategoryOpen] = useState<string | null>(null);
 
   // Nested structure for Programmes -> Categories -> Sub-Programmes
   const programmesData = [
@@ -68,11 +69,12 @@ export default function Navbar() {
   const isHomeActive = pathname === "/";
   const isProgrammesActive = pathname.startsWith("/programs");
   const isAboutActive = pathname === "/about";
+  const isPartnersActive = pathname === "/partners";
   const isContactActive = pathname === "/contact";
 
   return (
     <header className="w-full bg-white/70 backdrop-blur-md border-b border-[#D9D9D9]/60 py-4 px-4 sm:px-8 mx-auto sticky top-0 z-50">
-      <nav className="flex items-center justify-between gap-4">
+      <nav aria-label="Primary" className="flex items-center justify-between gap-4">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-2.5 z-20 hover:opacity-90 transition-opacity">
             <Image
@@ -90,9 +92,10 @@ export default function Navbar() {
           {/* Home Link */}
           <Link
             href="/"
+            aria-current={isHomeActive ? "page" : undefined}
             className={`px-5 py-2 text-xs sm:text-sm font-medium rounded-full transition-all duration-200 ${
               isHomeActive
-                ? "bg-[#ED1654] text-white shadow-md"
+                ? "bg-[#D6124B] text-white shadow-md"
                 : "text-[#737373] hover:text-[#000000] hover:bg-[#D9D9D9]/50"
             }`}
           >
@@ -103,9 +106,10 @@ export default function Navbar() {
           <div className="relative group">
             <Link
               href="/programs"
+              aria-current={pathname === "/programs" ? "page" : undefined}
               className={`flex items-center gap-1.5 px-5 py-2 text-xs sm:text-sm font-medium rounded-full transition-all duration-200 ${
                 isProgrammesActive
-                  ? "bg-[#ED1654] text-white shadow-md"
+                  ? "bg-[#D6124B] text-white shadow-md"
                   : "text-[#737373] hover:text-[#000000] hover:bg-[#D9D9D9]/50"
               }`}
             >
@@ -114,11 +118,11 @@ export default function Navbar() {
             </Link>
 
             {/* Level 1 Dropdown: Categories */}
-            <div className="absolute left-0 top-full pt-3 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50">
+            <div className="absolute left-0 top-full pt-3 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0 group-focus-within:pointer-events-auto transition-all duration-200 z-50">
               <div className="bg-white border border-[#D9D9D9] rounded-2xl shadow-xl p-2 w-64 space-y-1">
                 <Link
                   href="/programs"
-                  className="flex items-center justify-between px-4 py-2 rounded-xl text-xs font-bold text-[#ED1654] hover:bg-[#ED1654]/10 transition-colors"
+                  className="flex items-center justify-between px-4 py-2 rounded-xl text-xs font-bold text-[#C20F42] hover:bg-[#D6124B]/10 transition-colors"
                 >
                   <span className="flex items-center gap-2">
                     <BookOpen className="w-3.5 h-3.5" />
@@ -129,15 +133,43 @@ export default function Navbar() {
                 <div className="border-t border-[#D9D9D9]/60 my-1" />
 
                 {programmesData.map((cat, idx) => (
-                  <div key={idx} className="relative group/sub">
+                  <div
+                    key={idx}
+                    className="relative group/sub"
+                    onMouseEnter={() => setDesktopCategoryOpen(cat.category)}
+                    onMouseLeave={() => setDesktopCategoryOpen(null)}
+                    onFocus={() => setDesktopCategoryOpen(cat.category)}
+                    onBlur={(event) => {
+                      const nextTarget = event.relatedTarget;
+                      if (
+                        !(nextTarget instanceof Node) ||
+                        !event.currentTarget.contains(nextTarget)
+                      ) {
+                        setDesktopCategoryOpen(null);
+                      }
+                    }}
+                  >
                     {/* Category Item */}
-                    <div className="flex items-center justify-between px-4 py-2.5 rounded-xl text-xs sm:text-sm text-[#141414] font-medium hover:bg-[#D9D9D9]/40 hover:text-[#000000] cursor-pointer transition-colors">
+                    <button
+                      type="button"
+                      aria-expanded={desktopCategoryOpen === cat.category}
+                      aria-controls={`desktop-programmes-${idx}`}
+                      onClick={() =>
+                        setDesktopCategoryOpen(
+                          desktopCategoryOpen === cat.category ? null : cat.category,
+                        )
+                      }
+                      className="flex w-full items-center justify-between px-4 py-2.5 rounded-xl text-left text-xs sm:text-sm text-[#141414] font-medium hover:bg-[#D9D9D9]/40 hover:text-[#000000] transition-colors"
+                    >
                       <span>{cat.category}</span>
                       <ChevronRight className="w-3.5 h-3.5 text-[#737373]" />
-                    </div>
+                    </button>
 
-                    {/* Level 2 Sub-Dropdown: Opens on Hovering Category */}
-                    <div className="absolute left-full top-0 pl-2 opacity-0 -translate-x-2 pointer-events-none group-hover/sub:opacity-100 group-hover/sub:translate-x-0 group-hover/sub:pointer-events-auto transition-all duration-200 z-50">
+                    <div
+                      id={`desktop-programmes-${idx}`}
+                      hidden={desktopCategoryOpen !== cat.category}
+                      className="absolute left-full top-0 pl-2 transition-all duration-200 z-50"
+                    >
                       <div className="bg-white border border-[#D9D9D9] rounded-2xl shadow-xl p-2 w-64 space-y-1">
                         {cat.subItems.map((sub, sIdx) => (
                           <Link
@@ -159,13 +191,27 @@ export default function Navbar() {
           {/* About Us Link */}
           <Link
             href="/about"
+            aria-current={isAboutActive ? "page" : undefined}
             className={`px-5 py-2 text-xs sm:text-sm font-medium rounded-full transition-all duration-200 ${
               isAboutActive
-                ? "bg-[#ED1654] text-white shadow-md"
+                ? "bg-[#D6124B] text-white shadow-md"
                 : "text-[#737373] hover:text-[#000000] hover:bg-[#D9D9D9]/50"
             }`}
           >
             About Us
+          </Link>
+
+          {/* Partners Link */}
+          <Link
+            href="/partners"
+            aria-current={isPartnersActive ? "page" : undefined}
+            className={`px-5 py-2 text-xs sm:text-sm font-medium rounded-full transition-all duration-200 ${
+              isPartnersActive
+                ? "bg-[#D6124B] text-white shadow-md"
+                : "text-[#737373] hover:text-[#000000] hover:bg-[#D9D9D9]/50"
+            }`}
+          >
+            Partners
           </Link>
         </div>
 
@@ -173,10 +219,11 @@ export default function Navbar() {
         <div className="hidden sm:flex items-center z-20">
           <Link
             href="/contact"
+            aria-current={isContactActive ? "page" : undefined}
             className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 shadow-sm active:scale-95 ${
               isContactActive
-                ? "bg-[#ED1654] text-white"
-                : "bg-[#ED1654] hover:bg-[#d6124b] text-white"
+                ? "bg-[#D6124B] text-white"
+                : "bg-[#D6124B] hover:bg-[#B50F40] text-white"
             }`}
           >
             <User className="w-4 h-4 text-[#D9D9D9]" />
@@ -188,7 +235,9 @@ export default function Navbar() {
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="md:hidden p-2 rounded-lg text-[#141414] hover:bg-[#D9D9D9]/40"
-          aria-label="Toggle navigation"
+          aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={mobileMenuOpen}
+          aria-controls="mobile-navigation"
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
@@ -196,10 +245,15 @@ export default function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden mt-3 p-4 bg-[#D9D9D9]/20 rounded-2xl border border-[#D9D9D9]/60 space-y-2">
+        <nav
+          id="mobile-navigation"
+          aria-label="Mobile primary"
+          className="md:hidden mt-3 p-4 bg-[#D9D9D9]/20 rounded-2xl border border-[#D9D9D9]/60 space-y-2"
+        >
           {/* Mobile Home */}
           <Link
             href="/"
+            aria-current={isHomeActive ? "page" : undefined}
             onClick={() => setMobileMenuOpen(false)}
             className={`block w-full text-left px-4 py-2.5 text-sm font-medium rounded-xl transition-colors ${
               isHomeActive ? "bg-[#000000] text-white" : "text-[#737373] hover:bg-[#D9D9D9]/60"
@@ -213,7 +267,7 @@ export default function Navbar() {
             <Link
               href="/programs"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full flex items-center justify-between px-3 py-2 text-xs font-bold text-[#ED1654] uppercase tracking-wider hover:bg-[#D9D9D9]/30 rounded-lg"
+              className="w-full flex items-center justify-between px-3 py-2 text-xs font-bold text-[#C20F42] uppercase tracking-wider hover:bg-[#D9D9D9]/30 rounded-lg"
             >
               <span>Explore All Programmes</span>
               <ChevronRight className="w-3.5 h-3.5" />
@@ -222,11 +276,14 @@ export default function Navbar() {
             {programmesData.map((cat, idx) => (
               <div key={idx} className="space-y-1">
                 <button
+                  type="button"
                   onClick={() =>
                     setMobileCategoryOpen(
                       mobileCategoryOpen === cat.category ? null : cat.category
                     )
                   }
+                  aria-expanded={mobileCategoryOpen === cat.category}
+                  aria-controls={`mobile-programmes-${idx}`}
                   className="w-full flex items-center justify-between px-3 py-2 text-sm text-[#141414] font-medium rounded-lg hover:bg-[#D9D9D9]/50"
                 >
                   <span>{cat.category}</span>
@@ -238,8 +295,11 @@ export default function Navbar() {
                 </button>
 
                 {/* Expanded Sub-Items */}
-                {mobileCategoryOpen === cat.category && (
-                  <div className="pl-4 pr-2 space-y-1">
+                <div
+                  id={`mobile-programmes-${idx}`}
+                  hidden={mobileCategoryOpen !== cat.category}
+                  className="pl-4 pr-2 space-y-1"
+                >
                     {cat.subItems.map((sub, sIdx) => (
                       <Link
                         key={sIdx}
@@ -250,8 +310,7 @@ export default function Navbar() {
                         {sub.name}
                       </Link>
                     ))}
-                  </div>
-                )}
+                </div>
               </div>
             ))}
           </div>
@@ -259,6 +318,7 @@ export default function Navbar() {
           {/* Mobile About Us */}
           <Link
             href="/about"
+            aria-current={isAboutActive ? "page" : undefined}
             onClick={() => setMobileMenuOpen(false)}
             className={`block w-full text-left px-4 py-2.5 text-sm font-medium rounded-xl transition-colors ${
               isAboutActive ? "bg-[#000000] text-white" : "text-[#737373] hover:bg-[#D9D9D9]/60"
@@ -267,16 +327,29 @@ export default function Navbar() {
             About Us
           </Link>
 
+          {/* Mobile Partners */}
+          <Link
+            href="/partners"
+            aria-current={isPartnersActive ? "page" : undefined}
+            onClick={() => setMobileMenuOpen(false)}
+            className={`block w-full text-left px-4 py-2.5 text-sm font-medium rounded-xl transition-colors ${
+              isPartnersActive ? "bg-[#000000] text-white" : "text-[#737373] hover:bg-[#D9D9D9]/60"
+            }`}
+          >
+            Partners
+          </Link>
+
           {/* Mobile Contact Us CTA */}
           <Link
             href="/contact"
+            aria-current={isContactActive ? "page" : undefined}
             onClick={() => setMobileMenuOpen(false)}
             className="w-full flex items-center justify-center gap-2 mt-3 px-4 py-3 rounded-xl bg-[#000000] text-white text-sm font-semibold"
           >
             <User className="w-4 h-4" />
             <span>Contact us</span>
           </Link>
-        </div>
+        </nav>
       )}
     </header>
   );

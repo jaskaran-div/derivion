@@ -2,23 +2,22 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Script from "next/script";
-
-const siteUrl = "https://www.derivion.in";
+import { OrganizationJsonLd } from "@/app/components/JsonLd";
+import {
+  DEFAULT_DESCRIPTION,
+  DEFAULT_SOCIAL_IMAGE,
+  HOME_TITLE,
+  SITE_URL,
+} from "@/app/lib/seo";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-
-  title: "Derivion — Enabling trained risk",
-
-  description:
-    "Derivion empowers learners through financial literacy, financial trading education, digital systems, AI awareness and risk intelligence.",
-
-  applicationName: "Derivion",
-
-  alternates: {
-    canonical: "/",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: HOME_TITLE,
+    template: "%s | Derivion",
   },
-
+  description: DEFAULT_DESCRIPTION,
+  applicationName: "Derivion",
   robots: {
     index: true,
     follow: true,
@@ -30,37 +29,29 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
     apple: "/favicon.png",
   },
-
   openGraph: {
     type: "website",
-    url: siteUrl,
     siteName: "Derivion",
     locale: "en_IN",
-    title: "Derivion — Enabling trained risk",
-    description:
-      "Discover financial literacy, trading education, digital systems, AI awareness and risk intelligence with Derivion.",
+    title: HOME_TITLE,
+    description: DEFAULT_DESCRIPTION,
     images: [
       {
-        url: "/favicon.png",
-        width: 1200,
-        height: 630,
+        url: DEFAULT_SOCIAL_IMAGE,
         alt: "Derivion — Enabling trained risk",
       },
     ],
   },
-
   twitter: {
     card: "summary_large_image",
-    title: "Derivion — Enabling trained risk",
-    description:
-      "Discover financial literacy, trading education, digital systems, AI awareness and risk intelligence with Derivion.",
-    images: ["/favicon.png"],
+    title: HOME_TITLE,
+    description: DEFAULT_DESCRIPTION,
+    images: [DEFAULT_SOCIAL_IMAGE],
   },
 };
 
@@ -76,6 +67,10 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
     >
       <body className="min-h-full flex flex-col overflow-x-hidden bg-white text-[#000000]">
+        <a className="skip-link" href="#main-content">
+          Skip to main content
+        </a>
+        <OrganizationJsonLd />
         {children}
 
         {/* Google Analytics */}
