@@ -887,27 +887,11 @@ export default function ProgramDetailClient({
                 </div>
               ))}
             </div>
-            {(programme.category === "ISFT Awards" || programme.category === "ISFT Premium") && (
+            {programme.category === "ISFT Awards" && (
               <aside
-                aria-label="Risk and qualification notice"
-                className="rounded-2xl border border-[#E6E6E6] bg-white p-5 text-xs sm:text-sm text-[#525252] leading-relaxed space-y-2"
+                aria-label="Qualification notice"
+                className="rounded-2xl border border-[#E6E6E6] bg-white p-5 text-xs sm:text-sm text-[#525252] leading-relaxed"
               >
-                <p className="font-semibold text-[#111111]">Important information</p>
-                <p>
-                  This is an educational {programme.category === "ISFT Premium" ? "programme" : "qualification"}, not investment advice. It does not guarantee trading
-                  profits, income or employment. Trading leveraged products such as futures and options carries a
-                  high risk of loss: a{" "}
-                  <a
-                    href="https://www.sebi.gov.in/media-and-notifications/press-releases/sep-2024/updated-sebi-study-reveals-93-of-individual-traders-incurred-losses-in-equity-fando-between-fy22-and-fy24-aggregate-losses-exceed-1-8-lakh-crores-over-three-years_86906.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-medium text-[#C20F42] underline underline-offset-2 hover:text-[#B50F40]"
-                  >
-                    SEBI study (September 2024)
-                  </a>{" "}
-                  found that 93% of individual traders in equity F&amp;O incurred losses between FY22 and FY24.
-                </p>
-                {programme.category === "ISFT Awards" && (
                 <p>
                   ISFT awards are bespoke qualifications accredited by OCN London. Bespoke qualifications are not
                   regulated by Ofqual.{" "}
@@ -918,7 +902,6 @@ export default function ProgramDetailClient({
                     About our qualifications
                   </Link>
                 </p>
-                )}
               </aside>
             )}
           </AnimateOnScroll>
