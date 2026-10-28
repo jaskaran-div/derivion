@@ -11,28 +11,28 @@ export default function Placement() {
 
   return (
     <section id="framework" className="w-full bg-[#F7F7F5] py-12 sm:py-16 px-4 sm:px-8 text-[#111111]">
-      <div className="max-w-7xl mx-auto bg-white border border-[#E7E7E7] rounded-3xl p-6 sm:p-10 lg:p-12 shadow-[0_18px_50px_rgba(17,17,17,0.04)]">
+      <div className="max-w-7xl mx-auto bg-white border border-[#E7E7E7] rounded-3xl p-5 sm:p-10 lg:p-12 shadow-[0_18px_50px_rgba(17,17,17,0.04)]">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
 
           {/* ─── Left Column: Founder's Quote, Stats & CTAs ─── */}
           <AnimateOnScroll animation="fade-right" duration={700} className="lg:col-span-7 flex flex-col justify-center space-y-6">
             {/* Header Tag + Founder Quote Block */}
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D6124B]/10 text-[#C20F42] border border-[#ED1654]/20 text-xs font-bold uppercase tracking-wider">
-                <Newspaper className="w-3.5 h-3.5" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D6124B]/10 text-[#C20F42] border border-[#ED1654]/20 text-[10px] sm:text-xs font-bold uppercase tracking-wider">
+                <Newspaper className="w-3.5 h-3.5 shrink-0" />
                 <span>Founder&apos;s Article &amp; Leadership Quote</span>
               </div>
 
               <div className="space-y-3">
                 <Quote className="w-8 h-8 text-[#C20F42] opacity-90" />
-                <blockquote className="text-[#111111] text-base sm:text-lg lg:text-xl leading-relaxed font-light italic" style={{ fontFamily: "var(--font-serif)" }}>
+                <blockquote className="text-[#111111] text-[15px] sm:text-lg lg:text-xl leading-relaxed font-light italic" style={{ fontFamily: "var(--font-serif)" }}>
                   &ldquo;Completing our first cohort has validated what we set out to build – a programme where students go beyond learning about financial markets to operating within them. Seeing 100% of participants report improved career confidence and aspiration is exactly the outcome we designed this for. This is the foundation for what comes next across India.&rdquo;
                 </blockquote>
-                <div className="pt-1 flex items-center gap-2">
+                <div className="pt-1 flex flex-col sm:flex-row sm:items-center gap-0.5 sm:gap-2">
                   <span className="text-xs font-bold text-[#111111] uppercase tracking-wider">
                     Ratender Dhull
                   </span>
-                  <span className="text-xs text-[#C20F42] font-medium">• Founder &amp; CEO, ISFT by Derivion</span>
+                  <span className="text-xs text-[#C20F42] font-medium"><span className="hidden sm:inline">• </span>Founder &amp; CEO, ISFT by Derivion</span>
                 </div>
               </div>
             </div>
@@ -57,8 +57,8 @@ export default function Placement() {
 
           {/* ─── Right Column: Press Release Article Card ─── */}
           <AnimateOnScroll animation="fade-left" delay={150} duration={700} className="lg:col-span-5 flex flex-col justify-between border border-[#D9D9D9] rounded-2xl overflow-hidden bg-white shadow-sm">
-            <div className="p-6 space-y-4">
-              <div className="flex items-center justify-between">
+            <div className="p-5 sm:p-6 space-y-4">
+              <div className="flex flex-wrap items-center justify-between gap-2">
                 <span className="text-[10px] uppercase font-bold tracking-widest text-[#C20F42] bg-[#D6124B]/10 px-2.5 py-1 rounded">
                   Press Release • 23 April 2026
                 </span>
@@ -98,14 +98,14 @@ export default function Placement() {
 
             
               {/* Read Article + Expand Details */}
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+              <div className="flex flex-row flex-wrap items-center gap-x-5 gap-y-1">
 
                 {/* External Article */}
                 <a
                   href="https://thezishi.com/news/2026/04/all-participants-report-improved-financial-career-prospects-f112hei/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#C20F42] hover:text-[#B50F40] transition-colors"
+                  className="inline-flex items-center gap-1.5 py-2 text-xs font-bold text-[#C20F42] hover:text-[#B50F40] transition-colors"
                 >
                   <span>Read Full Article</span>
                   <ExternalLink className="w-3.5 h-3.5" />
@@ -116,7 +116,7 @@ export default function Placement() {
                   type="button"
                   onClick={() => setShowFullArticle(!showFullArticle)}
                   aria-expanded={showFullArticle}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#737373] hover:text-[#111111] transition-colors"
+                  className="inline-flex items-center gap-1.5 py-2 text-xs font-bold text-[#737373] hover:text-[#111111] transition-colors"
                 >
                   <span>{showFullArticle ? "Show Less" : "Article Details"}</span>
                   <ArrowRight

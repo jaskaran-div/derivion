@@ -13,7 +13,10 @@ export default function Navbar() {
   const [desktopCategoryOpen, setDesktopCategoryOpen] = useState<string | null>(null);
 
   // Nested structure for Programmes -> Categories -> Sub-Programmes
-  const programmesData = [
+  const programmesData: {
+    category: string;
+    subItems: { name: string; href: string; comingSoon?: boolean }[];
+  }[] = [
     {
       category: "Young Learners",
       subItems: [
@@ -31,37 +34,41 @@ export default function Navbar() {
       category: "ISFT Awards",
       subItems: [
         {
+          name: "ISFT Award in Introduction to Financial Trading",
+          href: "/programs/isft-award-in-introduction-to-financial-trading",
+        },
+        // Coming soon: listed below the live awards and not linked yet.
+        {
           name: "ISFT Award in Applied Financial Markets Trading",
           href: "/programs/isft-award-in-applied-financial-markets-trading",
+          comingSoon: true,
         },
         {
           name: "ISFT Award in Introduction to Financial Markets",
           href: "/programs/isft-award-in-introduction-to-financial-markets",
+          comingSoon: true,
         },
-        {
-          name: "ISFT Award in Introduction to Financial Trading",
-          href: "/programs/isft-award-in-introduction-to-financial-trading",
-        },
-        {
-          name: "ISFT Award in Introduction to Futures Trading",
-          href: "/programs/isft-award-in-introduction-to-futures-trading",
-        },
-        {
-          name: "ISFT Award in Introduction to Risk Management",
-          href: "/programs/isft-award-in-introduction-to-risk-management",
-        },
-        {
-          name: "ISFT Award in Introduction to Trading Government Bonds",
-          href: "/programs/isft-award-in-introduction-to-trading-government-bonds",
-        },
-        {
-          name: "ISFT Certificate in Introduction to Technical Analysis in Trading",
-          href: "/programs/isft-certificate-in-introduction-to-technical-analysis-in-trading",
-        },
-        {
-          name: "ISFT Award in Introduction to Behavioural Psychology in Trading",
-          href: "/programs/isft-award-in-introduction-to-behavioural-psychology-in-trading",
-        },
+        // Hidden for now: these ISFT awards are not on sale yet. Uncomment to restore.
+        // {
+        //   name: "ISFT Award in Introduction to Futures Trading",
+        //   href: "/programs/isft-award-in-introduction-to-futures-trading",
+        // },
+        // {
+        //   name: "ISFT Award in Introduction to Risk Management",
+        //   href: "/programs/isft-award-in-introduction-to-risk-management",
+        // },
+        // {
+        //   name: "ISFT Award in Introduction to Trading Government Bonds",
+        //   href: "/programs/isft-award-in-introduction-to-trading-government-bonds",
+        // },
+        // {
+        //   name: "ISFT Certificate in Introduction to Technical Analysis in Trading",
+        //   href: "/programs/isft-certificate-in-introduction-to-technical-analysis-in-trading",
+        // },
+        // {
+        //   name: "ISFT Award in Introduction to Behavioural Psychology in Trading",
+        //   href: "/programs/isft-award-in-introduction-to-behavioural-psychology-in-trading",
+        // },
       ],
     },
   ];
@@ -73,7 +80,7 @@ export default function Navbar() {
   const isContactActive = pathname === "/contact";
 
   return (
-    <header className="w-full bg-white/70 backdrop-blur-md border-b border-[#D9D9D9]/60 py-4 px-4 sm:px-8 mx-auto sticky top-0 z-50">
+    <header className="w-full bg-white/70 backdrop-blur-md border-b border-[#D9D9D9]/60 py-3 sm:py-4 px-4 sm:px-8 mx-auto sticky top-0 z-50">
       <nav aria-label="Primary" className="flex items-center justify-between gap-4">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-2.5 z-20 hover:opacity-90 transition-opacity">
@@ -82,7 +89,7 @@ export default function Navbar() {
               alt="Derivion Logo"
               width={50}
               height={50}
-              className="h-10 sm:h-6 w-auto object-contain"
+              className="h-8 sm:h-6 w-auto object-contain"
               priority
             />
         </Link>
@@ -171,15 +178,26 @@ export default function Navbar() {
                       className="absolute left-full top-0 pl-2 transition-all duration-200 z-50"
                     >
                       <div className="bg-white border border-[#D9D9D9] rounded-2xl shadow-xl p-2 w-64 space-y-1">
-                        {cat.subItems.map((sub, sIdx) => (
-                          <Link
-                            key={sIdx}
-                            href={sub.href}
-                            className="block px-4 py-2.5 rounded-xl text-xs sm:text-sm text-[#737373] hover:text-[#000000] hover:bg-[#D9D9D9]/40 transition-colors"
-                          >
-                            {sub.name}
-                          </Link>
-                        ))}
+                        {cat.subItems.map((sub, sIdx) =>
+                          sub.comingSoon ? (
+                            <span
+                              key={sIdx}
+                              aria-disabled="true"
+                              className="block px-4 py-2.5 rounded-xl text-xs sm:text-sm text-[#A3A3A3] cursor-default"
+                            >
+                              {sub.name}
+                              <ComingSoonTag />
+                            </span>
+                          ) : (
+                            <Link
+                              key={sIdx}
+                              href={sub.href}
+                              className="block px-4 py-2.5 rounded-xl text-xs sm:text-sm text-[#737373] hover:text-[#000000] hover:bg-[#D9D9D9]/40 transition-colors"
+                            >
+                              {sub.name}
+                            </Link>
+                          ),
+                        )}
                       </div>
                     </div>
                   </div>
@@ -248,7 +266,7 @@ export default function Navbar() {
         <nav
           id="mobile-navigation"
           aria-label="Mobile primary"
-          className="md:hidden mt-3 p-4 bg-[#D9D9D9]/20 rounded-2xl border border-[#D9D9D9]/60 space-y-2"
+          className="md:hidden mt-3 p-4 bg-[#D9D9D9]/20 rounded-2xl border border-[#D9D9D9]/60 space-y-2 max-h-[calc(100dvh-6rem)] overflow-y-auto overscroll-contain"
         >
           {/* Mobile Home */}
           <Link
@@ -300,16 +318,27 @@ export default function Navbar() {
                   hidden={mobileCategoryOpen !== cat.category}
                   className="pl-4 pr-2 space-y-1"
                 >
-                    {cat.subItems.map((sub, sIdx) => (
-                      <Link
-                        key={sIdx}
-                        href={sub.href}
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="block px-3 py-2 text-xs text-[#737373] hover:text-[#000000] rounded-md hover:bg-[#D9D9D9]/40"
-                      >
-                        {sub.name}
-                      </Link>
-                    ))}
+                    {cat.subItems.map((sub, sIdx) =>
+                      sub.comingSoon ? (
+                        <span
+                          key={sIdx}
+                          aria-disabled="true"
+                          className="block px-3 py-2.5 text-sm text-[#A3A3A3] cursor-default"
+                        >
+                          {sub.name}
+                          <ComingSoonTag />
+                        </span>
+                      ) : (
+                        <Link
+                          key={sIdx}
+                          href={sub.href}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="block px-3 py-2.5 text-sm text-[#737373] hover:text-[#000000] rounded-md hover:bg-[#D9D9D9]/40"
+                        >
+                          {sub.name}
+                        </Link>
+                      ),
+                    )}
                 </div>
               </div>
             ))}
@@ -352,5 +381,13 @@ export default function Navbar() {
         </nav>
       )}
     </header>
+  );
+}
+
+function ComingSoonTag() {
+  return (
+    <span className="ml-2 inline-block align-middle rounded-full bg-[#111111] px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-white">
+      Coming Soon
+    </span>
   );
 }

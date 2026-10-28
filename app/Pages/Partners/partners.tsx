@@ -87,7 +87,7 @@ const partnershipOptions = models.map((m) => m.title).concat("Other / Not sure y
 const cohortOptions = ["Under 25 learners", "25–100 learners", "100–500 learners", "500+ learners"];
 
 const inputClass =
-    "w-full px-4 py-3 rounded-xl bg-[#F9FAFB] border border-[#E5E7EB] text-xs sm:text-sm text-[#111111] placeholder-[#6B7280] focus:outline-none focus:border-[#ED1654] transition-colors";
+    "w-full px-4 py-3 rounded-xl bg-[#F9FAFB] border border-[#E5E7EB] text-base sm:text-sm text-[#111111] placeholder-[#6B7280] focus:outline-none focus:border-[#ED1654] transition-colors";
 const labelClass = "text-xs font-semibold text-[#374151]";
 
 function Required() {

@@ -37,13 +37,13 @@ export default function WhyUs() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6">
 
           {/* Top Left Card: Image + Text Side-by-Side */}
-          <AnimateOnScroll animation="fade-right" delay={100} duration={600} className="md:col-span-5 bg-[#D9D9D9]/20 border border-[#D9D9D9] rounded-2xl overflow-hidden p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5 hover:shadow-lg transition-all duration-300">
-            <div className="relative w-full sm:w-1/2 h-44 rounded-xl overflow-hidden bg-[#D9D9D9] shrink-0">
+          <AnimateOnScroll animation="fade-right" delay={100} duration={600} className="md:col-span-5 bg-[#D9D9D9]/20 border border-[#D9D9D9] rounded-2xl overflow-hidden p-4 sm:p-5 flex flex-row items-center gap-4 sm:gap-5 hover:shadow-lg transition-all duration-300">
+            <div className="relative w-24 h-24 sm:w-1/2 sm:h-44 rounded-xl overflow-hidden bg-[#D9D9D9] shrink-0">
               <Image
                 src="/Home/why.jpg"
                 alt="Practitioner-crafted education"
                 fill
-                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 20vw"
+                sizes="(max-width: 640px) 96px, (max-width: 768px) 50vw, 20vw"
                 className="object-cover"
               />
             </div>
@@ -58,7 +58,7 @@ export default function WhyUs() {
           </AnimateOnScroll>
 
           {/* Top Right Featured Large Card */}
-          <AnimateOnScroll animation="fade-left" delay={150} duration={600} className="md:col-span-7 bg-[#F5F5F5] text-[#111111] border border-[#E7E7E7] rounded-2xl overflow-hidden relative min-h-[220px] sm:min-h-[240px] group flex flex-col justify-end p-6 sm:p-8 hover:shadow-xl transition-all duration-300">
+          <AnimateOnScroll animation="fade-left" delay={150} duration={600} className="md:col-span-7 bg-[#F5F5F5] text-[#111111] border border-[#E7E7E7] rounded-2xl overflow-hidden relative min-h-[180px] sm:min-h-[240px] group flex flex-col justify-end p-5 sm:p-8 hover:shadow-xl transition-all duration-300">
             <div className="absolute inset-0 z-0 opacity-30 group-hover:scale-105 transition-transform duration-500">
               <Image
                 src="/Home/5 pillars.webp"
@@ -72,7 +72,7 @@ export default function WhyUs() {
               <span className="inline-block text-[10px] font-bold text-[#C20F42] uppercase tracking-widest bg-white/70 px-2.5 py-1 rounded border border-[#ED1654]/20">
                 COMPREHENSIVE ECOSYSTEM
               </span>
-              <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#111111]">
+              <h3 className="text-lg sm:text-2xl font-bold uppercase tracking-tight text-[#111111]">
                 INTEGRATED 5-PILLAR PROTECTION
               </h3>
               <p className="text-xs sm:text-sm text-[#525252] leading-relaxed">
@@ -82,7 +82,7 @@ export default function WhyUs() {
           </AnimateOnScroll>
 
           {/* Bottom Left Tall Card */}
-          <AnimateOnScroll animation="fade-right" delay={200} duration={600} className="md:col-span-5 bg-[#D9D9D9]/20 border border-[#D9D9D9] rounded-2xl overflow-hidden relative min-h-[200px] sm:min-h-[220px] group flex flex-col justify-end p-6 sm:p-8 hover:shadow-lg transition-all duration-300">
+          <AnimateOnScroll animation="fade-right" delay={200} duration={600} className="md:col-span-5 bg-[#D9D9D9]/20 border border-[#D9D9D9] rounded-2xl overflow-hidden relative min-h-[170px] sm:min-h-[220px] group flex flex-col justify-end p-5 sm:p-8 hover:shadow-lg transition-all duration-300">
             <div className="absolute inset-0 z-0 opacity-20 group-hover:scale-105 transition-transform duration-500">
               <Image
                 src="/Home/3rd.jpg"
@@ -106,13 +106,13 @@ export default function WhyUs() {
           </AnimateOnScroll>
 
           {/* Bottom Right Card: Image + Text Side-by-Side */}
-          <AnimateOnScroll animation="fade-left" delay={250} duration={600} className="md:col-span-7 bg-[#D9D9D9]/20 border border-[#D9D9D9] rounded-2xl overflow-hidden p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5 hover:shadow-lg transition-all duration-300">
-            <div className="relative w-full sm:w-1/2 h-48 rounded-xl overflow-hidden bg-[#D9D9D9] shrink-0">
+          <AnimateOnScroll animation="fade-left" delay={250} duration={600} className="md:col-span-7 bg-[#D9D9D9]/20 border border-[#D9D9D9] rounded-2xl overflow-hidden p-4 sm:p-5 flex flex-row items-center gap-4 sm:gap-5 hover:shadow-lg transition-all duration-300">
+            <div className="relative w-24 h-24 sm:w-1/2 sm:h-48 rounded-xl overflow-hidden bg-[#D9D9D9] shrink-0">
               <Image
                 src="/Home/case.jpg"
                 alt="Reconstructed Case Studies"
                 fill
-                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 30vw"
+                sizes="(max-width: 640px) 96px, (max-width: 768px) 50vw, 30vw"
                 className="object-cover"
               />
             </div>

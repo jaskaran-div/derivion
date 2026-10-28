@@ -1,6 +1,6 @@
 
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import {
   PROGRAMMES,
   getProgrammeBySlug,
@@ -64,6 +64,11 @@ export default async function ProgramPage({ params }: Props) {
   const programme = getProgrammeBySlug(slug);
 
   if (!programme) {
+    // Coming-soon programmes have no page yet; send visitors to the catalogue
+    // rather than a 404.
+    if (PROGRAMMES.some((p) => p.slug === slug && p.comingSoon)) {
+      redirect("/programs");
+    }
     notFound();
   }
 
@@ -72,7 +77,8 @@ export default async function ProgramPage({ params }: Props) {
   // evenly instead of every page pointing at the same three.
   const isIsftAward = programme.category === "ISFT Awards";
   const group = PROGRAMMES.filter(
-    (other) => (other.category === "ISFT Awards") === isIsftAward,
+    (other) =>
+      !other.comingSoon && (other.category === "ISFT Awards") === isIsftAward,
   );
   const position = group.findIndex((other) => other.slug === programme.slug);
   // Pass only what the cards render so other programmes' full curricula are

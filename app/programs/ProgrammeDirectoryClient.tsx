@@ -67,7 +67,7 @@ export default function ProgrammeDirectoryClient() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search by topic, keyword, or age group..."
-                  className="w-full pl-11 pr-4 py-3 rounded-full bg-[#F3F4F6] border border-[#E5E7EB] text-xs sm:text-sm text-[#111111] placeholder-[#6B7280] focus:outline-none focus:border-[#ED1654] transition-colors"
+                  className="w-full pl-11 pr-4 py-3 rounded-full bg-[#F3F4F6] border border-[#E5E7EB] text-base sm:text-sm text-[#111111] placeholder-[#6B7280] focus:outline-none focus:border-[#ED1654] transition-colors"
                 />
               </div>
 
@@ -144,6 +144,13 @@ export default function ProgrammeDirectoryClient() {
                           {programme.category}
                         </span>
                       </div>
+                      {programme.comingSoon && (
+                        <div className="absolute bottom-3 left-3">
+                          <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#111111] text-white shadow-sm">
+                            Coming Soon
+                          </span>
+                        </div>
+                      )}
                       {/* Age badge top-right */}
                       <div className="absolute top-3 right-3">
                         <span className="px-2.5 py-1 rounded-full text-[10px] font-semibold bg-white text-[#374151] border border-[#E5E7EB] shadow-sm">
@@ -161,7 +168,7 @@ export default function ProgrammeDirectoryClient() {
                       </div>
 
                       {/* Title */}
-                      <h2 className="text-base sm:text-lg font-bold text-[#111111] leading-snug group-hover:text-[#C20F42] transition-colors">
+                      <h2 className={`text-base sm:text-lg font-bold text-[#111111] leading-snug transition-colors ${programme.comingSoon ? "" : "group-hover:text-[#C20F42]"}`}>
                         {programme.title}
                       </h2>
 
@@ -171,13 +178,16 @@ export default function ProgrammeDirectoryClient() {
                       </p>
 
                       {/* CTA button */}
-                      <Link
-                        href={`/programs/${programme.slug}`}
-                        className="mt-1 w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-[#F3F4F6] hover:bg-[#D6124B] text-[#111111] hover:text-white text-xs font-semibold transition-all duration-200"
-                      >
-                        <span>View Programme</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </Link>
+                      {/* Coming-soon programmes have no page yet */}
+                      {!programme.comingSoon && (
+                        <Link
+                          href={`/programs/${programme.slug}`}
+                          className="mt-1 w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-[#F3F4F6] hover:bg-[#D6124B] text-[#111111] hover:text-white text-xs font-semibold transition-all duration-200"
+                        >
+                          <span>View Programme</span>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </Link>
+                      )}
                     </div>
                   </div>
                 ))}

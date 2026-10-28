@@ -155,20 +155,20 @@ export default function AboutUsPage() {
             </AnimateOnScroll>
 
             {/* Overlapping Stats Card */}
-            <AnimateOnScroll animation="fade-left" delay={150} duration={700} className="lg:col-span-5 flex items-center justify-center lg:justify-end -space-x-4 py-4">
-              <div className="w-32 h-32 sm:w-44 sm:h-44 rounded-full border border-[#D9D9D9] bg-white shadow-md flex flex-col items-center justify-center text-center p-3 hover:scale-105 transition-transform">
+            <AnimateOnScroll animation="fade-left" delay={150} duration={700} className="lg:col-span-5 flex items-center justify-center lg:justify-end -space-x-3 sm:-space-x-4 py-4">
+              <div className="w-[7.25rem] h-[7.25rem] sm:w-44 sm:h-44 rounded-full border border-[#D9D9D9] bg-white shadow-md flex flex-col items-center justify-center text-center p-3 hover:scale-105 transition-transform">
                 <span className="text-2xl sm:text-4xl font-bold text-[#C20F42]">{programmeCount}</span>
                 <span className="text-[10px] sm:text-xs text-[#737373] mt-1 font-medium max-w-[90px]">
                   Core Programmes
                 </span>
               </div>
-              <div className="w-32 h-32 sm:w-44 sm:h-44 rounded-full border border-[#D9D9D9] bg-[#F5F5F5] text-[#111111] shadow-xl flex flex-col items-center justify-center text-center p-3 hover:scale-105 transition-transform z-10">
+              <div className="w-[7.25rem] h-[7.25rem] sm:w-44 sm:h-44 rounded-full border border-[#D9D9D9] bg-[#F5F5F5] text-[#111111] shadow-xl flex flex-col items-center justify-center text-center p-3 hover:scale-105 transition-transform z-10">
                 <span className="text-2xl sm:text-4xl font-bold text-[#C20F42]">5</span>
                 <span className="text-[10px] sm:text-xs text-[#525252] mt-1 font-medium max-w-[90px]">
                   Key Literacies
                 </span>
               </div>
-              <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-full border border-[#D9D9D9] bg-white shadow-sm flex flex-col items-center justify-center text-center p-3 hover:scale-105 transition-transform">
+              <div className="w-[6.5rem] h-[6.5rem] sm:w-36 sm:h-36 rounded-full border border-[#D9D9D9] bg-white shadow-sm flex flex-col items-center justify-center text-center p-3 hover:scale-105 transition-transform">
                 <span className="text-xl sm:text-3xl font-bold text-[#000000]">100%</span>
                 <span className="text-[10px] sm:text-xs text-[#737373] mt-1 font-medium max-w-[80px]">
                   Practitioner Focus

@@ -21,7 +21,7 @@ export default function ProgrammesDirectoryPage() {
           { name: "Programmes", pathname: "/programs" },
         ]}
       />
-      <ProgrammeListJsonLd programmes={PROGRAMMES} />
+      <ProgrammeListJsonLd programmes={PROGRAMMES.filter((p) => !p.comingSoon)} />
       <ProgrammeDirectoryClient />
     </>
   );

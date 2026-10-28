@@ -52,14 +52,14 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-[#F8F9FA] text-[#111111] pt-16 pb-8 px-4 sm:px-8 border-t border-[#E5E7EB]">
-      <div className="max-w-7xl mx-auto space-y-12">
+    <footer className="w-full bg-[#F8F9FA] text-[#111111] pt-10 sm:pt-16 pb-24 sm:pb-8 px-4 sm:px-8 border-t border-[#E5E7EB]">
+      <div className="max-w-7xl mx-auto space-y-8 sm:space-y-12">
 
         {/* ─── Main Footer Content Grid ─── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-8 pt-4">
+        <div className="grid grid-cols-2 md:grid-cols-12 gap-x-6 gap-y-8 sm:gap-8 pt-4">
 
           {/* Brand Info (Col 1) */}
-          <div className="sm:col-span-2 md:col-span-4 space-y-4">
+          <div className="col-span-2 md:col-span-4 space-y-4">
             <Link href="/" className="inline-flex items-center gap-3 w-fit">
               <Image
                 src="/Home/derivion-logo.png"
@@ -110,12 +110,12 @@ export default function Footer() {
             <h2 className="text-xs font-bold uppercase tracking-wider text-[#111111]">
               Navigation
             </h2>
-            <ul className="space-y-2.5">
+            <ul className="space-y-1.5 sm:space-y-2.5">
               {quickLinks.map((link, idx) => (
                 <li key={idx}>
                   <Link
                     href={link.href}
-                    className="text-xs sm:text-sm text-[#4B5563] hover:text-[#C20F42] transition-colors"
+                    className="inline-block py-1 sm:py-0 text-sm text-[#4B5563] hover:text-[#C20F42] transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -129,12 +129,12 @@ export default function Footer() {
             <h2 className="text-xs font-bold uppercase tracking-wider text-[#111111]">
               Programmes
             </h2>
-            <ul className="space-y-2.5">
+            <ul className="space-y-1.5 sm:space-y-2.5">
               {programmeLinks.map((prog, idx) => (
                 <li key={idx}>
                   <Link
                     href={prog.href}
-                    className="text-xs sm:text-sm text-[#4B5563] hover:text-[#C20F42] transition-colors block line-clamp-1"
+                    className="block py-1 sm:py-0 text-sm text-[#4B5563] hover:text-[#C20F42] transition-colors sm:line-clamp-1"
                   >
                     {prog.name}
                   </Link>
@@ -144,7 +144,7 @@ export default function Footer() {
           </div>
 
           {/* Contact Details (Col 4) */}
-          <div className="sm:col-span-2 md:col-span-3 space-y-4">
+          <div className="col-span-2 md:col-span-3 space-y-4">
             <h2 className="text-xs font-bold uppercase tracking-wider text-[#111111]">
               Get in Touch
             </h2>
@@ -155,13 +155,13 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-[#C20F42] shrink-0" />
-                <a href="mailto:info@derivion.in" className="hover:text-[#C20F42] transition-colors">
+                <a href="mailto:info@derivion.in" className="py-1 sm:py-0 hover:text-[#C20F42] transition-colors">
                   info@derivion.in
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[#C20F42] shrink-0" />
-                <a href="tel:+917056057913" className="hover:text-[#C20F42] transition-colors">
+                <a href="tel:+917056057913" className="py-1 sm:py-0 hover:text-[#C20F42] transition-colors">
                   +91 70560 57913
                 </a>
               </li>
@@ -171,7 +171,7 @@ export default function Footer() {
               </li>
                <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[#C20F42] shrink-0" />
-                <a href="tel:+447990064079" className="hover:text-[#C20F42] transition-colors">
+                <a href="tel:+447990064079" className="py-1 sm:py-0 hover:text-[#C20F42] transition-colors">
                   +44 7990 064079
                 </a>
               </li>
@@ -189,10 +189,10 @@ export default function Footer() {
           <p>&copy; {new Date().getFullYear()} Derivion. All rights reserved.</p>
 
           <div className="flex items-center gap-6">
-            <Link href="/privacy-policy" className="hover:text-[#111111] transition-colors">
+            <Link href="/privacy-policy" className="py-2 sm:py-0 hover:text-[#111111] transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms-of-service" className="hover:text-[#111111] transition-colors">
+            <Link href="/terms-of-service" className="py-2 sm:py-0 hover:text-[#111111] transition-colors">
               Terms of Service
             </Link>
           </div>
@@ -206,10 +206,10 @@ export default function Footer() {
         rel="noopener noreferrer"
         aria-label="Visit the Derivion Academy blog"
         title="Visit the Derivion Academy blog"
-        className="fixed bottom-5 right-5 z-50 flex h-20 w-20 items-center justify-center overflow-hidden rounded-full border border-[#E5E7EB] bg-white shadow-lg transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ED1654] focus-visible:ring-offset-2 sm:bottom-6 sm:right-6 sm:h-24 sm:w-24"
+        className="fixed bottom-4 right-4 z-50 flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border border-[#E5E7EB] bg-white shadow-lg transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ED1654] focus-visible:ring-offset-2 sm:bottom-6 sm:right-6 sm:h-24 sm:w-24"
       >
         <Image
-          src="https://isftglobal.com/wp-content/uploads/2026/10/Chiaki.__1_-removebg-preview.png"
+          src="/Home/blog-button.png"
           alt=""
           width={256}
           height={256}

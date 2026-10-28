@@ -22,6 +22,10 @@ export interface Programme {
   shortTitle: string;
   brochure: string;
   category: "Young Learners" | "Adult Learners" | "ISFT Awards";
+  /** Shown with a "Coming Soon" badge; enrolment CTAs register interest instead. */
+  comingSoon?: boolean;
+  /** Live course on the Derivion Academy LMS; enrolment CTAs link here instead of /contact. */
+  enrollUrl?: string;
   targetAge: string;
   coreReflex: string;
   tagline: string;
@@ -462,6 +466,7 @@ export const PROGRAMMES: Programme[] = [
     shortTitle: "Applied Financial Markets Trading",
     brochure: "ISFT-Award in Applied Financial Markets Trading.pdf",
     category: "ISFT Awards",
+    comingSoon: true,
     targetAge: "Level 3 qualification",
     coreReflex: "Understand, assess and trade with discipline",
     tagline: "Trade with the forces that move the market.",
@@ -629,6 +634,7 @@ export const PROGRAMMES: Programme[] = [
     shortTitle: "Introduction to Financial Markets",
     brochure: "ISFT-Award in Introduction to Financial Markets.pdf",
     category: "ISFT Awards",
+    comingSoon: true,
     targetAge: "Level 3 qualification",
     coreReflex: "Build a broad market map before specialising",
     tagline: "Five markets, one shared vocabulary.",
@@ -811,6 +817,7 @@ export const PROGRAMMES: Programme[] = [
     shortTitle: "Introduction to Financial Trading",
     brochure: "ISFT-Award in Introduction to Financial Trading.pdf",
     category: "ISFT Awards",
+    enrollUrl: "https://www.derivionacademy.in/courses/906211",
     targetAge: "Entry-level learner",
     coreReflex: "Understand the market before placing a trade",
     tagline: "Understand the market. Trade with discipline.",
@@ -956,6 +963,7 @@ export const PROGRAMMES: Programme[] = [
       },
     ],
   },
+  /* Hidden for now: these ISFT awards are not on sale yet. Uncomment to restore.
   {
     id: "isft-award-in-introduction-to-risk-management",
     slug: "isft-award-in-introduction-to-risk-management",
@@ -1881,6 +1889,7 @@ export const PROGRAMMES: Programme[] = [
       },
     ],
   },
+  */
   {
     id: "harvest-literacy",
     slug: "harvest-literacy",
@@ -2117,10 +2126,11 @@ export function getAllProgrammes(): Programme[] {
   return PROGRAMMES;
 }
 
+// Coming-soon programmes are listed in the catalogue but have no detail page yet.
 export function getProgrammeBySlug(slug: string): Programme | undefined {
-  return PROGRAMMES.find((p) => p.slug === slug);
+  return PROGRAMMES.find((p) => p.slug === slug && !p.comingSoon);
 }
 
 export function getAllProgrammeSlugs(): string[] {
-  return PROGRAMMES.map((p) => p.slug);
+  return PROGRAMMES.filter((p) => !p.comingSoon).map((p) => p.slug);
 }

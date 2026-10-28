@@ -77,12 +77,14 @@ export default function Hero() {
     };
 
     return (
-        <section className="w-full bg-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+        <section className="w-full bg-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-6 flex flex-col sm:block">
 
             {/* ─── Top Hero Media Frame ─── */}
             <AnimateOnScroll animation="fade-up" duration={700}>
-                <div className="relative w-full h-[380px] sm:h-[440px] md:h-[500px] rounded-3xl sm:rounded-[40px] overflow-hidden bg-[#141414] shadow-sm group">
+                <div className="relative w-full sm:h-[440px] md:h-[500px] rounded-3xl sm:rounded-[40px] overflow-hidden bg-white sm:bg-[#141414] border border-[#E5E7EB] sm:border-0 shadow-sm group">
 
+                    {/* Media: a fixed-height band on phones, the full card from sm up */}
+                    <div className="relative h-[220px] sm:absolute sm:inset-0 sm:h-auto bg-[#141414]">
                     <Image
                         src="/Home/hero-section.jpg"
                         alt=""
@@ -146,11 +148,12 @@ export default function Hero() {
 
                     {/* Dark Gradient */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-transparent pointer-events-none" />
+                    </div>
 
 
 
                     {/* ─── Bottom-Right Floating Info Card ─── */}
-                    <div className="absolute bottom-0 right-0 bg-white p-4 sm:pt-6 sm:pl-8 sm:pr-6 sm:pb-6 rounded-tl-2xl sm:rounded-tl-[36px] max-w-full sm:max-w-xl md:max-w-2xl shadow-lg">
+                    <div className="relative sm:absolute sm:bottom-0 sm:right-0 bg-white p-4 sm:pt-6 sm:pl-8 sm:pr-6 sm:pb-6 rounded-tl-2xl sm:rounded-tl-[36px] max-w-full sm:max-w-xl md:max-w-2xl sm:shadow-lg">
 
                         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-6">
 
@@ -175,7 +178,7 @@ export default function Hero() {
             </AnimateOnScroll>
 
             {/* ─── Bottom Content Row ─── */}
-            <div className="mt-8 sm:mt-12 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+            <div className="order-first sm:order-none mb-5 sm:mb-0 sm:mt-12 grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 lg:gap-8 items-center">
 
                 {/* Left Heading */}
                 <AnimateOnScroll
@@ -185,11 +188,11 @@ export default function Hero() {
                     className="lg:col-span-7 space-y-4"
                 >
                     <h1
-                        className="text-3xl sm:text-5xl md:text-6xl font-semibold text-[#000000] tracking-tight leading-[1.1]"
+                        className="text-[34px] sm:text-5xl md:text-6xl font-semibold text-[#000000] tracking-tight leading-[1.1]"
                         style={{ fontFamily: "var(--font-sans)" }}
                     >
                         <span className="text-[#000000]">Derivion</span>
-                        <br className="hidden sm:inline" /> Enabling trained risk
+                        <br /> Enabling trained risk
                     </h1>
                 </AnimateOnScroll>
 
@@ -198,9 +201,9 @@ export default function Hero() {
                     animation="fade-left"
                     delay={200}
                     duration={700}
-                    className="lg:col-span-5 flex items-center justify-center lg:justify-end -space-x-3 sm:-space-x-4 py-2"
+                    className="lg:col-span-5 flex items-center justify-start sm:justify-center lg:justify-end -space-x-3 sm:-space-x-4 sm:py-2"
                 >
-                    <div className="w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full border border-[#D9D9D9] bg-white/90 backdrop-blur-sm flex flex-col items-center justify-center text-center p-3 shrink-0 shadow-sm hover:z-10 transition-transform duration-300 hover:scale-105">
+                    <div className="w-24 h-24 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full border border-[#D9D9D9] bg-white/90 backdrop-blur-sm flex flex-col items-center justify-center text-center p-3 shrink-0 shadow-sm hover:z-10 transition-transform duration-300 hover:scale-105">
                         <span className="text-xl sm:text-3xl font-bold text-[#C20F42]">
                             100%
                         </span>
@@ -210,7 +213,7 @@ export default function Hero() {
                         </span>
                     </div>
 
-                    <div className="w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full border border-[#D9D9D9] bg-white/90 backdrop-blur-sm flex flex-col items-center justify-center text-center p-3 shrink-0 shadow-sm hover:z-10 transition-transform duration-300 hover:scale-105">
+                    <div className="w-24 h-24 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full border border-[#D9D9D9] bg-white/90 backdrop-blur-sm flex flex-col items-center justify-center text-center p-3 shrink-0 shadow-sm hover:z-10 transition-transform duration-300 hover:scale-105">
                         <span className="text-xl sm:text-3xl font-bold text-[#000000]">
                             {PROGRAMMES.length}
                         </span>

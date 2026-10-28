@@ -94,6 +94,37 @@ export default function ProgramDetailClient({
     }
   };
 
+  // Live LMS courses link straight to the course; everything else goes to admissions.
+  const contactHref = `/contact?programme=${encodeURIComponent(programme.slug)}`;
+  const renderEnrollLink = (label: string, className: string) => {
+    const text = programme.enrollUrl
+      ? "Get This Course"
+      : programme.comingSoon
+        ? "Coming Soon · Register Interest"
+        : label;
+    const content = (
+      <>
+        <span>{text}</span>
+        <ArrowRight className="w-4 h-4" />
+      </>
+    );
+    return programme.enrollUrl ? (
+      <a
+        href={programme.enrollUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={() => trackEvent("enroll_click", { programme: programme.slug })}
+        className={className}
+      >
+        {content}
+      </a>
+    ) : (
+      <Link href={contactHref} className={className}>
+        {content}
+      </Link>
+    );
+  };
+
   const titleWords = programme.title.split(" ");
   const firstWord = titleWords[0];
   const restWords = titleWords.slice(1).join(" ");
@@ -131,6 +162,11 @@ export default function ProgramDetailClient({
                 <span className="px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#D6124B]/10 text-[#C20F42] border border-[#ED1654]/20">
                   {programme.category}
                 </span>
+                {programme.comingSoon && (
+                  <span className="px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#111111] text-white">
+                    Coming Soon
+                  </span>
+                )}
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-[#F5F5F5] text-[#111111] border border-[#D9D9D9]">
                   <span className="w-2 h-2 rounded-full bg-[#D6124B] animate-pulse" />
                   Target: {programme.targetAge}
@@ -201,13 +237,10 @@ export default function ProgramDetailClient({
 
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
-                <Link
-                  href={`/contact?programme=${encodeURIComponent(programme.slug)}`}
-                  className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-[#D6124B] hover:bg-[#B50F40] text-white text-xs sm:text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-lg active:scale-95"
-                >
-                  <span>Enroll For Cohort</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
+                {renderEnrollLink(
+                  "Enroll For Cohort",
+                  "inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-[#D6124B] hover:bg-[#B50F40] text-white text-xs sm:text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-lg active:scale-95"
+                )}
 
                 <button
                   type="button"
@@ -958,18 +991,19 @@ export default function ProgramDetailClient({
                 </span>?
               </h2>
               <p className="text-[#525252] text-xs sm:text-sm font-normal">
-                Next cohort starts in {programme.nextCohort}. Cohort sizes are intentionally limited.
+                {programme.comingSoon
+                  ? "This programme is launching soon. Register your interest and we will let you know when enrolment opens."
+                  : programme.enrollUrl
+                    ? "Enrolment is open now on the Derivion Academy LMS. Start learning at your own pace."
+                    : `Next cohort starts in ${programme.nextCohort}. Cohort sizes are intentionally limited.`}
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
-              <Link
-                href={`/contact?programme=${encodeURIComponent(programme.slug)}`}
-                className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#D6124B] hover:bg-[#B50F40] text-white text-xs sm:text-sm font-semibold transition-all duration-200 shadow-xl active:scale-95"
-              >
-                <span>Enroll in Cohort</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+              {renderEnrollLink(
+                "Enroll in Cohort",
+                "w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#D6124B] hover:bg-[#B50F40] text-white text-xs sm:text-sm font-semibold transition-all duration-200 shadow-xl active:scale-95"
+              )}
             </div>
           </AnimateOnScroll>
         </section>
@@ -1038,7 +1072,7 @@ export default function ProgramDetailClient({
                   onChange={(event) =>
                     setBrochureLead({ ...brochureLead, fullName: event.target.value })
                   }
-                  className="w-full rounded-xl border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-3 text-sm text-[#111111] focus:border-[#ED1654] focus:outline-none"
+                  className="w-full rounded-xl border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-3 text-base sm:text-sm text-[#111111] focus:border-[#ED1654] focus:outline-none"
                 />
               </div>
               <div className="space-y-1.5">
@@ -1056,7 +1090,7 @@ export default function ProgramDetailClient({
                   onChange={(event) =>
                     setBrochureLead({ ...brochureLead, phone: event.target.value })
                   }
-                  className="w-full rounded-xl border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-3 text-sm text-[#111111] focus:border-[#ED1654] focus:outline-none"
+                  className="w-full rounded-xl border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-3 text-base sm:text-sm text-[#111111] focus:border-[#ED1654] focus:outline-none"
                 />
               </div>
               <div className="space-y-1.5">
@@ -1074,7 +1108,7 @@ export default function ProgramDetailClient({
                   onChange={(event) =>
                     setBrochureLead({ ...brochureLead, email: event.target.value })
                   }
-                  className="w-full rounded-xl border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-3 text-sm text-[#111111] focus:border-[#ED1654] focus:outline-none"
+                  className="w-full rounded-xl border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-3 text-base sm:text-sm text-[#111111] focus:border-[#ED1654] focus:outline-none"
                 />
               </div>
               <button

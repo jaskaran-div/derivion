@@ -8,10 +8,9 @@ import AnimateOnScroll from "@/app/components/AnimateOnScroll";
 export default function Masters() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  // Portraits are only shown when they are real photographs of the person.
-  // The previous images for cards 2–5 carried OpenAI C2PA credentials
-  // (AI-generated), and the former-employer titles on cards 4–5 are awaiting
-  // evidence; see docs/seo/trust-audit.md before restoring either.
+  // Portraits for cards 2–5 were restored at the owner's request; they carry
+  // OpenAI C2PA credentials (AI-generated). The former-employer titles on
+  // cards 4–5 are still awaiting evidence; see docs/seo/trust-audit.md.
   const cards: {
     id: number;
     name: string;
@@ -26,7 +25,7 @@ export default function Masters() {
       title: "Head Educator",
       specialty: "Capital discipline, budgeting, and market behaviour",
       description: "Guides learners to understand spending, saving, and long-term decision-making with real-world financial reasoning.",
-      image: "https://isftglobal.com/wp-content/uploads/2026/03/403773cd-49f6-4e41-a052-145c80b42b49.jpg",
+      image: "/mentors/neil-crammond.jpg",
     },
     {
       id: 2,
@@ -34,6 +33,7 @@ export default function Masters() {
       title: "Trainer",
       specialty: "Payments, fraud awareness, and digital spending habits",
       description: "Helps students build healthy digital habits, recognise financial traps, and use tools responsibly.",
+      image: "/mentors/robert-russel.png",
     },
     {
       id: 3,
@@ -41,6 +41,7 @@ export default function Masters() {
       title: "Trainer",
       specialty: "Verification, synthetic media, and algorithmic trust",
       description: "Teaches learners how to question digital content, identify manipulation, and think critically in AI-driven environments.",
+      image: "/mentors/david-michael.png",
     },
     {
       id: 4,
@@ -48,6 +49,7 @@ export default function Masters() {
       title: "Trainer",
       specialty: "Online safety, redressal, and digital rights",
       description: "Equips students with practical knowledge around privacy, cyber hygiene, and taking the right actions when issues arise.",
+      image: "/mentors/jon-harman.png",
     },
     {
       id: 5,
@@ -55,6 +57,7 @@ export default function Masters() {
       title: "Trainer",
       specialty: "Confidence, decision-making, and digital resilience",
       description: "Builds everyday judgment, courage, and calm in high-pressure online and financial situations.",
+      image: "/Home/alex.png",
     },
   ];
 

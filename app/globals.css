@@ -37,6 +37,9 @@
 
 html, body {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  /* Slide-in animations start offset sideways; clip (unlike hidden) keeps the
+     sticky header working while preventing horizontal page scroll on phones. */
+  overflow-x: clip;
 }
 
 body {
@@ -79,6 +82,14 @@ main section[id] { scroll-margin-top: 8rem; }
 .anim-hidden.anim-fade-left  { transform: translateX(40px); }
 .anim-hidden.anim-fade-right { transform: translateX(-40px); }
 .anim-hidden.anim-scale-up   { transform: scale(0.93); }
+
+/* Smaller travel on phones so content doesn't swing in from off-screen. */
+@media (max-width: 639px) {
+  .anim-hidden.anim-fade-up    { transform: translateY(20px); }
+  .anim-hidden.anim-fade-down  { transform: translateY(-20px); }
+  .anim-hidden.anim-fade-left,
+  .anim-hidden.anim-fade-right { transform: translateY(20px); }
+}
 .anim-hidden.anim-fade-in    { transform: none; }
 
 /* Visible (animated-in) state */

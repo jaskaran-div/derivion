@@ -81,26 +81,31 @@ export default function OurProgrammes() {
 
         {/* ─── Compact User-Friendly Grid Layout (3 Columns) ─── */}
         <AnimateOnScroll animation="fade-up" delay={200} duration={700}>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="-mx-4 px-4 scroll-px-4 flex gap-4 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-2 sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-6 sm:overflow-visible">
             {filteredProgrammes.slice(0, 6).map((prog) => (
               <div
                 key={prog.id}
-                className="bg-white border border-[#E5E7EB] rounded-2xl p-5 flex flex-col justify-between hover:shadow-md hover:border-[#D1D5DB] transition-all duration-300 group space-y-4"
+                className="w-[82%] shrink-0 snap-start sm:w-auto bg-white border border-[#E5E7EB] rounded-2xl p-4 sm:p-5 flex flex-col justify-between hover:shadow-md hover:border-[#D1D5DB] transition-all duration-300 group space-y-4"
               >
                 <div className="space-y-3.5">
                   {/* Image Frame */}
-                  <div className="relative w-full h-44 rounded-xl overflow-hidden bg-[#F3F4F6]">
+                  <div className="relative w-full h-40 sm:h-44 rounded-xl overflow-hidden bg-[#F3F4F6]">
                     <Image
                       src={prog.heroImage}
                       alt={prog.title}
                       fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      sizes="(max-width: 640px) 82vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-3 left-3 flex items-center gap-2">
                       <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-md bg-white/95 text-[#C20F42] shadow-sm">
                         {prog.category}
                       </span>
+                      {prog.comingSoon && (
+                        <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-md bg-[#111111] text-white shadow-sm">
+                          Coming Soon
+                        </span>
+                      )}
                     </div>
                     <div className="absolute bottom-3 right-3">
                       <span className="text-[10px] font-semibold text-white bg-black/60 backdrop-blur-sm px-2.5 py-1 rounded-md">
@@ -119,9 +124,13 @@ export default function OurProgrammes() {
                     </div>
 
                     <h3 className="text-base sm:text-lg font-bold text-[#111111] leading-snug line-clamp-2">
-                      <Link href={`/programs/${prog.slug}`} className="hover:text-[#C20F42] transition-colors">
-                        {prog.title}
-                      </Link>
+                      {prog.comingSoon ? (
+                        prog.title
+                      ) : (
+                        <Link href={`/programs/${prog.slug}`} className="hover:text-[#C20F42] transition-colors">
+                          {prog.title}
+                        </Link>
+                      )}
                     </h3>
 
                     <p className="text-xs text-[#6B7280] leading-relaxed line-clamp-2">
@@ -130,16 +139,18 @@ export default function OurProgrammes() {
                   </div>
                 </div>
 
-                {/* Action Button */}
-                <div className="pt-2">
-                  <Link
-                    href={`/programs/${prog.slug}`}
-                    className="w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-[#F3F4F6] hover:bg-[#D6124B] text-[#111111] hover:text-white text-xs font-semibold transition-all duration-200"
-                  >
-                    <span>Explore Programme</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
+                {/* Action Button (coming-soon programmes have no page yet) */}
+                {!prog.comingSoon && (
+                  <div className="pt-2">
+                    <Link
+                      href={`/programs/${prog.slug}`}
+                      className="w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-[#F3F4F6] hover:bg-[#D6124B] text-[#111111] hover:text-white text-xs font-semibold transition-all duration-200"
+                    >
+                      <span>Explore Programme</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+                )}
               </div>
             ))}
           </div>

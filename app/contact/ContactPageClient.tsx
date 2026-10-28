@@ -79,7 +79,7 @@ function ContactFormInner() {
   };
 
   return (
-    <div className="bg-white text-[#111111] p-6 sm:p-10 rounded-3xl border border-[#E6E6E6] shadow-xl space-y-6">
+    <div className="bg-white text-[#111111] p-5 sm:p-10 rounded-3xl border border-[#E6E6E6] shadow-xl space-y-6">
       <div className="space-y-1">
         <span className="text-xs font-bold uppercase tracking-widest text-[#C20F42]">
           Admissions &amp; Inquiries
@@ -145,7 +145,7 @@ function ContactFormInner() {
                   setFormData({ ...formData, fullName: e.target.value })
                 }
                 placeholder="e.g. Aryan Sharma"
-                className="w-full px-4 py-3 rounded-xl bg-[#F9FAFB] border border-[#E5E7EB] text-xs sm:text-sm text-[#111111] placeholder-[#6B7280] focus:outline-none focus:border-[#ED1654] transition-colors"
+                className="w-full px-4 py-3 rounded-xl bg-[#F9FAFB] border border-[#E5E7EB] text-base sm:text-sm text-[#111111] placeholder-[#6B7280] focus:outline-none focus:border-[#ED1654] transition-colors"
               />
             </div>
 
@@ -166,7 +166,7 @@ function ContactFormInner() {
                   setFormData({ ...formData, email: e.target.value })
                 }
                 placeholder="aryan@example.com"
-                className="w-full px-4 py-3 rounded-xl bg-[#F9FAFB] border border-[#E5E7EB] text-xs sm:text-sm text-[#111111] placeholder-[#6B7280] focus:outline-none focus:border-[#ED1654] transition-colors"
+                className="w-full px-4 py-3 rounded-xl bg-[#F9FAFB] border border-[#E5E7EB] text-base sm:text-sm text-[#111111] placeholder-[#6B7280] focus:outline-none focus:border-[#ED1654] transition-colors"
               />
             </div>
           </div>
@@ -189,7 +189,7 @@ function ContactFormInner() {
                   setFormData({ ...formData, phone: e.target.value })
                 }
                 placeholder="+91 98765 43210"
-                className="w-full px-4 py-3 rounded-xl bg-[#F9FAFB] border border-[#E5E7EB] text-xs sm:text-sm text-[#111111] placeholder-[#6B7280] focus:outline-none focus:border-[#ED1654] transition-colors"
+                className="w-full px-4 py-3 rounded-xl bg-[#F9FAFB] border border-[#E5E7EB] text-base sm:text-sm text-[#111111] placeholder-[#6B7280] focus:outline-none focus:border-[#ED1654] transition-colors"
               />
             </div>
 
@@ -206,7 +206,7 @@ function ContactFormInner() {
                 onChange={(e) =>
                   setFormData({ ...formData, programme: e.target.value })
                 }
-                className="w-full px-4 py-3 rounded-xl bg-[#F9FAFB] border border-[#E5E7EB] text-xs sm:text-sm text-[#111111] focus:outline-none focus:border-[#ED1654] transition-colors"
+                className="w-full px-4 py-3 rounded-xl bg-[#F9FAFB] border border-[#E5E7EB] text-base sm:text-sm text-[#111111] focus:outline-none focus:border-[#ED1654] transition-colors"
               >
                 {PROGRAMMES.map((prog) => (
                   <option key={prog.slug} value={prog.slug} className="bg-white text-[#111111]">
@@ -230,7 +230,7 @@ function ContactFormInner() {
                 onChange={(e) =>
                   setFormData({ ...formData, background: e.target.value })
                 }
-                className="w-full px-4 py-3 rounded-xl bg-[#F9FAFB] border border-[#E5E7EB] text-xs sm:text-sm text-[#111111] focus:outline-none focus:border-[#ED1654] transition-colors"
+                className="w-full px-4 py-3 rounded-xl bg-[#F9FAFB] border border-[#E5E7EB] text-base sm:text-sm text-[#111111] focus:outline-none focus:border-[#ED1654] transition-colors"
               >
                 <option value="Parent of Learner (Ages 9–11)">Parent of Learner (Ages 9–11)</option>
                 <option value="Parent of Learner (Ages 11–14)">Parent of Learner (Ages 11–14)</option>
@@ -253,7 +253,7 @@ function ContactFormInner() {
                 onChange={(e) =>
                   setFormData({ ...formData, counselingMode: e.target.value })
                 }
-                className="w-full px-4 py-3 rounded-xl bg-[#F9FAFB] border border-[#E5E7EB] text-xs sm:text-sm text-[#111111] focus:outline-none focus:border-[#ED1654] transition-colors"
+                className="w-full px-4 py-3 rounded-xl bg-[#F9FAFB] border border-[#E5E7EB] text-base sm:text-sm text-[#111111] focus:outline-none focus:border-[#ED1654] transition-colors"
               >
                 <option value="1-on-1 Virtual Consultation">1-on-1 Virtual Consultation</option>
                 <option value="Direct Telephone Discussion">Direct Telephone Discussion</option>
@@ -276,7 +276,7 @@ function ContactFormInner() {
                 setFormData({ ...formData, message: e.target.value })
               }
               placeholder="Tell us about your learning goals, cohort preferences, or specific inquiries..."
-              className="w-full px-4 py-3 rounded-xl bg-[#F9FAFB] border border-[#E5E7EB] text-xs sm:text-sm text-[#111111] placeholder-[#6B7280] focus:outline-none focus:border-[#ED1654] transition-colors resize-none"
+              className="w-full px-4 py-3 rounded-xl bg-[#F9FAFB] border border-[#E5E7EB] text-base sm:text-sm text-[#111111] placeholder-[#6B7280] focus:outline-none focus:border-[#ED1654] transition-colors resize-none"
             />
           </div>
 
@@ -383,13 +383,13 @@ export default function ContactPageClient() {
               </div>
 
               {/* Contact Information Cards Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 {contactCards.map((card, idx) => {
                   const Icon = card.icon;
                   return (
                     <div
                       key={idx}
-                      className="p-5 rounded-2xl border border-[#D9D9D9] bg-[#D9D9D9]/10 hover:border-[#ED1654] transition-all duration-200 space-y-2.5 flex flex-col justify-between"
+                      className={`${idx === 0 || idx === contactCards.length - 1 ? "col-span-2 sm:col-span-1 " : ""}min-w-0 p-4 sm:p-5 rounded-2xl border border-[#D9D9D9] bg-[#D9D9D9]/10 hover:border-[#ED1654] transition-all duration-200 space-y-2.5 flex flex-col justify-between`}
                     >
                       <div className="space-y-2">
                         <div className="w-9 h-9 rounded-full bg-[#D6124B]/10 text-[#C20F42] flex items-center justify-center">
@@ -403,7 +403,7 @@ export default function ContactPageClient() {
                             {card.subtitle}
                           </p>
                         </div>
-                        <p className="text-xs text-[#737373] leading-relaxed">
+                        <p className="text-xs text-[#737373] leading-relaxed break-words">
                           {card.detail}
                         </p>
                       </div>
@@ -412,7 +412,7 @@ export default function ContactPageClient() {
                         {card.actionHref ? (
                           <a
                             href={card.actionHref}
-                            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#C20F42] hover:text-[#B50F40] transition-colors"
+                            className="inline-flex items-center gap-1.5 py-1.5 sm:py-0 text-xs font-semibold text-[#C20F42] hover:text-[#B50F40] transition-colors"
                           >
                             <span>{card.actionText}</span>
                             <ArrowRight className="w-3.5 h-3.5" />
@@ -429,7 +429,7 @@ export default function ContactPageClient() {
               </div>
 
               {/* Curriculum Orientation Box */}
-              <div className="p-6 rounded-3xl bg-[#F7F7F5] text-[#111111] border border-[#E6E6E6] space-y-3">
+              <div className="hidden sm:block p-6 rounded-3xl bg-[#F7F7F5] text-[#111111] border border-[#E6E6E6] space-y-3">
                 <div className="flex items-center gap-2 text-xs font-bold text-[#C20F42] uppercase tracking-wider">
                   <ShieldCheck className="w-4 h-4" />
                   <span>Curriculum Orientation</span>
