@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { PROGRAMMES } from "@/app/data/programmes";
 
 // Clean inline SVGs for Social Logos
 function LinkedinIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -77,11 +78,11 @@ export default function Footer() {
             {/* Quick Stats Pill */}
             <div className="flex items-center gap-4 py-2 text-xs font-semibold text-[#374151]">
               <div>
-                <span className="text-[#C20F42] font-bold">3</span> Literacy Programmes
+                <span className="text-[#C20F42] font-bold">{PROGRAMMES.length}</span> Programmes
               </div>
               <div className="w-1.5 h-1.5 rounded-full bg-[#D6124B]" />
               <div>
-                <span className="text-[#C20F42] font-bold">5</span> Core Literacies
+                <span className="text-[#C20F42] font-bold">8</span> Core Literacies
               </div>
             </div>
 

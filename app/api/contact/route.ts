@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { escapeHtml } from "@/app/lib/email";
 import { createMailTransporter } from "@/app/lib/mail-transport";
 import { checkRateLimit } from "@/app/lib/rate-limit";
+import { PROGRAMMES } from "@/app/data/programmes";
 
 export async function POST(request: Request) {
   const rateLimit = checkRateLimit(request, "contact");
@@ -21,11 +22,17 @@ export async function POST(request: Request) {
       fullName,
       email,
       phone,
-      programme,
+      programme: programmeSlug,
       background,
       counselingMode,
       message,
     } = body;
+
+    // The form sends a slug; email the readable title and category instead.
+    const selected = PROGRAMMES.find((p) => p.slug === programmeSlug);
+    const programme = selected
+      ? `${selected.title} (${selected.category})`
+      : programmeSlug;
 
     if (!fullName || !email || !phone) {
       return NextResponse.json(

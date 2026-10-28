@@ -22,6 +22,8 @@ import AnimateOnScroll from "@/app/components/AnimateOnScroll";
 import { trackEvent } from "@/app/lib/analytics";
 import { PROGRAMMES } from "@/app/data/programmes";
 
+const PROGRAMME_CATEGORIES = ["Young Learners", "Adult Learners", "ISFT Awards", "ISFT Premium"] as const;
+
 function ContactFormInner() {
   const searchParams = useSearchParams();
   const requestedProgramme = searchParams.get("programme");
@@ -208,10 +210,14 @@ function ContactFormInner() {
                 }
                 className="w-full px-4 py-3 rounded-xl bg-[#F9FAFB] border border-[#E5E7EB] text-base sm:text-sm text-[#111111] focus:outline-none focus:border-[#ED1654] transition-colors"
               >
-                {PROGRAMMES.map((prog) => (
-                  <option key={prog.slug} value={prog.slug} className="bg-white text-[#111111]">
-                    {prog.title} ({prog.category} • {prog.targetAge})
-                  </option>
+                {PROGRAMME_CATEGORIES.map((category) => (
+                  <optgroup key={category} label={category}>
+                    {PROGRAMMES.filter((prog) => prog.category === category).map((prog) => (
+                      <option key={prog.slug} value={prog.slug} className="bg-white text-[#111111]">
+                        {prog.title} ({prog.targetAge})
+                      </option>
+                    ))}
+                  </optgroup>
                 ))}
               </select>
             </div>
@@ -236,6 +242,7 @@ function ContactFormInner() {
                 <option value="Parent of Learner (Ages 11–14)">Parent of Learner (Ages 11–14)</option>
                 <option value="Adult Learner / University Student (18+)">Adult Learner / University Student (18+)</option>
                 <option value="Working Professional / Executive">Working Professional / Executive</option>
+                <option value="Aspiring Trader / Finance Professional">Aspiring Trader / Finance Professional</option>
                 <option value="School / Institutional Representative">School / Institutional Representative</option>
                 <option value="General Inquirer">General Inquirer</option>
               </select>

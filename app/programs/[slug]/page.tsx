@@ -72,13 +72,15 @@ export default async function ProgramPage({ params }: Props) {
     notFound();
   }
 
-  // Literacy programmes link to each other; ISFT awards link to other awards.
+  // Literacy programmes link to each other; ISFT awards and ISFT premium
+  // programmes each link within their own category.
   // Take the next programmes in catalogue order (wrapping) so links spread
   // evenly instead of every page pointing at the same three.
-  const isIsftAward = programme.category === "ISFT Awards";
+  const groupOf = (category: string) =>
+    category === "ISFT Awards" || category === "ISFT Premium" ? category : "Literacy";
   const group = PROGRAMMES.filter(
     (other) =>
-      !other.comingSoon && (other.category === "ISFT Awards") === isIsftAward,
+      !other.comingSoon && groupOf(other.category) === groupOf(programme.category),
   );
   const position = group.findIndex((other) => other.slug === programme.slug);
   // Pass only what the cards render so other programmes' full curricula are

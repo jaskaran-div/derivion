@@ -1,3 +1,5 @@
+import { PREMIUM_PROGRAMMES } from "./premium-programmes";
+
 export interface CurriculumModule {
   number: string;
   title: string;
@@ -20,8 +22,9 @@ export interface Programme {
   slug: string;
   title: string;
   shortTitle: string;
-  brochure: string;
-  category: "Young Learners" | "Adult Learners" | "ISFT Awards";
+  /** PDF in public/course-pdf; omit to hide the brochure download. */
+  brochure?: string;
+  category: "Young Learners" | "Adult Learners" | "ISFT Awards" | "ISFT Premium";
   /** Shown with a "Coming Soon" badge; enrolment CTAs register interest instead. */
   comingSoon?: boolean;
   /** Live course on the Derivion Academy LMS; enrolment CTAs link here instead of /contact. */
@@ -2120,6 +2123,7 @@ export const PROGRAMMES: Programme[] = [
       },
     ],
   },
+  ...PREMIUM_PROGRAMMES,
 ];
 
 export function getAllProgrammes(): Programme[] {

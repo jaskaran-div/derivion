@@ -68,6 +68,7 @@ export default function ProgramDetailClient({
 
       // GA4 enhanced measurement records the PDF itself as file_download.
       trackEvent("generate_lead", { form_name: "brochure", programme: programme.slug });
+      if (!programme.brochure) return;
       const downloadLink = document.createElement("a");
       downloadLink.href = `/course-pdf/${encodeURIComponent(programme.brochure)}`;
       downloadLink.download = programme.brochure;
@@ -214,15 +215,27 @@ export default function ProgramDetailClient({
                   </p>
                 </div> */}
 
-                <div className="space-y-1">
-                  <div className="flex items-center gap-1.5 text-xs text-[#737373]">
-                    <GraduationCap className="w-3.5 h-3.5 text-[#C20F42]" />
-                    <span>Eligibility</span>
+                {programme.category === "ISFT Premium" ? (
+                  <div className="space-y-1">
+                    <div className="flex items-center gap-1.5 text-xs text-[#737373]">
+                      <GraduationCap className="w-3.5 h-3.5 text-[#C20F42]" />
+                      <span>Format</span>
+                    </div>
+                    <p className="text-xs sm:text-sm font-bold text-[#000000]">
+                      {programme.format}
+                    </p>
                   </div>
-                  <p className="text-xs sm:text-sm font-bold text-[#000000] break-words">
-                    {programme.eligibility}
-                  </p>
-                </div>
+                ) : (
+                  <div className="space-y-1">
+                    <div className="flex items-center gap-1.5 text-xs text-[#737373]">
+                      <GraduationCap className="w-3.5 h-3.5 text-[#C20F42]" />
+                      <span>Eligibility</span>
+                    </div>
+                    <p className="text-xs sm:text-sm font-bold text-[#000000] break-words">
+                      {programme.eligibility}
+                    </p>
+                  </div>
+                )}
 
                 {/* <div className="space-y-1">
                   <div className="flex items-center gap-1.5 text-xs text-[#737373]">
@@ -242,6 +255,7 @@ export default function ProgramDetailClient({
                   "inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-[#D6124B] hover:bg-[#B50F40] text-white text-xs sm:text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-lg active:scale-95"
                 )}
 
+                {programme.brochure && (
                 <button
                   type="button"
                   onClick={() => {
@@ -253,6 +267,7 @@ export default function ProgramDetailClient({
                   <Download className="w-4 h-4" />
                   <span>Download Brochure</span>
                 </button>
+                )}
               </div>
 
               {programme.scholarshipAvailable && (
@@ -872,14 +887,14 @@ export default function ProgramDetailClient({
                 </div>
               ))}
             </div>
-            {programme.category === "ISFT Awards" && (
+            {(programme.category === "ISFT Awards" || programme.category === "ISFT Premium") && (
               <aside
                 aria-label="Risk and qualification notice"
                 className="rounded-2xl border border-[#E6E6E6] bg-white p-5 text-xs sm:text-sm text-[#525252] leading-relaxed space-y-2"
               >
                 <p className="font-semibold text-[#111111]">Important information</p>
                 <p>
-                  This is an educational qualification, not investment advice. It does not guarantee trading
+                  This is an educational {programme.category === "ISFT Premium" ? "programme" : "qualification"}, not investment advice. It does not guarantee trading
                   profits, income or employment. Trading leveraged products such as futures and options carries a
                   high risk of loss: a{" "}
                   <a
@@ -892,6 +907,7 @@ export default function ProgramDetailClient({
                   </a>{" "}
                   found that 93% of individual traders in equity F&amp;O incurred losses between FY22 and FY24.
                 </p>
+                {programme.category === "ISFT Awards" && (
                 <p>
                   ISFT awards are bespoke qualifications accredited by OCN London. Bespoke qualifications are not
                   regulated by Ofqual.{" "}
@@ -902,6 +918,7 @@ export default function ProgramDetailClient({
                     About our qualifications
                   </Link>
                 </p>
+                )}
               </aside>
             )}
           </AnimateOnScroll>
@@ -993,7 +1010,9 @@ export default function ProgramDetailClient({
               <p className="text-[#525252] text-xs sm:text-sm font-normal">
                 {programme.comingSoon
                   ? "This programme is launching soon. Register your interest and we will let you know when enrolment opens."
-                  : programme.enrollUrl
+                  : programme.category === "ISFT Premium"
+                    ? "Apply or book a free consultation on the ISFT Global programme page."
+                    : programme.enrollUrl
                     ? "Enrolment is open now on the Derivion Academy LMS. Start learning at your own pace."
                     : `Next cohort starts in ${programme.nextCohort}. Cohort sizes are intentionally limited.`}
               </p>

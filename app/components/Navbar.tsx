@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { User, Menu, X, ChevronDown, ChevronRight, BookOpen } from "lucide-react";
+import { PREMIUM_PROGRAMMES } from "@/app/data/premium-programmes";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -70,6 +71,13 @@ export default function Navbar() {
         //   href: "/programs/isft-award-in-introduction-to-behavioural-psychology-in-trading",
         // },
       ],
+    },
+    {
+      category: "ISFT Premium",
+      subItems: PREMIUM_PROGRAMMES.map((programme) => ({
+        name: programme.title,
+        href: `/programs/${programme.slug}`,
+      })),
     },
   ];
 

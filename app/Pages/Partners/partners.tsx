@@ -19,7 +19,7 @@ import { PROGRAMMES } from "@/app/data/programmes";
 const isftAwardCount = PROGRAMMES.filter((p) => p.category === "ISFT Awards").length;
 
 const stats = [
-    { value: `${PROGRAMMES.length}`, label: "ISFT awards & literacy programmes" },
+    { value: `${PROGRAMMES.length}`, label: "ISFT premium, awards & literacy programmes" },
     { value: `${isftAwardCount}`, label: "OCN London-accredited ISFT awards" },
     { value: "3", label: "Engagement models" },
     { value: "9–18+", label: "Learner age bands served" },
