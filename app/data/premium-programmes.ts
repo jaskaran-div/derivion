@@ -264,12 +264,6 @@ const ADMISSION_STEPS: Programme["admissionSteps"] = [
   },
 ];
 
-const RISK_FAQ = {
-  question: "Does the programme guarantee trading profits or a job?",
-  answer:
-    "No. It is an educational programme, not investment advice, and it does not guarantee profits, income or employment. Trading carries a high risk of loss.",
-};
-
 const CONTACT_FAQ = {
   question: "How do I contact the admissions team?",
   answer:
@@ -347,7 +341,6 @@ export const PREMIUM_PROGRAMMES: Programme[] = [
         answer:
           "Through test-like MCQ assessments with a 70% minimum score, at least 10 completed trading diaries and a practical trading day in which you analyse, plan, execute, record and review trades.",
       },
-      RISK_FAQ,
       CONTACT_FAQ,
     ],
   }),
@@ -454,7 +447,6 @@ export const PREMIUM_PROGRAMMES: Programme[] = [
         answer:
           "A daily Morning Missive, 16 weekly live market sessions, two 1-to-1 sessions every month with Neil Crammond or a professional trader from the network, and monthly guest sessions.",
       },
-      RISK_FAQ,
       CONTACT_FAQ,
     ],
   }),
@@ -498,7 +490,6 @@ export const PREMIUM_PROGRAMMES: Programme[] = [
         answer:
           "The 8-week Advanced Certificate in Financial Trading followed by the 4-month Trading Residency Programme, with an 80% profit split on the funded account after evaluation.",
       },
-      RISK_FAQ,
       CONTACT_FAQ,
     ],
   }),
@@ -542,7 +533,6 @@ export const PREMIUM_PROGRAMMES: Programme[] = [
         answer:
           "The 8-week Advanced Certificate in Financial Trading (2 hours daily) followed by a one-week London Industry Immersion Programme.",
       },
-      RISK_FAQ,
       CONTACT_FAQ,
     ],
   }),
@@ -586,7 +576,6 @@ export const PREMIUM_PROGRAMMES: Programme[] = [
         answer:
           "The 4-month Trading Residency Programme with an 80% profit split on the funded account after evaluation, plus a one-week London Industry Immersion Programme.",
       },
-      RISK_FAQ,
       CONTACT_FAQ,
     ],
   }),
@@ -630,7 +619,6 @@ export const PREMIUM_PROGRAMMES: Programme[] = [
         answer:
           "The 8-week Advanced Certificate in Financial Trading, the 6-day / 5-night London Industry Immersion Programme and the 4-month Trading Residency Programme.",
       },
-      RISK_FAQ,
       CONTACT_FAQ,
     ],
   }),
