@@ -463,6 +463,236 @@ export const PROGRAMMES: Programme[] = [
     ],
   },
   {
+    id: "harvest-literacy",
+    slug: "harvest-literacy",
+    title: "Harvest Literacy",
+    shortTitle: "Harvest Literacy",
+    brochure: "ISFT Harvest Literacy (Adults).pdf",
+    category: "Adult Learners",
+    targetAge: "Adults 18+",
+    coreReflex: "JUDGE, VERIFY & KNOW YOUR RECOURSE",
+    tagline: "Defend the earning, borrowing, and investing adult where a mistake costs most.",
+    description:
+      "A 6.5-hour rigorous hybrid programme for Indian adults aged 18+. Defends hard-earned capital across personal finance, credit traps, market mechanisms, AI financial fraud, cyber deception, and statutory consumer legal recourse.",
+    heroImage: "/Home/harvest.png",
+    format: "Hybrid (Intensive Masterclasses + Reconstructed Case Studies)",
+    eligibility: "Adults aged 18+ (Students, Earners, Investors, Professionals)",
+    duration: "6.5 Hours (5 Comprehensive Adult Modules)",
+    deadline: "Applications Open for Next Cohort",
+    nextCohort: "Upcoming Month",
+    tuition: "Contact Admissions for Enrollment",
+    scholarshipAvailable: true,
+    scholarshipText: "Corporate group pricing and professional development subsidies available",
+    stats: [
+      { value: "18+ Yrs", label: "Adult Target Audience" },
+      { value: "6.5 Hours", label: "Comprehensive Masterclass" },
+      { value: "5 Studies", label: "Reconstructed Case Studies" },
+      { value: "Recourse", label: "Core Reflex: Judge, Verify & Know Recourse" },
+    ],
+    overview: [
+      "For earning adults, financial decisions carry permanent legal and monetary consequences. Harvest Literacy is specifically built for Indian adults aged 18+ to defend wealth where a single error costs the most: borrowing, investing, and navigating aggressive digital systems.",
+      "The programme spans five comprehensive pillars: Harvest Financial, Harvest Digital, Harvest AI, Harvest Cyber, and Harvest Legal. It bridges practical market mechanisms, loan traps, credit scores, finfluencer manipulation, dark patterns, synthetic fraud, and consumer dispute escalation.",
+      "Integrated into the curriculum are five reconstructed behavioural finance case studies of actual market failures, teaching learners how cognitive biases, greed, and leverage cause catastrophe.",
+      "Important: Harvest Literacy provides rigorous financial education and risk defence; it does not provide speculative investment tips or formal financial advisory services.",
+    ],
+    keyHighlights: [
+      "Credit & EMI Defence: Unpacks the mathematics of borrowing, CIBIL dynamics, and predatory loan traps.",
+      "Real Market Mechanics: Distinguishes genuine saving from investing and speculation across shares, bonds, commodities, and derivatives.",
+      "5 Reconstructed Case Studies: Examines historical market collapses, hidden losses, and impossible returns.",
+      "AI & Cyber Deception: Deep analysis of digital arrest scams, screen-sharing malware, voice clones, and UPI fraud.",
+      "Statutory Legal Recourse: Guides adults through RBI Ombudsman, Consumer Protection Act, cyber crime portals, and formal evidence preservation.",
+    ],
+    caseStudies: [
+      {
+        title: "The Genius Who Bet It All, Twice",
+        subtitle: "Overconfidence, Leverage & Systemic Risk",
+        description:
+          "A reconstructed analysis of high-profile trading disasters where mathematical brilliance was undone by extreme leverage and catastrophic tail risk.",
+        keyTakeaway: "No level of intellect eliminates market risk when leverage exceeds liquidity.",
+      },
+      {
+        title: "The Trader Who Hid the Loss",
+        subtitle: "Loss Aversion & Deception Escalation",
+        description:
+          "Explores how an unacknowledged initial loss led a rogue trader to construct fictitious offsetting positions, culminating in institutional insolvency.",
+        keyTakeaway: "Uncut losses compound exponentially; strict risk stop-losses must remain non-negotiable.",
+      },
+      {
+        title: "The Fund Too Good to Be True",
+        subtitle: "Ponzi Mechanics & Affinity Fraud",
+        description:
+          "Deconstructs an infamous multi-billion dollar investment vehicle that promised consistent, non-volatile yields through fabricated returns.",
+        keyTakeaway: "Guaranteed outsized returns with zero drawdown are mathematically fraudulent.",
+      },
+      {
+        title: "The Promise of Impossible Returns",
+        subtitle: "Finfluencers, Social Proof & Mass Euphoria",
+        description:
+          "An autopsy of modern unregulated investment schemes promoted via social platforms targeting retail savings with fabricated audited statements.",
+        keyTakeaway: "Social proof and celebrity endorsements are not regulatory disclosures.",
+      },
+      {
+        title: "The Coin With No Chain",
+        subtitle: "Digital Assets, Speculation & Phantom Liquidity",
+        description:
+          "Investigates a speculative token collapse where investors were locked out of redemptions due to manipulated market-making and artificial spreads.",
+        keyTakeaway: "Understand the liquidity mechanism and underlying asset before allocating capital.",
+      },
+    ],
+    curriculum: [
+      {
+        number: "Module 01",
+        title: "Harvest Financial: Personal Wealth & Market Reality",
+        duration: "9 Units • Approx. 2.5 Hours",
+        description:
+          "In-depth analysis of budgeting, emergency buffers, debt traps, financial markets, risk containment, finfluencer lures, and long-term family security.",
+        topics: [
+          "Unit 1: Money That Works (Budgeting, Cashflows & Emergency Funds)",
+          "Unit 2: Credit, Loans & the EMI Trap (CIBIL, Amortisation & Debt Burdens)",
+          "Unit 3: How Markets Actually Work (Shares, Bonds, Indices, Commodities & Currencies)",
+          "Unit 4: Growing Money Safely (Saving vs Investing vs Pure Speculation)",
+          "Unit 5: Insurance & Protection (Term, Health & Tail-Risk Shielding)",
+          "Unit 6: The Finfluencer & Get-Rich Trap (Unregulated Schemes & Conflict of Interest)",
+          "Unit 7: Scams & Fraud (Anatomy of Contemporary Financial Deception)",
+          "Unit 8: Your Rights & Recourse (Statutory Investor & Banking Protections)",
+          "Unit 9: Planning Ahead (Retirement, Family Protection & Unclaimed Assets)",
+        ],
+        skills: ["CIBIL Optimization", "EMI Amortisation Analysis", "Asset Class Differentiation", "Regulatory Verification"],
+        project: "Construct an audited Personal Financial Health & Debt Amortisation Framework.",
+      },
+      {
+        number: "Module 02",
+        title: "Harvest Digital: Screen-Based Capital Outflows",
+        duration: "Core Units • Approx. 1 Hour",
+        description:
+          "Deconstructs the money that leaves through screens: UPI AutoPay, dark patterns, Buy Now Pay Later (BNPL), and subscription creep.",
+        topics: [
+          "UPI AutoPay and Silent Recurring Mandate Traps",
+          "Dark Patterns in Consumer Apps: Forced Continuity, Misdirection, and Drip Pricing",
+          "Buy Now Pay Later (BNPL): The Psychology of Invisible Debt",
+          "Digital Identity, Behavioural Tracking, and Targeted Financial Advertising",
+          "Digital Records, Account Hygiene, and Digital Asset Succession",
+        ],
+        skills: ["AutoPay Auditing", "Dark Pattern Detection", "BNPL Risk Containment", "Digital Record Keeping"],
+        project: "Execute a Comprehensive Digital Financial Hygiene & Mandate Clearance Audit.",
+      },
+      {
+        number: "Module 03",
+        title: "Harvest AI: Synthetic Deception & Financial Verification",
+        duration: "Core Units • Approx. 1 Hour",
+        description:
+          "Focuses on AI-powered financial fraud, voice cloning in emergency calls, fake algorithmic advisory platforms, and verification protocols.",
+        topics: [
+          "Deepfake Video and Cloned Audio in Financial Social Engineering",
+          "AI-Generated Fake Brokerages, Investment Dashboards, and Performance Claims",
+          "Synthetic E-Commerce Fronts, Fabricated Customer Reviews, and Stolen Identifiers",
+          "Hallucinated Financial Outputs from Large Language Models",
+          "Independent Multi-Channel Verification Protocols",
+        ],
+        skills: ["Deepfake Voice Verification", "Platform Authenticity Audit", "LLM Output Verification", "Multi-Channel Cross-Check"],
+        project: "Build an Institutional AI Verification & Scam-Detection Checklist for high-value transactions.",
+      },
+      {
+        number: "Module 04",
+        title: "Harvest Cyber: Attack Anatomy & Urgent Response",
+        duration: "Core Units • Approx. 1 Hour",
+        description:
+          "Covers modern threat vectors: phishing, smishing, vishing, quishing, malicious APKs, digital arrest scams, and immediate recovery protocols.",
+        topics: [
+          "Attack Vectors: Phishing, Smishing, Vishing, and QR Quishing",
+          "Fake KYC, Fraudulent Refund Links, and Spoofed Customer Care Numbers",
+          "Malicious Android APKs, Screen-Sharing Software, and SIM Swap Mechanics",
+          "Anatomy of Digital Arrest Scams, Romance Traps, and Fake Task Schemes",
+          "Golden Hour Emergency Protocols: Freezing Accounts, Blocking Cards & Immediate Helplines",
+        ],
+        skills: ["Attack Vector Identification", "APK Risk Mitigation", "Golden Hour Incident Response", "Cybercrime Reporting"],
+        project: "Draft a Personal Cyber Emergency Response Dossier with bank freeze procedures and nodal contacts.",
+      },
+      {
+        number: "Module 05",
+        title: "Harvest Legal: Statutory Rights, Redressal & Recourse",
+        duration: "Core Units • Approx. 1 Hour",
+        description:
+          "Mastering legal recourse: consumer rights under the Consumer Protection Act, RBI Ombudsman, contract enforceability, and formal escalation.",
+        topics: [
+          "Consumer Rights in the Digital Economy: Contracts, Disclaimers, and Consent",
+          "The Legal Weight of Clicking 'I Agree' and Unfair Contract Terms",
+          "Data Rights, Digital Personal Data Protection Act (DPDPA), and Privacy Redressal",
+          "Statutory Escalation Pathways: RBI Ombudsman, SEBI SCORES, and Consumer Commissions",
+          "Evidence Preservation: Legal Admissibility of Electronic Records, Timestamps & Audit Logs",
+        ],
+        skills: ["Statutory Recourse Navigation", "RBI Ombudsman Filing", "Electronic Evidence Preservation", "Consumer Litigation Basics"],
+        project: "Prepare a Formal Grievance Redressal Dossier ready for regulatory submission.",
+      },
+    ],
+    toolsAndPlatforms: [
+      "Financial Health & EMI Calculator",
+      "Digital Mandate Auditor",
+      "Reconstructed Case Study Archives",
+      "RBI Ombudsman Escalation Guide",
+    ],
+    mentors: [
+      {
+        name: "Derivion Adult Financial Pedagogy",
+        role: "Curriculum Directors, Adult Education",
+        pastOrg: "Derivion Institute",
+        bio: "Specialists in macroeconomics, capital market infrastructure, credit analysis, and investor protection.",
+        image: "/Home/hero-section.jpg",
+      },
+      {
+        name: "Derivion Regulatory & Cyber Council",
+        role: "Legal & Cyber Risk Advisory",
+        pastOrg: "Derivion Institute",
+        bio: "Practitioners with extensive experience in consumer financial law, digital forensics, and regulatory ombudsman mechanisms.",
+        image: "/Home/hero-section.jpg",
+      },
+    ],
+    careerPaths: [
+      {
+        role: "Capital & Wealth Defence",
+        avgCtc: "Prudent Growth",
+        description: "Immunity against predatory debt, high-interest EMI traps, and fraudulent investment schemes.",
+      },
+      {
+        role: "Cyber & AI Threat Neutrality",
+        avgCtc: "Zero Vulnerability",
+        description: "Hardened digital posture against digital arrest scams, spoofed APKs, and cloned audio attacks.",
+      },
+      {
+        role: "Legal Redressal Readiness",
+        avgCtc: "Enforce Rights",
+        description: "Command of statutory escalation channels (Ombudsman, SCORES, Consumer Commissions) to recover assets.",
+      },
+    ],
+    admissionSteps: [
+      { step: "01", title: "Registration", description: "Submit learner profile and professional focus." },
+      { step: "02", title: "Cohort Orientation", description: "Receive masterclass schedule and case study readings." },
+      { step: "03", title: "Immersion & Certification", description: "Participate in case debriefs and complete the risk evaluation project." },
+    ],
+    faqs: [
+      {
+        question: "Is Harvest Literacy an investment advisory or stock-tipping service?",
+        answer:
+          "No. Harvest Literacy is strictly an educational masterclass in financial defense, market mechanics, credit prudence, and fraud avoidance. Derivion does not provide investment tips or brokerage services.",
+      },
+      {
+        question: "Who is Harvest Literacy intended for?",
+        answer:
+          "Harvest is designed for Indian adults aged 18 and above, including university students, salaried earners, business owners, and active retail investors looking to safeguard their capital.",
+      },
+      {
+        question: "What are the Behavioural Finance Case Studies?",
+        answer:
+          "Harvest includes five reconstructed analyses of real historical market failures, rogue trading collapses, and impossible-yield schemes, demonstrating how cognitive bias and unchecked leverage cause ruin.",
+      },
+      {
+        question: "What is the core reflex taught in Harvest?",
+        answer:
+          "The adult reflex is 'JUDGE, VERIFY & KNOW YOUR RECOURSE'—ensuring that earners evaluate terms with skepticism, independently verify claims, and know statutory channels to recover assets if targeted.",
+      },
+    ],
+  },
+  {
     id: "isft-award-in-applied-financial-markets-trading",
     slug: "isft-award-in-applied-financial-markets-trading",
     title: "ISFT Award in Applied Financial Markets Trading",
@@ -1893,236 +2123,6 @@ export const PROGRAMMES: Programme[] = [
     ],
   },
   */
-  {
-    id: "harvest-literacy",
-    slug: "harvest-literacy",
-    title: "Harvest Literacy",
-    shortTitle: "Harvest Literacy",
-    brochure: "ISFT Harvest Literacy (Adults).pdf",
-    category: "Adult Learners",
-    targetAge: "Adults 18+",
-    coreReflex: "JUDGE, VERIFY & KNOW YOUR RECOURSE",
-    tagline: "Defend the earning, borrowing, and investing adult where a mistake costs most.",
-    description:
-      "A 6.5-hour rigorous hybrid programme for Indian adults aged 18+. Defends hard-earned capital across personal finance, credit traps, market mechanisms, AI financial fraud, cyber deception, and statutory consumer legal recourse.",
-    heroImage: "/Home/harvest.png",
-    format: "Hybrid (Intensive Masterclasses + Reconstructed Case Studies)",
-    eligibility: "Adults aged 18+ (Students, Earners, Investors, Professionals)",
-    duration: "6.5 Hours (5 Comprehensive Adult Modules)",
-    deadline: "Applications Open for Next Cohort",
-    nextCohort: "Upcoming Month",
-    tuition: "Contact Admissions for Enrollment",
-    scholarshipAvailable: true,
-    scholarshipText: "Corporate group pricing and professional development subsidies available",
-    stats: [
-      { value: "18+ Yrs", label: "Adult Target Audience" },
-      { value: "6.5 Hours", label: "Comprehensive Masterclass" },
-      { value: "5 Studies", label: "Reconstructed Case Studies" },
-      { value: "Recourse", label: "Core Reflex: Judge, Verify & Know Recourse" },
-    ],
-    overview: [
-      "For earning adults, financial decisions carry permanent legal and monetary consequences. Harvest Literacy is specifically built for Indian adults aged 18+ to defend wealth where a single error costs the most: borrowing, investing, and navigating aggressive digital systems.",
-      "The programme spans five comprehensive pillars: Harvest Financial, Harvest Digital, Harvest AI, Harvest Cyber, and Harvest Legal. It bridges practical market mechanisms, loan traps, credit scores, finfluencer manipulation, dark patterns, synthetic fraud, and consumer dispute escalation.",
-      "Integrated into the curriculum are five reconstructed behavioural finance case studies of actual market failures, teaching learners how cognitive biases, greed, and leverage cause catastrophe.",
-      "Important: Harvest Literacy provides rigorous financial education and risk defence; it does not provide speculative investment tips or formal financial advisory services.",
-    ],
-    keyHighlights: [
-      "Credit & EMI Defence: Unpacks the mathematics of borrowing, CIBIL dynamics, and predatory loan traps.",
-      "Real Market Mechanics: Distinguishes genuine saving from investing and speculation across shares, bonds, commodities, and derivatives.",
-      "5 Reconstructed Case Studies: Examines historical market collapses, hidden losses, and impossible returns.",
-      "AI & Cyber Deception: Deep analysis of digital arrest scams, screen-sharing malware, voice clones, and UPI fraud.",
-      "Statutory Legal Recourse: Guides adults through RBI Ombudsman, Consumer Protection Act, cyber crime portals, and formal evidence preservation.",
-    ],
-    caseStudies: [
-      {
-        title: "The Genius Who Bet It All, Twice",
-        subtitle: "Overconfidence, Leverage & Systemic Risk",
-        description:
-          "A reconstructed analysis of high-profile trading disasters where mathematical brilliance was undone by extreme leverage and catastrophic tail risk.",
-        keyTakeaway: "No level of intellect eliminates market risk when leverage exceeds liquidity.",
-      },
-      {
-        title: "The Trader Who Hid the Loss",
-        subtitle: "Loss Aversion & Deception Escalation",
-        description:
-          "Explores how an unacknowledged initial loss led a rogue trader to construct fictitious offsetting positions, culminating in institutional insolvency.",
-        keyTakeaway: "Uncut losses compound exponentially; strict risk stop-losses must remain non-negotiable.",
-      },
-      {
-        title: "The Fund Too Good to Be True",
-        subtitle: "Ponzi Mechanics & Affinity Fraud",
-        description:
-          "Deconstructs an infamous multi-billion dollar investment vehicle that promised consistent, non-volatile yields through fabricated returns.",
-        keyTakeaway: "Guaranteed outsized returns with zero drawdown are mathematically fraudulent.",
-      },
-      {
-        title: "The Promise of Impossible Returns",
-        subtitle: "Finfluencers, Social Proof & Mass Euphoria",
-        description:
-          "An autopsy of modern unregulated investment schemes promoted via social platforms targeting retail savings with fabricated audited statements.",
-        keyTakeaway: "Social proof and celebrity endorsements are not regulatory disclosures.",
-      },
-      {
-        title: "The Coin With No Chain",
-        subtitle: "Digital Assets, Speculation & Phantom Liquidity",
-        description:
-          "Investigates a speculative token collapse where investors were locked out of redemptions due to manipulated market-making and artificial spreads.",
-        keyTakeaway: "Understand the liquidity mechanism and underlying asset before allocating capital.",
-      },
-    ],
-    curriculum: [
-      {
-        number: "Module 01",
-        title: "Harvest Financial: Personal Wealth & Market Reality",
-        duration: "9 Units • Approx. 2.5 Hours",
-        description:
-          "In-depth analysis of budgeting, emergency buffers, debt traps, financial markets, risk containment, finfluencer lures, and long-term family security.",
-        topics: [
-          "Unit 1: Money That Works (Budgeting, Cashflows & Emergency Funds)",
-          "Unit 2: Credit, Loans & the EMI Trap (CIBIL, Amortisation & Debt Burdens)",
-          "Unit 3: How Markets Actually Work (Shares, Bonds, Indices, Commodities & Currencies)",
-          "Unit 4: Growing Money Safely (Saving vs Investing vs Pure Speculation)",
-          "Unit 5: Insurance & Protection (Term, Health & Tail-Risk Shielding)",
-          "Unit 6: The Finfluencer & Get-Rich Trap (Unregulated Schemes & Conflict of Interest)",
-          "Unit 7: Scams & Fraud (Anatomy of Contemporary Financial Deception)",
-          "Unit 8: Your Rights & Recourse (Statutory Investor & Banking Protections)",
-          "Unit 9: Planning Ahead (Retirement, Family Protection & Unclaimed Assets)",
-        ],
-        skills: ["CIBIL Optimization", "EMI Amortisation Analysis", "Asset Class Differentiation", "Regulatory Verification"],
-        project: "Construct an audited Personal Financial Health & Debt Amortisation Framework.",
-      },
-      {
-        number: "Module 02",
-        title: "Harvest Digital: Screen-Based Capital Outflows",
-        duration: "Core Units • Approx. 1 Hour",
-        description:
-          "Deconstructs the money that leaves through screens: UPI AutoPay, dark patterns, Buy Now Pay Later (BNPL), and subscription creep.",
-        topics: [
-          "UPI AutoPay and Silent Recurring Mandate Traps",
-          "Dark Patterns in Consumer Apps: Forced Continuity, Misdirection, and Drip Pricing",
-          "Buy Now Pay Later (BNPL): The Psychology of Invisible Debt",
-          "Digital Identity, Behavioural Tracking, and Targeted Financial Advertising",
-          "Digital Records, Account Hygiene, and Digital Asset Succession",
-        ],
-        skills: ["AutoPay Auditing", "Dark Pattern Detection", "BNPL Risk Containment", "Digital Record Keeping"],
-        project: "Execute a Comprehensive Digital Financial Hygiene & Mandate Clearance Audit.",
-      },
-      {
-        number: "Module 03",
-        title: "Harvest AI: Synthetic Deception & Financial Verification",
-        duration: "Core Units • Approx. 1 Hour",
-        description:
-          "Focuses on AI-powered financial fraud, voice cloning in emergency calls, fake algorithmic advisory platforms, and verification protocols.",
-        topics: [
-          "Deepfake Video and Cloned Audio in Financial Social Engineering",
-          "AI-Generated Fake Brokerages, Investment Dashboards, and Performance Claims",
-          "Synthetic E-Commerce Fronts, Fabricated Customer Reviews, and Stolen Identifiers",
-          "Hallucinated Financial Outputs from Large Language Models",
-          "Independent Multi-Channel Verification Protocols",
-        ],
-        skills: ["Deepfake Voice Verification", "Platform Authenticity Audit", "LLM Output Verification", "Multi-Channel Cross-Check"],
-        project: "Build an Institutional AI Verification & Scam-Detection Checklist for high-value transactions.",
-      },
-      {
-        number: "Module 04",
-        title: "Harvest Cyber: Attack Anatomy & Urgent Response",
-        duration: "Core Units • Approx. 1 Hour",
-        description:
-          "Covers modern threat vectors: phishing, smishing, vishing, quishing, malicious APKs, digital arrest scams, and immediate recovery protocols.",
-        topics: [
-          "Attack Vectors: Phishing, Smishing, Vishing, and QR Quishing",
-          "Fake KYC, Fraudulent Refund Links, and Spoofed Customer Care Numbers",
-          "Malicious Android APKs, Screen-Sharing Software, and SIM Swap Mechanics",
-          "Anatomy of Digital Arrest Scams, Romance Traps, and Fake Task Schemes",
-          "Golden Hour Emergency Protocols: Freezing Accounts, Blocking Cards & Immediate Helplines",
-        ],
-        skills: ["Attack Vector Identification", "APK Risk Mitigation", "Golden Hour Incident Response", "Cybercrime Reporting"],
-        project: "Draft a Personal Cyber Emergency Response Dossier with bank freeze procedures and nodal contacts.",
-      },
-      {
-        number: "Module 05",
-        title: "Harvest Legal: Statutory Rights, Redressal & Recourse",
-        duration: "Core Units • Approx. 1 Hour",
-        description:
-          "Mastering legal recourse: consumer rights under the Consumer Protection Act, RBI Ombudsman, contract enforceability, and formal escalation.",
-        topics: [
-          "Consumer Rights in the Digital Economy: Contracts, Disclaimers, and Consent",
-          "The Legal Weight of Clicking 'I Agree' and Unfair Contract Terms",
-          "Data Rights, Digital Personal Data Protection Act (DPDPA), and Privacy Redressal",
-          "Statutory Escalation Pathways: RBI Ombudsman, SEBI SCORES, and Consumer Commissions",
-          "Evidence Preservation: Legal Admissibility of Electronic Records, Timestamps & Audit Logs",
-        ],
-        skills: ["Statutory Recourse Navigation", "RBI Ombudsman Filing", "Electronic Evidence Preservation", "Consumer Litigation Basics"],
-        project: "Prepare a Formal Grievance Redressal Dossier ready for regulatory submission.",
-      },
-    ],
-    toolsAndPlatforms: [
-      "Financial Health & EMI Calculator",
-      "Digital Mandate Auditor",
-      "Reconstructed Case Study Archives",
-      "RBI Ombudsman Escalation Guide",
-    ],
-    mentors: [
-      {
-        name: "Derivion Adult Financial Pedagogy",
-        role: "Curriculum Directors, Adult Education",
-        pastOrg: "Derivion Institute",
-        bio: "Specialists in macroeconomics, capital market infrastructure, credit analysis, and investor protection.",
-        image: "/Home/hero-section.jpg",
-      },
-      {
-        name: "Derivion Regulatory & Cyber Council",
-        role: "Legal & Cyber Risk Advisory",
-        pastOrg: "Derivion Institute",
-        bio: "Practitioners with extensive experience in consumer financial law, digital forensics, and regulatory ombudsman mechanisms.",
-        image: "/Home/hero-section.jpg",
-      },
-    ],
-    careerPaths: [
-      {
-        role: "Capital & Wealth Defence",
-        avgCtc: "Prudent Growth",
-        description: "Immunity against predatory debt, high-interest EMI traps, and fraudulent investment schemes.",
-      },
-      {
-        role: "Cyber & AI Threat Neutrality",
-        avgCtc: "Zero Vulnerability",
-        description: "Hardened digital posture against digital arrest scams, spoofed APKs, and cloned audio attacks.",
-      },
-      {
-        role: "Legal Redressal Readiness",
-        avgCtc: "Enforce Rights",
-        description: "Command of statutory escalation channels (Ombudsman, SCORES, Consumer Commissions) to recover assets.",
-      },
-    ],
-    admissionSteps: [
-      { step: "01", title: "Registration", description: "Submit learner profile and professional focus." },
-      { step: "02", title: "Cohort Orientation", description: "Receive masterclass schedule and case study readings." },
-      { step: "03", title: "Immersion & Certification", description: "Participate in case debriefs and complete the risk evaluation project." },
-    ],
-    faqs: [
-      {
-        question: "Is Harvest Literacy an investment advisory or stock-tipping service?",
-        answer:
-          "No. Harvest Literacy is strictly an educational masterclass in financial defense, market mechanics, credit prudence, and fraud avoidance. Derivion does not provide investment tips or brokerage services.",
-      },
-      {
-        question: "Who is Harvest Literacy intended for?",
-        answer:
-          "Harvest is designed for Indian adults aged 18 and above, including university students, salaried earners, business owners, and active retail investors looking to safeguard their capital.",
-      },
-      {
-        question: "What are the Behavioural Finance Case Studies?",
-        answer:
-          "Harvest includes five reconstructed analyses of real historical market failures, rogue trading collapses, and impossible-yield schemes, demonstrating how cognitive bias and unchecked leverage cause ruin.",
-      },
-      {
-        question: "What is the core reflex taught in Harvest?",
-        answer:
-          "The adult reflex is 'JUDGE, VERIFY & KNOW YOUR RECOURSE'—ensuring that earners evaluate terms with skepticism, independently verify claims, and know statutory channels to recover assets if targeted.",
-      },
-    ],
-  },
   ...PREMIUM_PROGRAMMES,
 ];
 
@@ -2130,11 +2130,26 @@ export function getAllProgrammes(): Programme[] {
   return PROGRAMMES;
 }
 
-// Coming-soon programmes are listed in the catalogue but have no detail page yet.
+// Coming-soon programmes have no page yet, and ISFT Premium programmes link
+// straight to their page on isftglobal.com instead of a page on this site.
+export function hasDetailPage(p: Programme): boolean {
+  return !p.comingSoon && p.category !== "ISFT Premium";
+}
+
+/** Link attributes that open external (isftglobal.com) links in a new tab. */
+export function newTabProps(href: string) {
+  return href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {};
+}
+
+/** Where a programme card or menu item should link. */
+export function programmeHref(p: Programme): string {
+  return p.category === "ISFT Premium" && p.enrollUrl ? p.enrollUrl : `/programs/${p.slug}`;
+}
+
 export function getProgrammeBySlug(slug: string): Programme | undefined {
-  return PROGRAMMES.find((p) => p.slug === slug && !p.comingSoon);
+  return PROGRAMMES.find((p) => p.slug === slug && hasDetailPage(p));
 }
 
 export function getAllProgrammeSlugs(): string[] {
-  return PROGRAMMES.filter((p) => !p.comingSoon).map((p) => p.slug);
+  return PROGRAMMES.filter(hasDetailPage).map((p) => p.slug);
 }

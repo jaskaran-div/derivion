@@ -5,6 +5,8 @@ import {
   PROGRAMMES,
   getProgrammeBySlug,
   getAllProgrammeSlugs,
+  hasDetailPage,
+  programmeHref,
 } from "@/app/data/programmes";
 import { PROGRAMME_SEO } from "@/app/data/programme-seo";
 import { PROGRAMME_ASSESSMENT } from "@/app/data/programme-assessment";
@@ -64,10 +66,11 @@ export default async function ProgramPage({ params }: Props) {
   const programme = getProgrammeBySlug(slug);
 
   if (!programme) {
-    // Coming-soon programmes have no page yet; send visitors to the catalogue
-    // rather than a 404.
-    if (PROGRAMMES.some((p) => p.slug === slug && p.comingSoon)) {
-      redirect("/programs");
+    // Programmes without a page here: premium ones go to their isftglobal.com
+    // page, coming-soon ones to the catalogue, rather than a 404.
+    const unlisted = PROGRAMMES.find((p) => p.slug === slug);
+    if (unlisted) {
+      redirect(unlisted.comingSoon ? "/programs" : programmeHref(unlisted));
     }
     notFound();
   }
@@ -80,7 +83,7 @@ export default async function ProgramPage({ params }: Props) {
     category === "ISFT Awards" || category === "ISFT Premium" ? category : "Literacy";
   const group = PROGRAMMES.filter(
     (other) =>
-      !other.comingSoon && groupOf(other.category) === groupOf(programme.category),
+      hasDetailPage(other) && groupOf(other.category) === groupOf(programme.category),
   );
   const position = group.findIndex((other) => other.slug === programme.slug);
   // Pass only what the cards render so other programmes' full curricula are

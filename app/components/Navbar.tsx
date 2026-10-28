@@ -74,9 +74,10 @@ export default function Navbar() {
     },
     {
       category: "ISFT Premium",
+      // Premium programmes link straight to their isftglobal.com page.
       subItems: PREMIUM_PROGRAMMES.map((programme) => ({
         name: programme.title,
-        href: `/programs/${programme.slug}`,
+        href: programme.enrollUrl ?? "/programs",
       })),
     },
   ];
@@ -200,6 +201,7 @@ export default function Navbar() {
                             <Link
                               key={sIdx}
                               href={sub.href}
+                              {...(sub.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                               className="block px-4 py-2.5 rounded-xl text-xs sm:text-sm text-[#737373] hover:text-[#000000] hover:bg-[#D9D9D9]/40 transition-colors"
                             >
                               {sub.name}
@@ -340,6 +342,7 @@ export default function Navbar() {
                         <Link
                           key={sIdx}
                           href={sub.href}
+                          {...(sub.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                           onClick={() => setMobileMenuOpen(false)}
                           className="block px-3 py-2.5 text-sm text-[#737373] hover:text-[#000000] rounded-md hover:bg-[#D9D9D9]/40"
                         >

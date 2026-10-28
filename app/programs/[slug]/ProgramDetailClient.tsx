@@ -215,27 +215,15 @@ export default function ProgramDetailClient({
                   </p>
                 </div> */}
 
-                {programme.category === "ISFT Premium" ? (
-                  <div className="space-y-1">
-                    <div className="flex items-center gap-1.5 text-xs text-[#737373]">
-                      <GraduationCap className="w-3.5 h-3.5 text-[#C20F42]" />
-                      <span>Format</span>
-                    </div>
-                    <p className="text-xs sm:text-sm font-bold text-[#000000]">
-                      {programme.format}
-                    </p>
+                <div className="space-y-1">
+                  <div className="flex items-center gap-1.5 text-xs text-[#737373]">
+                    <GraduationCap className="w-3.5 h-3.5 text-[#C20F42]" />
+                    <span>Eligibility</span>
                   </div>
-                ) : (
-                  <div className="space-y-1">
-                    <div className="flex items-center gap-1.5 text-xs text-[#737373]">
-                      <GraduationCap className="w-3.5 h-3.5 text-[#C20F42]" />
-                      <span>Eligibility</span>
-                    </div>
-                    <p className="text-xs sm:text-sm font-bold text-[#000000] break-words">
-                      {programme.eligibility}
-                    </p>
-                  </div>
-                )}
+                  <p className="text-xs sm:text-sm font-bold text-[#000000] break-words">
+                    {programme.eligibility}
+                  </p>
+                </div>
 
                 {/* <div className="space-y-1">
                   <div className="flex items-center gap-1.5 text-xs text-[#737373]">
@@ -993,9 +981,7 @@ export default function ProgramDetailClient({
               <p className="text-[#525252] text-xs sm:text-sm font-normal">
                 {programme.comingSoon
                   ? "This programme is launching soon. Register your interest and we will let you know when enrolment opens."
-                  : programme.category === "ISFT Premium"
-                    ? "Apply or book a free consultation on the ISFT Global programme page."
-                    : programme.enrollUrl
+                  : programme.enrollUrl
                     ? "Enrolment is open now on the Derivion Academy LMS. Start learning at your own pace."
                     : `Next cohort starts in ${programme.nextCohort}. Cohort sizes are intentionally limited.`}
               </p>

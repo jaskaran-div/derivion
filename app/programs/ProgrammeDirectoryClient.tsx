@@ -7,7 +7,7 @@ import { Search, ArrowRight, Sparkles, Clock } from "lucide-react";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import AnimateOnScroll from "@/app/components/AnimateOnScroll";
-import { PROGRAMMES } from "@/app/data/programmes";
+import { PROGRAMMES, programmeHref, newTabProps } from "@/app/data/programmes";
 
 export default function ProgrammeDirectoryClient() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
@@ -181,7 +181,8 @@ export default function ProgrammeDirectoryClient() {
                       {/* Coming-soon programmes have no page yet */}
                       {!programme.comingSoon && (
                         <Link
-                          href={`/programs/${programme.slug}`}
+                          href={programmeHref(programme)}
+                          {...newTabProps(programmeHref(programme))}
                           className="mt-1 w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-[#F3F4F6] hover:bg-[#D6124B] text-[#111111] hover:text-white text-xs font-semibold transition-all duration-200"
                         >
                           <span>View Programme</span>

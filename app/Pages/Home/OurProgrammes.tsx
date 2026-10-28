@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Sparkles, BookOpen, Clock, Users } from "lucide-react";
-import { PROGRAMMES } from "@/app/data/programmes";
+import { PROGRAMMES, programmeHref, newTabProps } from "@/app/data/programmes";
 import AnimateOnScroll from "@/app/components/AnimateOnScroll";
 
 export default function OurProgrammes() {
@@ -127,7 +127,7 @@ export default function OurProgrammes() {
                       {prog.comingSoon ? (
                         prog.title
                       ) : (
-                        <Link href={`/programs/${prog.slug}`} className="hover:text-[#C20F42] transition-colors">
+                        <Link href={programmeHref(prog)} {...newTabProps(programmeHref(prog))} className="hover:text-[#C20F42] transition-colors">
                           {prog.title}
                         </Link>
                       )}
@@ -143,7 +143,8 @@ export default function OurProgrammes() {
                 {!prog.comingSoon && (
                   <div className="pt-2">
                     <Link
-                      href={`/programs/${prog.slug}`}
+                      href={programmeHref(prog)}
+                      {...newTabProps(programmeHref(prog))}
                       className="w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-[#F3F4F6] hover:bg-[#D6124B] text-[#111111] hover:text-white text-xs font-semibold transition-all duration-200"
                     >
                       <span>Explore Programme</span>

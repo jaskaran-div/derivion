@@ -2,7 +2,7 @@ import {
   BreadcrumbJsonLd,
   ProgrammeListJsonLd,
 } from "@/app/components/JsonLd";
-import { PROGRAMMES } from "@/app/data/programmes";
+import { PROGRAMMES, hasDetailPage } from "@/app/data/programmes";
 import { createPageMetadata } from "@/app/lib/seo";
 import ProgrammeDirectoryClient from "./ProgrammeDirectoryClient";
 
@@ -21,7 +21,7 @@ export default function ProgrammesDirectoryPage() {
           { name: "Programmes", pathname: "/programs" },
         ]}
       />
-      <ProgrammeListJsonLd programmes={PROGRAMMES.filter((p) => !p.comingSoon)} />
+      <ProgrammeListJsonLd programmes={PROGRAMMES.filter(hasDetailPage)} />
       <ProgrammeDirectoryClient />
     </>
   );
