@@ -91,6 +91,15 @@ export default function AboutUsPage() {
     },
   ];
 
+  const leaders = [
+    { name: "Ratender Dhull", role: "Founder", image: "/isft/ratender.jpg" },
+    { name: "Tapojit Chakraborty", role: "Chief Advisor", image: "/isft/tapojit.jpg" },
+    { name: "Dr. Tushar K. Nath", role: "Chief Academic Advisor", image: "/isft/tushar.jpg" },
+    { name: "Neil Crammond", role: "Mentor", image: "/isft/neil.jpg" },
+    { name: "Dr. Jayant Sonwalkar", role: "Academic & University Engagement Advisor", image: "/isft/jayant.jpg" },
+    { name: "Prof. KK Dash", role: "Academia-Industry-Administration Engagement", image: "/isft/kkdash.jpg" },
+  ];
+
   return (
     <div className="min-h-screen bg-white text-[#000000] flex flex-col">
       <BreadcrumbJsonLd
@@ -343,6 +352,65 @@ export default function AboutUsPage() {
           </AnimateOnScroll>
         </section>
 
+        {/* ─── Leadership Panel ─── */}
+        <section id="leadership" className="w-full bg-[#F7F7F5] text-[#111111] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
+          <AnimateOnScroll animation="fade-up" duration={700} className="max-w-7xl mx-auto space-y-10">
+            <div className="space-y-2">
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#C20F42]">
+                The People Behind Derivion
+              </span>
+              <h2
+                className="text-3xl sm:text-4xl font-medium tracking-tight text-[#111111]"
+                style={{ fontFamily: "var(--font-serif)" }}
+              >
+                Leadership <span className="italic font-normal text-[#C20F42]">Panel</span>
+              </h2>
+              <p className="text-xs sm:text-sm text-[#525252] max-w-lg">
+                Guided by founders, academics and market professionals with real-world experience.
+              </p>
+            </div>
+
+            {/* Featured founder */}
+            <div className="bg-white border border-[#E6E6E6] rounded-3xl shadow-sm p-6 sm:p-10 flex flex-col sm:flex-row items-center gap-6 sm:gap-10">
+              <div className="relative shrink-0 w-[150px] h-[150px] rounded-full overflow-hidden ring-4 ring-[#C20F42]/15 bg-[#F2F2F2]">
+                <Image src={leaders[0].image} alt={leaders[0].name} fill sizes="150px" quality={100} className="object-cover" />
+              </div>
+              <div className="space-y-3 text-center sm:text-left">
+                <span className="inline-block px-2.5 py-1 bg-[#D6124B] text-white text-xs font-bold rounded">
+                  {leaders[0].role.toUpperCase()}
+                </span>
+                <h3
+                  className="text-2xl sm:text-3xl font-medium tracking-tight"
+                  style={{ fontFamily: "var(--font-serif)" }}
+                >
+                  {leaders[0].name}
+                </h3>
+                <p className="text-xs sm:text-sm text-[#525252] leading-relaxed max-w-xl">
+                  Leading the vision and direction of the institution, alongside an advisory panel of academics and market professionals.
+                </p>
+              </div>
+            </div>
+
+            {/* Rest of the panel */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+              {leaders.slice(1).map((p) => (
+                <div
+                  key={p.name}
+                  className="bg-white border border-[#E6E6E6] rounded-2xl p-6 shadow-sm hover:border-[#ED1654] hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center gap-4"
+                >
+                  <div className="relative w-[140px] h-[140px] rounded-full overflow-hidden ring-4 ring-[#C20F42]/10 bg-[#F2F2F2]">
+                    <Image src={p.image} alt={p.name} fill sizes="140px" quality={100} className="object-cover" />
+                  </div>
+                  <div className="space-y-1">
+                    <h3 className="text-base font-bold text-[#111111] leading-tight">{p.name}</h3>
+                    <p className="text-xs text-[#C20F42] font-medium leading-snug">{p.role}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </AnimateOnScroll>
+        </section>
+
         {/* ─── Academic Stewardship & Disciplines ─── */}
         <section id="disciplines" className="w-full bg-[#F7F7F5] text-[#111111] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
           <AnimateOnScroll animation="fade-up" duration={700} className="max-w-7xl mx-auto space-y-10">
@@ -445,8 +513,6 @@ export default function AboutUsPage() {
             </div>
           </AnimateOnScroll>
         </section>
-
-      
 
         {/* ─── Bottom CTA ─── */}
         <section className="w-full bg-[#F7F7F5] py-14 px-4 sm:px-8 text-[#111111] border-t border-[#D9D9D9]">
