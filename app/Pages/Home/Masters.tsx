@@ -14,7 +14,7 @@ export default function Masters() {
     {
       id: 1,
       name: "Neil Crammond",
-      title: "Tutor",
+      title: "Programme Curator - Head Trainer",
       image: "https://isftglobal.com/wp-content/uploads/2026/09/neil.png",
       link: "https://www.linkedin.com/in/neil-crammond-54b98116/",
     },
