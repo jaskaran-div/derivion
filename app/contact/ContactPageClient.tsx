@@ -19,6 +19,8 @@ import {
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import AnimateOnScroll from "@/app/components/AnimateOnScroll";
+import AgeConsent from "@/app/components/AgeConsent";
+import type { ConsentRole } from "@/app/lib/consent";
 import { trackEvent } from "@/app/lib/analytics";
 import { PROGRAMMES } from "@/app/data/programmes";
 
@@ -41,6 +43,7 @@ function ContactFormInner() {
     background: "Parent of Learner (Ages 9–11)",
     counselingMode: "1-on-1 Virtual Consultation",
     message: "",
+    consent: "" as ConsentRole | "",
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -286,6 +289,12 @@ function ContactFormInner() {
               className="w-full px-4 py-3 rounded-xl bg-[#F9FAFB] border border-[#E5E7EB] text-base sm:text-sm text-[#111111] placeholder-[#6B7280] focus:outline-none focus:border-[#ED1654] transition-colors resize-none"
             />
           </div>
+
+          <AgeConsent
+            idPrefix="contact"
+            value={formData.consent}
+            onChange={(consent) => setFormData({ ...formData, consent })}
+          />
 
           {/* Submit Button */}
           <button

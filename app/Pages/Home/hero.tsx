@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight, Play, Pause, Volume2, VolumeX, Maximize } from "lucide-react";
 import AnimateOnScroll from "@/app/components/AnimateOnScroll";
-import { PROGRAMMES } from "@/app/data/programmes";
+import { CORE_PROGRAMME_COUNT } from "@/app/data/programmes";
 
 export default function Hero() {
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -87,7 +87,7 @@ export default function Hero() {
                     <div className="relative h-[220px] sm:absolute sm:inset-0 sm:h-auto bg-[#141414]">
                     <Image
                         src="/Home/hero-section.jpg"
-                        alt=""
+                        alt="A person taking notes beside stacks of coins, a calculator and a laptop showing a bar chart"
                         fill
                         sizes="(max-width: 768px) calc(100vw - 2rem), (max-width: 1280px) calc(100vw - 3rem), 1216px"
                         preload
@@ -215,7 +215,7 @@ export default function Hero() {
 
                     <div className="w-24 h-24 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full border border-[#D9D9D9] bg-white/90 backdrop-blur-sm flex flex-col items-center justify-center text-center p-3 shrink-0 shadow-sm hover:z-10 transition-transform duration-300 hover:scale-105">
                         <span className="text-xl sm:text-3xl font-bold text-[#000000]">
-                            {PROGRAMMES.length}
+                            {CORE_PROGRAMME_COUNT}
                         </span>
 
                         <span className="text-[10px] sm:text-xs text-[#111111] font-medium mt-0.5 sm:mt-1 leading-tight max-w-[70px] sm:max-w-[80px]">

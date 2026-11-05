@@ -3,6 +3,7 @@ import { getProgrammeBySlug } from "@/app/data/programmes";
 import { escapeHtml } from "@/app/lib/email";
 import { createMailTransporter } from "@/app/lib/mail-transport";
 import { checkRateLimit } from "@/app/lib/rate-limit";
+import { consentRecord, parseConsentRole } from "@/app/lib/consent";
 
 export async function POST(request: Request) {
   const rateLimit = checkRateLimit(request, "brochure-lead");
@@ -50,6 +51,15 @@ export async function POST(request: Request) {
     );
   }
 
+  const consentRole = parseConsentRole(payload.consent);
+  if (!consentRole) {
+    return NextResponse.json(
+      { error: "Please confirm whether you are 18 or older, or a parent or guardian." },
+      { status: 400 }
+    );
+  }
+  const consent = consentRecord(consentRole);
+
   const programme = getProgrammeBySlug(programmeSlug);
   if (!programme) {
     return NextResponse.json({ error: "The selected programme was not found." }, { status: 400 });
@@ -71,6 +81,7 @@ export async function POST(request: Request) {
         `Phone: ${phone}`,
         `Email: ${email}`,
         `Programme: ${programme.title}`,
+        `Age / consent: ${consent}`,
       ].join("\n"),
       html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #111827;">
@@ -79,6 +90,7 @@ export async function POST(request: Request) {
           <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
           <p><strong>Email:</strong> ${escapeHtml(email)}</p>
           <p><strong>Programme:</strong> ${escapeHtml(programme.title)}</p>
+          <p><strong>Age / consent:</strong> ${escapeHtml(consent)}</p>
         </div>
       `,
     });

@@ -211,7 +211,7 @@ export default function Footer() {
       >
         <Image
           src="/Home/blog-button.png"
-          alt=""
+          alt="Derivion Academy blog"
           width={256}
           height={256}
           sizes="96px"

@@ -25,7 +25,7 @@ const sections = [
   {
     title: "3. Eligibility and Account Responsibility",
     text:
-      "You must provide accurate information when enrolling in a programme or submitting a form. We reserve the right to refuse service or suspend access where information is inaccurate, misleading, or where the use of our content is not aligned with the intended educational purpose.",
+      "You must provide accurate information when enrolling in a programme or submitting a form. We reserve the right to refuse service or suspend access where information is inaccurate, misleading, or where the use of our content is not aligned with the intended educational purpose. If a learner is under 18, a parent or lawful guardian must submit the enquiry or enrolment, accept these terms on the learner's behalf, and give consent for their personal data to be processed as described in our Privacy Policy.",
   },
   {
     title: "4. Use of Educational Content",
@@ -53,12 +53,17 @@ const sections = [
       "Derivion shall not be liable for indirect, incidental, or consequential losses arising from the use of our website or participation in our programmes, including loss of opportunity, reputational harm, or financial loss not directly caused by our misconduct. Our total liability, where applicable, shall not exceed the fees paid for the relevant service or programme.",
   },
   {
-    title: "9. Changes to Terms",
+    title: "9. Governing Law and Jurisdiction",
+    text:
+      "These Terms of Service are governed by and construed in accordance with the laws of the Republic of India. Any dispute arising out of or in connection with these terms, our website, or our programmes shall be subject to the exclusive jurisdiction of the competent courts in Delhi, India.",
+  },
+  {
+    title: "10. Changes to Terms",
     text:
       "We may update these Terms of Service from time to time to reflect changes in our services, legal requirements, or operational practices. Continued use of our website and services after such updates indicates your acceptance of the revised terms.",
   },
   {
-    title: "10. Contact",
+    title: "11. Contact",
     text:
       "If you have questions about these Terms of Service, please contact us at info@derivion.in. You may also reach our office at Plot No 42, Phase IV, Sector 18, Gurugram, Sarhol, Haryana 122015, or Office 3A:1, Rathbone House, Dexter House, Croydon CR0 1BT, United Kingdom.",
   },
@@ -98,7 +103,7 @@ export default function TermsOfServicePage() {
               Terms of Service
             </h1>
             <p className="text-sm text-[#737373]">
-              Last updated: September 2026
+              Last updated: November 2026
             </p>
           </AnimateOnScroll>
 

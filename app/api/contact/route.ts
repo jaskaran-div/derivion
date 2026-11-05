@@ -3,6 +3,7 @@ import { escapeHtml } from "@/app/lib/email";
 import { createMailTransporter } from "@/app/lib/mail-transport";
 import { checkRateLimit } from "@/app/lib/rate-limit";
 import { PROGRAMMES } from "@/app/data/programmes";
+import { consentRecord, parseConsentRole } from "@/app/lib/consent";
 
 export async function POST(request: Request) {
   const rateLimit = checkRateLimit(request, "contact");
@@ -41,6 +42,15 @@ export async function POST(request: Request) {
       );
     }
 
+    const consentRole = parseConsentRole(body.consent);
+    if (!consentRole) {
+      return NextResponse.json(
+        { error: "Please confirm whether you are 18 or older, or a parent or guardian." },
+        { status: 400 }
+      );
+    }
+    const consent = consentRecord(consentRole);
+
     const recipient = process.env.CONTACT_TO || "admissions@derivion.in";
     const fromAddress =
       process.env.SMTP_FROM ||
@@ -56,6 +66,7 @@ export async function POST(request: Request) {
         <p><strong>Programme:</strong> ${escapeHtml(programme || "Not specified")}</p>
         <p><strong>Background:</strong> ${escapeHtml(background || "Not specified")}</p>
         <p><strong>Preferred Orientation Mode:</strong> ${escapeHtml(counselingMode || "Not specified")}</p>
+        <p><strong>Age / consent:</strong> ${escapeHtml(consent)}</p>
         <p><strong>Message:</strong></p>
         <p>${escapeHtml(message || "No additional message").replace(/\n/g, "<br />")}</p>
       </div>
@@ -73,6 +84,7 @@ export async function POST(request: Request) {
         `Programme: ${programme || "Not specified"}`,
         `Background: ${background || "Not specified"}`,
         `Preferred Orientation Mode: ${counselingMode || "Not specified"}`,
+        `Age / consent: ${consent}`,
         "",
         `Message: ${message || "No additional message"}`,
       ].join("\n"),

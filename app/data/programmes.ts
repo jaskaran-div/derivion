@@ -2153,3 +2153,6 @@ export function getProgrammeBySlug(slug: string): Programme | undefined {
 export function getAllProgrammeSlugs(): string[] {
   return PROGRAMMES.filter(hasDetailPage).map((p) => p.slug);
 }
+
+/** Programmes with a full page on this site (excludes coming-soon and ISFT Premium). */
+export const CORE_PROGRAMME_COUNT = PROGRAMMES.filter(hasDetailPage).length;

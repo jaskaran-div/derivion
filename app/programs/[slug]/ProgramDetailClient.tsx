@@ -25,6 +25,8 @@ import Footer from "@/app/components/Footer";
 import AnimateOnScroll from "@/app/components/AnimateOnScroll";
 import { Programme } from "@/app/data/programmes";
 import type { ProgrammeAssessment } from "@/app/data/programme-assessment";
+import AgeConsent from "@/app/components/AgeConsent";
+import type { ConsentRole } from "@/app/lib/consent";
 import { trackEvent } from "@/app/lib/analytics";
 
 export default function ProgramDetailClient({
@@ -44,7 +46,7 @@ export default function ProgramDetailClient({
   const [activeModuleIndex, setActiveModuleIndex] = useState(0);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   const [isBrochureFormOpen, setIsBrochureFormOpen] = useState(false);
-  const [brochureLead, setBrochureLead] = useState({ fullName: "", email: "", phone: "" });
+  const [brochureLead, setBrochureLead] = useState({ fullName: "", email: "", phone: "", consent: "" as ConsentRole | "" });
   const [isSubmittingBrochureLead, setIsSubmittingBrochureLead] = useState(false);
   const [brochureLeadError, setBrochureLeadError] = useState<string | null>(null);
   const moduleTabsRef = useRef<HTMLDivElement>(null);
@@ -76,7 +78,7 @@ export default function ProgramDetailClient({
       downloadLink.click();
       downloadLink.remove();
       setIsBrochureFormOpen(false);
-      setBrochureLead({ fullName: "", email: "", phone: "" });
+      setBrochureLead({ fullName: "", email: "", phone: "", consent: "" });
     } catch (error) {
       setBrochureLeadError(
         error instanceof Error
@@ -244,9 +246,12 @@ export default function ProgramDetailClient({
                 )}
 
                 {programme.brochure && (
-                <button
-                  type="button"
-                  onClick={() => {
+                // A real link to the PDF so it works without JavaScript and is
+                // crawlable; with JavaScript the lead form opens first.
+                <a
+                  href={`/course-pdf/${encodeURIComponent(programme.brochure)}`}
+                  onClick={(event) => {
+                    event.preventDefault();
                     setBrochureLeadError(null);
                     setIsBrochureFormOpen(true);
                   }}
@@ -254,7 +259,7 @@ export default function ProgramDetailClient({
                 >
                   <Download className="w-4 h-4" />
                   <span>Download Brochure</span>
-                </button>
+                </a>
                 )}
               </div>
 
@@ -1099,6 +1104,11 @@ export default function ProgramDetailClient({
                   className="w-full rounded-xl border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-3 text-base sm:text-sm text-[#111111] focus:border-[#ED1654] focus:outline-none"
                 />
               </div>
+              <AgeConsent
+                idPrefix="brochure"
+                value={brochureLead.consent}
+                onChange={(consent) => setBrochureLead({ ...brochureLead, consent })}
+              />
               <button
                 type="submit"
                 disabled={isSubmittingBrochureLead}

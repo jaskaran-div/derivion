@@ -25,10 +25,10 @@ export const metadata = createPageMetadata(
   "Learn how Derivion teaches financial literacy, digital payment safety, AI and deepfake awareness, financial markets and risk management to children, teenagers and adults.",
   "/about",
 );
-import { PROGRAMMES } from "@/app/data/programmes";
+import { CORE_PROGRAMME_COUNT, PROGRAMMES } from "@/app/data/programmes";
 
 export default function AboutUsPage() {
-  const programmeCount = PROGRAMMES.length;
+  const programmeCount = CORE_PROGRAMME_COUNT;
   const programmeCategoryCount = new Set(
     PROGRAMMES.map((programme) => programme.category),
   ).size;

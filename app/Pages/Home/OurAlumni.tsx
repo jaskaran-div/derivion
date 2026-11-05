@@ -25,7 +25,6 @@ export default function OurAlumni() {
       role: "Funded Trader",
       company: "",
       companyLogo: "/Home/nishant%20(2).png",
-      batch: "Batch of 2024",
       photo: "/Home/nishant%20(2).png",
       quote:
         '“The real shift was in my thinking. I stopped treating markets like theory and started approaching them with structure, risk control, and verification. That mindset sharpened my portfolio decisions and gave me a stronger story in front of hiring managers.”',
@@ -35,7 +34,6 @@ export default function OurAlumni() {
       role: "Finance Analyst",
       company: "ZWC",
       companyLogo: "/Home/aaryan.png",
-      batch: "Batch of 2024",
       photo: "/Home/aaryan.png",
       quote:
         '“Derivion gave me the clarity and practical framework I needed to move from curiosity to confidence. The combination of structured learning, market context, and mentor guidance helped me build a much sharper foundation for my career path.”',
@@ -45,7 +43,6 @@ export default function OurAlumni() {
       role: "Financial Analyst",
       company: "ZWC",
       companyLogo: "/Home/sonia.png",
-      batch: "Batch of 2024",
       photo: "/Home/sonia.png",
       quote:
         '“ISFT’s ACFT provided me with the necessary knowledge, skills and mentorship to begin my journey as a professional trader.”',
@@ -134,10 +131,12 @@ export default function OurAlumni() {
                         </p>
 
                         <div className="flex items-center justify-between pt-2.5 mt-2.5 border-t border-[#E6E6E6]">
-                          <span className="inline-block px-2 py-1 rounded-md bg-[#F5F5F5] border border-[#E1E1E1] text-[9px] font-medium text-[#111111]">
-                            {alumnus.batch}
-                          </span>
-                          <span className="text-[9px] text-[#C20F42] font-medium flex items-center gap-1">
+                          {alumnus.batch ? (
+                            <span className="inline-block px-2 py-1 rounded-md bg-[#F5F5F5] border border-[#E1E1E1] text-[9px] font-medium text-[#111111]">
+                              {alumnus.batch}
+                            </span>
+                          ) : null}
+                          <span className="ml-auto text-[9px] text-[#C20F42] font-medium flex items-center gap-1">
                             <span className="w-1.5 h-1.5 rounded-full bg-[#D6124B]" /> Verified Outcome
                           </span>
                         </div>
