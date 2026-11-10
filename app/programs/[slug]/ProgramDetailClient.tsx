@@ -128,6 +128,8 @@ export default function ProgramDetailClient({
     );
   };
 
+  const isSeries = programme.category === "ISFT Series";
+
   const titleWords = programme.title.split(" ");
   const firstWord = titleWords[0];
   const restWords = titleWords.slice(1).join(" ");
@@ -589,8 +591,8 @@ export default function ProgramDetailClient({
               </div>
               <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
-                  { label: "Unit tests", text: assessment.unitTest },
-                  { label: "Final written task", text: assessment.finalTask },
+                  { label: isSeries ? "Module quizzes" : "Unit tests", text: assessment.unitTest },
+                  { label: isSeries ? "Projects & final case" : "Final written task", text: assessment.finalTask },
                   { label: "Marking", text: assessment.marking },
                 ].map((item) => (
                   <li
@@ -880,6 +882,24 @@ export default function ProgramDetailClient({
                 </div>
               ))}
             </div>
+            {isSeries && (
+              <aside
+                aria-label="Certification notice"
+                className="rounded-2xl border border-[#E6E6E6] bg-white p-5 text-xs sm:text-sm text-[#525252] leading-relaxed"
+              >
+                <p>
+                  Certified through OCN London and ISFT. This programme is quality-assured by OCN London, and
+                  successful learners receive OCN London certification alongside the ISFT certificate. Education
+                  only, not investment advice. Employment is not guaranteed.{" "}
+                  <Link
+                    href="/about#qualifications"
+                    className="font-medium text-[#C20F42] underline underline-offset-2 hover:text-[#B50F40]"
+                  >
+                    About our qualifications
+                  </Link>
+                </p>
+              </aside>
+            )}
             {programme.category === "ISFT Awards" && (
               <aside
                 aria-label="Qualification notice"

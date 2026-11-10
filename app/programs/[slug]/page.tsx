@@ -66,7 +66,7 @@ export default async function ProgramPage({ params }: Props) {
   const programme = getProgrammeBySlug(slug);
 
   if (!programme) {
-    // Programmes without a page here: premium ones go to their isftglobal.com
+    // Programmes without a page here: excellence ones go to their isftglobal.com
     // page, coming-soon ones to the catalogue, rather than a 404.
     const unlisted = PROGRAMMES.find((p) => p.slug === slug);
     if (unlisted) {
@@ -75,12 +75,14 @@ export default async function ProgramPage({ params }: Props) {
     notFound();
   }
 
-  // Literacy programmes link to each other; ISFT awards and ISFT premium
+  // Literacy programmes link to each other; ISFT awards, ISFT series and ISFT excellence
   // programmes each link within their own category.
   // Take the next programmes in catalogue order (wrapping) so links spread
   // evenly instead of every page pointing at the same three.
   const groupOf = (category: string) =>
-    category === "ISFT Awards" || category === "ISFT Premium" ? category : "Literacy";
+    category === "ISFT Awards" || category === "ISFT Series" || category === "ISFT Excellence"
+      ? category
+      : "Literacy";
   const group = PROGRAMMES.filter(
     (other) =>
       hasDetailPage(other) && groupOf(other.category) === groupOf(programme.category),

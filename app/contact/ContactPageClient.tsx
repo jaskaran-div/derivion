@@ -24,7 +24,7 @@ import type { ConsentRole } from "@/app/lib/consent";
 import { trackEvent } from "@/app/lib/analytics";
 import { PROGRAMMES } from "@/app/data/programmes";
 
-const PROGRAMME_CATEGORIES = ["Young Learners", "Adult Learners", "ISFT Awards", "ISFT Premium"] as const;
+const PROGRAMME_CATEGORIES = ["Young Learners", "Adult Learners", "ISFT Awards", "ISFT Series", "ISFT Excellence"] as const;
 
 function ContactFormInner() {
   const searchParams = useSearchParams();

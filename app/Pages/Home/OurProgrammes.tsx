@@ -10,7 +10,7 @@ import AnimateOnScroll from "@/app/components/AnimateOnScroll";
 export default function OurProgrammes() {
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const categories = ["All", "Young Learners", "Adult Learners", "ISFT Awards", "ISFT Premium"];
+  const categories = ["All", "Young Learners", "Adult Learners", "ISFT Awards", "ISFT Series", "ISFT Excellence"];
 
   // Filter programmes based on active category selection
   const filteredProgrammes =
@@ -163,7 +163,7 @@ export default function OurProgrammes() {
             href="/programs"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#111111] hover:bg-[#111111] text-[#111111] hover:text-white text-xs font-bold uppercase tracking-wider transition-all"
           >
-            <span>Explore All {PROGRAMMES.length} Programmes, ISFT Awards &amp; Premium</span>
+            <span>Explore All {PROGRAMMES.length} Programmes, ISFT Awards, Series &amp; Excellence</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </AnimateOnScroll>

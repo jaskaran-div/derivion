@@ -1,4 +1,4 @@
-// Assessment details for the ISFT awards, taken from the "How you're assessed"
+// Assessment details for the ISFT awards and ISFT Series, taken from the "How you're assessed"
 // section of each OCN London course brochure in public/course-pdf/. Update these
 // only from a revised brochure; see docs/seo/trust-audit.md.
 
@@ -13,6 +13,12 @@ const UNIT_MCQ =
 
 const MARKING =
   "Written work is assessed by the Head Educator against a published marking brief.";
+
+const SERIES_QUIZ =
+  "Every module ends with a quiz: 25 multiple-choice questions in 75 minutes, 70% to pass, auto-marked online, and you can retake it.";
+
+const SERIES_MARKING =
+  "Projects are assessed by the Head Educator against a published marking brief, with feedback within 10 working days and one free resubmission. One overall grade: Pass 70–74%, Merit 75–84%, Distinction 85%+.";
 
 export const PROGRAMME_ASSESSMENT: Record<string, ProgrammeAssessment> = {
   "isft-award-in-introduction-to-financial-trading": {
@@ -58,5 +64,30 @@ export const PROGRAMME_ASSESSMENT: Record<string, ProgrammeAssessment> = {
     unitTest: UNIT_MCQ,
     finalTask: "Unit 4 adds a structured reflective journal of 1,000–1,200 words.",
     marking: MARKING,
+  },
+  // ISFT Series: from the "How you're assessed" page of each series brochure.
+  "isft-series-1-financial-markets-foundations-certificate": {
+    unitTest: SERIES_QUIZ,
+    finalTask:
+      "Two written projects: a 400–600 word trading scenario (Module 3) and an 800–1,200 word comparative market report (Module 8), then a one-hour final case once all eight modules are passed.",
+    marking: SERIES_MARKING,
+  },
+  "isft-series-2-technical-analysis-and-trading-certificate": {
+    unitTest: SERIES_QUIZ,
+    finalTask:
+      "Two projects: an 800–1,200 word news-trading plan and evaluation (Module 4) and a five-chart analysis portfolio with a 1,500–2,000 word report (Module 12), then a one-hour final case once all twelve modules are passed.",
+    marking: SERIES_MARKING,
+  },
+  "isft-series-3-derivatives-and-fixed-income-markets-certificate": {
+    unitTest: SERIES_QUIZ,
+    finalTask:
+      "Two written projects: an 800–1,200 word futures hedging scenario (Module 4) and a 1,500–2,000 word bond market analytical report (Module 10), then a one-hour final case once all ten modules are passed.",
+    marking: SERIES_MARKING,
+  },
+  "isft-series-4-trader-risk-and-mindset-certificate": {
+    unitTest: SERIES_QUIZ,
+    finalTask:
+      "Two written projects: a 1,000–1,500 word risk management report (Module 4) and a 1,000–1,200 word structured reflective journal (Module 8), then a one-hour final case once all eight modules are passed.",
+    marking: SERIES_MARKING,
   },
 };

@@ -1,4 +1,5 @@
-import { PREMIUM_PROGRAMMES } from "./premium-programmes";
+import { EXCELLENCE_PROGRAMMES } from "./excellence-programmes";
+import { SERIES_PROGRAMMES } from "./series-programmes";
 
 export interface CurriculumModule {
   number: string;
@@ -24,7 +25,7 @@ export interface Programme {
   shortTitle: string;
   /** PDF in public/course-pdf; omit to hide the brochure download. */
   brochure?: string;
-  category: "Young Learners" | "Adult Learners" | "ISFT Awards" | "ISFT Premium";
+  category: "Young Learners" | "Adult Learners" | "ISFT Awards" | "ISFT Series" | "ISFT Excellence";
   /** Shown with a "Coming Soon" badge; enrolment CTAs register interest instead. */
   comingSoon?: boolean;
   /** Live course on the Derivion Academy LMS; enrolment CTAs link here instead of /contact. */
@@ -2123,17 +2124,18 @@ export const PROGRAMMES: Programme[] = [
     ],
   },
   */
-  ...PREMIUM_PROGRAMMES,
+  ...SERIES_PROGRAMMES,
+  ...EXCELLENCE_PROGRAMMES,
 ];
 
 export function getAllProgrammes(): Programme[] {
   return PROGRAMMES;
 }
 
-// Coming-soon programmes have no page yet, and ISFT Premium programmes link
+// Coming-soon programmes have no page yet, and ISFT Excellence programmes link
 // straight to their page on isftglobal.com instead of a page on this site.
 export function hasDetailPage(p: Programme): boolean {
-  return !p.comingSoon && p.category !== "ISFT Premium";
+  return !p.comingSoon && p.category !== "ISFT Excellence";
 }
 
 /** Link attributes that open external (isftglobal.com) links in a new tab. */
@@ -2143,7 +2145,7 @@ export function newTabProps(href: string) {
 
 /** Where a programme card or menu item should link. */
 export function programmeHref(p: Programme): string {
-  return p.category === "ISFT Premium" && p.enrollUrl ? p.enrollUrl : `/programs/${p.slug}`;
+  return p.category === "ISFT Excellence" && p.enrollUrl ? p.enrollUrl : `/programs/${p.slug}`;
 }
 
 export function getProgrammeBySlug(slug: string): Programme | undefined {
@@ -2154,5 +2156,5 @@ export function getAllProgrammeSlugs(): string[] {
   return PROGRAMMES.filter(hasDetailPage).map((p) => p.slug);
 }
 
-/** Programmes with a full page on this site (excludes coming-soon and ISFT Premium). */
+/** Programmes with a full page on this site (excludes coming-soon and ISFT Excellence). */
 export const CORE_PROGRAMME_COUNT = PROGRAMMES.filter(hasDetailPage).length;

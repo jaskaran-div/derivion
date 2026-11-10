@@ -1,6 +1,6 @@
 import type { CurriculumModule, Programme } from "./programmes";
 
-// ISFT Premium programmes. Content and durations are taken from each
+// ISFT Excellence programmes. Content and durations are taken from each
 // programme's page on isftglobal.com (fetched 28 Oct 2026); enrolment links
 // point back to those pages. Fees are deliberately not shown on this site.
 
@@ -140,8 +140,8 @@ const TRP_STAGES: CurriculumModule[] = [
     title: "Funded Trading",
     duration: "After evaluation",
     description:
-      "Once the evaluation is passed, Zenithwave Capital allocates a $25,000 funded account. Participants retain 80% of the profits generated through the funded account.",
-    topics: ["$25,000 funded account", "80% profit split", "Funded account through Zenithwave Capital", "One free retry on the evaluation"],
+      "Once the evaluation is passed, Zenithwave Capital allocates a $50,000 funded account. Participants retain 80% of the profits generated through the funded account.",
+    topics: ["$50,000 funded account", "80% profit split", "Funded account through Zenithwave Capital", "One free retry on the evaluation"],
     skills: ["Capital preservation", "Position sizing"],
     project: "Trade the funded account with the same rules and discipline developed during evaluation.",
   },
@@ -270,7 +270,7 @@ const CONTACT_FAQ = {
     "Email admissions@derivion.in or call +91 70560 57913, Monday to Saturday, 10:00 AM to 6:30 PM.",
 };
 
-function premium(
+function excellence(
   programme: Omit<
     Programme,
     | "category"
@@ -284,7 +284,7 @@ function premium(
   > & { careerPaths?: Programme["careerPaths"] },
 ): Programme {
   return {
-    category: "ISFT Premium",
+    category: "ISFT Excellence",
     deadline: "Applications open",
     nextCohort: "Contact admissions",
     scholarshipAvailable: false,
@@ -296,8 +296,8 @@ function premium(
   };
 }
 
-export const PREMIUM_PROGRAMMES: Programme[] = [
-  premium({
+export const EXCELLENCE_PROGRAMMES: Programme[] = [
+  excellence({
     id: "isft-acft",
     slug: "isft-advanced-certificate-in-financial-trading",
     title: "ISFT Advanced Certificate in Financial Trading (ACFT)",
@@ -344,7 +344,7 @@ export const PREMIUM_PROGRAMMES: Programme[] = [
       CONTACT_FAQ,
     ],
   }),
-  premium({
+  excellence({
     id: "isft-liip",
     slug: "isft-london-industry-immersion-programme",
     title: "ISFT London Industry Immersion Programme (LIIP)",
@@ -396,7 +396,7 @@ export const PREMIUM_PROGRAMMES: Programme[] = [
       CONTACT_FAQ,
     ],
   }),
-  premium({
+  excellence({
     id: "isft-trp",
     slug: "isft-trading-residency-programme",
     title: "ISFT Trading Residency Programme (TRP)",
@@ -406,7 +406,7 @@ export const PREMIUM_PROGRAMMES: Programme[] = [
     coreReflex: "Trade with structure, review with evidence",
     tagline: "From evaluation to verified performance.",
     description:
-      "A 4-month trading programme with live market participation from day one, a $25,000 funded account after evaluation, professional mentorship and an ISFT certified performance record.",
+      "A 4-month trading programme with live market participation from day one, a $50,000 funded account after evaluation, professional mentorship and an ISFT certified performance record.",
     heroImage: "/programme/trp.png",
     format: "Live trading with mentorship, 4 months",
     eligibility: "Speak with the admissions team to confirm the programme suits your background",
@@ -450,7 +450,7 @@ export const PREMIUM_PROGRAMMES: Programme[] = [
       CONTACT_FAQ,
     ],
   }),
-  premium({
+  excellence({
     id: "isft-acft-trp",
     slug: "isft-acft-trading-residency-programme",
     title: "ISFT ACFT + Trading Residency Programme (TRP)",
@@ -493,7 +493,7 @@ export const PREMIUM_PROGRAMMES: Programme[] = [
       CONTACT_FAQ,
     ],
   }),
-  premium({
+  excellence({
     id: "isft-acft-liip",
     slug: "isft-acft-london-industry-immersion-programme",
     title: "ISFT ACFT + London Industry Immersion Programme (LIIP)",
@@ -536,7 +536,7 @@ export const PREMIUM_PROGRAMMES: Programme[] = [
       CONTACT_FAQ,
     ],
   }),
-  premium({
+  excellence({
     id: "isft-trp-liip",
     slug: "isft-trading-residency-london-industry-immersion-programme",
     title: "ISFT Trading Residency (TRP) + London Industry Immersion Programme (LIIP)",
@@ -579,7 +579,7 @@ export const PREMIUM_PROGRAMMES: Programme[] = [
       CONTACT_FAQ,
     ],
   }),
-  premium({
+  excellence({
     id: "isft-acft-liip-trp",
     slug: "isft-acft-liip-trp",
     title: "ISFT ACFT + LIIP + TRP",

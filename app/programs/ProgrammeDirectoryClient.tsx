@@ -13,7 +13,7 @@ export default function ProgrammeDirectoryClient() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [searchQuery, setSearchQuery] = useState<string>("");
 
-  const categories = ["All", "Young Learners", "Adult Learners", "ISFT Awards", "ISFT Premium"];
+  const categories = ["All", "Young Learners", "Adult Learners", "ISFT Awards", "ISFT Series", "ISFT Excellence"];
 
   const filteredProgrammes = PROGRAMMES.filter((prog) => {
     const matchesCategory =
@@ -51,7 +51,7 @@ export default function ProgrammeDirectoryClient() {
             </h1>
 
             <p className="text-sm sm:text-base md:text-lg text-[#737373] leading-relaxed">
-              Explore Derivion&apos;s practitioner-crafted programmes designed to build safe instincts, screen hygiene, AI verification, and financial defence across youth and adulthood. Choose from literacy programmes for ages 9–11, 11–14 and adults, or online ISFT awards in financial markets and trading accredited by OCN London.
+              Explore Derivion&apos;s practitioner-crafted programmes designed to build safe instincts, screen hygiene, AI verification, and financial defence across youth and adulthood. Choose from literacy programmes for ages 9–11, 11–14 and adults, online ISFT awards accredited by OCN London, or the job-ready ISFT Series certificates in financial markets, technical analysis, derivatives and fixed income, and trader risk.
             </p>
           </AnimateOnScroll>
 

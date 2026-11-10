@@ -63,4 +63,24 @@ export const PROGRAMME_SEO: Record<string, ProgrammeSeo> = {
     description:
       "An online Level 3 award on trading emotions, behavioural finance, market psychology, mental performance, execution discipline and P&L management for traders under pressure.",
   },
+  "isft-series-1-financial-markets-foundations-certificate": {
+    title: "Financial Markets Foundations Certificate — ISFT-Series-1",
+    description:
+      "A job-ready online certificate for beginners: how markets, asset classes and regulation work, and placing orders with sensible risk limits. 8 modules, 16 credits, OCN London certification.",
+  },
+  "isft-series-2-technical-analysis-and-trading-certificate": {
+    title: "Technical Analysis & Trading Certificate — ISFT-Series-2",
+    description:
+      "A job-ready online certificate in economic data, central banks, news trading and chart analysis, from candlesticks to market profile. 12 modules, 24 credits, OCN London certification.",
+  },
+  "isft-series-3-derivatives-and-fixed-income-markets-certificate": {
+    title: "Derivatives & Fixed Income Markets Certificate — ISFT-Series-3",
+    description:
+      "A job-ready online certificate in futures pricing, margin and hedging, bonds, yields and the yield curve, Indian G-Secs and bond futures. 10 modules, 20 credits, OCN London certification.",
+  },
+  "isft-series-4-trader-risk-and-mindset-certificate": {
+    title: "Trader Risk & Mindset Certificate — ISFT-Series-4",
+    description:
+      "A job-ready online certificate in leverage, position sizing, trading plans, risk strategies, trading psychology and behavioural finance. 8 modules, 16 credits, OCN London certification.",
+  },
 };

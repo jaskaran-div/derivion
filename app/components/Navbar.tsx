@@ -5,7 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { User, Menu, X, ChevronDown, ChevronRight, BookOpen } from "lucide-react";
-import { PREMIUM_PROGRAMMES } from "@/app/data/premium-programmes";
+import { EXCELLENCE_PROGRAMMES } from "@/app/data/excellence-programmes";
+import { SERIES_PROGRAMMES } from "@/app/data/series-programmes";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -73,9 +74,16 @@ export default function Navbar() {
       ],
     },
     {
-      category: "ISFT Premium",
-      // Premium programmes link straight to their isftglobal.com page.
-      subItems: PREMIUM_PROGRAMMES.map((programme) => ({
+      category: "ISFT Series",
+      subItems: SERIES_PROGRAMMES.map((programme) => ({
+        name: programme.title,
+        href: `/programs/${programme.slug}`,
+      })),
+    },
+    {
+      category: "ISFT Excellence",
+      // Excellence programmes link straight to their isftglobal.com page.
+      subItems: EXCELLENCE_PROGRAMMES.map((programme) => ({
         name: programme.title,
         href: programme.enrollUrl ?? "/programs",
       })),

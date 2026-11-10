@@ -8,7 +8,7 @@ import ProgrammeDirectoryClient from "./ProgrammeDirectoryClient";
 
 export const metadata = createPageMetadata(
   "Financial Literacy & Trading Courses and Qualifications",
-  "Browse Derivion's financial literacy programmes for ages 9–14 and adults, and online ISFT awards in financial markets, technical analysis, futures, bonds, trading psychology and risk management.",
+  "Browse Derivion's financial literacy programmes for ages 9–14 and adults, online ISFT awards, and job-ready ISFT Series certificates in financial markets, technical analysis, derivatives, fixed income and trader risk.",
   "/programs",
 );
 
