@@ -882,24 +882,6 @@ export default function ProgramDetailClient({
                 </div>
               ))}
             </div>
-            {isSeries && (
-              <aside
-                aria-label="Certification notice"
-                className="rounded-2xl border border-[#E6E6E6] bg-white p-5 text-xs sm:text-sm text-[#525252] leading-relaxed"
-              >
-                <p>
-                  Certified through OCN London and ISFT. This programme is quality-assured by OCN London, and
-                  successful learners receive OCN London certification alongside the ISFT certificate. Education
-                  only, not investment advice. Employment is not guaranteed.{" "}
-                  <Link
-                    href="/about#qualifications"
-                    className="font-medium text-[#C20F42] underline underline-offset-2 hover:text-[#B50F40]"
-                  >
-                    About our qualifications
-                  </Link>
-                </p>
-              </aside>
-            )}
             {programme.category === "ISFT Awards" && (
               <aside
                 aria-label="Qualification notice"
