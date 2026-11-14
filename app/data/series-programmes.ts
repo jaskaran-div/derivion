@@ -469,10 +469,10 @@ export const SERIES_PROGRAMMES: Programme[] = [
       },
     ]),
     toolsAndPlatforms: [
-      "A free charting platform, e.g. TradingView",
       "Recorded lessons and notes for every module",
       "Weekly live session with a trainer",
       "Demo accounts and past data for practice and backtesting",
+      "Learning platform (LMS) with auto-marked module quizzes",
     ],
     careerPaths: [
       { role: "Read data and policy", avgCtc: "Modules 1–4", description: "Explain how data and central bank policy move markets." },
