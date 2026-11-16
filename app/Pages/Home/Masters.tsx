@@ -11,28 +11,42 @@ export default function Masters() {
     image?: string;
     link: string;
   }[] = [
-    {
-      id: 1,
-      name: "Neil Crammond",
-      title: "Programme Curator - Head Trainer",
-      image: "https://isftglobal.com/wp-content/uploads/2026/09/neil.png",
-      link: "https://www.linkedin.com/in/neil-crammond-54b98116/",
-    },
-    {
-      id: 2,
-      name: "Peter Glancy",
-      title: "Tutor",
-      image: "/mentors/peter-glancy.png",
-      link: "https://www.linkedin.com/in/peterglancy/",
-    },
-    {
-      id: 3,
-      name: "Tony Andrews",
-      title: "Tutor",
-      image: "https://isftglobal.com/wp-content/uploads/2026/11/tony.png",
-      link: "https://www.linkedin.com/in/tony-andrews-299020228/",
-    },
-  ];
+      {
+        id: 1,
+        name: "Neil Crammond",
+        title: "Programme Curator - Head Trainer",
+        image: "https://isftglobal.com/wp-content/uploads/2026/11/neil.png",
+        link: "https://www.linkedin.com/in/neil-crammond-54b98116/",
+      },
+      {
+        id: 2,
+        name: "Peter Glancy",
+        title: "Tutor",
+        image: "https://isftglobal.com/wp-content/uploads/2026/11/peter-transparent.png",
+        link: "https://www.linkedin.com/in/peterglancy/",
+      },
+      {
+        id: 3,
+        name: "Tony Andrews",
+        title: "Tutor",
+        image: "https://isftglobal.com/wp-content/uploads/2026/11/tony.png",
+        link: "https://www.linkedin.com/in/tony-andrews-299020228/",
+      },
+      {
+        id: 4,
+        name: "Ratender Dhull",
+        title: "Tutor",
+        image: "https://isftglobal.com/wp-content/uploads/2026/03/Ratender-Dull-150x150-1.webp",
+        link: "https://www.linkedin.com/in/ratender-dhull/",
+      },
+      {
+        id: 5,
+        name: "Varun Kumar Patel",
+        title: "Tutor",
+        image: "https://isftglobal.com/wp-content/uploads/2026/11/Varunkumar-Patel.png",
+        link: "https://www.linkedin.com/in/vaarunkumar-patel-2b729859/",
+      },
+    ];
 
   return (
     <section id="disciplines" className="w-full bg-white text-[#000000] py-12 sm:py-16 px-4 sm:px-6 lg:px-8 border-t border-[#D9D9D9]">
