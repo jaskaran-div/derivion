@@ -159,7 +159,7 @@ export default function ProgramDetailClient({
         {/* ─── Hero Section ─── */}
         <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            
+
             {/* Left Content Column */}
             <AnimateOnScroll animation="fade-right" duration={700} className="lg:col-span-7 space-y-5">
               {/* Category & Reflex Pill */}
@@ -248,20 +248,20 @@ export default function ProgramDetailClient({
                 )}
 
                 {programme.brochure && (
-                // A real link to the PDF so it works without JavaScript and is
-                // crawlable; with JavaScript the lead form opens first.
-                <a
-                  href={`/course-pdf/${encodeURIComponent(programme.brochure)}`}
-                  onClick={(event) => {
-                    event.preventDefault();
-                    setBrochureLeadError(null);
-                    setIsBrochureFormOpen(true);
-                  }}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-[#ED1654] hover:bg-[#D6124B] hover:text-white text-[#C20F42] text-xs sm:text-sm font-semibold transition-all duration-200 active:scale-95"
-                >
-                  <Download className="w-4 h-4" />
-                  <span>Download Brochure</span>
-                </a>
+                  // A real link to the PDF so it works without JavaScript and is
+                  // crawlable; with JavaScript the lead form opens first.
+                  <a
+                    href={`/course-pdf/${encodeURIComponent(programme.brochure)}`}
+                    onClick={(event) => {
+                      event.preventDefault();
+                      setBrochureLeadError(null);
+                      setIsBrochureFormOpen(true);
+                    }}
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-[#ED1654] hover:bg-[#D6124B] hover:text-white text-[#C20F42] text-xs sm:text-sm font-semibold transition-all duration-200 active:scale-95"
+                  >
+                    <Download className="w-4 h-4" />
+                    <span>Download Brochure</span>
+                  </a>
                 )}
               </div>
 
@@ -470,14 +470,19 @@ export default function ProgramDetailClient({
                     }}
                     aria-pressed={activeModuleIndex === mIdx}
                     aria-controls={`module-panel-${mIdx}`}
-                    className={`px-5 py-3 rounded-2xl text-xs sm:text-sm font-semibold transition-all duration-200 shrink-0 flex items-center gap-2 ${
-                      activeModuleIndex === mIdx
-                        ? "bg-white text-[#000000] shadow-xl border border-[#E6E6E6]"
-                        : "bg-[#F3F3F3] text-[#525252] hover:text-[#111111] border border-[#D9D9D9]"
-                    }`}
+                    className={`relative px-5 py-3 rounded-2xl text-xs sm:text-sm font-semibold transition-all duration-300 shrink-0 flex items-center gap-2 ${activeModuleIndex === mIdx
+                      ? "bg-[#D6124B] text-white border border-[#D6124B] shadow-lg shadow-[#D6124B]/25 ring-2 ring-[#D6124B]/20"
+                      : "bg-white text-[#525252] border border-[#D9D9D9] hover:border-[#D6124B]/50 hover:bg-[#D6124B]/5 hover:text-[#C20F42]"
+                      }`}
                   >
-                    <span>{mod.number}</span>
-                    <span className="hidden sm:inline font-normal text-xs text-[#737373]">
+                    <span className="font-bold">{mod.number}</span>
+
+                    <span
+                      className={`hidden sm:inline font-normal text-xs ${activeModuleIndex === mIdx
+                          ? "text-white/80"
+                          : "text-[#737373]"
+                        }`}
+                    >
                       • {mod.duration}
                     </span>
                   </button>
@@ -497,76 +502,76 @@ export default function ProgramDetailClient({
 
             {/* Module Cards — all rendered so every module is in the HTML; inactive ones are hidden */}
             <div>
-            {programme.curriculum.map((mod, mIdx) => (
-              <div
-                key={mIdx}
-                id={`module-panel-${mIdx}`}
-                hidden={activeModuleIndex !== mIdx}
-                className="bg-white border border-[#E6E6E6] rounded-3xl p-6 sm:p-10 shadow-xl space-y-8 animate-in fade-in duration-300">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E6E6E6] pb-6">
-                  <div>
-                    <span className="text-xs font-bold text-[#C20F42] uppercase tracking-wider block mb-1">
-                      {mod.number} — {mod.duration}
-                    </span>
-                    <h3
-                      className="text-2xl sm:text-3xl font-medium text-[#111111]"
-                      style={{ fontFamily: "var(--font-serif)" }}
-                    >
-                      {mod.title}
-                    </h3>
-                  </div>
-                </div>
-
-                <p className="text-sm sm:text-base text-[#525252] font-light leading-relaxed">
-                  {mod.description}
-                </p>
-
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-2">
-                  {/* Topics Covered */}
-                  <div className="lg:col-span-7 space-y-3">
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#111111]">
-                      Topics &amp; Episodes
-                    </h4>
-                    <ul className="space-y-2.5">
-                      {mod.topics.map((t, tIdx) => (
-                        <li key={tIdx} className="flex items-start gap-3 text-xs sm:text-sm text-[#525252]">
-                          <CheckCircle2 className="w-4 h-4 text-[#C20F42] shrink-0 mt-0.5" />
-                          <span>{t}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Hands-On Project & Skills */}
-                  <div className="lg:col-span-5 space-y-4 bg-[#F7F7F5] p-5 sm:p-6 rounded-2xl border border-[#E6E6E6]">
-                    <div className="space-y-1.5">
-                      <span className="text-[10px] font-bold text-[#C20F42] uppercase tracking-widest block">
-                        Milestone Project / Drill
+              {programme.curriculum.map((mod, mIdx) => (
+                <div
+                  key={mIdx}
+                  id={`module-panel-${mIdx}`}
+                  hidden={activeModuleIndex !== mIdx}
+                  className="bg-white border border-[#E6E6E6] rounded-3xl p-6 sm:p-10 shadow-xl space-y-8 animate-in fade-in duration-300">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E6E6E6] pb-6">
+                    <div>
+                      <span className="text-xs font-bold text-[#C20F42] uppercase tracking-wider block mb-1">
+                        {mod.number} — {mod.duration}
                       </span>
-                      <p className="text-xs sm:text-sm text-[#111111] font-medium leading-relaxed">
-                        {mod.project}
-                      </p>
+                      <h3
+                        className="text-2xl sm:text-3xl font-medium text-[#111111]"
+                        style={{ fontFamily: "var(--font-serif)" }}
+                      >
+                        {mod.title}
+                      </h3>
+                    </div>
+                  </div>
+
+                  <p className="text-sm sm:text-base text-[#525252] font-light leading-relaxed">
+                    {mod.description}
+                  </p>
+
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-2">
+                    {/* Topics Covered */}
+                    <div className="lg:col-span-7 space-y-3">
+                      <h4 className="text-xs font-bold uppercase tracking-wider text-[#111111]">
+                        Topics &amp; Episodes
+                      </h4>
+                      <ul className="space-y-2.5">
+                        {mod.topics.map((t, tIdx) => (
+                          <li key={tIdx} className="flex items-start gap-3 text-xs sm:text-sm text-[#525252]">
+                            <CheckCircle2 className="w-4 h-4 text-[#C20F42] shrink-0 mt-0.5" />
+                            <span>{t}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
 
-                    <div className="space-y-2 pt-2 border-t border-[#E6E6E6]">
-                      <span className="text-[10px] font-bold text-[#525252] uppercase tracking-widest block">
-                        Core Competencies
-                      </span>
-                      <div className="flex flex-wrap gap-2">
-                        {mod.skills.map((skill, sIdx) => (
-                          <span
-                            key={sIdx}
-                            className="px-2.5 py-1 rounded-md text-[11px] font-medium bg-white text-[#111111] border border-[#E6E6E6]"
-                          >
-                            {skill}
-                          </span>
-                        ))}
+                    {/* Hands-On Project & Skills */}
+                    <div className="lg:col-span-5 space-y-4 bg-[#F7F7F5] p-5 sm:p-6 rounded-2xl border border-[#E6E6E6]">
+                      <div className="space-y-1.5">
+                        <span className="text-[10px] font-bold text-[#C20F42] uppercase tracking-widest block">
+                          Milestone Project / Drill
+                        </span>
+                        <p className="text-xs sm:text-sm text-[#111111] font-medium leading-relaxed">
+                          {mod.project}
+                        </p>
+                      </div>
+
+                      <div className="space-y-2 pt-2 border-t border-[#E6E6E6]">
+                        <span className="text-[10px] font-bold text-[#525252] uppercase tracking-widest block">
+                          Core Competencies
+                        </span>
+                        <div className="flex flex-wrap gap-2">
+                          {mod.skills.map((skill, sIdx) => (
+                            <span
+                              key={sIdx}
+                              className="px-2.5 py-1 rounded-md text-[11px] font-medium bg-white text-[#111111] border border-[#E6E6E6]"
+                            >
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
             </div>
           </AnimateOnScroll>
         </section>
@@ -866,9 +871,8 @@ export default function ProgramDetailClient({
                   >
                     <span>{faq.question}</span>
                     <ChevronDown
-                      className={`w-4 h-4 text-[#737373] transition-transform duration-200 shrink-0 ml-4 ${
-                        openFaqIndex === fIdx ? "rotate-180 text-[#C20F42]" : ""
-                      }`}
+                      className={`w-4 h-4 text-[#737373] transition-transform duration-200 shrink-0 ml-4 ${openFaqIndex === fIdx ? "rotate-180 text-[#C20F42]" : ""
+                        }`}
                     />
                   </button>
 

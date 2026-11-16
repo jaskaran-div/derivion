@@ -94,6 +94,7 @@ export default function Navbar() {
   const isProgrammesActive = pathname.startsWith("/programs");
   const isAboutActive = pathname === "/about";
   const isPartnersActive = pathname === "/partners";
+  const isGalleryActive = pathname === "/gallery";
   const isContactActive = pathname === "/contact";
 
   return (
@@ -249,6 +250,19 @@ export default function Navbar() {
           >
             Partners
           </Link>
+
+          {/* Gallery Link */}
+          <Link
+            href="/gallery"
+            aria-current={isGalleryActive ? "page" : undefined}
+            className={`px-5 py-2 text-xs sm:text-sm font-medium rounded-full transition-all duration-200 ${
+              isGalleryActive
+                ? "bg-[#D6124B] text-white shadow-md"
+                : "text-[#737373] hover:text-[#000000] hover:bg-[#D9D9D9]/50"
+            }`}
+          >
+            Gallery
+          </Link>
         </div>
 
         {/* Right CTA Button */}
@@ -385,6 +399,18 @@ export default function Navbar() {
             }`}
           >
             Partners
+          </Link>
+
+          {/* Mobile Gallery */}
+          <Link
+            href="/gallery"
+            aria-current={isGalleryActive ? "page" : undefined}
+            onClick={() => setMobileMenuOpen(false)}
+            className={`block w-full text-left px-4 py-2.5 text-sm font-medium rounded-xl transition-colors ${
+              isGalleryActive ? "bg-[#000000] text-white" : "text-[#737373] hover:bg-[#D9D9D9]/60"
+            }`}
+          >
+            Gallery
           </Link>
 
           {/* Mobile Contact Us CTA */}

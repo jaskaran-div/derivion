@@ -40,6 +40,7 @@ export default function Footer() {
   const quickLinks = [
     { name: "All Programmes", href: "/programs" },
     { name: "About Derivion", href: "/about" },
+    { name: "Our Gallery", href: "/gallery" },
     { name: "Contact & Admissions", href: "/contact" },
     { name: "Core Learning Pillars", href: "/about#pillars" },
     { name: "Curricular Disciplines", href: "/about#disciplines" },

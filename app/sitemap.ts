@@ -10,6 +10,7 @@ const PAGE_UPDATED: Record<string, string> = {
   "": "2026-11-05",
   "/about": "2026-10-31",
   "/partners": "2026-10-28",
+  "/gallery": "2026-11-14",
   "/contact": "2026-11-05",
   "/programs": "2026-10-28",
   "/privacy-policy": "2026-11-05",

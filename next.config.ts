@@ -9,9 +9,10 @@ const contentSecurityPolicy = [
   "default-src 'self'",
   `script-src 'self' 'unsafe-inline' https://www.googletagmanager.com${isDev ? " 'unsafe-eval'" : ""}`,
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' blob: data: https://derivion.in https://isftglobal.com https://*.google-analytics.com https://*.googletagmanager.com",
+  "img-src 'self' blob: data: https://derivion.in https://isftglobal.com https://res.cloudinary.com https://*.google-analytics.com https://*.googletagmanager.com",
   "font-src 'self' data:",
-  "media-src 'self'",
+  // Cloudinary hosts the /gallery photos and videos.
+  "media-src 'self' https://res.cloudinary.com",
   "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com",
   "frame-src 'none'",
   "object-src 'none'",
@@ -32,6 +33,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "isftglobal.com",
         pathname: "/wp-content/uploads/**",
+      },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
       },
     ],
   },
