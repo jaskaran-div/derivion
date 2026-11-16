@@ -252,7 +252,7 @@ export default function Navbar() {
           </Link>
 
           {/* Gallery Link */}
-          <Link
+          {/* <Link
             href="/gallery"
             aria-current={isGalleryActive ? "page" : undefined}
             className={`px-5 py-2 text-xs sm:text-sm font-medium rounded-full transition-all duration-200 ${
@@ -262,7 +262,7 @@ export default function Navbar() {
             }`}
           >
             Gallery
-          </Link>
+          </Link> */}
         </div>
 
         {/* Right CTA Button */}
@@ -402,7 +402,7 @@ export default function Navbar() {
           </Link>
 
           {/* Mobile Gallery */}
-          <Link
+          {/* <Link
             href="/gallery"
             aria-current={isGalleryActive ? "page" : undefined}
             onClick={() => setMobileMenuOpen(false)}
@@ -411,7 +411,7 @@ export default function Navbar() {
             }`}
           >
             Gallery
-          </Link>
+          </Link> */}
 
           {/* Mobile Contact Us CTA */}
           <Link
