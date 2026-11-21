@@ -14,7 +14,8 @@ const contentSecurityPolicy = [
   // Cloudinary hosts the /gallery photos and videos.
   "media-src 'self' https://res.cloudinary.com",
   "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com",
-  "frame-src 'none'",
+  // YouTube embed on /partners (Partner with ISFT video).
+  "frame-src https://www.youtube-nocookie.com https://www.youtube.com",
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",

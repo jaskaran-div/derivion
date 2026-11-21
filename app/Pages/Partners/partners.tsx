@@ -37,6 +37,23 @@ const academicPartners: { name: string; logo?: string }[] = [
     { name: "ZISHI", logo: "/partners/zishi.png" },
 ];
 
+// Paste the YouTube link here (watch, youtu.be, shorts or embed URLs all work).
+const PARTNER_VIDEO_URL = "https://youtube.com/shorts/J5nvQ2yGYZc";
+
+function getYouTubeId(url: string) {
+    const match = url.match(/(?:youtu\.be\/|v=|\/embed\/|\/shorts\/)([\w-]{11})/);
+    return match ? match[1] : null;
+}
+
+const partnerVideoId = getYouTubeId(PARTNER_VIDEO_URL);
+
+const isftHighlights = [
+    { strong: "A win-win", text: "for your institution and your students" },
+    { strong: "Hands-on Trading Lab", text: "with simulated live data and zero live-market liability" },
+    { strong: "ISFT runs the academics:", text: "trainers, study material, LMS and live mentorship" },
+    { strong: "You handle admissions", text: "and earn a tiered revenue share on every enrolment" },
+];
+
 const models = [
     {
         icon: GraduationCap,
@@ -200,6 +217,79 @@ export default function Partners() {
                             </div>
                         ))}
                     </dl>
+                </div>
+            </section>
+
+            {/* Partner with ISFT */}
+            <section id="partner-with-isft" className="w-full bg-[#FAFAFA] px-4 sm:px-6 lg:px-8 py-16 sm:py-20 scroll-mt-24">
+                <div className="max-w-6xl mx-auto grid lg:grid-cols-5 gap-10 lg:gap-14 items-center">
+                    <AnimateOnScroll animation="fade-up" duration={600} className="lg:col-span-2">
+                        <div className="relative mx-auto w-full max-w-[340px] aspect-[9/16] rounded-3xl overflow-hidden bg-[#0B0B0B] border border-[#E5E7EB] shadow-2xl">
+                            {partnerVideoId ? (
+                                <iframe
+                                    src={`https://www.youtube-nocookie.com/embed/${partnerVideoId}?rel=0`}
+                                    title="Partner with ISFT by Derivion"
+                                    loading="lazy"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowFullScreen
+                                    className="absolute inset-0 w-full h-full"
+                                />
+                            ) : (
+                                <div className="absolute inset-0 flex items-center justify-center text-sm text-[#BDBDBD]">
+                                    Video coming soon
+                                </div>
+                            )}
+                        </div>
+                    </AnimateOnScroll>
+
+                    <AnimateOnScroll animation="fade-up" delay={120} duration={600} className="lg:col-span-3 space-y-6">
+                        <div className="space-y-3">
+                            <span className="text-[11px] font-semibold tracking-wider uppercase text-[#C20F42]">
+                                For Finance &amp; Trading Institutions
+                            </span>
+                            <h2
+                                className="text-3xl sm:text-5xl font-bold text-[#000000] tracking-tight"
+                                style={{ fontFamily: "var(--font-serif)" }}
+                            >
+                                Partner with <span className="text-[#D6124B]">ISFT</span>{" "}
+                                <span className="block sm:inline text-2xl sm:text-3xl font-semibold text-[#5F5F5F]">by Derivion</span>
+                            </h2>
+                            <p className="text-base sm:text-lg text-[#374151] leading-relaxed">
+                                Bring a regulated, UK-recognised trading qualification to your institution, without
+                                changing how you run.
+                            </p>
+                        </div>
+
+                        <ul className="space-y-3">
+                            {isftHighlights.map((h) => (
+                                <li key={h.strong} className="flex gap-3 text-sm sm:text-base">
+                                    <CheckCircle2 className="w-5 h-5 mt-0.5 shrink-0 text-[#D6124B]" />
+                                    <span className="text-[#5F5F5F]">
+                                        <strong className="font-semibold text-[#000000]">{h.strong}</strong> {h.text}
+                                    </span>
+                                </li>
+                            ))}
+                        </ul>
+
+                        <span className="inline-flex px-4 py-2 rounded-full border border-[#E5E7EB] bg-white text-sm font-medium text-[#000000]">
+                            OCN London
+                        </span>
+
+                        <p className="text-sm text-[#737373]">
+                            Already on this route:{" "}
+                            <strong className="font-semibold text-[#000000]">Chandigarh University</strong>,{" "}
+                            <strong className="font-semibold text-[#000000]">Jaipuria University</strong> and government
+                            institutes across India.
+                        </p>
+
+                        <button
+                            type="button"
+                            onClick={scrollToForm}
+                            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#D6124B] hover:bg-[#B50F40] text-white text-sm font-semibold shadow-lg shadow-[#D6124B]/25 transition-all active:scale-95"
+                        >
+                            Share my details <ArrowRight className="w-4 h-4" />
+                        </button>
+                    </AnimateOnScroll>
                 </div>
             </section>
 
